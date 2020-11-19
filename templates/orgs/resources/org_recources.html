@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block title %} {% trans "مصادر المجتمع المدني" %} {% endblock %}
+
+{% block content %}
+
+<div class="row mt-4 pt-4 orgs-news">
+  <div class="">
+    <article>
+      <h1 class="text-center mb-4"> {% trans "مصادر المجتمع المدني" %} </h1>
+      <!-- Text Descriptions -->
+
+      {% if LANGUAGE_CODE == 'ar' %}
+      <p class="text-right text-al-just p-color h4">
+
+        يعرض هذا القسم فرص العمل والتمويل والموارد المتاحة سواء لمنظمات المجتمع المدني السوري والعاملين فيها، وأيضا
+        للأفراد السوريين، ويضم هذا القسم أربع صفحات فرعية:
+
+
+        <span id="collapseText" class="collapse">
+
+          <ul id="list-collapse">
+            <li>
+              <strong>فرص العمل :</strong> يتضمن أحدث فرص العمل والتطوع والتدريب التي تطرحها المنظمات المسجلة في المنصة
+              وغير المسجلة بما
+              في
+              ذلك المنظمات الدولية.
+            </li>
+            <li>
+              <strong>فرص التمويل :</strong> يعرض المنح وفرص التمويل سواء الخاصة بالأفراد أو المنظمات.
+            </li>
+            <li>
+              <strong>فرص بناء القدرات :</strong> يعرض فرص وأجندة ورشات العمل والتدريب في مجالات مختلفة (مجالات التنمية،
+              مجالات الإغاثة
+              الإنسانية، مجالات الحوكمة والإدارة... الخ).
+            </li>
+            <li>
+              <strong>دليل التطوير :</strong> وهو مكتبة الكترونية مليئة بالمراجع التي تهم العاملين في مجال المجتمع
+              المدني وإدارة المشاريع،
+              الحوكمة التنظيمية، المناصرة والحملات... الخ
+            </li>
+          </ul>
+
+        </span>
+      </p>
+      {% endif %}
+
+      <a href="#collapseText" id="collapsRead" class="nav-toggle text-decoration-none" data-toggle="collapse">
+        {% trans "إقراء المزيد" %}
+      </a>
+    </article>
+
+
+    <hr>
+    <!-- Les Cercles -->
+    <div class="row org-work mb-2">
+      <h2 class="text-center mb-4"> {% trans "المصادر" %} </h2>
+
+      <div class="d-flex justify-content-center align-items-center flex-wrap">
+        <div class="">
+          <a href="{% url 'orgs_jobs' %}"
+            class="btn btn-button d-flex justify-content-center align-items-center border-0"> {% trans "فرص العمل" %}
+          </a>
+        </div>
+        <div class="">
+          <a href="{% url 'funding' %}"
+            class="btn btn-button d-flex justify-content-center align-items-center border-0"> {% trans "فرص التمويل" %}
+          </a>
+        </div>
+
+        <div class="">
+          <a href="{% url 'orgs_capacity' %}"
+            class="btn btn-button d-flex justify-content-center align-items-center border-0">
+            {% trans "فرص بناء القدرات" %} </a>
+        </div>
+        <div class="">
+          <a href="{% url 'orgs_devs' %}"
+            class="btn btn-button d-flex justify-content-center align-items-center border-0"> {% trans 'دليل التطوير' %}
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% load static i18n crispy_forms_tags %}
+{% block title %} {% trans 'تعديل الملف الشخصي للمنظمة' %} {% endblock %}
+
+{% block content %}
+<h1> {% trans 'تعديل الملف الشخصي للمنظمة' %} </h1>
+
+<div class="register">
+    <form action="" id="fill_form" method="POST" data-cities-url="{% url 'ajax_load_cities' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="{% trans 'تعديل' %}" class="btn btn-block">
+    </form>
+</div>
+
+{% endblock %}

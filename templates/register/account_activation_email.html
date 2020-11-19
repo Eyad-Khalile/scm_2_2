@@ -1,0 +1,35 @@
+{% autoescape off %}
+Welcome : {{ user.username }},
+
+Please click on the link below to confirm your registration:
+
+<a href="http://{{ domain }}{% url 'activate' uidb64=uid token=token %}" class="btn">Activate</a>
+Your username, in case you've forgotten: {{ user.get_username }}
+{% endautoescape %}
+
+
+
+
+
+
+{% autoescape off %}
+مرحبا : {{ user.username }},
+
+
+رجاء اضغط على الرابط التالي لتأكيد التسجيل
+
+<a href="http://{{ domain }}{% url 'activate' uidb64=uid token=token %}">تفعيل</a>
+{% endautoescape %}
+
+
+
+
+
+
+{% autoescape off %}
+Bienvenue : {{ user.username }},
+
+Veuillez cliquer sur le lien ci-dessous pour confirmer votre inscription :
+
+<a href="http://{{ domain }}{% url 'activate' uidb64=uid token=token %}">Activez</a>
+{% endautoescape %}

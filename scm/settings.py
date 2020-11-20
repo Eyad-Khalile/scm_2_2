@@ -15,6 +15,7 @@ import django.conf.locale
 from django.conf.locale import LANG_INFO
 import os
 from django.utils.translation import gettext_lazy as _
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -208,3 +209,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'khalile.eyad@gmail.com'
 EMAIL_HOST_PASSWORD = 'Eyad1979@'
+
+
+# KEROKU
+django_heroku.settings(locals())

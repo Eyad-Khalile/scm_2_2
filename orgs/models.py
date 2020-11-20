@@ -374,10 +374,10 @@ class OrgProfile(models.Model):
     #     max_length=150, choices=syr_city_CHOICES, null=True, blank=True, verbose_name=_("المحافظة"))
     logo = models.ImageField(upload_to="org_logos",
                              null=False, default='org_logos/default_logo.jpg', verbose_name=_("شعار المنظمة"))
-    # message = models.TextField(
-    #     max_length=2000, null=False, verbose_name=_("الرؤية و الرسالة"))
-    message = RichTextField(
-        null=True, blank=True, verbose_name=_("الرؤية و الرسالة"))
+    message = models.TextField(
+        max_length=2000, null=False, verbose_name=_("الرؤية و الرسالة"))
+    # message = RichTextField(
+    #     null=True, blank=True, verbose_name=_("الرؤية و الرسالة"))
 
     name_managing_director = models.CharField(
         max_length=255, null=True, blank=True, verbose_name=_("اسم رئيس مجلس اﻹدارة"))

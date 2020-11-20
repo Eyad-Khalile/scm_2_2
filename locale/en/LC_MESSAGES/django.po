@@ -4,1596 +4,1596 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
-"Project-Id-Version: scm\n"
-"Language: en\n"
+"Project-Id-Version: English_2\n"
+"Language: ar\n"
 
 #: 
 msgid "إدارة موقع SCM "
-msgstr ""
+msgstr "managing SCM website"
 
 #: 
 msgid "تاريخ التأسيس / من :"
-msgstr ""
+msgstr "Date of establishment/ from:  "
 
 #: 
 msgid "إلى :"
-msgstr ""
+msgstr "to:"
 
 #: 
 msgid "اسم المنظمة"
-msgstr ""
+msgstr "Name of Organisation"
 
 #: 
 msgid "تاريخ نشر الخبر / من :"
-msgstr ""
+msgstr "Publication date of the news item/ from:"
 
 #: 
 msgid "كلمات من عنوان الخبر"
-msgstr ""
+msgstr "Words from the news item's headline"
 
 #: 
 msgid "كلمات من تفاصيل الخبر"
-msgstr ""
+msgstr "words from the news item details"
 
 #: 
 msgid "كلمات من عنوان التقرير"
-msgstr ""
+msgstr "words from the report's headline"
 
 #: 
 msgid "تاريخ نشر التقرير / من :"
-msgstr ""
+msgstr "Publication date of the report/ from:"
 
 #: 
 msgid "كلمات من عنوان البيان"
-msgstr ""
+msgstr "words from the statement headline "
 
 #: 
 msgid "تاريخ نشر البيان / من :"
-msgstr ""
+msgstr "publication date of the statement / from"
 
 #: 
 msgid "كلمات من عنوان المحتوى"
-msgstr ""
+msgstr "words from the content headline"
 
 #: 
 msgid "تاريخ نشر المحتوى / من :"
-msgstr ""
+msgstr "publication date of the content / from"
 
 #: 
 msgid "كلمات من اسم الجهة"
-msgstr ""
+msgstr "words from the name of the entity"
 
 #: 
 msgid "كلمات من عنوان البحث"
-msgstr ""
+msgstr "words from the research title"
 
 #: 
 msgid "تاريخ نشر البحث / من :"
-msgstr ""
+msgstr "publication date of the research/from:"
 
 #: 
 msgid "كلمات من فرصة العمل  "
-msgstr ""
+msgstr "words from the job opening"
 
 #: 
 msgid "نوع الوظيفة"
-msgstr ""
+msgstr "kind of job"
 
 #: 
 msgid "الخبرة"
-msgstr ""
+msgstr "the experience"
 
 #: 
 msgid "مكان العمل"
-msgstr ""
+msgstr "workplace"
 
 #: 
 msgid "المحافظة"
-msgstr ""
+msgstr "province"
 
 #: 
 msgid "مجال العمل"
-msgstr ""
+msgstr "area of work"
 
 #: 
 msgid "تاريخ نشر فرصة العمل / من :"
-msgstr ""
+msgstr "publication date of the job opening/from:"
 
 #: 
 msgid "الجهة المانحة"
-msgstr ""
+msgstr "the donor"
 
 #: 
 msgid "حسب المبلغ المالي"
-msgstr ""
+msgstr "according to the amount of money "
 
 #: 
 msgid "تاريخ نشر المنحة  / من :"
-msgstr ""
+msgstr "publication date of the grant"
 
 #: 
 msgid "عنوان المادة"
-msgstr ""
+msgstr "title of the article"
 
 #: 
 msgid "حقل إجباري, يرجى إدخال بريد إلكتروني صحيح لتتمكن من تفعيل حسابك"
-msgstr ""
+msgstr "required filed, please input a valid email address in order to activate your account"
 
 #: 
 msgid "عنوان بريد إلكتروني"
-msgstr ""
+msgstr "email address"
 
 #: 
 msgid "هذا الحقل لا يقبل الحروف الخاصه و الرموز"
-msgstr ""
+msgstr "This field does not accept special characters and symbols"
 
 #: 
 msgid "اسم المنظمة باللغة الانكليزية أو الكردية"
-msgstr ""
+msgstr "the organisation name in English or Kurdish"
 
 #: 
 msgid "الاسم المختصر"
-msgstr ""
+msgstr "the acronym"
 
 #: 
 msgid "اسم رئيس مجلس اﻹدارة"
-msgstr ""
+msgstr "the name of the Chairman of the Board of Directors"
 
 #: 
 msgid "اسم المدير التنفيذي"
-msgstr ""
+msgstr "the name of the executive director"
 
 #: 
 msgid "الموقع الالكتروني"
-msgstr ""
+msgstr "the website"
 
 #: 
 msgid "صفحة فيسبوك"
-msgstr ""
+msgstr "Facebook page"
 
 #: 
 msgid "صفحة تويتر"
-msgstr ""
+msgstr "Twitter page"
 
 #: 
 msgid "البريد الاكتروني"
-msgstr ""
+msgstr "email address"
 
 #: 
 msgid "اسم الشخص المسؤول عن التواصل"
-msgstr ""
+msgstr "the name of the person in charge of communicating"
 
 #: 
 msgid "البريد الاكتروني للشخص المسؤول عن التواصل"
-msgstr ""
+msgstr "the email address of the person in charge of communicating"
 
 #: 
 msgid "عنوان المقر الرئيسي"
-msgstr ""
+msgstr "the address of the core headquarters"
 
 #: 
 msgid "اسم الشبكة / التحالف"
-msgstr ""
+msgstr "the name of the network/alliance "
 
 #: 
 msgid "الاسم و الكنية"
-msgstr ""
+msgstr "name and surname"
 
 #: 
 msgid "العمل"
-msgstr ""
+msgstr "job"
 
 #: 
 msgid "هذا البريد الالكتروني موجود مسبقاً"
-msgstr ""
+msgstr "this email address  already exists"
 
 #: 
 msgid "العراق"
-msgstr ""
+msgstr "Iraq"
 
 #: 
 msgid "لبنان"
-msgstr ""
+msgstr "Lebanon"
 
 #: 
 msgid "اﻷردن"
-msgstr ""
+msgstr "Jordan"
 
 #: 
 msgid "سوريا"
-msgstr ""
+msgstr "Syria"
 
 #: 
 msgid "تركيا"
-msgstr ""
+msgstr "Turkey"
 
 #: 
 msgid "مؤسسة"
-msgstr ""
+msgstr "institution"
 
 #: 
 msgid "جمعية أو منظمة"
-msgstr ""
+msgstr "organisation or association"
 
 #: 
 msgid "مبادرة / فريق"
-msgstr ""
+msgstr "initiative / team"
 
 #: 
 msgid "اتحاد / تحالف / تجمع"
-msgstr ""
+msgstr "union / alliance / assembly"
 
 #: 
 msgid "لجنة / تنسيقية / مجموعة"
-msgstr ""
+msgstr "committee / Coordinators Union  / group"
 
 #: 
 msgid "حلب"
-msgstr ""
+msgstr "Aleppo"
 
 #: 
 msgid "دمشق"
-msgstr ""
+msgstr "Damascus"
 
 #: 
 msgid "ريف دمشق"
-msgstr ""
+msgstr "Rif Dimashq"
 
 #: 
 msgid "درعا"
-msgstr ""
+msgstr "Daraa"
 
 #: 
 msgid "دير الزور"
-msgstr ""
+msgstr "Deir ez-zor"
 
 #: 
 msgid "حماه"
-msgstr ""
+msgstr "Hama"
 
 #: 
 msgid "الحسكة"
-msgstr ""
+msgstr "Al-hasaka"
 
 #: 
 msgid "حمص"
-msgstr ""
+msgstr "Homs"
 
 #: 
 msgid "إدلب"
-msgstr ""
+msgstr "Idlib"
 
 #: 
 msgid "اللاذقية"
-msgstr ""
+msgstr "Lattakia"
 
 #: 
 msgid "القنيطرة"
-msgstr ""
+msgstr "Qunatra"
 
 #: 
 msgid "الرقة"
-msgstr ""
+msgstr "Raqqa"
 
 #: 
 msgid "السويداء"
-msgstr ""
+msgstr "Suwayda"
 
 #: 
 msgid "طرطوس"
-msgstr ""
+msgstr "Tartous"
 
 #: 
 msgid "أضنة"
-msgstr ""
+msgstr "Adana"
 
 #: 
 msgid "أديامان"
-msgstr ""
+msgstr "Adiaman"
 
 #: 
 msgid "أفيون"
-msgstr ""
+msgstr "Afyonkarahisar"
 
 #: 
 msgid "أغري"
-msgstr ""
+msgstr "Agri"
 
 #: 
 msgid "أماسيا"
-msgstr ""
+msgstr "Amasya"
 
 #: 
 msgid "أنقرة"
-msgstr ""
+msgstr "Ankara"
 
 #: 
 msgid "أنطاليا"
-msgstr ""
+msgstr "Antalia"
 
 #: 
 msgid "أرتوين"
-msgstr ""
+msgstr "Artvin"
 
 #: 
 msgid "أيطن"
-msgstr ""
+msgstr "Ayten"
 
 #: 
 msgid "بالق أسير"
-msgstr ""
+msgstr "Balikesir"
 
 #: 
 msgid "بيله جك"
-msgstr ""
+msgstr "Bilecik"
 
 #: 
 msgid "بينكُل"
-msgstr ""
+msgstr "Bingol"
 
 #: 
 msgid "بيطليس"
-msgstr ""
+msgstr "Bitlis"
 
 #: 
 msgid "بولو"
-msgstr ""
+msgstr "Bolu"
 
 #: 
 msgid "بوردور"
-msgstr ""
+msgstr "Budrom"
 
 #: 
 msgid "بورصة"
-msgstr ""
+msgstr "Stock Market"
 
 #: 
 msgid "جاناكالي"
-msgstr ""
+msgstr "Canakkale"
 
 #: 
 msgid "جانقري"
-msgstr ""
+msgstr "Cankiri"
 
 #: 
 msgid "جوروم"
-msgstr ""
+msgstr "Corum"
 
 #: 
 msgid "دنيزلي"
-msgstr ""
+msgstr "Denizli"
 
 #: 
 msgid "ديار بكر"
-msgstr ""
+msgstr "Diyarbakir"
 
 #: 
 msgid "أدرنة"
-msgstr ""
+msgstr "Edirne"
 
 #: 
 msgid "إلازِغ"
-msgstr ""
+msgstr "Elazig"
 
 #: 
 msgid "أرزينجان"
-msgstr ""
+msgstr "Erzingan"
 
 #: 
 msgid "أرضروم"
-msgstr ""
+msgstr "Erzurum"
 
 #: 
 msgid "أسكي شهر"
-msgstr ""
+msgstr "Eskisehir"
 
 #: 
 msgid "غازي عينتاب"
-msgstr ""
+msgstr "Gaziantep"
 
 #: 
 msgid "غيرسون"
-msgstr ""
+msgstr "Gumushane"
 
 #: 
 msgid "كوموش خانة"
-msgstr ""
+msgstr "Giresun"
 
 #: 
 msgid "حقاري"
-msgstr ""
+msgstr "Hakkari"
 
 #: 
 msgid "خطاي"
-msgstr ""
+msgstr "Hatay"
 
 #: 
 msgid "إسبرطة"
-msgstr ""
+msgstr "Sparta"
 
 #: 
 msgid "مرسين"
-msgstr ""
+msgstr "Mersin"
 
 #: 
 msgid "إسطنبول"
-msgstr ""
+msgstr "Istanbul"
 
 #: 
 msgid "إزمير"
-msgstr ""
+msgstr "Izmir"
 
 #: 
 msgid "كارس"
-msgstr ""
+msgstr "Cars"
 
 #: 
 msgid "قسطموني"
-msgstr ""
+msgstr "Kastamunu"
 
 #: 
 msgid "قيصرية"
-msgstr ""
+msgstr "kayseri"
 
 #: 
 msgid "كيركلاريلي"
-msgstr ""
+msgstr "Kirkraleri"
 
 #: 
 msgid "قرشهر"
-msgstr ""
+msgstr "Kirsahir"
 
 #: 
 msgid "قوجه ايلي"
-msgstr ""
+msgstr "Kokaeli"
 
 #: 
 msgid "قونية"
-msgstr ""
+msgstr "Konya"
 
 #: 
 msgid "كوتاهيا"
-msgstr ""
+msgstr "Kotahia"
 
 #: 
 msgid "ملاطية"
-msgstr ""
+msgstr "Malatia"
 
 #: 
 msgid "مانيسا"
-msgstr ""
+msgstr "Mansia"
 
 #: 
 msgid "كارامان"
-msgstr ""
+msgstr "Karaman"
 
 #: 
 msgid "ماردين"
-msgstr ""
+msgstr "Mardine"
 
 #: 
 msgid "موغلا"
-msgstr ""
+msgstr "Mugla"
 
 #: 
 msgid "موس"
-msgstr ""
+msgstr "Mus"
 
 #: 
 msgid "نوشهر"
-msgstr ""
+msgstr "Nevsehir"
 
 #: 
 msgid "نيدا"
-msgstr ""
+msgstr "Nida"
 
 #: 
 msgid "أردو"
-msgstr ""
+msgstr "Ardo"
 
 #: 
 msgid "ريزه"
-msgstr ""
+msgstr "Rize"
 
 #: 
 msgid "صقاريا"
-msgstr ""
+msgstr "Sakarya"
 
 #: 
 msgid "سامسون"
-msgstr ""
+msgstr "Samson"
 
 #: 
 msgid "سيرت"
-msgstr ""
+msgstr "Siirt"
 
 #: 
 msgid "سينوب"
-msgstr ""
+msgstr "Sinop"
 
 #: 
 msgid "سيواس"
-msgstr ""
+msgstr "Sivas"
 
 #: 
 msgid "تكيرطاغ"
-msgstr ""
+msgstr "Teqirdag"
 
 #: 
 msgid "توكات"
-msgstr ""
+msgstr "Tokat"
 
 #: 
 msgid "طرابزون"
-msgstr ""
+msgstr "Trabzon"
 
 #: 
 msgid "تونجلي"
-msgstr ""
+msgstr "Tonceli"
 
 #: 
 msgid "شانلي أورفا"
-msgstr ""
+msgstr "Urfa"
 
 #: 
 msgid "أوشاك"
-msgstr ""
+msgstr "Oshak"
 
 #: 
 msgid "وان"
-msgstr ""
+msgstr "Wan "
 
 #: 
 msgid "يوزكات"
-msgstr ""
+msgstr "Yozgat"
 
 #: 
 msgid "زونغولداك"
-msgstr ""
+msgstr "Zongwaldak"
 
 #: 
 msgid "أق سراي"
-msgstr ""
+msgstr "Aksaray"
 
 #: 
 msgid "بايبورت"
-msgstr ""
+msgstr "Bayburt"
 
 #: 
 msgid "قرة مان"
-msgstr ""
+msgstr "Kahramanmaraş"
 
 #: 
 msgid "كيرِك قلعة"
-msgstr ""
+msgstr "Kırıkkale"
 
 #: 
 msgid "باتمان"
-msgstr ""
+msgstr "Batman"
 
 #: 
 msgid "شرناق"
-msgstr ""
+msgstr "Shernak"
 
 #: 
 msgid "بارتين"
-msgstr ""
+msgstr "Partin"
 
 #: 
 msgid "أرض خان"
-msgstr ""
+msgstr "Ardahan"
 
 #: 
 msgid "إغدير"
-msgstr ""
+msgstr "Eghdir"
 
 #: 
 msgid "يالوفا"
-msgstr ""
+msgstr "Yaluva"
 
 #: 
 msgid "قرة بوك"
-msgstr ""
+msgstr "Karabuk "
 
 #: 
 msgid "كيليس"
-msgstr ""
+msgstr "Kilis"
 
 #: 
 msgid "عثمانية"
-msgstr ""
+msgstr "Othmanieh"
 
 #: 
 msgid "دوزجه"
-msgstr ""
+msgstr "Dozga"
 
 #: 
 msgid "إربد"
-msgstr ""
+msgstr "Irbid"
 
 #: 
 msgid "البلقاء"
-msgstr ""
+msgstr "Balqa"
 
 #: 
 msgid "جرش"
-msgstr ""
+msgstr "Jerash"
 
 #: 
 msgid "الزرقاء"
-msgstr ""
+msgstr "Zarqa"
 
 #: 
 msgid "الطفيلة"
-msgstr ""
+msgstr "Tafilah"
 
 #: 
 msgid "عجلون"
-msgstr ""
+msgstr "Ajloun"
 
 #: 
 msgid "العقبة"
-msgstr ""
+msgstr "Al Aqaba"
 
 #: 
 msgid "عمان"
-msgstr ""
+msgstr "Amman"
 
 #: 
 msgid "الكرك"
-msgstr ""
+msgstr "Al karak"
 
 #: 
 msgid "مادبا"
-msgstr ""
+msgstr "Madaba"
 
 #: 
 msgid "معان"
-msgstr ""
+msgstr "Ma'an"
 
 #: 
 msgid "المفرق"
-msgstr ""
+msgstr "Al Mafraque"
 
 #: 
 msgid "بيروت"
-msgstr ""
+msgstr "Beirut"
 
 #: 
 msgid "جبل لبنان"
-msgstr ""
+msgstr "Mount Lebanon governorate"
 
 #: 
 msgid "لبنان الشمالي"
-msgstr ""
+msgstr "North governorate"
 
 #: 
 msgid "لبنان الجنوبي"
-msgstr ""
+msgstr "South governorate"
 
 #: 
 msgid "البقاع"
-msgstr ""
+msgstr "Beeqaa"
 
 #: 
 msgid "النبطية"
-msgstr ""
+msgstr "Nabatieh"
 
 #: 
 msgid "عكار"
-msgstr ""
+msgstr "Akkar"
 
 #: 
 msgid "بعبلك الهرمل"
-msgstr ""
+msgstr "Baalbek-Hermel"
 
 #: 
 msgid "كسروان جبيل"
-msgstr ""
+msgstr "Keserwan District"
 
 #: 
 msgid "أربيل"
-msgstr ""
+msgstr "Erbil"
 
 #: 
 msgid "اﻷنبار"
-msgstr ""
+msgstr "Al-Anbar"
 
 #: 
 msgid "بابل"
-msgstr ""
+msgstr "Babylon"
 
 #: 
 msgid "بغداد"
-msgstr ""
+msgstr "Baghdad"
 
 #: 
 msgid "البصرة"
-msgstr ""
+msgstr "Basra"
 
 #: 
 msgid "حلبجة"
-msgstr ""
+msgstr "Halabja"
 
 #: 
 msgid "دهوك"
-msgstr ""
+msgstr "Duhok"
 
 #: 
 msgid "القادسية"
-msgstr ""
+msgstr "Al-Kadisyya"
 
 #: 
 msgid "ديالي"
-msgstr ""
+msgstr "Dyala"
 
 #: 
 msgid "ذي قار"
-msgstr ""
+msgstr "Dhi Qar"
 
 #: 
 msgid "السليمانية"
-msgstr ""
+msgstr "Sulaimanyah"
 
 #: 
 msgid "صلاح الدين"
-msgstr ""
+msgstr "Salahdin"
 
 #: 
 msgid "كركوك"
-msgstr ""
+msgstr "kirkuk"
 
 #: 
 msgid "كربلاء"
-msgstr ""
+msgstr "Karbala"
 
 #: 
 msgid "المثنى"
-msgstr ""
+msgstr "Al Muthanna"
 
 #: 
 msgid "ميسان"
-msgstr ""
+msgstr "Maysan"
 
 #: 
 msgid "النجف"
-msgstr ""
+msgstr "Najaf"
 
 #: 
 msgid "نينوى"
-msgstr ""
+msgstr "Nineveh"
 
 #: 
 msgid "واسط"
-msgstr ""
+msgstr "Wasit"
 
 #: 
 msgid "إعلام"
-msgstr ""
+msgstr "media"
 
 #: 
 msgid "تعليم"
-msgstr ""
+msgstr "education"
 
 #: 
 msgid "حماية"
-msgstr ""
+msgstr "protection"
 
 #: 
 msgid "سبل العيش واﻷمن الغذائي"
-msgstr ""
+msgstr "livelihood and food security"
 
 #: 
 msgid "مشاريع النظافة والمياه والصرف الصحي"
-msgstr ""
+msgstr "Hygiene, water, and sanitation projects"
 
 #: 
 msgid "تنمية"
-msgstr ""
+msgstr "development"
 
 #: 
 msgid "قانون و مناصرة و سیاسة"
-msgstr ""
+msgstr "law, advocacy and policy"
 
 #: 
 msgid "مانحین و دعم العمل التطوعي"
-msgstr ""
+msgstr "donors and support volunteering"
 
 #: 
 msgid "منظمات دینیة"
-msgstr ""
+msgstr "religious organisations"
 
 #: 
 msgid "تجمعات و اتحادات مھنیة"
-msgstr ""
+msgstr "occupational groupings and federations "
 
 #: 
 msgid "صحة"
-msgstr ""
+msgstr "health"
 
 #: 
 msgid "دراسات وأبحاث"
-msgstr ""
+msgstr "studies and researches"
 
 #: 
 msgid "أخرى"
-msgstr ""
+msgstr "other"
 
 #: 
 msgid "لا يوجد فئة محددة"
-msgstr ""
+msgstr "no specific category"
 
 #: 
 msgid "نساء"
-msgstr ""
+msgstr "women"
 
 #: 
 msgid "رجال"
-msgstr ""
+msgstr "men"
 
 #: 
 msgid "شباب 18-24"
-msgstr ""
+msgstr "youth 18-24"
 
 #: 
 msgid "أطفال 0-18"
-msgstr ""
+msgstr "children 0-18"
 
 #: 
 msgid "مجموعات دینیة"
-msgstr ""
+msgstr "religious groups"
 
 #: 
 msgid "مجموعة عرقیة"
-msgstr ""
+msgstr "ethnic group"
 
 #: 
 msgid "فاقدي المعیل"
-msgstr ""
+msgstr "who lost their provider"
 
 #: 
 msgid "ذوي الاحتیاجات الخاصة"
-msgstr ""
+msgstr "People with special needs"
 
 #: 
 msgid "لاجئین"
-msgstr ""
+msgstr "refugees"
 
 #: 
 msgid "نازحین"
-msgstr ""
+msgstr "displaced persons"
 
 #: 
 msgid "عائدین"
-msgstr ""
+msgstr "returnees"
 
 #: 
 msgid "منظمات مجتمع مدني اخرى"
-msgstr ""
+msgstr "other civil society organisations"
 
 #: 
 msgid "لا"
-msgstr ""
+msgstr "no"
 
 #: 
 msgid "نعم"
-msgstr ""
+msgstr "yes"
 
 #: 
 msgid "لا يوجد"
-msgstr ""
+msgstr "none"
 
 #: 
 msgid "مدونة السلوك"
-msgstr ""
+msgstr "code of conduct"
 
 #: 
 msgid "حماية الطفل"
-msgstr ""
+msgstr "child protection"
 
 #: 
 msgid "مكافحة الفساد"
-msgstr ""
+msgstr "anti-corruption"
 
 #: 
 msgid "سياسة الموارد البشرية"
-msgstr ""
+msgstr "human resources policy"
 
 #: 
 msgid "سياسة المشتريات"
-msgstr ""
+msgstr "procurement policy"
 
 #: 
 msgid "سياسة التطوع"
-msgstr ""
+msgstr "volunteering policy"
 
 #: 
 msgid "سياسة منع التحرش"
-msgstr ""
+msgstr "harassment prevention policy"
 
 #: 
 msgid "السياسة المالية"
-msgstr ""
+msgstr "financial policy"
 
 #: 
 msgid "سياسة استخدام المعدات"
-msgstr ""
+msgstr "using equipment policy"
 
 #: 
 msgid "سياسة الخصوصية"
-msgstr ""
+msgstr "privacy policy"
 
 #: 
 msgid "دوام كامل"
-msgstr ""
+msgstr "full time"
 
 #: 
 msgid "دوام جزئي"
-msgstr ""
+msgstr "part time"
 
 #: 
 msgid "استشاري"
-msgstr ""
+msgstr "advisor"
 
 #: 
 msgid "تدريب"
-msgstr ""
+msgstr "training"
 
 #: 
 msgid "تطوع"
-msgstr ""
+msgstr "volunteering"
 
 #: 
 msgid "زمالة"
-msgstr ""
+msgstr "fellowship"
 
 #: 
 msgid "الخبرة غير ضرورية"
-msgstr ""
+msgstr "no experience required "
 
 #: 
 msgid "1-2 سنة"
-msgstr ""
+msgstr "1-2 years"
 
 #: 
 msgid "2-5 سنة"
-msgstr ""
+msgstr "2-5 years"
 
 #: 
 msgid "5-9 سنة"
-msgstr ""
+msgstr "5-9 years"
 
 #: 
 msgid "10 وفوق"
-msgstr ""
+msgstr "more than 10"
 
 #: 
 msgid "أقل من 6 أشهر"
-msgstr ""
+msgstr "less than 6 months"
 
 #: 
 msgid "ستة أشهر لسنة"
-msgstr ""
+msgstr "6 to 12 months"
 
 #: 
 msgid "سنة إلى سنتين"
-msgstr ""
+msgstr "1 to 2 years"
 
 #: 
 msgid "أكثر من سنتين"
-msgstr ""
+msgstr "more than 2 years"
 
 #: 
 msgid "أقل من 5000 دولار"
-msgstr ""
+msgstr "less than 5000 dollars"
 
 #: 
 msgid "بين 5000 و 10000 دولار"
-msgstr ""
+msgstr "between 5000 and 10000 dollars"
 
 #: 
 msgid "بين 10000 و50000 دولار"
-msgstr ""
+msgstr "between 10000 and 500000 dollars"
 
 #: 
 msgid "بين 50000 و100000 دولار"
-msgstr ""
+msgstr "between 50000 and 100000 dollars"
 
 #: 
 msgid "كلية"
-msgstr ""
+msgstr "total"
 
 #: 
 msgid "جزئية"
-msgstr ""
+msgstr "partial"
 
 #: 
 msgid "دراسية"
-msgstr ""
+msgstr "academic"
 
 #: 
 msgid "انتاجية"
-msgstr ""
+msgstr "productivity"
 
 #: 
 msgid "دراسات و أبحاث"
-msgstr ""
+msgstr "studies and researches"
 
 #: 
 msgid "إجازة جامعية"
-msgstr ""
+msgstr "college degree"
 
 #: 
 msgid "دبلوم"
-msgstr ""
+msgstr "diploma"
 
 #: 
 msgid "ماجيستير"
-msgstr ""
+msgstr "master"
 
 #: 
 msgid "دكتوراه"
-msgstr ""
+msgstr "doctorate"
 
 #: 
 msgid "إعلام/ اتصالات/ علاقات عامة"
-msgstr ""
+msgstr "media / communication / public relations"
 
 #: 
 msgid "أعمال وإدارة"
-msgstr ""
+msgstr "management and business"
 
 #: 
 msgid "اقتصاد/ محاسبة"
-msgstr ""
+msgstr "Economy and accounting"
 
 #: 
 msgid "تعليم/ تربية/ رياض أطفال"
-msgstr ""
+msgstr "education / raising / kinder garden"
 
 #: 
 msgid "حاسوب وتكنولوجيا المعلومات"
-msgstr ""
+msgstr "computer and informational technology"
 
 #: 
 msgid "دراسات إسلامية"
-msgstr ""
+msgstr "Islamic studies"
 
 #: 
 msgid "دراسات إنسانية/ لغات"
-msgstr ""
+msgstr "humanity studies / languages"
 
 #: 
 msgid "زراعة وعلوم بيئية"
-msgstr ""
+msgstr "agriculture and environmental science"
 
 #: 
 msgid "سياحة وعلوم فندقية"
-msgstr ""
+msgstr "tourism and hotel science"
 
 #: 
 msgid "علوم إنسانية"
-msgstr ""
+msgstr "human science"
 
 #: 
 msgid "علوم طبية/ طب/ صيدلة/ تمريض"
-msgstr ""
+msgstr "medical sciences / medicine / pharmacy / nursing"
 
 #: 
 msgid "علوم طبيعية"
-msgstr ""
+msgstr "natural sciences"
 
 #: 
 msgid "عمارة وتصميم"
-msgstr ""
+msgstr "architectural and design"
 
 #: 
 msgid "فنون ومسارح وموسيقى"
-msgstr ""
+msgstr "art, theaters, and music"
 
 #: 
 msgid "قانون ودراسات قانونية"
-msgstr ""
+msgstr "law and legal studies"
 
 #: 
 msgid "هندسة وعلوم هندسية"
-msgstr ""
+msgstr "engineering and geometries"
 
 #: 
 msgid "الدولة"
-msgstr ""
+msgstr "country"
 
 #: 
 msgid "اسم المحافظة"
-msgstr ""
+msgstr "province name"
 
 #: 
 msgid "اسم المستخدم"
-msgstr ""
+msgstr "user name"
 
 #: 
 msgid "نوع المنظمة"
-msgstr ""
+msgstr "the type of the organisation"
 
 #: 
 msgid "شعار المنظمة"
-msgstr ""
+msgstr "the organisation motto"
 
 #: 
 msgid "الرؤية و الرسالة"
-msgstr ""
+msgstr "vision and mission"
 
 #: 
 msgid "رقم الهاتف"
-msgstr ""
+msgstr "phone number"
 
 #: 
 msgid "الفئات المستهدفة"
-msgstr ""
+msgstr "target groups"
 
 #: 
 msgid "تاريخ سنة التأسيس"
-msgstr ""
+msgstr "year of incorporation"
 
 #: 
 msgid "هل المنظمة مسجلة ؟"
-msgstr ""
+msgstr "is it a registered organisation? "
 
 #: 
 msgid "بلد التسجيل"
-msgstr ""
+msgstr "country of registration"
 
 #: 
 msgid "عدد اﻷعضاء"
-msgstr ""
+msgstr "membership"
 
 #: 
 msgid "عدد النساء من اﻷعضاء"
-msgstr ""
+msgstr "number of the female members"
 
 #: 
 msgid "السياسات واللوائح المكتوبة"
-msgstr ""
+msgstr "policies and written rules"
 
 #: 
 msgid "ھل المؤسسة عضو في اي شبكة او تحالف او جسم تنسیقي؟"
-msgstr ""
+msgstr "is the constitution member in any network or alliance or coordinating body"
 
 #: 
 msgid "عنوان الخبر"
-msgstr ""
+msgstr "the story headline"
 
 #: 
 msgid "تفاصيل الخبر"
-msgstr ""
+msgstr "details of the story"
 
 #: 
 msgid "صورة الخبر"
-msgstr ""
+msgstr "the photo of the story"
 
 #: 
 msgid "عنوان التقرير"
-msgstr ""
+msgstr "the report headline "
 
 #: 
 msgid "مجال التقرير"
-msgstr ""
+msgstr "scope of the report"
 
 #: 
 msgid "صورة او ملف التقرير"
-msgstr ""
+msgstr "a copy or a file of the report"
 
 #: 
 msgid "عنوان البيان"
-msgstr ""
+msgstr "statement headline"
 
 #: 
 msgid "صورة او ملف البيان"
-msgstr ""
+msgstr "a copy or a file of the statement"
 
 #: 
 msgid "عنوان المحتوى"
-msgstr ""
+msgstr "the content headline"
 
 #: 
 msgid "صورة او ملف المحتوى"
-msgstr ""
+msgstr "a copy or a file of the content"
 
 #: 
 msgid "رابط المحتوى"
-msgstr ""
+msgstr "the content link"
 
 #: 
 msgid "اسم الجهة"
-msgstr ""
+msgstr "name of the entity"
 
 #: 
 msgid "عنوان البحث"
-msgstr ""
+msgstr "the research headline"
 
 #: 
 msgid "مجال البحث"
-msgstr ""
+msgstr "scope of the research"
 
 #: 
 msgid "ملف البحث"
-msgstr ""
+msgstr "research file"
 
 #: 
 msgid "رابط البحث"
-msgstr ""
+msgstr "research link"
 
 #: 
 msgid "اضف اسم المنظمة اﻷخرى"
-msgstr ""
+msgstr "add the name of the other organisation"
 
 #: 
 msgid "اسم المنظمة اﻷخرى"
-msgstr ""
+msgstr "the name of the other organisation"
 
 #: 
 msgid "عنوان الوظيفة"
-msgstr ""
+msgstr "job title"
 
 #: 
 msgid "مدة العقد بالأشهر"
-msgstr ""
+msgstr "duration of the contract in months"
 
 #: 
 msgid "وصف الوضيفة"
-msgstr ""
+msgstr "job description"
 
 #: 
 msgid "المنطقة"
-msgstr ""
+msgstr "the region"
 
 #: 
 msgid "تاريخ إغلاق الوظيفة"
-msgstr ""
+msgstr "closing date of the job"
 
 #: 
 msgid "طريقة التقدم للوظيفة"
-msgstr ""
+msgstr "how to apply to the job"
 
 #: 
 msgid "لوغو الجهة المانحة"
-msgstr ""
+msgstr "the logo of the donor"
 
 #: 
 msgid "لمحة عن الجهة المانحة"
-msgstr ""
+msgstr "an overview about the donor"
 
 #: 
 msgid "قطاع المنحة"
-msgstr ""
+msgstr "the scholarship sector"
 
 #: 
 msgid "دول المنحة"
-msgstr ""
+msgstr "scholarship countries"
 
 #: 
 msgid "تاريخ إغلاق المنحة"
-msgstr ""
+msgstr "scholarship end date"
 
 #: 
 msgid "مدة المنحة"
-msgstr ""
+msgstr "duration of the scholarship"
 
 #: 
 msgid "حجم المنحة"
-msgstr ""
+msgstr "scholarship scale"
 
 #: 
 msgid "وصف المنحة"
-msgstr ""
+msgstr "scholarship description"
 
 #: 
 msgid "شروط المنحة"
-msgstr ""
+msgstr "scholarship requirements  "
 
 #: 
 msgid "متطلبات التقديم"
-msgstr ""
+msgstr "filing requirements"
 
 #: 
 msgid "كيفية التقديم"
-msgstr ""
+msgstr "how to apply "
 
 #: 
 msgid "الرابط الأصلي"
-msgstr ""
+msgstr "the original link"
 
 #: 
 msgid "فئة المنحة"
-msgstr ""
+msgstr "scholarship category"
 
 #: 
 msgid "نوع المنحة"
-msgstr ""
+msgstr "scholarship type"
 
 #: 
 msgid "المستوى التعليمي"
-msgstr ""
+msgstr "educational level"
 
 #: 
 msgid "الاختصاص التعليمي"
-msgstr ""
+msgstr "educational disciplines"
 
 #: 
 msgid "اسم الجهة الممولة"
-msgstr ""
+msgstr "financing entity"
 
 #: 
 msgid "عنوان الفرصة"
-msgstr ""
+msgstr "opportunity title"
 
 #: 
 msgid "وصف الفرصة"
-msgstr ""
+msgstr "opportunity description"
 
 #: 
 msgid "نوع الفرصة"
-msgstr ""
+msgstr "opportunity type"
 
 #: 
 msgid "مكان الفرصة"
-msgstr ""
+msgstr "opportunity location"
 
 #: 
 msgid "قطاع الفرصة"
-msgstr ""
+msgstr "opportunity sector"
 
 #: 
 msgid "طريقة التقديم"
-msgstr ""
+msgstr "how to apply"
 
 #: 
 msgid "تطوير وإدارة المشاريع"
-msgstr ""
+msgstr "project development and management"
 
 #: 
 msgid "الحوكمة التنظيمية"
-msgstr ""
+msgstr "organizational governance"
 
 #: 
 msgid "المناصرة والحملات"
-msgstr ""
+msgstr "advocacy and campaigns"
 
 #: 
 msgid "مكتبة المجتمع المدني"
-msgstr ""
+msgstr "civil society library"
 
 #: 
 msgid "اسم الجهة "
-msgstr ""
+msgstr "entity name"
 
 #: 
 msgid "تاريخ الإعداد/النشر/التأليف"
-msgstr ""
+msgstr "date of preparation / publishing / authoring"
 
 #: 
 msgid "لمحة عن الجهة"
-msgstr ""
+msgstr "a glance about the entity"
 
 #: 
 msgid "موضوع المادة"
-msgstr "subject"
+msgstr "subject of the article"
 
 #: 
 msgid "المادة "
-msgstr ""
+msgstr "the article"
 
 #: 
 msgid "تم إنشاء حسابك بنجاح باسم المستخدم ( {username} ) !, يرجى تأكيد عنوان بريدك الإلكتروني لإكمال التسجيل "
-msgstr ""
+msgstr "your account was successfully created with the user name ( username), please confirm your email address to to complete registration"
 
 #: 
 msgid "يرجى التسجيل باستخدام عنوان بريد إلكتروني آخر، هذا البريد الإلكتروني ( {user_email} ) مستخدم مسبقاً"
-msgstr ""
+msgstr "please, sign up using other email address, this email address ( user email) is already in use"
 
 #: 
 msgid "لقد تم حذف المحافظه بنجاح"
-msgstr "delete"
+msgstr "the province was deleted successfully"
 
 #: 
 msgid "لقد تم تعديل الملف الشخصي بنجاح"
-msgstr ""
+msgstr "the personal profile was edited successfully"
 
 #: 
 msgid "لقد تم حذف الملف بنجاح"
-msgstr ""
+msgstr "the file was deleted successfully"
 
 #: 
 msgid "لا يوجد حاليا منظمات"
-msgstr ""
+msgstr "there are no organisations currently "
 
 #: 
 msgid "لا يوجد حالي أخبار"
-msgstr ""
+msgstr "there is no news currently"
 
 #: 
 msgid "لا يوجد حاليا فرص بناء"
-msgstr ""
+msgstr "there are no building opportunities currently"
 
 #: 
 msgid "لقد تم طلب الاشتراك بآخر اﻷخبار بنجاح"
-msgstr ""
+msgstr "the news feed subscription was successfully requested"
 
 #: 
 msgid "هذا البريد الالكتروني موجود مسبقاً يرجى التسجيل ببريد الكتروني أخر"
-msgstr "Email"
+msgstr "this email address is already existing, please sign up using another email address"
 
 #: 
 msgid "لقد تم تغيير حالة الطلب للمنظمة بنجاح"
-msgstr ""
+msgstr "the application status for the organization was changed successfully"
 
 #: 
 msgid "لقد تمت إضافة الخبر بنجاح و ستتم دراسته قريباً"
-msgstr ""
+msgstr "the story was successfully added, and it will be reviewed soon"
 
 #: 
 msgid "لقد تم تغيير حالة الخبر بنجاح"
-msgstr ""
+msgstr "the story statue was successfully changed "
 
 #: 
 msgid "لقد تم تعديل الخبر بنجاح"
-msgstr ""
+msgstr "the story was edited successfully"
 
 #: 
 msgid "لقد تم حذف الخبر بنجاح"
-msgstr ""
+msgstr "the story was deleted successfully"
 
 #: 
 msgid "لقد تمت إضافة التقرير بنجاح و ستتم دراسته قريباً"
-msgstr ""
+msgstr "the report was successfully added, and it will be reviewed soon"
 
 #: 
 msgid "لقد تم تعديل حالة التقرير بنجاح"
-msgstr ""
+msgstr "the report statue was edited successfully "
 
 #: 
 msgid "لقد تم حذف التقرير بنجاح"
-msgstr ""
+msgstr "the report was deleted successfully"
 
 #: 
 msgid "لقد تمت تعديل التقرير بنجاح"
-msgstr ""
+msgstr "the report was edited successfully"
 
 #: 
 msgid "لقد تمت إضافة البيان بنجاح و ستتم دراسته قريباً"
-msgstr ""
+msgstr "the statement was successfully added, and it will be reviewed soon"
 
 #: 
 msgid "لقد تم تعديل حالة البيان بنجاح"
-msgstr ""
+msgstr "the statement statue was edited successfully"
 
 #: 
 msgid "لقد تم تعديل البيان بنجاح"
-msgstr ""
+msgstr "the statement was edited successfully"
 
 #: 
 msgid "لقد تم حذف البيان بنجاح"
-msgstr ""
+msgstr "the statement was deleted successfully"
 
 #: 
 msgid "لقد تمت إضافة المحتوى بنجاح و ستتم دراسته قريباً"
-msgstr ""
+msgstr "the content was successfully added, and it will be reviewed soon"
 
 #: 
 msgid "لقد تم تعديل حالة المحتوى بنجاح"
-msgstr ""
+msgstr "the content statue was edited successfully"
 
 #: 
 msgid "لقد تم تعديل المحتوى بنجاح"
-msgstr ""
+msgstr "the content was edited successfully"
 
 #: 
 msgid "لقد تم حذف المحتوى بنجاح"
-msgstr ""
+msgstr "the content was deleted successfully"
 
 #: 
 msgid "لقد تمت إضافة البحث بنجاح و ستتم دراسته قريباً"
-msgstr ""
+msgstr "the research was successfully added, and it will be reviewed soon"
 
 #: 
 msgid "لقد تم تعديل حالة البحث بنجاح"
-msgstr ""
+msgstr "the research statue was edited successfully"
 
 #: 
 msgid "لقد تم تعديل البحث بنجاح"
-msgstr ""
+msgstr "the research was edited successfully"
 
 #: 
 msgid "لقد تم حذف البحث بنجاح"
-msgstr ""
+msgstr "the research was deleted successfully"
 
 #: 
 msgid "لقد تمت إضافة فرصة العمل بنجاح و ستتم دراستها قريباً"
-msgstr ""
+msgstr "the job opportunity was successfully added, and it will be reviewed soon"
 
 #: 
 msgid "يجب إدخال اسم منظمة لتتم معالجة و نشر فرصة العمل"
-msgstr ""
+msgstr "organisation name must be entered to review and publish job opportunity"
 
 #: 
 msgid "لقد تم تغيير حالة فرصة العمل بنجاح"
-msgstr ""
+msgstr "the job opportunity statue was edited successfully"
 
 #: 
 msgid "لقد تم تعديل فرصة العمل بنجاح"
-msgstr ""
+msgstr "the job opportunity was edited successfully"
 
 #: 
 msgid "لقد تم حذف فرصة العمل بنجاح"
-msgstr ""
+msgstr "the job opportunity was deleted successfully"
 
 #: 
 msgid "لقد تم تسجيل طلب فرصة التمويل بنجاح و ستتم دراسته قريباً"
-msgstr ""
+msgstr "the funding opportunity request was successfully registered, and it will be reviewed soon"
 
 #: 
 msgid "رجاءً أدخل اسم المنظمة أو الجهة المانحة لتتم دراسة فرصة التمويل"
-msgstr ""
+msgstr "please, enter the organisation name or the donor to review the funding opportunity"
 
 #: 
 msgid "لقد تم تغيير حالة فرصة التمويل بنجاح"
-msgstr ""
+msgstr "the funding opportunity statue was changed successfully"
 
 #: 
 msgid "لقد تم تعديل فرصة التمويل بنجاح"
-msgstr ""
+msgstr "the funding opportunity was edited successfully"
 
 #: 
 msgid "لقد تم حذف فرصة التمويل بنجاح"
-msgstr ""
+msgstr "the funding opportunity was deleted successfully"
 
 #: 
 msgid "لقد تمت إضافة فرصة التمويل بنجاح و ستتم دراسته قريباً"
-msgstr ""
+msgstr "the funding opportunity was successfully added, and it will be reviewed soon"
 
 #: 
 msgid "يحب إدخال اسم منظمة أو اسم الجهة المانحة لنتمكن من دراسة فرصة التمويل"
-msgstr ""
+msgstr "the organisation name or the donor name must be entered to review funding opportunity"
 
 #: 
 msgid "لقد تم تغيير حالة المنحة  بنجاح"
-msgstr ""
+msgstr "the grant statue was changed successfully"
 
 #: 
 msgid "لقد تمت إضافة فرصة بناء القدرات بنجاح و ستتم دراسته قريباً"
-msgstr ""
+msgstr "the capacity building opportunity was added successfully, and it will be reviewed soon"
 
 #: 
 msgid "يجب إدخال اسم الجهة المانحة لنتمكن من دراسة الفرصة"
-msgstr ""
+msgstr "the donor name must be entered to review the opportunity"
 
 #: 
 msgid "لقد تم تغيير حالة فرصة بناء القدرات  بنجاح"
-msgstr ""
+msgstr "the capacity building opportunity statue was changed successfully"
 
 #: 
 msgid "لقد تم تعديل فرصة بناء القدرات بنجاح"
-msgstr ""
+msgstr "the capacity building opportunity was edited successfully"
 
 #: 
 msgid "لقد تم حذف فرصة بناء القدرات بنجاح"
-msgstr ""
+msgstr "the capacity building opportunity was deleted successfully"
 
 #: 
 msgid "لقد تمت إضافة دليل تطوير بنجاح و ستتم دراسته قريباً"
-msgstr ""
+msgstr "the development index was added successfully, and it will be reviewed soon"
 
 #: 
 msgid "لقد تم تغيير حالة دليل تطوير بنجاح"
-msgstr ""
+msgstr "the development index statue was changed successfully"
 
 #: 
 msgid "لقد تم تعديل دليل التطوير بنجاح"
-msgstr ""
+msgstr "the development index was edited successfully"
 
 #: 
 msgid "لقد تم ارسال الدعوة "
-msgstr ""
+msgstr "the invitation was sent"
 
 #: 
 msgid "عربي"
@@ -1601,19 +1601,19 @@ msgstr "Arabic"
 
 #: 
 msgid "English"
-msgstr ""
+msgstr "English"
 
 #: 
 msgid "Kurdî"
-msgstr ""
+msgstr "Kurdi"
 
 #: 
 msgid "admin"
-msgstr ""
+msgstr "admin"
 
 #: 
 msgid "إضافة محافظة"
-msgstr ""
+msgstr "add province"
 
 #: 
 msgid "احفظ"
@@ -1621,1321 +1621,1321 @@ msgstr "save"
 
 #: 
 msgid "حذف محافظة"
-msgstr ""
+msgstr "delete province"
 
 #: 
 msgid "هل أنت متأكد من رغبتك في حذف المحافظة "
-msgstr ""
+msgstr "are you sure you want to delete the province"
 
 #: 
 msgid "حذف المحافظة"
-msgstr ""
+msgstr "delete the province"
 
 #: 
 msgid "عودة إلى الصفحة السابقة"
-msgstr "back"
+msgstr "back to the previous page"
 
 #: 
 msgid "تعديل محافظة"
-msgstr ""
+msgstr "edit the province"
 
 #: 
 msgid "محافظات دول الجوار لسوريا"
-msgstr "city"
+msgstr "provinces of the neighboring countries of Syria "
 
 #: 
 msgid "المركز السوري للإعلام و حرية التعبير"
-msgstr ""
+msgstr "Syrian Center for Media and Freedom of Expression"
 
 #: 
 msgid "بوابة المجتمع المدني"
-msgstr ""
+msgstr "civil society portal"
 
 #: 
 msgid "للتواصل معنا"
-msgstr ""
+msgstr "contact us"
 
 #: 
 msgid "تابعونا على"
-msgstr ""
+msgstr "follow us on"
 
 #: 
 msgid "للاشتراك بآخر الأخبار"
-msgstr ""
+msgstr "to subscribe the latest news"
 
 #: 
 msgid "إملأ النموذج التالي"
-msgstr ""
+msgstr "fill out the form"
 
 #: 
 msgid "دليل المجتمع المدني"
-msgstr ""
+msgstr "civil society index"
 
 #: 
 msgid "أخبار المجتمع المدني"
-msgstr ""
+msgstr "civil society news"
 
 #: 
 msgid "أخبار المنظمات"
-msgstr ""
+msgstr "the organisations news"
 
 #: 
 msgid "تقارير ودراسات"
-msgstr ""
+msgstr "reports and researches"
 
 #: 
 msgid "بيانات"
-msgstr ""
+msgstr "data"
 
 #: 
 msgid "سمعي وبصري"
-msgstr ""
+msgstr "audio-visual"
 
 #: 
 msgid "أبحاث خارجية"
-msgstr ""
+msgstr "external researches"
 
 #: 
 msgid "اﻷخبار"
-msgstr ""
+msgstr "the news  "
 
 #: 
 msgid "موارد المجتمع المدني"
-msgstr ""
+msgstr "civil society resources"
 
 #: 
 msgid "فرص العمل"
-msgstr ""
+msgstr "job opportunity"
 
 #: 
 msgid "فرص التمويل"
-msgstr ""
+msgstr "funding opportunities"
 
 #: 
 msgid "فرص بناء القدرات"
-msgstr ""
+msgstr "capacity building opportunity"
 
 #: 
 msgid "دليل التطوير"
-msgstr ""
+msgstr "development index"
 
 #: 
 msgid "الموارد"
-msgstr ""
+msgstr "resources"
 
 #: 
 msgid "أخبار البوابة"
-msgstr ""
+msgstr "portal news"
 
 #: 
 msgid "أهلاً"
-msgstr ""
+msgstr "welcome"
 
 #: 
 msgid "لوحة التحكم الخاصة باﻹدارة"
-msgstr ""
+msgstr "management control panel"
 
 #: 
 msgid "ملفي الشخصي"
-msgstr ""
+msgstr "my personal profile"
 
 #: 
 msgid "تغيير كلمة المرور"
-msgstr ""
+msgstr "changing the password"
 
 #: 
 msgid "تسجيل الخروج"
-msgstr ""
+msgstr "log out"
 
 #: 
 msgid "تسجيل الدخول"
-msgstr ""
+msgstr "log in "
 
 #: 
 msgid "تقديم طلب اشتراك جديد لمنظمة"
-msgstr ""
+msgstr "apply for a new participation request to an organisation"
 
 #: 
 msgid "طلبات المنظمات قيد الدراسة"
-msgstr ""
+msgstr "organisations requests are under consideration"
 
 #: 
 msgid "طلبات المنظمات الموافق عليها"
-msgstr ""
+msgstr "approved organisations requests"
 
 #: 
 msgid "إضافة خبر لمنظمة"
-msgstr ""
+msgstr "add a news item to an organisation"
 
 #: 
 msgid "أخبار المنظمات قيد الدراسة"
-msgstr ""
+msgstr "organisations news are under consideration"
 
 #: 
 msgid "إضافة تقرير أو دراسة لمنظمة"
-msgstr ""
+msgstr "add a report or a research for an organisation"
 
 #: 
 msgid "تقارير و دراسات المنظمات قيد الدراسة"
-msgstr ""
+msgstr "organisations reports and researches under consideration"
 
 #: 
 msgid "إضافة بيان لمنظمة"
-msgstr ""
+msgstr "add a statement to an organisation"
 
 #: 
 msgid "بيانات المنظمات قيد الدراسة"
-msgstr ""
+msgstr "organisations statements under consideration"
 
 #: 
 msgid "إضافة محتوى سمعي و بصري لمنظمة"
-msgstr ""
+msgstr "add audio-visual content to an organisation"
 
 #: 
 msgid "المحتوى السمعي و البصري للمنظمات قيد الدراسة"
-msgstr ""
+msgstr "the audio-visual content to the organisations are under consideration"
 
 #: 
 msgid "إضافة بحث خارجي لمنظمة"
-msgstr ""
+msgstr "add an external research to an organisation"
 
 #: 
 msgid "اﻷبحاث الخارجية للمنظمات قيد الدراسة"
-msgstr ""
+msgstr "the external researches for the organisations are under consideration"
 
 #: 
 msgid "إضافة فرصة عمل"
-msgstr ""
+msgstr "add job opportunity"
 
 #: 
 msgid "فرص العمل للمنظمات قيد الدراسة"
-msgstr ""
+msgstr "job opportunity for the organisations are under consideration"
 
 #: 
 msgid "إضافة فرصة تمويل"
-msgstr ""
+msgstr "add funding opportunity"
 
 #: 
 msgid "فرص التمويل للمنظمات قيد الدراسة"
-msgstr ""
+msgstr "funding opportunities for the organisations are under consideration"
 
 #: 
 msgid "إضافة فرصة بناء القدرات"
-msgstr ""
+msgstr "add building capacities opportunity"
 
 #: 
 msgid "فرص بناء القدرات للمنظمات قيد الدراسة"
-msgstr ""
+msgstr "building capacities opportunities for the organisations are under consideration"
 
 #: 
 msgid "إضافة دليل تطوير"
-msgstr ""
+msgstr "add development index "
 
 #: 
 msgid "دليل التطوير للمنظمات قيد الدراسة"
-msgstr ""
+msgstr "development indexes for the organisations are under consideration"
 
 #: 
 msgid "اتصل بنا"
-msgstr ""
+msgstr "contact us"
 
 #: 
 msgid "خطأ 404 , صفحة غير متاحة"
-msgstr ""
+msgstr "error 404, unavailable page"
 
 #: 
 msgid "صفحة غير متاحة"
-msgstr ""
+msgstr "unavailable page"
 
 #: 
 msgid "هذه الصفحة مفقودة أو غير متوفره أساساً"
-msgstr ""
+msgstr "this page is missing or not existing"
 
 #: 
 msgid "العودة إلى الصفحة الرئيسية"
-msgstr ""
+msgstr "back to the main page"
 
 #: 
 msgid "فرص بناء القدرات  قيد الدراسة"
-msgstr ""
+msgstr "building capacities opportunity is under consideration"
 
 #: 
 msgid "لقراءة المزيد"
-msgstr ""
+msgstr "to read more"
 
 #: 
 msgid "لا يوجد حالياً فرص بناء قدرات للنشر"
-msgstr ""
+msgstr "there are no building capacities opportunities currently to publish"
 
 #: 
 msgid "اضافة فرصة بناء القدرات"
-msgstr ""
+msgstr "add building capacities opportunity"
 
 #: 
 msgid "انشر فرصة بناء قدرات"
-msgstr ""
+msgstr "publish building capacities opportunity"
 
 #: 
 msgid "فرز"
-msgstr ""
+msgstr "sort"
 
 #: 
 msgid "فرص بناء القدرات قيد الدراسة"
-msgstr ""
+msgstr "building capacities opportunities are under consideration"
 
 #: 
 msgid "بحث"
-msgstr ""
+msgstr "search"
 
 #: 
 msgid " لا يوجد حالياً فرص بناء القدرات "
-msgstr ""
+msgstr "there are no building capacities opportunities currently"
 
 #: 
 msgid "حذف فرصة بناء القدرات"
-msgstr ""
+msgstr "delete building capacities opportunity"
 
 #: 
 msgid "هل أنت متأكد من رغبتك في حذف فرصة بناء القدرات بعنوان"
-msgstr ""
+msgstr "are you sure you want to delete the building capacities opportunity?"
 
 #: 
 msgid "حذف"
-msgstr ""
+msgstr "delete"
 
 #: 
 msgid "تفاصيل فرصة بناء القدرات"
-msgstr ""
+msgstr "details of building capacities opportunity"
 
 #: 
 msgid "اسم اللذي أضاف فرصة بناء القدرات"
-msgstr ""
+msgstr "the name of the person who added the building capacities opportunity"
 
 #: 
 msgid "اسم الجهة المانحة"
-msgstr ""
+msgstr "the name of the donor"
 
 #: 
 msgid "تاريخ الإضافة"
-msgstr ""
+msgstr "adding date"
 
 #: 
 msgid "وصف فرصة التمويل"
-msgstr ""
+msgstr "description of the funding opportunity"
 
 #: 
 msgid "لم يذكر"
-msgstr ""
+msgstr "not mentioned"
 
 #: 
 msgid "الموافقة على نشر "
-msgstr ""
+msgstr "accepting to publish"
 
 #: 
 msgid "إلغاء نشر الخبر"
-msgstr ""
+msgstr "cancel publishing the news item"
 
 #: 
 msgid "تعديل فرصة بناءالقدرات"
-msgstr ""
+msgstr "editing building capacities opportunity"
 
 #: 
 msgid "حذف "
-msgstr ""
+msgstr "delete"
 
 #: 
 msgid " تعديل فرصة بناء القدرات"
-msgstr ""
+msgstr "editing building capacities opportunity"
 
 #: 
 msgid "تعديل فرصة بناء القدرات"
-msgstr ""
+msgstr "editing building capacities opportunity"
 
 #: 
 msgid "تعديل"
-msgstr ""
+msgstr "editing  "
 
 #: 
 msgid "أخبار المركز"
-msgstr ""
+msgstr "the center news"
 
 #: 
 msgid "إضافة خبر"
-msgstr ""
+msgstr "adding news item"
 
 #: 
 msgid "نص الخبر"
-msgstr ""
+msgstr "the news item text"
 
 #: 
 msgid "أضف صورة الخبر"
-msgstr ""
+msgstr "add the news item's image"
 
 #: 
 msgid "أضف"
-msgstr ""
+msgstr "add"
 
 #: 
 msgid "تاريخ الخبر"
-msgstr ""
+msgstr "the news item date"
 
 #: 
 msgid "مشاركة على فيسبوك"
-msgstr ""
+msgstr "share on Facebook"
 
 #: 
 msgid "عودة إلى صفحة أخبار المركز"
-msgstr ""
+msgstr "back to news center's page"
 
 #: 
 msgid "إضافة بيان"
-msgstr ""
+msgstr "add a statement  "
 
 #: 
 msgid "البيانات"
-msgstr ""
+msgstr "statements "
 
 #: 
 msgid " لا يوجد حالياً بيانات منشورة للمنظمات"
-msgstr ""
+msgstr "there are no statements published for the organisations currently"
 
 #: 
 msgid "بيانات قيد الدراسة"
-msgstr ""
+msgstr "statements under consideration"
 
 #: 
 msgid " لا يوجد حالياً بيانات قيد الدراسة منشورة للمنظمات"
-msgstr ""
+msgstr "there are no statements under consideration for the organisations currently"
 
 #: 
 msgid "حذف البيان"
-msgstr ""
+msgstr "delete the statement"
 
 #: 
 msgid "هل أنت متأكد من رغبتك في حذف البيان بعنوان"
-msgstr ""
+msgstr "are you sure you want to delete the statement named"
 
 #: 
 msgid "تفاصيل البيان"
-msgstr ""
+msgstr "the statement details"
 
 #: 
 msgid "اسم اللذي أضاف البيان"
-msgstr ""
+msgstr "the name of the person who added the statement"
 
 #: 
 msgid "تاريخ إضافة البيان"
-msgstr ""
+msgstr "adding the statement date"
 
 #: 
 msgid "محتوى البيان"
-msgstr ""
+msgstr "content of statement"
 
 #: 
 msgid "الموافقة على نشر البيان"
-msgstr ""
+msgstr "approving to publish the statement"
 
 #: 
 msgid "إلغاء نشر البيان"
-msgstr ""
+msgstr "cancelling to publish the statement"
 
 #: 
 msgid "تعديل البيان"
-msgstr ""
+msgstr "editing the statement"
 
 #: 
 msgid "لا يوجد حالياً دليل تطوير"
-msgstr ""
+msgstr "there is no development index currently"
 
 #: 
 msgid "اضافة دليل تطوير"
-msgstr ""
+msgstr "adding development index"
 
 #: 
 msgid "انشر دليل التطوير"
-msgstr ""
+msgstr "publish development index"
 
 #: 
 msgid "حذف الدليل"
-msgstr ""
+msgstr "deleting the index"
 
 #: 
 msgid "حذف دليل التطوير"
-msgstr ""
+msgstr "deleting the development index"
 
 #: 
 msgid "هل أنت متأكد من رغبتك في حذف دليل التطوير بعنوان"
-msgstr ""
+msgstr "are you sure you want to delete the development index?"
 
 #: 
 msgid "تفاصيل دليل التطوير"
-msgstr ""
+msgstr "development index details"
 
 #: 
 msgid "اسم اللذي أضاف  تفاصيل دليل التطوير"
-msgstr ""
+msgstr "the name of the person who added the development index details"
 
 #: 
 msgid "  تاريخ الإضافة "
-msgstr ""
+msgstr "adding date"
 
 #: 
 msgid "عنوان"
-msgstr ""
+msgstr "title"
 
 #: 
 msgid "وصف الدليل"
-msgstr ""
+msgstr "describing the index"
 
 #: 
 msgid "المادة"
-msgstr ""
+msgstr "the article"
 
 #: 
 msgid "الموافقة على النشر "
-msgstr ""
+msgstr "accepting to publish"
 
 #: 
 msgid "إلغاء نشر الدليل"
-msgstr ""
+msgstr "cancelling to publish the index"
 
 #: 
 msgid "تعديل الدليل"
-msgstr ""
+msgstr "editing the index "
 
 #: 
 msgid "اضافة دليل التطوير"
-msgstr ""
+msgstr "adding the development index"
 
 #: 
 msgid "دليل التطوير قيد الدراسة"
-msgstr ""
+msgstr "the development index is under consideration"
 
 #: 
 msgid "لا يوجد حالياً دليل تطوير منشور من قبل المنظمات"
-msgstr ""
+msgstr "there is no published development index for the organisations currently"
 
 #: 
 msgid "تعديل دليل التطوير"
-msgstr ""
+msgstr "editing development index"
 
 #: 
 msgid "فرص تمويل المنظمات"
-msgstr ""
+msgstr "funding opportunities for the organisations  "
 
 #: 
 msgid "فرص تمويل الأفراد"
-msgstr ""
+msgstr "funding opportunities for individuals "
 
 #: 
 msgid "فرص التمويل قيد الدراسة"
-msgstr ""
+msgstr "funding opportunities are under consideration"
 
 #: 
 msgid "لا يوجد حالياً فرص فرص تمويل للموافقة على النشر"
-msgstr ""
+msgstr "there are no funding opportunities to be accepted for publishing"
 
 #: 
 msgid "اضافة فرصة تمويل"
-msgstr ""
+msgstr "adding funding opportunity"
 
 #: 
 msgid "اضافة"
-msgstr ""
+msgstr "adding"
 
 #: 
 msgid "تعديل فرصة التمويل"
-msgstr ""
+msgstr "editing funding opportunity"
 
 #: 
 msgid "لا يوجد حالياً فرص تمويل منشورة من قبل المنظمات"
-msgstr ""
+msgstr "there are no published funding opportunities by the organisations currently"
 
 #: 
 msgid "حذف فرصة التمويل"
-msgstr ""
+msgstr "deleting the funding opportunity"
 
 #: 
 msgid "هل أنت متأكد من رغبتك في حذف فرصة التمويل بعنوان"
-msgstr ""
+msgstr "are you sure you want to delete the funding opportunity?"
 
 #: 
 msgid "تفاصيل فرصة التمويل"
-msgstr ""
+msgstr "funding opportunity details"
 
 #: 
 msgid "اسم اللذي أضاف فرصة التمويل"
-msgstr ""
+msgstr "the name of the person who added the funding opportunity"
 
 #: 
 msgid "أحدث فرص تمويل المنظمات"
-msgstr ""
+msgstr "the latest funding opportunities from the organisations"
 
 #: 
 msgid "الموافقة على النشر"
-msgstr ""
+msgstr "accepting to publish"
 
 #: 
 msgid "إلغاء نشر فرصة التمويل"
-msgstr ""
+msgstr "cancelling to publish the funding opportunity"
 
 #: 
 msgid "إضافة فرصة تمويل للأفراد"
-msgstr ""
+msgstr "adding funding opportunity for the individuals"
 
 #: 
 msgid "حذف فرصة تمويل للأفراد"
-msgstr ""
+msgstr "deleting funding opportunity for the individuals"
 
 #: 
 msgid "تفاصيل فرصة تمويل للأفراد"
-msgstr ""
+msgstr "details of funding opportunity for the individuals"
 
 #: 
 msgid "تعديل فرصة تمويل للأفراد"
-msgstr ""
+msgstr "editing funding opportunity for the individuals"
 
 #: 
 msgid "فرص التمويل للأفراد للموافقة على النشر"
-msgstr ""
+msgstr "funding opportunities for the individuals to accept publishing "
 
 #: 
 msgid "لا يوجد حالياً فرص للأفراد تمويل منشورة من قبل المنظمات"
-msgstr ""
+msgstr "there are no published funding opportunities for the individuals by the organisations "
 
 #: 
 msgid "فرص التمويل للأفراد"
-msgstr ""
+msgstr "funding opportunities for the individuals  "
 
 #: 
 msgid "قائمة دليل المجتمع المدني للموافقة على النشر"
-msgstr ""
+msgstr "a list of the civil society index to accept publishing "
 
 #: 
 msgid "للمزيد عن المنظمة"
-msgstr ""
+msgstr "for more information about the organisation"
 
 #: 
 msgid "حالياً لا يوجد طلبات للمنظمات للموافقة عليها"
-msgstr ""
+msgstr "currently, there are no requests for the organisations to accept "
 
 #: 
 msgid "عودة إلى صفحة دليل المنظمات"
-msgstr ""
+msgstr "back to organisations index page"
 
 #: 
 msgid "إقراء المزيد"
-msgstr ""
+msgstr "read more"
 
 #: 
 msgid "قائمة منظمات المجتمع المدني"
-msgstr ""
+msgstr "a list of the civil society organisations"
 
 #: 
 msgid "طلبات اشتراك المنظمات قيد الدراسة"
-msgstr ""
+msgstr "the applies for participation to the organisations are under consideration"
 
 #: 
 msgid "إجمالي عدد المنظمات"
-msgstr ""
+msgstr "total number of the organisations"
 
 #: 
 msgid "حالياً لا يوجد منظمات مسجله او موافق عليها"
-msgstr ""
+msgstr "currently, there are no registered or approved organisations"
 
 #: 
 msgid "دليل المجتمع المدني بحسب مجال العمل"
-msgstr ""
+msgstr "civil society index according to the area of work"
 
 #: 
 msgid "المنظمات المضافة حديثاً"
-msgstr ""
+msgstr "organisations added recently"
 
 #: 
 msgid "أحدث اﻷخبار"
-msgstr ""
+msgstr "latest news"
 
 #: 
 msgid "للمزيد عن الخبر"
-msgstr ""
+msgstr "for more about the news item"
 
 #: 
 msgid "أحدث فرص العمل"
-msgstr ""
+msgstr "latest job opportunities"
 
 #: 
 msgid "للمزيد عن فرصة العمل"
-msgstr ""
+msgstr "for more about the job opportunity"
 
 #: 
 msgid "أحدث فرص بناء القدرات"
-msgstr ""
+msgstr "latest capacity building opportunities"
 
 #: 
 msgid "للمزيد عن فرصة بناء القدرات"
-msgstr ""
+msgstr "for more about the capacity building opportunity"
 
 #: 
 msgid "اشترك"
-msgstr ""
+msgstr "subscribe"
 
 #: 
 msgid "إضافة محتوى سمعي و بصري"
-msgstr ""
+msgstr "adding audio-visual content"
 
 #: 
 msgid "إضافة"
-msgstr ""
+msgstr "adding"
 
 #: 
 msgid "حذف المحتوى السمعي و البصري"
-msgstr ""
+msgstr "delete the audio-visual content"
 
 #: 
 msgid "هل أنت متأكد من رغبتك في حذف المحتوى بعنوان"
-msgstr ""
+msgstr "are you sure you want to delete the content?"
 
 #: 
 msgid "حذف المحتوى"
-msgstr ""
+msgstr "delete the content"
 
 #: 
 msgid "تعديل المحتوى السمعي و البصري"
-msgstr ""
+msgstr "editing the audio-visual content"
 
 #: 
 msgid "المحتوى السمعي و البصري"
-msgstr ""
+msgstr "the audio-visual content  "
 
 #: 
 msgid " لا يوجد حالياً محتوى سمعي و بصري منشور من قبل المنظمات"
-msgstr ""
+msgstr "there is no audio-visual content published by the organisations"
 
 #: 
 msgid "تفاصيل المحتوى السمعي والبصري"
-msgstr ""
+msgstr "the audio-visual content details"
 
 #: 
 msgid "اسم اللذي أضاف المحتوى"
-msgstr ""
+msgstr "the name of the person who added the content"
 
 #: 
 msgid "تاريخ إضافة المحتوى"
-msgstr ""
+msgstr "adding the content date"
 
 #: 
 msgid "مضمون المحتوى السمعي و البصري"
-msgstr ""
+msgstr "the substance of the audio-visual content"
 
 #: 
 msgid "الموافقة على نشر المحتوى"
-msgstr ""
+msgstr "accepting to publish the content "
 
 #: 
 msgid "إلغاء نشر المحتوى"
-msgstr ""
+msgstr "cancel publishing the content"
 
 #: 
 msgid "تعديل المحتوى"
-msgstr ""
+msgstr "edit the content"
 
 #: 
 msgid "المحتوى السمعي و البصري قيد الدراسة"
-msgstr ""
+msgstr "the audio-visual content is under consideration"
 
 #: 
 msgid "لا يوجد حالياً محتوى سمعي و بصري منشور من قبل المنظمات للموافقة على النشر"
-msgstr ""
+msgstr "there is no published audio-visual content by the organisation to publish"
 
 #: 
 msgid "انشر الخبر"
-msgstr ""
+msgstr "publish the news"
 
 #: 
 msgid "تعديل خبر"
-msgstr ""
+msgstr "editing the news"
 
 #: 
 msgid "تعديل الخبر"
-msgstr ""
+msgstr "editing the news"
 
 #: 
 msgid "حذف خبر"
-msgstr ""
+msgstr "delete the news"
 
 #: 
 msgid "هل أنت متأكد من رغبتك في حذف الخبر بعنوان "
-msgstr ""
+msgstr "are you sure you want to delete the news item?"
 
 #: 
 msgid "حذف الخبر"
-msgstr ""
+msgstr "delete the news"
 
 #: 
 msgid "لا يوجد حالياً أخبار للموافقة على النشر"
-msgstr ""
+msgstr "there are no news to accept publishing currently"
 
 #: 
 msgid "تاريخ إضافة الخبر"
-msgstr ""
+msgstr "date adding the news "
 
 #: 
 msgid "اسم اللذي أضاف الخبر"
-msgstr ""
+msgstr "the name of the person who added the news item"
 
 #: 
 msgid "أحدث ثلاثة أخبار"
-msgstr ""
+msgstr "latest three news "
 
 #: 
 msgid "الموافقة على نشر الخبر"
-msgstr ""
+msgstr "accepting to publish the news item"
 
 #: 
 msgid "لا يوجد حالياً أخبار منشورة للمنظمات"
-msgstr ""
+msgstr "there are no published news for the organisations currently"
 
 #: 
 msgid "اخبار البوابة"
-msgstr ""
+msgstr "the portal news "
 
 #: 
 msgid "اخبار البوابة "
-msgstr ""
+msgstr "the portal news "
 
 #: 
 msgid "أخبار البوابةقيد الدراسة"
-msgstr ""
+msgstr "the portal news under consideration"
 
 #: 
 msgid "لا يوجد حالياً أخبار جديدة عن البوابة"
-msgstr ""
+msgstr "there is no news about the portal currently "
 
 #: 
 msgid "عودة إلى الصفحة الرئيسية"
-msgstr ""
+msgstr "back to the main page"
 
 #: 
 msgid "إضافة تقرير"
-msgstr ""
+msgstr "adding the report"
 
 #: 
 msgid "حذف التقرير"
-msgstr ""
+msgstr "deleting the report"
 
 #: 
 msgid "هل أنت متأكد من رغبتك في حذف التقرير بعنوان"
-msgstr ""
+msgstr "are you sure you want to delete the report?"
 
 #: 
 msgid "تفاصيل التقرير أو الدراسة"
-msgstr ""
+msgstr "the study or research details"
 
 #: 
 msgid "اسم اللذي أضاف التقرير"
-msgstr ""
+msgstr "the name of the person who added the report"
 
 #: 
 msgid "تاريخ إضافة التقرير"
-msgstr ""
+msgstr "adding the report date"
 
 #: 
 msgid "محتوى التقرير"
-msgstr ""
+msgstr "the report content"
 
 #: 
 msgid "الموافقة على نشر التقرير"
-msgstr ""
+msgstr "accepting to publish the report"
 
 #: 
 msgid "إلغاء نشر التقرير"
-msgstr ""
+msgstr "cancelling to publish the report"
 
 #: 
 msgid "تعديل التقرير"
-msgstr ""
+msgstr "editing the report"
 
 #: 
 msgid "التقارير و الدراسات"
-msgstr ""
+msgstr "the reports and the studies"
 
 #: 
 msgid "إضافة تقرير أو دراسة"
-msgstr ""
+msgstr "adding a report or a study"
 
 #: 
 msgid "لقراءة ملف الدراسة يجب الدخول إلى التفاصيل"
-msgstr ""
+msgstr "to read the study file you should enter to details"
 
 #: 
 msgid "لا يوجد حالياً تقارير و دراسات للموافقة على النشر"
-msgstr ""
+msgstr "there are no reports or studies to accept publishing currently"
 
 #: 
 msgid "إضافة بحث"
-msgstr ""
+msgstr "adding a report "
 
 #: 
 msgid "حذف البحث الخارجي"
-msgstr ""
+msgstr "delete the external research "
 
 #: 
 msgid "هل أنت متأكد من رغبتك في حذف البحث بعنوان"
-msgstr ""
+msgstr "are you sur you want to delete the research?"
 
 #: 
 msgid "حذف البحث"
-msgstr ""
+msgstr "delete the research"
 
 #: 
 msgid "تفاصيل البحث الخارجي"
-msgstr ""
+msgstr "the details of the external research "
 
 #: 
 msgid "اسم اللذي أضاف البحث"
-msgstr ""
+msgstr "the name of the person who added the research"
 
 #: 
 msgid "تاريخ إضافة البحث"
-msgstr ""
+msgstr "adding the research date"
 
 #: 
 msgid "محتوى البحث"
-msgstr ""
+msgstr "the research content"
 
 #: 
 msgid "الموافقة على نشر البحث"
-msgstr ""
+msgstr "accepting to publish the research "
 
 #: 
 msgid "إلغاء نشر البحث"
-msgstr ""
+msgstr "cancelling to publish the research "
 
 #: 
 msgid "تعديل البحث"
-msgstr ""
+msgstr "editing the research "
 
 #: 
 msgid "اﻷبحاث الخارجية"
-msgstr ""
+msgstr "the external researches  "
 
 #: 
 msgid "إضافة بحث خارجي"
-msgstr ""
+msgstr "adding external research"
 
 #: 
 msgid "لا يوجد حالياً أبحاث خارجية منشورة للمنظمات"
-msgstr ""
+msgstr "there are no published external researches for the organisations"
 
 #: 
 msgid "اﻷبحاث الخارجية قيد الدراسة"
-msgstr ""
+msgstr "the external researches are under consideration"
 
 #: 
 msgid "لا يوجد حالياً أبحاث خارجية قيد الدراسة"
-msgstr ""
+msgstr "there are no external researches under consideration currently"
 
 #: 
 msgid "فرص العمل قيد الدراسة"
-msgstr ""
+msgstr "job opportunities are under consideration "
 
 #: 
 msgid "اسم العمل"
-msgstr ""
+msgstr "the job name"
 
 #: 
 msgid "مدة العمل"
-msgstr ""
+msgstr "the job duration"
 
 #: 
 msgid "أشهر"
-msgstr ""
+msgstr "months"
 
 #: 
 msgid "لا يوجد حالياً فرص عمل للموافقة على النشر"
-msgstr ""
+msgstr "there are no job opportunities to accept publish"
 
 #: 
 msgid "انشر فرصة العمل"
-msgstr ""
+msgstr "publish the job opportunity"
 
 #: 
 msgid "تعديل فرصة عمل"
-msgstr ""
+msgstr "editing the job opportunity"
 
 #: 
 msgid "حذف فرصة عمل"
-msgstr ""
+msgstr "deleting the job opportunity"
 
 #: 
 msgid "هل أنت متأكد من رغبتك في حذف فرصة العمل بعنوان "
-msgstr ""
+msgstr "are you sur you want to delete the job opportunity?"
 
 #: 
 msgid "تفاصيل العمل"
-msgstr ""
+msgstr "details of the job"
 
 #: 
 msgid " تفاصيل العمل"
-msgstr ""
+msgstr "details of the job "
 
 #: 
 msgid "اسم فرصة العمل"
-msgstr ""
+msgstr "the job opportunity name"
 
 #: 
 msgid "اسم اللذي أضاف فرصة العمل"
-msgstr ""
+msgstr "the name of the person who added the job opportunity"
 
 #: 
 msgid "وصف فرصة العمل"
-msgstr ""
+msgstr "describing the  job opportunity"
 
 #: 
 msgid "المدينة"
-msgstr ""
+msgstr "the city"
 
 #: 
 msgid "الخبرة المطلوبة"
-msgstr ""
+msgstr "the required expertise"
 
 #: 
 msgid "تاريخ إغلاق التقدم للوظيفة"
-msgstr ""
+msgstr "ending to apply the job date"
 
 #: 
 msgid "إلغاء نشر فرصة العمل"
-msgstr ""
+msgstr "cancelling to publish the job opportunity"
 
 #: 
 msgid "لا يوجد حالياً فرص عمل"
-msgstr ""
+msgstr "there are no job opportunities currently"
 
 #: 
 msgid "مصادر المجتمع المدني"
-msgstr ""
+msgstr "the civil society resources "
 
 #: 
 msgid "المصادر"
-msgstr ""
+msgstr "resources "
 
 #: 
 msgid "تعديل ملفي الشخصي"
-msgstr ""
+msgstr "editing my personal profile "
 
 #: 
 msgid "عدد الاخبار المنشورة"
-msgstr ""
+msgstr "the published news number"
 
 #: 
 msgid "عدد المنظمات"
-msgstr ""
+msgstr "the organisations number"
 
 #: 
 msgid "عدد الاخبار"
-msgstr ""
+msgstr "the news number"
 
 #: 
 msgid " عدد التقارير"
-msgstr ""
+msgstr "the reports number"
 
 #: 
 msgid " عدد البيانات"
-msgstr ""
+msgstr "the statements number"
 
 #: 
 msgid " عدد سمعي بصري"
-msgstr ""
+msgstr "the audio-visual number"
 
 #: 
 msgid " عدد الابحاث"
-msgstr ""
+msgstr "the research number"
 
 #: 
 msgid " عدد فرص العمل"
-msgstr ""
+msgstr "the job opportunities number"
 
 #: 
 msgid " عدد فرص التمويل"
-msgstr ""
+msgstr "the funding opportunities number"
 
 #: 
 msgid " عدد فرص بناء القدرات"
-msgstr ""
+msgstr "building capacities opportunities number"
 
 #: 
 msgid " عدد فرص دليل التطوير"
-msgstr ""
+msgstr "development index opportunities number"
 
 #: 
 msgid " عدد الاخبار المنشورة من البوابة"
-msgstr ""
+msgstr "the published news' form the portal number  "
 
 #: 
 msgid "invite org"
-msgstr ""
+msgstr "invite org"
 
 #: 
 msgid "حذف الملف"
-msgstr ""
+msgstr "delete the profile"
 
 #: 
 msgid "هل أنت متأكد من رغبتك في حذف الملف الشخصي"
-msgstr ""
+msgstr "are you sure you want to delete your personal profile"
 
 #: 
 msgid "لا يوجد لديك الصلاحية للدخول إلى هذه الصفحة"
-msgstr ""
+msgstr "there is no validity to access to this page"
 
 #: 
 msgid "اتمام الملف الشخصي للمنظمة"
-msgstr ""
+msgstr "complete the personal profile for the organisation"
 
 #: 
 msgid "تقديم طلب اشتراك"
-msgstr ""
+msgstr "submitting the subscribe request"
 
 #: 
 msgid "هذا الحقل لا يقبل أقل من 3 حروف و لا يقبل اﻷحرف الخاصه و الرموز"
-msgstr ""
+msgstr "This field does not accept less than three letters, or special characters and symbols"
 
 #: 
 msgid "تعديل الملف الشخصي للمنظمة"
-msgstr ""
+msgstr "editing the personal profile for the organisation"
 
 #: 
 msgid "حالياً لا يوجد منظمات مسجله او للموافقة عليها"
-msgstr ""
+msgstr "there are no registered or accepted organisations currently"
 
 #: 
 msgid "تفاصيل المنظمة"
-msgstr ""
+msgstr "the organisation details"
 
 #: 
 msgid "عن المنظمة"
-msgstr ""
+msgstr "about the organisation"
 
 #: 
 msgid "معلومات الاتصال بالمنظمة"
-msgstr ""
+msgstr "contact information with the organisation "
 
 #: 
 msgid "جديد المنظمة"
-msgstr ""
+msgstr "the organisation updates"
 
 #: 
 msgid "معلومات عن المنظمة"
-msgstr ""
+msgstr "information about the organisation"
 
 #: 
 msgid "نعم مسجلة"
-msgstr ""
+msgstr "yes, registered "
 
 #: 
 msgid "غير مسجلة"
-msgstr ""
+msgstr "not registered"
 
 #: 
 msgid "ليست عضو"
-msgstr ""
+msgstr "not a member"
 
 #: 
 msgid "اسم الشبكة أو التحالف"
-msgstr ""
+msgstr "the alliance or network name"
 
 #: 
 msgid "هل تم التحقق من قبل اﻹدارة على أنها منظمة؟"
-msgstr ""
+msgstr "did the administration verify that it is an organisation? "
 
 #: 
 msgid "تم التحقق و الموافقة"
-msgstr ""
+msgstr "has been checked and accepted"
 
 #: 
 msgid "لم يتم التحقق بعد"
-msgstr ""
+msgstr "not checked yet"
 
 #: 
 msgid "أخبار المنظمة"
-msgstr ""
+msgstr "the organisation news"
 
 #: 
 msgid "التقارير و الدراسات للمنظمة"
-msgstr ""
+msgstr "the reports and studies for the organisation"
 
 #: 
 msgid "البيانات للمنظمة"
-msgstr ""
+msgstr "the organisation statement"
 
 #: 
 msgid "المحتوى السمعي و البصري للمنظمة"
-msgstr ""
+msgstr "the audio-visual content of the organisation"
 
 #: 
 msgid "قبول الطلب"
-msgstr ""
+msgstr "accept the request"
 
 #: 
 msgid "رفض الطلب"
-msgstr ""
+msgstr "refuse the request"
 
 #: 
 msgid "حذف الطلب"
-msgstr ""
+msgstr "delete the request"
 
 #: 
 msgid "تعديل الملف الشخصي"
-msgstr ""
+msgstr "editing the personal profile  "
 
 #: 
 msgid "حذف الملف الشخصي"
-msgstr ""
+msgstr "deleting the personal profile"
 
 #: 
 msgid "عودة إلى صفحة دليل المجتمع المدني"
-msgstr ""
+msgstr "back to civil society index's page"
 
 #: 
 msgid "الملف الشخصي"
-msgstr ""
+msgstr "the personal profile  "
 
 #: 
 msgid "اسم المنظمة المختصر"
-msgstr ""
+msgstr "the acronym of the organisation"
 
 #: 
 msgid "التأكيد من اﻹدارة على أنها منظمة"
-msgstr ""
+msgstr "verify the administration as an organisation"
 
 #: 
 msgid "تمت الموافقة عليها"
-msgstr ""
+msgstr "accepted"
 
 #: 
 msgid "لم يتم التأكيد بعد"
-msgstr ""
+msgstr "not verified yet"
 
 #: 
 msgid "تعديل الطلب"
-msgstr ""
+msgstr "editing the request"
 
 #: 
 msgid "رجاءً أتمم ملف المنظمة الشخصي لنتمكن من التحقق من معلوماتكم و تتمكنون من استخدام الموقع"
-msgstr ""
+msgstr "please, complete the organisation personal profile, to verify your information, and be able to use the website"
 
 #: 
 msgid "ملف المنظمة الشخصي"
-msgstr ""
+msgstr "the organisation personal profile"
 
 #: 
 msgid "تقديم طلب اشتراك لمنظمة"
-msgstr ""
+msgstr "submitting a subscribe request for the organisation"
 
 #: 
 msgid "تنشيط الحساب"
-msgstr ""
+msgstr "activate the account"
 
 #: 
 msgid "لقد تم تسجيل الخروج بنجاح"
-msgstr ""
+msgstr "you logged out successfully"
 
 #: 
 msgid "يمكنك اﻵن"
-msgstr ""
+msgstr "you can now "
 
 #: 
 msgid "إعادة تسجيل الدخول"
-msgstr ""
+msgstr "log in again"
 
 #: 
 msgid "الذهاب للصفحة الرئيسية"
-msgstr ""
+msgstr "go to the main page"
 
 #: 
 msgid "تغيير"
-msgstr ""
+msgstr "change  "
 
 #: 
 msgid "لقد تم تغيير كلمة المرور بنجاح"
-msgstr ""
+msgstr "your password has been changed successfully"
 
 #: 
 msgid "يمكنك اﻵن تسجيل الدخول باستخدام كلمة المرور الجديدة"
-msgstr ""
+msgstr "you can log in using your new password "
 
 #: 
 msgid "إعادة تعيين كلمة المرور"
-msgstr ""
+msgstr "reset your password"
 
 #: 
 msgid "لا يمكنك إعادة تعيين كلمة المرور بحال تسجيل الدخول"
-msgstr ""
+msgstr "you can't reset your password during log in"
 
 #: 
 msgid "تغيير كلمة السر"
-msgstr ""
+msgstr "reset your password"
 
 #: 
 msgid "إعادة تعيين"
-msgstr ""
+msgstr "reset  "
 
 #: 
 msgid "لقد تم إعادة تعيين كلمة المرور بنجاح"
-msgstr ""
+msgstr "your password has been changed successfully"
 
 #: 
 msgid "يمكنك ﻵن"
-msgstr ""
+msgstr "you can now "
 
 #: 
 msgid "تسحيل الدخول"
-msgstr ""
+msgstr "log in"
 
 #: 
 msgid "أو"
-msgstr ""
+msgstr "or  "
 
 #: 
 msgid "الصفحة الرئيسية"
-msgstr ""
+msgstr "the main page"
 
 #: 
 msgid "تأكيد إعادة تعيين كلمة المرور"
-msgstr ""
+msgstr "confirm resetting your password"
 
 #: 
 msgid "يتم إعادة تعيين كلمة المرور"
-msgstr ""
+msgstr "your password is being reset now"
 
 #: 
 msgid "لقد تم إرسال بريد الكتروني يتضمن رابط ﻹعادة تعيين كلمة المرور"
-msgstr ""
+msgstr "an email with a link to reset your password was sent"
 
 #: 
 msgid "يمكنك الذهاب إلى"
-msgstr ""
+msgstr "you can go to"
 
 #: 
 msgid "هل نسيت كلمة المرور"
-msgstr ""
+msgstr "did you forget your password?"
 
 #: 
 msgid "إذا لم يكن لديك حساب ! يمكنك"
-msgstr ""
+msgstr "if you do not have an account, you can"
 
 #: 
 msgid "إنشاء حساب"
-msgstr ""
+msgstr "create an account "
 
 #: 
 msgid "أنشاء حساب"
-msgstr ""
+msgstr "create an account "
 
 #: 
 msgid "تقديم طلب اشترك"
-msgstr ""
+msgstr "submitting a subscribe request"
 
 #: 
 msgid "إذا كان لديك حساب يمكنك تسجيل الدخول من هنا"
-msgstr ""
+msgstr "if you have an account you can log in from here"
 

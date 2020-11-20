@@ -400,9 +400,11 @@ def orgs_add_news(request):
         form = NewsForm(request.POST or None, files=request.FILES)
         if form.is_valid():
             user = form.save(commit=False)
-            prof_user = OrgProfile.objects.get(user=request.user)
+
+            prof_user = OrgProfile.objects.filter(user=request.user)
             user.user = request.user
             org_name = form.cleaned_data.get('org_name')
+
             if org_name:
                 user.org_name = org_name
             else:

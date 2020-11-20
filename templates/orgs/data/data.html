@@ -28,6 +28,9 @@
                 {% if request.user.is_authenticated and request.user.is_superuser %}
                 <a href="{% url 'data_not_pub' %}" class="btn btn-block mt-4"
                     title="{% trans 'بيانات المنظمات قيد الدراسة' %}"><i class="fas fa-chalkboard-teacher"></i></a>
+                {% else %}
+                <a href="{% url 'data_not_pub' %}?user={{ request.user.id }}" class="btn btn-block mt-4"
+                    title="{% trans 'بيانات المنظمات قيد الدراسة' %}"><i class="fas fa-chalkboard-teacher"></i></a>
                 {% endif %}
             </div>
 

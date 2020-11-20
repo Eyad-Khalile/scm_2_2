@@ -31,6 +31,9 @@
                 {% if request.user.is_authenticated and request.user.is_superuser %}
                 <a href="{% url 'org_funding_not_pub' %}" class="btn btn-block mt-4"
                     title="{% trans 'فرص التمويل قيد الدراسة' %}"><i class="fas fa-chalkboard-teacher"></i></a>
+                {% elif request.user.is_authenticated and request.user.is_staff %}
+                <a href="{% url 'org_funding_not_pub' %}?user={{ request.user.id }}" class="btn btn-block mt-4"
+                    title="{% trans 'فرص التمويل قيد الدراسة' %}"><i class="fas fa-chalkboard-teacher"></i></a>
                 {% endif %}
             </div>
 

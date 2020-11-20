@@ -10,8 +10,7 @@
     <div class="row">
       <div class="col-md-4 mb-4" data-aos="fade-left">
         <div class="profile-img">
-          <img src="{{ org.logo.url }}" class="w-100 img-thumbnail rounded" alt="{{ org.name }}"
-            title="{{ org.name }}" />
+          <img src="{{ org.logo.url }}" class="img-thumbnail rounded" alt="{{ org.name }}" title="{{ org.name }}" />
           <!-- <div class="file">
                         Change Photo
                         <input type="file" name="file" />
@@ -23,24 +22,24 @@
           <!-- اسم المنظمة -->
           <h5 class="row">
             <div class="col-6">
-              <strong> {% trans "اسم المنظمة" %} : </strong>
+              <strong> {% trans "اسم المنظمة" %}</strong>
             </div>
             <div class="col-6">
-              {{ org.name }}
+              : {{ org.name }}
             </div>
           </h5>
 
 
           <h6 class="row">
             <div class="col-6">
-              <strong> {% trans "اسم المنظمة باللغة الانكليزية أو الكردية" %} : </strong>
+              <strong> {% trans "اسم المنظمة باللغة الانكليزية أو الكردية" %}</strong>
             </div>
             <div class="col-6">
               {% if org.name_en_ku %}
-              {{ org.name_en_ku }}
+              : {{ org.name_en_ku }}
               {% else %}
               <span class="text-muted">
-                {% trans "لم يذكر" %}
+                : {% trans "لم يذكر" %}
               </span>
               {% endif %}
             </div>
@@ -49,14 +48,14 @@
 
           <h6 class=" row">
             <div class="col-6">
-              <strong> {% trans "الاسم المختصر" %} : </strong>
+              <strong> {% trans "الاسم المختصر" %}</strong>
             </div>
             <div class="col-6">
               {% if org.short_cut %}
-              {{ org.short_cut }}
+              : {{ org.short_cut }}
               {% else %}
               <span class="text-muted">
-                {% trans "لم يذكر" %}
+                : {% trans "لم يذكر" %}
               </span>
               {% endif %}
             </div>
@@ -65,10 +64,10 @@
           {% if request.user.is_superuser %}
           <h6 class="mb-4 pb-4 row border-top pt-2">
             <div class="col-6">
-              <strong>{% trans "اسم المستخدم" %} :</strong>
+              <strong>{% trans "اسم المستخدم" %}</strong>
             </div>
             <div class="col-6">
-              {{ org.user }}
+              : {{ org.user }}
             </div>
           </h6>
           {% endif %}

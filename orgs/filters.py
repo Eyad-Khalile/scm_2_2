@@ -27,6 +27,7 @@ class OrgsFilter(django_filters.FilterSet):
     class Meta:
         model = OrgProfile
         fields = [
+            'user',
             'name',
             'position_work',
             'work_domain',
@@ -54,6 +55,7 @@ class OrgsNewsFilter(django_filters.FilterSet):
     class Meta:
         model = OrgNews
         fields = [
+            'user',
             'org_name',
             'title',
             'content',
@@ -75,6 +77,7 @@ class OrgsRapportFilter(django_filters.FilterSet):
     class Meta:
         model = OrgRapport
         fields = [
+            'user',
             'org_name',
             'title',
             'domain',
@@ -96,6 +99,7 @@ class OrgsDataFilter(django_filters.FilterSet):
     class Meta:
         model = OrgData
         fields = [
+            'user',
             'org_name',
             'title',
             'start_date_pub',
@@ -116,6 +120,7 @@ class OrgsMediaFilter(django_filters.FilterSet):
     class Meta:
         model = OrgData
         fields = [
+            'user',
             'org_name',
             'title',
             'start_date_pub',
@@ -137,6 +142,7 @@ class OrgsResearchFilter(django_filters.FilterSet):
     class Meta:
         model = OrgResearch
         fields = [
+            'user',
             'name_entity',
             'title',
             'domaine',
@@ -234,6 +240,7 @@ class OrgsCapacityFilter(django_filters.FilterSet):
     class Meta:
         model = OrgCapacityOpp
         fields = [
+            'user',
             'org_name',
             'name_capacity',
             'title_capacity',
@@ -265,6 +272,7 @@ class OrgsDevFilter(django_filters.FilterSet):
     class Meta:
         model = DevOrgOpp
         fields = [
+            'user',
             'org_name',
             'name_dev',
             'title_dev',
@@ -286,6 +294,7 @@ class PersoFundFilter(django_filters.FilterSet):
     class Meta:
         model = PersFundingOpp
         fields = [
+            'user',
             'category',
             'fund_type',
             'domain',

@@ -34,6 +34,10 @@
                 <a href="{% url 'org_news_not_pub' %}" class="btn btn-block mt-4"
                     title="{% trans 'أخبار المنظمات قيد الدراسة' %}"><i class="fas fa-chalkboard-teacher"></i>
                 </a>
+                {% else %}
+                <a href="{% url 'org_news_not_pub' %}?user={{ request.user.id }}" class="btn btn-block mt-4"
+                    title="{% trans 'أخبار المنظمات قيد الدراسة' %}"><i class="fas fa-chalkboard-teacher"></i>
+                </a>
                 {% endif %}
             </div>
 

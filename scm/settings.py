@@ -166,10 +166,10 @@ LOCALE_PATHS = [
 
 
 LANGUAGES = [
-    ('ar', _('عربي')),
-    ('en', _('English')),
+    ('ar.utf8', _('عربي')),
+    ('en_US.utf8', _('English')),
     # ('km', _('Kurdish')),
-    ('ku', _('Kurdî')),
+    ('ku.utf8', _('Kurdî')),
 ]
 
 EXTRA_LANG_INFO = {

@@ -15,7 +15,7 @@ import django.conf.locale
 from django.conf.locale import LANG_INFO
 import os
 from django.utils.translation import gettext_lazy as _
-# import django_heroku
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'l=2j+l)(khert5i(rrgqqst66gr5y&8t3byb&zj+16)(8bg^cd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 # DEBUG = int(os.environ.get('DEBUG', default=1))
 
 ALLOWED_HOSTS = ['*']
@@ -44,13 +44,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'orgs',
+    'whitenoise.runserver_nostatic',
     'crispy_forms',
     'django_countries',
     'phonenumber_filter',
     'django_filters',
     #  'django_social_share',
-    'ckeditor',
-    'django_template_maths',
+    # 'ckeditor',
+    # 'django_template_maths',
 
 ]
 
@@ -68,6 +69,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -192,11 +194,12 @@ LOGIN_REDIRECT_URL = 'profile'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-# STATIC_ROOT = (os.path.join(BASE_DIR, 'static'))
+STATIC_ROOT = (os.path.join(BASE_DIR, 'static'))
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/')
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static/')
+# ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 MEDIA_ROOT = (os.path.join(BASE_DIR, 'media'))
 MEDIA_URL = '/media/'
@@ -212,4 +215,4 @@ EMAIL_HOST_PASSWORD = 'Eyad1979@'
 
 
 # KEROKU
-# django_heroku.settings(locals())
+django_heroku.settings(locals())

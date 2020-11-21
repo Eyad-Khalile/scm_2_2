@@ -493,7 +493,8 @@ body {
           width: 100px*$i;
           // background-image: url('../../../media/img_0'+$i+'.jpg');
           // background-image: url('../../../media/img_0#{$i}.jpg');
-          background-image: url('../../../media/0#{$i}.png');
+          // background-image: url('../../../media/0#{$i}.png');
+          background-image: url('../../media/slider/new/0#{$i}.png');
           // background-image: url('../../../media/slide_01.png');
         }
       }

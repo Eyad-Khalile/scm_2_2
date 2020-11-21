@@ -57,12 +57,12 @@
 
 
   <!-- AOS -->
-  <link rel="stylesheet" href="{% static 'dist/aos/aos.css' %}" charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="{% static 'dist/aos/aos.css' %}" charset="utf-8" />
   <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
   <!-- SITE STYLES -->
-  <link rel="stylesheet" href="{% static 'dist/app.bundle.css' %}" charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="{% static 'dist/app.bundle.css' %}" charset="utf-8" />
   {% if LANGUAGE_CODE != 'ar' %}
-  <link rel="stylesheet" href="{% static 'dist/style_en.css' %}" charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="{% static 'dist/style_en.css' %}" charset="utf-8" />
   {% endif %}
 
   <title>{% block title %} {% endblock %}</title>

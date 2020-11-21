@@ -192,10 +192,23 @@ LOGIN_REDIRECT_URL = 'profile'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 # STATIC_ROOT = (os.path.join(BASE_DIR, 'static/'))
+
+
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles/')
-]
+# STATICFILES_DIRS=[(os.path.join(BASE_DIR,'static'))]#for local test
+STATICFILES_DIRS = (
+    ('css', os.path.join(STATIC_ROOT, 'css').replace('\\', '/')),
+    ('js', os.path.join(STATIC_ROOT, 'js').replace('\\', '/')),
+    ('images', os.path.join(BASE_DIR, 'images').replace('\\', '/')),
+    # ('upload',os.path.join(STATIC_ROOT,'upload').replace('\\','/') ),
+)
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'static/')
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'staticfiles/')
+# ]
 
 MEDIA_ROOT = (os.path.join(BASE_DIR, 'media'))
 MEDIA_URL = '/media/'

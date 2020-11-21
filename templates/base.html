@@ -57,12 +57,12 @@
 
 
   <!-- AOS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'dist/aos/aos.css' %}" charset="utf-8" />
+  <link rel="stylesheet" href="{% static 'dist/aos/aos.css' %}" charset="utf-8" />
   <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
   <!-- SITE STYLES -->
-  <link rel="stylesheet" type="text/css" href="{% static 'dist/app.bundle.css' %}" charset="utf-8" />
+  <link rel="stylesheet" href="{% static 'dist/app.bundle.css' %}" charset="utf-8" />
   {% if LANGUAGE_CODE != 'ar' %}
-  <link rel="stylesheet" type="text/css" href="{% static 'dist/style_en.css' %}" charset="utf-8" />
+  <link rel="stylesheet" href="{% static 'dist/style_en.css' %}" charset="utf-8" />
   {% endif %}
 
   <title>{% block title %} {% endblock %}</title>
@@ -175,7 +175,7 @@
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
   <script src="{% static 'dist/aos/aos.js' %}" type="text/js" charset="utf-8"></script>
-  <script>
+  <script type="text/js">
     AOS.init({
       duration: 1000,
     });

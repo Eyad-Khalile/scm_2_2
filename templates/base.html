@@ -8,8 +8,10 @@
 
 <head>
   <!-- Required meta tags -->
-  <meta charset="utf-8" />
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="Content-Type" content="en, ar, ku; charset=utf-8" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <!-- FACEBOOK -->
   <!-- <meta property="og:url" content="{{ request.build_absolute_uri }}" />
   <meta property="og:type" content="CIVIL SOCIETY GATEWAY" />
@@ -55,12 +57,12 @@
 
 
   <!-- AOS -->
-  <link rel="stylesheet" href="{% static 'dist/aos/aos.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'dist/aos/aos.css' %}" charset="utf-8" />
   <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
   <!-- SITE STYLES -->
-  <link rel="stylesheet" href="{% static 'dist/app.bundle.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'dist/app.bundle.css' %}" charset="utf-8" />
   {% if LANGUAGE_CODE != 'ar' %}
-  <link rel="stylesheet" href="{% static 'dist/style_en.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'dist/style_en.css' %}" charset="utf-8" />
   {% endif %}
 
   <title>{% block title %} {% endblock %}</title>
@@ -172,13 +174,13 @@
 
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
-  <script src="{% static 'dist/aos/aos.js' %}"></script>
-  <script>
+  <script src="{% static 'dist/aos/aos.js' %}" type="text/js" charset="utf-8"></script>
+  <script type="text/js">
     AOS.init({
       duration: 1000,
     });
   </script>
-  <script src="{% static 'dist/app.bundle.js' %}"></script>
+  <script src="{% static 'dist/app.bundle.js' %}" type="text/js" charset="utf-8"></script>
 
   {% block javascript %} {% endblock %}
 </body>

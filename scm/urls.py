@@ -31,8 +31,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 #     path('', include('orgs.urls')),
 # ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-favicon_view = RedirectView.as_view(url='static/favicon.ico',
-                                    permanent=False)
+# favicon_view = RedirectView.as_view(url='static/media/favico_main/favicon-32x32.png',
+#                                     permanent=False)
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
@@ -41,7 +41,6 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path(_('admin'), admin.site.urls),
     path('', include('orgs.urls')),
-    path('favicon.ico', favicon_view),
     prefix_default_language=False,
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

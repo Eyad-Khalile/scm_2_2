@@ -41,7 +41,6 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path(_('admin'), admin.site.urls),
     path('', include('orgs.urls')),
-    # path('favicon.ico', favicon_view),
     prefix_default_language=False,
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

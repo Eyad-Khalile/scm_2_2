@@ -13,9 +13,4 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'scm.settings')
 
-# export LANG = 'en_US.UTF-8'
-# export LC_ALL = 'en_US.UTF-8'
-export LANG = 'ar.UTF-8'
-export LC_ALL = 'ar.UTF-8'
-
 application = get_wsgi_application()

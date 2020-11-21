@@ -185,6 +185,9 @@ django.conf.locale.LANG_INFO = LANG_INFO
 global_settings.LANGUAGES = global_settings.LANGUAGES + [("ku", 'Kurdi')]
 
 
+export LANG = 'ar.UTF-8'
+export LC_ALL = 'ar.UTF-8'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'profile'

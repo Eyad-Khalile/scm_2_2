@@ -15,7 +15,7 @@
             title="{% trans 'اضافة فرصة بناء القدرات' %}"><i class="fas fa-plus"></i></a>
         {% endif %}
     </div>
-    {% if Capacitys %}
+    {% if Capacitys and request.use.is_authenticated and request.user.is_superuser %}
     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
         <a class="btn btn-block mt-4" data-toggle="collapse" href="#collapseFiltre" aria-expanded="false"
             aria-controls="collapseFiltre" title="{% trans 'فرز' %}"><i class="fas fa-filter"></i></a>

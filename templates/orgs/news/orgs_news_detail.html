@@ -45,17 +45,18 @@
       {% endif %}
       {% endif %}
 
-      {% if request.user == new.user and new.publish == False %}
 
-      <a href="{% url 'news_edit' new.id %}" class="list-group-item list-group-item-action"
-        title="{% trans 'تعديل الخبر' %}">{% trans 'تعديل الخبر' %} <i class="fas fa-edit mx-1"></i></a>
 
-      {% elif request.user.is_superuser %}
+      {% if request.user.is_superuser %}
       <a href="{% url 'news_edit' new.id %}" class="list-group-item list-group-item-action"
         title="{% trans 'تعديل الخبر' %}">{% trans 'تعديل الخبر' %} <i class="fas fa-edit mx-1"></i></a>
 
       <a href="{% url 'news_delete' new.id %}" class="list-group-item list-group-item-action"
         title="{% trans 'حذف الخبر' %}">{% trans 'حذف الخبر' %} <i class="far fa-trash-alt mx-1"></i></a>
+
+      {% elif request.user == new.user and new.publish == False %}
+      <a href="{% url 'news_edit' new.id %}" class="list-group-item list-group-item-action"
+        title="{% trans 'تعديل الخبر' %}">{% trans 'تعديل الخبر' %} <i class="fas fa-edit mx-1"></i></a>
       {% endif %}
 
     </div>

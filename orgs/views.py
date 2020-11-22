@@ -1618,6 +1618,9 @@ def org_funding_not_pub(request):
     fundings = OrgFundingOpp.objects.filter(
         publish=False).order_by('-created_at')
 
+    myFilter = OrgsFundingFilter(request.GET, queryset=fundings)
+    fundings = myFilter.qs
+
     # PAGINATEUR
     paginator = Paginator(fundings, 12)
     page = request.GET.get('page')
@@ -1628,6 +1631,7 @@ def org_funding_not_pub(request):
 
     context = {
         'fundings': fundings,
+        'myFilter': myFilter,
     }
     return render(request, 'orgs/funding_opport/orgs/fundings_not_pub.html', context)
 # funding details

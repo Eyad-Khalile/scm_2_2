@@ -27457,7 +27457,11 @@ function init() {
   let post_title = encodeURI($('#post_title').text());
   let image = encodeURI($('#post_img').attr('src'));
   let description = encodeURI($('#post_content').text());
-  facebookBtn.attr('href', `https://www.facebook.com/sharer.php?u=${url}&text=${post_title}&image=${image}`);
+  console.log(url);
+  console.log(post_title);
+  console.log(image);
+  console.log(description);
+  facebookBtn.attr('href', `https://www.facebook.com/sharer.php?u=${url}&title=${post_title}&image=${image}`);
   twitterBtn.attr('href', `https://twitter.com/share?url=${url}&text=${post_title}`);
   linkedinkBtn.attr('href', `https://www.linkedin.com/shareArticle?url=${url}&title=${post_title}`);
   whatsappBtn.attr('href', `https://api.whatsapp.com/send?text=${post_title} ${url}`);

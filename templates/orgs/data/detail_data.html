@@ -47,17 +47,16 @@
       {% endif %}
       {% endif %}
 
-      {% if request.user == data.user and data.publish == False %}
+
+      {% if request.user.is_superuser %}
       <a href="{% url 'edit_data' data.id %}" class="list-group-item list-group-item-action"
         title="{% trans 'تعديل البيان' %}">{% trans 'تعديل البيان' %} <i class="fas fa-edit mx-1"></i></a>
-
-      {% elif request.user.is_superuser %}
-
-      <a href="{% url 'edit_data' data.id %}" class="list-group-item list-group-item-action"
-        title="{% trans 'تعديل البيان' %}">{% trans 'تعديل البيان' %} <i class="fas fa-edit mx-1"></i></a>
-
       <a href="{% url 'delete_data' data.id %}" class="list-group-item list-group-item-action"
         title="{% trans 'حذف البيان' %}">{% trans 'حذف البيان' %} <i class="far fa-trash-alt mx-1"></i></a>
+
+      {% elif request.user == data.user and data.publish == False %}
+      <a href="{% url 'edit_data' data.id %}" class="list-group-item list-group-item-action"
+        title="{% trans 'تعديل البيان' %}">{% trans 'تعديل البيان' %} <i class="fas fa-edit mx-1"></i></a>
       {% endif %}
 
     </div>

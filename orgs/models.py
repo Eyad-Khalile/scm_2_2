@@ -953,7 +953,7 @@ class Invitation(models.Model):
 
     def send(self):
         subject = u'Invitation to join Django Bookmarks'
-        template = get_template('orgs/our_news/invitation_email.txt')
+        template = get_template('orgs/our_news/invitation_email.html')
         context = Context(
             {'name': self.name, 'sender': self.sender.username, })
         message = template.render(context)

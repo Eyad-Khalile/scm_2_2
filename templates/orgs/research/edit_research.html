@@ -5,7 +5,7 @@
 {% block content %}
 
 <div class="row pt-4 mt-4 mb-4">
-    <h1>{% trans "تعديل البحث" %}</h1>
+    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">{% trans "تعديل البحث" %}</h1>
     <hr>
 
     <form action="" id="form_rapport" method="post" class="register" enctype="multipart/form-data">

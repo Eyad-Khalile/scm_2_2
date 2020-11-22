@@ -8,10 +8,11 @@
 <div class="row mt-4 pt-4 orgs-news">
   <div class="">
     <article>
-      <h1 class="text-center mb-4"> {% trans "فرص التمويل" %} </h1>
+      <h1 class="text-center mb-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+        {% trans "فرص التمويل" %} </h1>
       <!-- Text Descriptions -->
 
-      
+
     </article>
 
 
@@ -22,18 +23,20 @@
       <div class="d-flex justify-content-center align-items-center flex-wrap">
         <div class="">
           <a href="{% url 'orgs_funding' %}"
-            class="btn btn-button d-flex justify-content-center align-items-center border-0"> {% trans "فرص تمويل المنظمات" %}
+            class="btn btn-button d-flex justify-content-center align-items-center border-0">
+            {% trans "فرص تمويل المنظمات" %}
           </a>
         </div>
         <div class="">
           <a href="{% url 'finance_perso' %}"
-            class="btn btn-button d-flex justify-content-center align-items-center border-0"> {% trans "فرص تمويل الأفراد" %}
+            class="btn btn-button d-flex justify-content-center align-items-center border-0">
+            {% trans "فرص تمويل الأفراد" %}
           </a>
         </div>
 
+      </div>
+
     </div>
-
   </div>
-</div>
 
-{% endblock %}
+  {% endblock %}

@@ -7,7 +7,7 @@
 
 
 <div class="row mt-4 pt-4 mb-4">
-    <h1> {% trans "إضافة خبر" %} </h1>
+    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}"> {% trans "إضافة خبر" %} </h1>
 
 
     <form action="" method="post" class="register" enctype="multipart/form-data">

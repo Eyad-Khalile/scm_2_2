@@ -3,12 +3,12 @@
 {% block title %} {% trans "أخبار المركز" %} {% endblock %}
 
 {% block content %}
-<h1>{% trans "أخبار المركز" %}</h1>
-<hr>
+<h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">{% trans "أخبار المركز" %}</h1>
+
 
 
 <div class="row">
-    
+
     <div class="col-9">
         <div class="collapse mt-4" id="collapseAddFinance">
             <h2> {% trans "إضافة خبر" %} </h2>
@@ -17,13 +17,14 @@
                     <input type="text" class="form-control" placeholder="{% trans 'عنوان الخبر' %}">
                 </div>
                 <div class="form-group">
-                    <textarea name="" id="" class="form-control" cols="33" rows="10" placeholder="{% trans 'نص الخبر' %}"></textarea>
+                    <textarea name="" id="" class="form-control" cols="33" rows="10"
+                        placeholder="{% trans 'نص الخبر' %}"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="" class="form-control mt-3"> {% trans 'أضف صورة الخبر' %} </label>
                     <input type="file" class="form-control " accept="image/*">
                 </div>
-                
+
                 <div class="form-group">
                     <input type="submit" class="btn btn-block mt-3" value="{% trans 'أضف' %}">
                 </div>
@@ -31,7 +32,7 @@
             </form>
         </div>
 
-        
+
         <div class="mt-4">
             <h2>قائمة أخبار المركز</h2>
 
@@ -47,14 +48,16 @@
                 <tbody>
                     <tr>
                         <td>Mark</td>
-                        <td><img class="" width="80" src="{% static 'media/article_img.jpg' %}" alt="Card image cap"></td>
+                        <td><img class="" width="80" src="{% static 'media/article_img.jpg' %}" alt="Card image cap">
+                        </td>
                         <td>
                             <a href="{% url 'centre_news_detail' 5 %}" class="btn btn-info"> تفاصيل الخبر </a>
                         </td>
                     </tr>
                     <tr>
                         <td>Mark</td>
-                        <td><img class="" width="80" src="{% static 'media/article_img.jpg' %}" alt="Card image cap"></td>
+                        <td><img class="" width="80" src="{% static 'media/article_img.jpg' %}" alt="Card image cap">
+                        </td>
                         <td>
                             <a href="{% url 'centre_news_detail' 6 %}" class="btn btn-info"> تفاصيل الخبر </a>
                         </td>
@@ -62,7 +65,8 @@
                     </tr>
                     <tr>
                         <td>Mark</td>
-                        <td><img class="" width="80" src="{% static 'media/article_img.jpg' %}" alt="Card image cap"></td>
+                        <td><img class="" width="80" src="{% static 'media/article_img.jpg' %}" alt="Card image cap">
+                        </td>
                         <td>
                             <a href="{% url 'centre_news_detail' 7 %}" class="btn btn-info"> تفاصيل الخبر </a>
                         </td>
@@ -70,7 +74,8 @@
                     </tr>
                     <tr>
                         <td>Mark</td>
-                        <td><img class="" width="80" src="{% static 'media/article_img.jpg' %}" alt="Card image cap"></td>
+                        <td><img class="" width="80" src="{% static 'media/article_img.jpg' %}" alt="Card image cap">
+                        </td>
                         <td>
                             <a href="{% url 'centre_news_detail' 8 %}" class="btn btn-info"> تفاصيل الخبر </a>
                         </td>
@@ -78,7 +83,8 @@
                     </tr>
                     <tr>
                         <td>Mark</td>
-                        <td><img class="" width="80" src="{% static 'media/article_img.jpg' %}" alt="Card image cap"></td>
+                        <td><img class="" width="80" src="{% static 'media/article_img.jpg' %}" alt="Card image cap">
+                        </td>
                         <td>
                             <a href="{% url 'centre_news_detail' 9 %}" class="btn btn-info"> تفاصيل الخبر </a>
                         </td>
@@ -86,7 +92,8 @@
                     </tr>
                     <tr>
                         <td>Mark</td>
-                        <td><img class="" width="80" src="{% static 'media/article_img.jpg' %}" alt="Card image cap"></td>
+                        <td><img class="" width="80" src="{% static 'media/article_img.jpg' %}" alt="Card image cap">
+                        </td>
                         <td>
                             <a href="{% url 'centre_news_detail' 10 %}" class="btn btn-info"> تفاصيل الخبر </a>
                         </td>
@@ -104,14 +111,14 @@
             <h2>فرز بحسب :</h2>
 
             <form action="" class="form-inline">
-                
+
                 <div class="form-group">
                     <input type="text" class="form-control mt-3" placeholder="عنوان الخبر">
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control mt-3" placeholder="نص الخبر">
                 </div>
-                
+
                 <div class="row">
                     <div class="col">
                         <label for="">تاريخ نشر الخبر / من :</label>
@@ -130,8 +137,8 @@
             <!-- BUTTONS -->
             <hr>
 
-            <button class="btn btn-block mt-4" type="button" data-toggle="collapse"
-                data-target="#collapseAddFinance" aria-expanded="false" aria-controls="collapseAddFinance">
+            <button class="btn btn-block mt-4" type="button" data-toggle="collapse" data-target="#collapseAddFinance"
+                aria-expanded="false" aria-controls="collapseAddFinance">
                 إضافة خبر
             </button>
             <!-- <button class="btn btn-block mt-4" type="button" data-toggle="collapse"

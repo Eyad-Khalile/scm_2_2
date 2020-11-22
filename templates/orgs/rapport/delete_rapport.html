@@ -5,7 +5,8 @@
 {% block content %}
 
 <div class="row pt-4 mt-4 mb-4">
-    <h1 class="mt-4 mb-4 pb-4"> {% trans "حذف التقرير" %} </h1>
+    <h1 class="mt-4 mb-4 pb-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+        {% trans "حذف التقرير" %} </h1>
 
     <h2> {% trans "هل أنت متأكد من رغبتك في حذف التقرير بعنوان" %} : {{ rapport.title }} </h2>
 

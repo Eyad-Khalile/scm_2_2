@@ -12,7 +12,8 @@
 
 {% if orgs %}
 
-<h1 class="pt-5 mt-5 text-center border-bottom pb-3">{% trans 'طلبات المنظمات قيد الدراسة' %}</h1>
+<h1 class="pt-5 mt-5 border-bottom pb-3 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+    {% trans 'طلبات المنظمات قيد الدراسة' %}</h1>
 
 <div class="row justify-content-center pt-4">
     <br>
@@ -76,7 +77,8 @@
 
 </div>
 {% else %}
-<h3> {% trans 'حالياً لا يوجد منظمات مسجله او موافق عليها' %} </h3>
+<h3 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+    {% trans 'حالياً لا يوجد منظمات مسجله او موافق عليها' %} </h3>
 {% endif %}
 
 

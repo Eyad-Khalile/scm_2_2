@@ -8,7 +8,8 @@
 
 
 <div class="row mt-4 pt-4 mb-4">
-    <h1 class="mt-4 mb-4 pb-4"> {% trans "حذف فرصة تمويل للأفراد" %} </h1>
+    <h1 class="mt-4 mb-4 pb-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+        {% trans "حذف فرصة تمويل للأفراد" %} </h1>
 
     <h2> {% trans "هل أنت متأكد من رغبتك في حذف فرصة التمويل بعنوان" %} :
         {% if funding.name_funding %}

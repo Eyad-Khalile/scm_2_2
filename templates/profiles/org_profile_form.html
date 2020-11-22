@@ -5,7 +5,8 @@
 
 {% block content %}
 
-<h1 class="pt-4 mt-4"> {% trans 'تقديم طلب اشتراك' %} </h1>
+<h1 class="pt-4 mt-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+    {% trans 'تقديم طلب اشتراك' %} </h1>
 
 <div class="register mb-5">
     <form action="" id="fill_form" method="POST" data-cities-url="{% url 'ajax_load_cities' %}"

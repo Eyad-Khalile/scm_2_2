@@ -17,9 +17,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center pt-4 mt-4">{% trans 'لوحة التحكم الخاصة باﻹدارة' %} </h1>
+                <h1 class="pt-4 mt-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+                    {% trans 'لوحة التحكم الخاصة باﻹدارة' %} </h1>
 
-                <hr>
                 <!-- CONTANTS -->
                 <div class="contante">
                     <div class="d-flex justify-content-center align-items-center">

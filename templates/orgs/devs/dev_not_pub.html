@@ -7,7 +7,8 @@
 
 
 <div class="row mt-4 pt-4">
-    <h1> {% trans "دليل التطوير قيد الدراسة" %} </h1>
+    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+        {% trans "دليل التطوير قيد الدراسة" %} </h1>
 
     <div class="row mt-4">
 
@@ -123,7 +124,8 @@
 
 
                 {% else %}
-                <h3> {% trans "لا يوجد حالياً دليل تطوير منشور من قبل المنظمات قيد الدراسة" %} </h3>
+                <h3 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+                    {% trans "لا يوجد حالياً دليل تطوير منشور من قبل المنظمات قيد الدراسة" %} </h3>
                 {% endif %}
 
 

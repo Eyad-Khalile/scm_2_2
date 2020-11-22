@@ -7,7 +7,8 @@
 
 
 <div class="row mt-4 pt-4">
-    <h1> {% trans "فرص التمويل قيد الدراسة" %} </h1>
+    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+        {% trans "فرص التمويل قيد الدراسة" %} </h1>
 
     <div class="row justify-content-start pt-4">
         {% if fundings %}
@@ -74,7 +75,8 @@
 
 
         {% else %}
-        <h3> {% trans "لا يوجد حالياً فرص فرص تمويل للموافقة على النشر" %} </h3>
+        <h3 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+            {% trans "لا يوجد حالياً فرص فرص تمويل للموافقة على النشر" %} </h3>
         {% endif %}
 
     </div>

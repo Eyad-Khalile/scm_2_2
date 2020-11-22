@@ -458,7 +458,7 @@
 
 {% if not user_prof %}
 <div class="row pt-4">
-    <h3 class="mt-4 mb-4 pt-4 pb-4">
+    <h3 class="mt-4 mb-4 pt-4 pb-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
         {% trans 'رجاءً أتمم ملف المنظمة الشخصي لنتمكن من التحقق من معلوماتكم و تتمكنون من استخدام الموقع' %}
     </h3>
 

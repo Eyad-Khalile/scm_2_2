@@ -2,7 +2,8 @@
 {% get_current_language as LANGUAGE_CODE %} {% block title %} {% trans 'تفاصيل المنظمة' %} {% endblock %}
 {% block content %}
 
-<h1 class="mt-4 mb-4">{% trans 'تفاصيل المنظمة' %} </h1>
+<h1 class="mt-4 mb-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+  {% trans 'تفاصيل المنظمة' %} </h1>
 
 <div class="container emp-profile mt-4">
   <form>

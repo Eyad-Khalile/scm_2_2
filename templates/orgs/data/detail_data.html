@@ -14,9 +14,11 @@
   <div class="well col-lg-9 job-card col-xs-12 position-relative">
 
     <!-- MINI MANU -->
+    {% if request.user.is_authenticated %}
     <span id="span-menu" type="button"
       class="span-menu {% if LANGUAGE_CODE == 'ar' %} float-right {% else %} float-left {% endif %}"><i
         class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
+    {% endif %}
 
     <div id="mini-menu"
       class="list-group mini-menu d-none {% if LANGUAGE_CODE == 'ar' %} menu-right {% else %} menu-left {% endif %}">

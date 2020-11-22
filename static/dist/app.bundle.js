@@ -27200,11 +27200,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {// pre loader
-$(window).on("load", function () {
-  setInterval(function () {
-    $('.loader').addClass('hidden');
-  });
-});
+// $(window).on("load", function () {
+//     setInterval(function () {
+//         $('.loader').addClass('hidden');
+//     });
+// });
 $('body').css('padding-top', $('.navbar').outerHeight() + 'px');
 $('#navbarSupportedContent').find('.nav-link').css('height', $('.navbar').outerHeight() + 'px');
 $('#list-collapse').addClass('d-none');

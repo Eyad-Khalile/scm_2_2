@@ -9,7 +9,8 @@
 
 
 <div class="row mt-4 pt-4">
-    <h1> {% trans "تفاصيل فرصة تمويل للأفراد" %} </h1>
+    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+        {% trans "تفاصيل فرصة تمويل للأفراد" %} </h1>
 
     <div class="well col-lg-9 col-xs-12 job-card position-relative" data-aos="fade-in">
 
@@ -319,8 +320,9 @@
     <!-- THE LATEST FUNDING  -->
 
     {% if persos.count > 0 %}
-    <div class="col-lg-3 d-none d-lg-block">
-        <h2 class="text-center mb-4 border-bottom"> {% trans 'أحدث فرص تمويل المنظمات' %} </h2>
+    <div class="col-lg-3 d-none d-lg-block last3">
+        <h2 class="text-center mb-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+            {% trans 'أحدث فرص تمويل المنظمات' %} </h2>
         {% for perso in persos|slice:3 %}
         <a href="{% url 'finance_perso_detail' perso.id%}" class='bg-light nav-link border-bottom pb-3 mb-2'>
             <div class="news-card" data-aos="fade-in">

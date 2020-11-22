@@ -8,7 +8,8 @@
 
 
 <div class="row mt-4 pt-4">
-  <h1> {% trans 'تفاصيل دليل التطوير' %} </h1>
+  <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}"> {% trans 'تفاصيل دليل التطوير' %}
+  </h1>
 
   <div class="well col-lg-9 job-card col-xs-12 position-relative">
 
@@ -201,8 +202,9 @@
 
   <!-- THE LATEST DEVS  -->
   {% if devs.count > 0 %}
-  <div class="col-lg-3 d-none d-lg-block">
-    <h2 class="text-center mb-4 border-bottom"> {% trans 'أحدث ثلاثة دليل تطوير' %} </h2>
+  <div class="col-lg-3 d-none d-lg-block last3">
+    <h2 class="text-center mb-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+      {% trans 'أحدث ثلاثة دليل تطوير' %} </h2>
     {% for dev in devs|slice:3 %}
     <a href="{% url 'devs_detail' dev.id %}" class='bg-light nav-link border-bottom pb-3 mb-2'>
       <div class="news-card">

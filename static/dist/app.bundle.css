@@ -11764,6 +11764,7 @@ html {
   scroll-behavior: smooth; }
   html ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.7);
     border-radius: 10px; }
   html scrollbar-track {
     box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.7);
@@ -11939,21 +11940,6 @@ body {
     background-size: contain;
     background-attachment: fixed;
     background-color: #17678C; }
-  body .carouselHomePage .carousel-inner .slide-item-1 {
-    width: 100px;
-    background-image: url(../../media/01.png); }
-  body .carouselHomePage .carousel-inner .slide-item-2 {
-    width: 200px;
-    background-image: url(../../media/02.png); }
-  body .carouselHomePage .carousel-inner .slide-item-3 {
-    width: 300px;
-    background-image: url(../../media/03.png); }
-  body .carouselHomePage .carousel-inner .slide-item-4 {
-    width: 400px;
-    background-image: url(../../media/04.png); }
-  body .carouselHomePage .carousel-inner .slide-item-5 {
-    width: 500px;
-    background-image: url(../../media/05.png); }
   body .carousel-control-next-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='tomato' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e"); }
   body .carousel-control-prev-icon {
@@ -12037,6 +12023,9 @@ body {
       max-height: 140px !important; }
   body .job-card .row {
     --bs-gutter-x: 0 !important; }
+  body .job-card h3, body .job-card .h3 {
+    padding-right: 10px;
+    padding-left: 10px; }
   body .job-card p {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
@@ -12134,6 +12123,18 @@ body {
       color: #fff;
       background-color: #17678C;
       border-color: #17678C; }
+  body .last3 {
+    position: relative; }
+    body .last3 h2, body .last3 .h2 {
+      position: absolute;
+      top: -45px;
+      white-space: nowrap; }
+  body .br_right {
+    border-right: 5px solid #17678C;
+    padding-right: 20px; }
+  body .br_left {
+    border-left: 5px solid #17678C;
+    padding-left: 20px; }
 
 nav.nav-bg {
   background-color: #17678C; }
@@ -12141,7 +12142,7 @@ nav.nav-bg {
 nav ul li a {
   color: #fff !important;
   font-weight: bold;
-  padding-top: 1em !important; }
+  padding-top: 1.40em !important; }
   nav ul li a:hover {
     background-color: #fff;
     color: #17678C !important; }

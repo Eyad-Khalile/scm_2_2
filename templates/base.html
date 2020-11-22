@@ -57,12 +57,12 @@
 
 
   <!-- AOS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'dist/aos/aos.css' %}" charset="utf-8" />
+  <link rel="stylesheet" href="{% static 'dist/aos/aos.css' %}" />
   <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
   <!-- SITE STYLES -->
-  <link rel="stylesheet" type="text/css" href="{% static 'dist/app.bundle.css' %}" charset="utf-8" />
+  <link rel="stylesheet" href="{% static 'dist/app.bundle.css' %}" />
   {% if LANGUAGE_CODE != 'ar' %}
-  <link rel="stylesheet" type="text/css" href="{% static 'dist/style_en.css' %}" charset="utf-8" />
+  <link rel="stylesheet" href="{% static 'dist/style_en.css' %}" />
   {% endif %}
 
   <title>{% block title %} {% endblock %}</title>
@@ -88,9 +88,9 @@
       {% endif %}
       <div class="main-content p-0 col-12 mb-4 min-vh-100">
 
-        <div class="loader">
+        <!-- <div class="loader">
           <img src="{% static 'media/pre_loader/Spinner-2.3s-200px.gif' %}" alt="loader">
-        </div>
+        </div> -->
 
         <!-- MESSAGES -->
         <!-- <div
@@ -174,13 +174,13 @@
 
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
-  <script src="{% static 'dist/aos/aos.js' %}" type="text/js" charset="utf-8"></script>
-  <script type="text/js">
+  <script src="{% static 'dist/aos/aos.js' %}"></script>
+  <script>
     AOS.init({
       duration: 1000,
     });
   </script>
-  <script src="{% static 'dist/app.bundle.js' %}" type="text/js" charset="utf-8"></script>
+  <script src="{% static 'dist/app.bundle.js' %}"></script>
 
   {% block javascript %} {% endblock %}
 </body>

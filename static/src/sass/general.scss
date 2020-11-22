@@ -130,6 +130,7 @@ html {
 
   ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     // background-color: rgba(122, 153, 217, 0.5);
   }
@@ -488,16 +489,16 @@ body {
         background-color: $color-1;
       }
 
-      @for $i from 1 through 5 {
-        .slide-item-#{$i} {
-          width: 100px*$i;
-          // background-image: url('../../../media/img_0'+$i+'.jpg');
-          // background-image: url('../../../media/img_0#{$i}.jpg');
-          // background-image: url('../../../media/0#{$i}.png');
-          background-image: url('../../media/slider/new/0#{$i}.png');
-          // background-image: url('../../../media/slide_01.png');
-        }
-      }
+      // @for $i from 1 through 5 {
+      //   .slide-item-#{$i} {
+      //     width: 100px*$i;
+      //     // background-image: url('../../../media/img_0'+$i+'.jpg');
+      //     // background-image: url('../../../media/img_0#{$i}.jpg');
+      //     // background-image: url('../../../media/0#{$i}.png');
+      //     background-image: url('../../media/0#{$i}.png');
+      //     // background-image: url('../../../media/slide_01.png');
+      //   }
+      // }
 
     }
    
@@ -796,12 +797,12 @@ body {
   .news-card-link {
     text-decoration: none !important;
     background-color: #fff;
-    .news-card {
+    // .news-card {
 
-      p {
+    //   // p {
         
-      }
-    }
+    //   // }
+    // }
   }
 
   // JOBS 
@@ -816,6 +817,11 @@ body {
   .job-card {
     .row {
       --bs-gutter-x: 0 !important;
+    }
+
+    h3 {
+      padding-right: 10px;
+      padding-left: 10px;
     }
 
     p {
@@ -948,6 +954,27 @@ body {
     }
 
 
+  }
+
+  .last3 {
+    position: relative;
+
+    h2 {
+      position: absolute;
+      top: -45px;
+      white-space: nowrap;
+    }
+  }
+
+  // h1 & h2 border
+  .br_right {
+    border-right: 5px solid $color-1;
+    padding-right: 20px;
+  }
+
+  .br_left {
+    border-left: 5px solid $color-1;
+    padding-left: 20px;
   }
 
   

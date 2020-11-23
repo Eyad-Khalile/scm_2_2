@@ -62,3 +62,7 @@ if not settings.DEBUG:
 
 handler404 = 'orgs.views.page_not_found_view'
 # handler500 = 'article.views.page_not_found_view'
+
+# SECURE_HSTS_SECONDS = 31536000
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

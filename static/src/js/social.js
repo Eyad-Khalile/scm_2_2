@@ -21,10 +21,10 @@ function init() {
     let image = encodeURI($('#post_img').attr('src'));
     let description = encodeURI($('#post_content').text());
 
-    console.log(url)
-    console.log(post_title)
-    console.log(image)
-    console.log(description)
+    // console.log(url)
+    // console.log(post_title)
+    // console.log(image)
+    // console.log(description)
     
     facebookBtn.attr(
         'href',

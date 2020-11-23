@@ -1,9 +1,10 @@
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf import settings
 from django.contrib.auth import views as auth_views
 from django.conf.urls.static import static
 from . import views, views_prof_dash
 from django.views.generic import TemplateView
+from django.views.static import serve
 
 urlpatterns = [
     # HOME AND LEGALE
@@ -170,8 +171,14 @@ urlpatterns = [
     # path('signe_in', views.signe_in, name="signe_in"),
     path('login/', auth_views.LoginView.as_view(template_name='register/signe-in.html'), name='signe_in'),
     path('signe_up/', views.signe_up, name="signe_up"),
-    path('activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
-         views.activate, name='activate'),
+
+    #     path('activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+    #          views.activate, name='activate'),
+
+    re_path(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+            views.activate, name='activate'),
+
+
     path('logout/', auth_views.LogoutView.as_view(template_name='register/logged_out.html'), name='logout'),
     path('profile/', views_prof_dash.profile, name="profile"),
     path('profile_supper/', views_prof_dash.admin_dashboard, name="profile_supper"),

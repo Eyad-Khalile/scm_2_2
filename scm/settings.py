@@ -14,6 +14,7 @@ from django.conf import global_settings
 import django.conf.locale
 from django.conf.locale import LANG_INFO
 import os
+from decouple import config
 from django.utils.translation import gettext_lazy as _
 # import django_heroku
 
@@ -25,10 +26,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/aff
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'l=2j+l)(khert5i(rrgqqst66gr5y&8t3byb&zj+16)(8bg^cd'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG', cast=bool)
 # DEBUG = int(os.environ.get('DEBUG', default=1))
 
 ALLOWED_HOSTS = ['*']
@@ -214,16 +215,16 @@ MEDIA_URL = '/media/'
 # EMAIL_PORT = 587
 # EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = 'khalile.eyad@gmail.com'
-# EMAIL_HOST_PASSWORD = 'khalilmath@123'
+# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD_GMAIL')
 
 # SENDGRID
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'khalile.eyad@gmail.com'
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 
 
 # KEROKU

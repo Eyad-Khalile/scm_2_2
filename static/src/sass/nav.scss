@@ -2,7 +2,7 @@
 nav {
     // background-image: $bg-color;
     
-    
+    background-color: rgba($color-1, 0.3);
     &.nav-bg {
         background-color: $color-1;
     }
@@ -93,7 +93,7 @@ nav {
 }
 
 ul.dropdown-menu {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba($color-1, 0.3);
 }
 
 .nav-bg-scroll {

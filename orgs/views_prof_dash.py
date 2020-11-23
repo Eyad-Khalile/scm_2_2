@@ -20,9 +20,10 @@ from bokeh.palettes import Spectral6
 from bokeh.plotting import figure
 from bokeh.transform import factor_cmap
 from bokeh.embed import components
-from django.core.mail import send_mail
+from django.core.mail import send_mail, send_mass_mail
 from django.template.loader import get_template
 from django.template import Context
+
 
 # if OrgProfile.objects.filter(id=user.id).exists():
 

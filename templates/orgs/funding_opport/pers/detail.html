@@ -323,7 +323,7 @@
     {% if persos.count > 0 %}
     <div class="col-lg-3 d-none d-lg-block last3">
         <h2 class="text-center mb-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
-            {% trans 'أحدث فرص تمويل المنظمات' %} </h2>
+            {% trans 'أحدث ثلاثة فرص تمويل للأفراد' %} </h2>
         {% for perso in persos|slice:3 %}
         <a href="{% url 'finance_perso_detail' perso.id%}" class='bg-light nav-link border-bottom pb-3 mb-2'>
             <div class="news-card" data-aos="fade-in">

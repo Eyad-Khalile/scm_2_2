@@ -28,28 +28,28 @@
             <div class="col-md-6">
                 <div class="profile-head">
                     <h5 class="row border-bottom">
-                        <p class="col">{% trans 'اسم المنظمة' %} : </p>
-                        <p class="col">{{ prof.name }}</p>
+                        <p class="col">{% trans 'اسم المنظمة' %} </p>
+                        <p class="col">: {{ prof.name }}</p>
                     </h5>
 
                     <h6 class="row border-bottom">
-                        <p class="col">{% trans 'اسم المنظمة باللغة الانكليزية أو الكردية' %} :</p>
+                        <p class="col">{% trans 'اسم المنظمة باللغة الانكليزية أو الكردية' %} </p>
                         <p class="col">
                             {% if prof.name_en_ku %}
-                            {{ prof.name_en_ku }}
+                            : {{ prof.name_en_ku }}
                             {% else %}
-                            <span class="text-muted"> {% trans 'لم يذكر' %} </span>
+                            <span class="text-muted">: {% trans 'لم يذكر' %} </span>
                             {% endif %}
                         </p>
                     </h6>
 
                     <h6 class="row border-bottom">
-                        <p class="col">{% trans 'اسم المنظمة المختصر' %} :</p>
+                        <p class="col">{% trans 'اسم المنظمة المختصر' %} </p>
                         <p class="col">
                             {% if prof.short_cut %}
-                            {{ prof.short_cut }}
+                            : {{ prof.short_cut }}
                             {% else %}
-                            <span class="text-muted"> {% trans 'لم يذكر' %} </span>
+                            <span class="text-muted">: {% trans 'لم يذكر' %} </span>
                             {% endif %}
                         </p>
 

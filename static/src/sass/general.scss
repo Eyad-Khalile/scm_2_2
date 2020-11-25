@@ -793,6 +793,14 @@ body {
       }
   }
 
+  .row.row-gutter-0 {
+    --bs-gutter-x: 0 !important;
+  }
+
+  .row.row-gutter-3 {
+    --bs-gutter-x: 3.5rem !important;
+  }
+
   // NEWS 
   .news-card-link {
     text-decoration: none !important;
@@ -894,6 +902,14 @@ body {
     padding-right: 10px;
     padding-left: 10px;
 
+    &.span-menu-org.float-right {
+      padding-right: 0 !important;
+    }
+    &.span-menu-org.float-left {
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+    }
+
     svg {
       path {
         fill: $color-1;
@@ -904,6 +920,10 @@ body {
     position: absolute;
     top: 48px;
     z-index: 2;
+
+    &.mini-menu-org {
+      top: 100px;
+    }
     
     @include myTransition;
 
@@ -918,6 +938,11 @@ body {
 
     &.menu-right {
       right: 40px;
+
+      &.mini-menu-org {
+        right: 28px;
+      }
+
       a, button {
         svg {
           float: left;
@@ -926,6 +951,11 @@ body {
     }
     &.menu-left {
       left: 66px;
+
+      &.mini-menu-org {
+        left: 31px;
+      }
+
       a,
       button {
         svg {

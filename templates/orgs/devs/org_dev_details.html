@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static i18n django_template_maths %}
+{% load static i18n %}
 {% block title %} {% trans 'تفاصيل دليل التطوير' %} {% endblock %}
 
 {% get_current_language as LANGUAGE_CODE %}
@@ -100,7 +100,7 @@
     {% if request.user.is_authenticated and request.user.is_superuser %}
     <p class="text-muted mt-4 row">
       <span class="col-3">
-        {% trans "اسم اللذي أضاف  تفاصيل دليل التطوير" %}
+        {% trans "اسم اللذي أضاف دليل التطوير" %}
       </span>
       <span class="col-9">
         : {{ dev.user }}

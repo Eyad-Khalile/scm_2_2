@@ -231,7 +231,7 @@
     {% if capacites.count > 0 %}
     <div class="col-lg-3 d-none d-lg-block last3">
         <h2 class="text-center mb-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
-            {% trans 'أحدث ثلاثة دليل تطوير' %} </h2>
+            {% trans 'أحدث ثلاثة فرص بناء القدرات' %} </h2>
         {% for cap in capacites|slice:3 %}
         <a href="{% url 'capacity_detail' cap.id %}" class='bg-light nav-link border-bottom pb-3 mb-2'>
             <div class="news-card">

@@ -14,8 +14,9 @@
     <div class="d-flex mt-4">
 
         {% if request.user.is_authenticated %}
-        <a href="{% url 'orgs_add_news' %}" class="btn btn-block  mt-4 mx-2" title="{% trans 'إضافة خبر' %}"><i
-                class="fas fa-plus"></i>
+        <a href="{% url 'orgs_add_news' %}"
+            class="btn btn-block mt-4 {% if LANGUAGE_CODE == 'ar' %} ml-2 {% else %} mr-2 {% endif %}"
+            title="{% trans 'إضافة خبر' %}"><i class="fas fa-plus"></i>
         </a>
         {% endif %}
 
@@ -71,7 +72,8 @@
 
 
 
-    <div class="row row-m-0 justify-content-start pt-4 pb-4 mb-4">
+    <div class="row row-m-0 {% if LANGUAGE_CODE == 'ar' %} row-gutter-0 {% else %} row-gutter-3 {% endif %} pt-4 pb-4
+        mb-4">
         {% if news %}
         {% for new in news %}
 

@@ -2,10 +2,58 @@
 {% get_current_language as LANGUAGE_CODE %} {% block title %} {% trans 'تفاصيل المنظمة' %} {% endblock %}
 {% block content %}
 
-<h1 class="mt-4 mb-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
-  {% trans 'تفاصيل المنظمة' %} </h1>
 
-<div class="container emp-profile mt-4">
+<div class="container emp-profile mt-4 position-relative border-bottom">
+  <h1 class="mt-4 mb-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+    {% trans 'تفاصيل المنظمة' %} </h1>
+
+  <!-- MINI MANU -->
+  {% if request.user.is_authenticated %}
+  <span id="span-menu" type="button" class="span-menu span-menu-org {% if LANGUAGE_CODE == 'ar' %} float-right {% else %} float-left
+    {% endif %}"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
+  {% endif %}
+
+  <div id="mini-menu" class="list-group mini-menu mini-menu-org d-none {% if LANGUAGE_CODE == 'ar' %} menu-right {% else %}
+    menu-left
+    {% endif %}">
+    <!-- <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+        Cras justo odio
+      </a> -->
+    {% if request.user.is_authenticated and request.user.is_superuser %}
+    {% if org.publish == False %}
+    <form action="" class="confirm" method="post">
+      {% csrf_token %} {{ form.publish }}
+      <div class="form-group">
+        <button type="submit" id="org_confirm_btn" class="list-group-item list-group-item-action"
+          title="{% trans 'قبول الطلب' %}">{% trans 'قبول الطلب' %} <i class="fas fa-check mx-1"></i></button>
+      </div>
+    </form>
+    {% elif org.publish == True %}
+    <form action="" class="deconfirm" method="post">
+      {% csrf_token %} {{ form.publish }}
+      <div class="form-group">
+        <button type="submit" id="org_deconfirm_btn" class="list-group-item list-group-item-action"
+          title="{% trans 'رفض الطلب' %}">{% trans 'رفض الطلب' %} <i class="fa fa-ban mx-1"
+            aria-hidden="true"></i></button>
+      </div>
+    </form>
+    {% endif %}
+    {% endif %}
+
+
+    {% if request.user.is_superuser %}
+    <a href="{% url 'org_profile_edit' org.id %}" class="list-group-item list-group-item-action"
+      title="{% trans 'تعديل الملف الشخصي' %}">{% trans 'تعديل الملف الشخصي' %} <i class="fas fa-edit mx-1"></i></a>
+    <a href="{% url 'org_profile_delete' org.id %}" class="list-group-item list-group-item-action"
+      title="{% trans 'حذف الملف الشخصي' %}">{% trans 'حذف الملف الشخصي' %} <i class="far fa-trash-alt mx-1"></i></a>
+
+    {% elif request.user == job.user and job.publish == False %}
+    <a href="{% url 'org_profile_edit' org.id %}" class="list-group-item list-group-item-action"
+      title="{% trans 'تعديل الملف الشخصي' %}">{% trans 'تعديل الملف الشخصي' %} <i class="fas fa-edit mx-1"></i></a>
+    {% endif %}
+
+  </div>
+
   <form>
 
     <div class="row">
@@ -490,68 +538,6 @@
   </form>
 </div>
 
-<div class="row border-top pt-4">
-  <div class="col" data-aos="fade-left">
-    {% if request.user.is_authenticated and request.user.is_superuser %}
 
-    {% if org.publish == False %}
-    <form action="" class="confirm" method="post">
-      {% csrf_token %} {{form.publish}}
-      <div class="form-group">
-        <button type="submit" id="org_confirm_btn" class="btn btn-block" title="{% trans 'قبول الطلب' %}"><i
-            class="fas fa-check"></i></button>
-      </div>
-    </form>
-    {% elif org.publish == True %}
-    <form action="" class="deconfirm" method="post">
-      {% csrf_token %} {{form.publish}}
-      <div class="form-group">
-        <button type="submit" id="org_deconfirm_btn" class="btn btn-block" title="{% trans 'رفض الطلب' %}"><i
-            class="fa fa-ban" aria-hidden="true"></i>
-        </button>
-      </div>
-    </form>
-
-    {% endif %}
-    {% endif %}
-    <!-- <div class="col">
-            <a href="" class="btn btn-block"> {% trans 'حذف الطلب' %} </a>
-        </div> -->
-  </div>
-
-  <div class="col" data-aos="fade-left">
-    <div class="row">
-      {% if request.user.is_authenticated and request.user == org.user and org.publish == 'false' %}
-      <div class="col">
-        <a href="{% url 'org_profile_edit' org.id %}" class="btn btn-block" title="{% trans 'تعديل الملف الشخصي' %}">
-          <i class="fas fa-edit"></i>
-        </a>
-      </div>
-      {% endif %}
-
-      {% if request.user.is_authenticated and request.user.is_superuser %}
-      <div class="col">
-        <a href="{% url 'org_profile_delete' org.id %}" class="btn btn-block" title="{% trans 'حذف الملف الشخصي' %}">
-          <i class="fas fa-trash-alt"></i>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'org_profile_edit' org.id %}" class="btn btn-block" title="{% trans 'تعديل الملف الشخصي' %}">
-          <i class="fas fa-edit"></i>
-        </a>
-      </div>
-      {% endif %}
-    </div>
-
-
-  </div>
-
-  <div class="col" data-aos="fade-left">
-    <a href="{% url 'guide' %}" class="btn btn-block" title="{% trans 'عودة إلى صفحة دليل المجتمع المدني' %}">
-      <i class="fas fa-backward"></i>
-    </a>
-  </div>
-
-</div>
 
 {% endblock %}

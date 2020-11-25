@@ -269,7 +269,7 @@
               <h3 class="mt-4">{{ job.job_type }}</h3>
               <p>{{ job.job_description|truncatechars:80 }}</p>
               <p>
-                <a href="{% url 'resource_work_detail' job.id %}" class="btn btn-block">
+                <a href="{% url 'jobs_detail' job.id %}" class="btn btn-block">
                   {% trans 'للمزيد عن فرصة العمل' %}
                 </a>
               </p>

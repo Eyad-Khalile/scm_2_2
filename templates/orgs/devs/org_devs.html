@@ -13,8 +13,9 @@
     <div class="d-flex mt-4">
 
         {% if request.user.is_authenticated and request.user.is_staff %}
-        <a href="{% url 'orgs_add_devs' %}" class="btn btn-block mt-4 mx-2" title="{% trans 'اضافة دليل التطوير' %}"><i
-                class="fas fa-plus"></i></a>
+        <a href="{% url 'orgs_add_devs' %}"
+            class="btn btn-block mt-4 {% if LANGUAGE_CODE == 'ar' %} ml-2 {% else %} mr-2 {% endif %}"
+            title="{% trans 'اضافة دليل التطوير' %}"><i class="fas fa-plus"></i></a>
         {% endif %}
 
         {% if devs %}
@@ -61,7 +62,8 @@
 
 
 
-    <div class="row row-m-0 mt-4 pt-4">
+    <div class="row row-m-0 {% if LANGUAGE_CODE == 'ar' %} row-gutter-0 {% else %} row-gutter-3 {% endif %} pt-4 pb-4
+        mb-4">
 
         <div class="row row-m-0 justify-content-start pt-4 pb-4 mb-4">
             {% if devs %}

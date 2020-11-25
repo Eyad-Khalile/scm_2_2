@@ -12012,6 +12012,10 @@ body {
     body .row-m-0 {
       margin-left: 0 !important;
       margin-right: 0 !important; } }
+  body .row.row-gutter-0 {
+    --bs-gutter-x: 0 !important; }
+  body .row.row-gutter-3 {
+    --bs-gutter-x: 3.5rem !important; }
   body .news-card-link {
     text-decoration: none !important;
     background-color: #fff; }
@@ -12068,6 +12072,11 @@ body {
     padding-top: 30px;
     padding-right: 10px;
     padding-left: 10px; }
+    body .span-menu.span-menu-org.float-right {
+      padding-right: 0 !important; }
+    body .span-menu.span-menu-org.float-left {
+      padding-left: 0 !important;
+      margin-left: 0 !important; }
     body .span-menu svg path {
       fill: #17678C; }
   body .mini-menu {
@@ -12089,12 +12098,18 @@ body {
     -ms-transition-timing-function: ease;
     -o-transition-timing-function: ease;
     transition-timing-function: ease; }
+    body .mini-menu.mini-menu-org {
+      top: 100px; }
     body .mini-menu.menu-right {
       right: 40px; }
+      body .mini-menu.menu-right.mini-menu-org {
+        right: 28px; }
       body .mini-menu.menu-right a svg, body .mini-menu.menu-right button svg {
         float: left; }
     body .mini-menu.menu-left {
       left: 66px; }
+      body .mini-menu.menu-left.mini-menu-org {
+        left: 31px; }
       body .mini-menu.menu-left a svg,
       body .mini-menu.menu-left button svg {
         float: right; }
@@ -12644,7 +12659,6 @@ div.emp-profile img {
     box-shadow: none;
     background-color: rgba(23, 103, 140, 0.7) !important;
     border-radius: 0 !important;
-    padding: 0 !important;
     color: #fff !important; }
   .form-news-latter ::placeholder {
     color: rgba(255, 255, 255, 0.5); }

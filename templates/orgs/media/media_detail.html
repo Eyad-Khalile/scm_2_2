@@ -163,7 +163,7 @@
   {% if medias.count > 0 %}
   <div class="col-lg-3 d-none d-lg-block last3">
     <h2 class="text-center mb-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
-      {% trans 'أحدث ثلاثة دليل تطوير' %} </h2>
+      {% trans 'أحدث ثلاثة محتوى سمعي و بصري' %} </h2>
     {% for media in medias|slice:3 %}
     <a href="{% url 'media_detail' media.id %}" class='bg-light nav-link border-bottom pb-3 mb-2'>
       <div class="news-card">

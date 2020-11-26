@@ -280,7 +280,7 @@ def home(request):
     if news.first():
         first_news = news.first().id
     else:
-        first_news = _('لا يوجد حالي أخبار')
+        first_news = _('لا يوجد أخبار حالياً')
 
     # the Last job
     if jobs.first():

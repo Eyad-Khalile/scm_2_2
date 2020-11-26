@@ -67,7 +67,7 @@ def org_profile(request):
             if int(userprof) in orgs and not request.user.is_staff:
                 # print(orgs)
                 # print('is in')
-                messages.error(request, _('هذا المستخدم ليه طلب مسبقاً'))
+                messages.error(request, _('هذا المستخدم لديه طلب مسبقاً'))
                 return redirect('org_profile')
 
     else:

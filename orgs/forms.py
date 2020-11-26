@@ -50,8 +50,8 @@ class OrgProfileForm(forms.ModelForm):
                                 widget=forms.TextInput(
         attrs={'placeholder': _('هذا الحقل لا يقبل الحروف الخاصه و الرموز')})
     )
-    message = forms.CharField(max_length=2000, min_length=3, required=False, label="الرؤية و الرسالة", widget=forms.Textarea(
-        attrs={'placeholder': 'هذا الحقل لا يقبل الحروف الخاصه و الرموز'}))
+    message = forms.CharField(max_length=2000, min_length=3, required=False, label=_("الرؤية و الرسالة"), widget=forms.Textarea(
+        attrs={'placeholder': _('هذا الحقل لا يقبل الحروف الخاصه و الرموز')}))
 
     name_managing_director = forms.CharField(max_length=255, min_length=3, required=False, label=_('اسم رئيس مجلس اﻹدارة'),
                                              widget=forms.TextInput(

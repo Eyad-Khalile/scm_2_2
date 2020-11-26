@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-25 20:53+0000\n"
+"POT-Creation-Date: 2020-11-26 09:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -165,14 +165,17 @@ msgstr "A Glance About The Entity"
 
 #: orgs/forms.py:13
 msgid "حقل إجباري, يرجى إدخال بريد إلكتروني صحيح لتتمكن من تفعيل حسابك"
-msgstr "Required Filed, Please Input A Valid Email Address In Order To Activate Your Account"
+msgstr ""
+"Required Filed, Please Input A Valid Email Address In Order To Activate Your "
+"Account"
 
 #: orgs/forms.py:13
 msgid "عنوان بريد إلكتروني"
 msgstr "Email Address"
 
-#: orgs/forms.py:43 orgs/forms.py:47 orgs/forms.py:51 orgs/forms.py:58
-#: orgs/forms.py:62 orgs/forms.py:78 orgs/forms.py:86 orgs/forms.py:90
+#: orgs/forms.py:43 orgs/forms.py:47 orgs/forms.py:51 orgs/forms.py:54
+#: orgs/forms.py:58 orgs/forms.py:62 orgs/forms.py:78 orgs/forms.py:86
+#: orgs/forms.py:90
 msgid "هذا الحقل لا يقبل الحروف الخاصه و الرموز"
 msgstr "This Field Does Not Accept Special Characters And Symbols"
 
@@ -186,6 +189,12 @@ msgstr "The Organisation Name In English Or Kurdish"
 #: templates/profiles/particip_detail.html:100
 msgid "الاسم المختصر"
 msgstr "The Acronym"
+
+#: orgs/forms.py:53 orgs/models.py:378
+#: templates/profiles/particip_detail.html:182
+#: templates/profiles/profile.html:114 templates/profiles/staff_profile.html:54
+msgid "الرؤية و الرسالة"
+msgstr "Vision And Mission"
 
 #: orgs/forms.py:56 orgs/models.py:383
 #: templates/profiles/particip_detail.html:199
@@ -967,7 +976,7 @@ msgstr "No"
 msgid "نعم"
 msgstr "Yes"
 
-#: orgs/models.py:228 orgs/views.py:289
+#: orgs/models.py:228 orgs/views.py:291
 msgid "لا يوجد"
 msgstr "None"
 
@@ -1008,7 +1017,7 @@ msgid "سياسة استخدام المعدات"
 msgstr "Using Equipment Policy"
 
 #: orgs/models.py:238 templates/combonents/footer.html:136
-#: templates/orgs/politic.html:3 templates/orgs/politic.html:9
+#: templates/orgs/politic.html:4 templates/orgs/politic.html:11
 msgid "سياسة الخصوصية"
 msgstr "Privacy Policy"
 
@@ -1218,11 +1227,6 @@ msgstr "Workplace"
 msgid "شعار المنظمة"
 msgstr "The Organisation Motto"
 
-#: orgs/models.py:378 templates/profiles/particip_detail.html:182
-#: templates/profiles/profile.html:114 templates/profiles/staff_profile.html:54
-msgid "الرؤية و الرسالة"
-msgstr "Vision And Mission"
-
 #: orgs/models.py:397 templates/profiles/particip_detail.html:441
 #: templates/profiles/profile.html:384
 #: templates/profiles/staff_profile.html:315
@@ -1275,7 +1279,8 @@ msgstr "Policies And Written Rules"
 #: templates/profiles/profile.html:267
 #: templates/profiles/staff_profile.html:198
 msgid "ھل المؤسسة عضو في اي شبكة او تحالف او جسم تنسیقي؟"
-msgstr "Is The Constitution Member In Any Network Or Alliance Or Coordinating Body"
+msgstr ""
+"Is The Constitution Member In Any Network Or Alliance Or Coordinating Body"
 
 #: orgs/models.py:464 templates/orgs/centre_news.html:17
 #: templates/orgs/centre_news_detail.html:11
@@ -1533,205 +1538,222 @@ msgstr "The Article"
 msgid "رابط فيديو"
 msgstr "video link"
 
-#: orgs/views.py:110
+#: orgs/views.py:112
 #, python-brace-format
 msgid ""
 "تم إنشاء حسابك بنجاح باسم المستخدم ( {username} ) !, يرجى تأكيد عنوان بريدك "
 "الإلكتروني لإكمال التسجيل "
-msgstr "Your Account Was Successfully Created With The User Name ( {username} ), Please Confirm Your Email Address To To Complete Registration"
+msgstr ""
+"Your Account Was Successfully Created With The User Name ( {username} ), "
+"Please Confirm Your Email Address To To Complete Registration"
 
-#: orgs/views.py:118
+#: orgs/views.py:120
 #, python-brace-format
 msgid ""
 "يرجى التسجيل باستخدام عنوان بريد إلكتروني آخر، هذا البريد الإلكتروني "
 "( {user_email} ) مستخدم مسبقاً"
-msgstr "Please, Sign Up Using Other Email Address, This Email Address ( {user_email} ) Is Already In Use"
+msgstr ""
+"Please, Sign Up Using Other Email Address, This Email Address "
+"( {user_email} ) Is Already In Use"
 
-#: orgs/views.py:210
+#: orgs/views.py:212
 msgid "لقد تم حذف المحافظه بنجاح"
 msgstr "The Province Was Deleted Successfully"
 
-#: orgs/views.py:277
+#: orgs/views.py:279
 msgid "لا يوجد حاليا منظمات"
 msgstr "There Are No Organisations Currently"
 
-#: orgs/views.py:283
+#: orgs/views.py:285
 msgid "لا يوجد أخبار حالياً"
 msgstr "There Is No News Currently"
 
-#: orgs/views.py:295
+#: orgs/views.py:297
 msgid "لا يوجد حاليا فرص بناء"
 msgstr "There Are No Building Opportunities Currently"
 
-#: orgs/views.py:305
+#: orgs/views.py:307
 msgid "لقد تم طلب الاشتراك بآخر اﻷخبار بنجاح"
 msgstr "The News Feed Subscription Was Successfully Requested"
 
-#: orgs/views.py:313
+#: orgs/views.py:315
 msgid "هذا البريد الالكتروني موجود مسبقاً يرجى التسجيل ببريد الكتروني أخر"
-msgstr "This Email Address Is Already Existing, Please Sign Up Using Another Email Address"
+msgstr ""
+"This Email Address Is Already Existing, Please Sign Up Using Another Email "
+"Address"
 
-#: orgs/views.py:443
+#: orgs/views.py:445
 msgid "لقد تمت إضافة الخبر بنجاح و ستتم دراسته قريباً"
 msgstr "The Story Was Successfully Added, And It Will Be Reviewed Soon"
 
-#: orgs/views.py:493
+#: orgs/views.py:495
 msgid "لقد تم تغيير حالة الخبر بنجاح"
 msgstr "The Story Statue Was Successfully Changed "
 
-#: orgs/views.py:521
+#: orgs/views.py:523
 msgid "لقد تم تعديل الخبر بنجاح"
 msgstr "The Story Statue Was Successfully Changed"
 
-#: orgs/views.py:543
+#: orgs/views.py:545
 msgid "لقد تم حذف الخبر بنجاح"
 msgstr "The Story Was Deleted Successfully"
 
-#: orgs/views.py:570
+#: orgs/views.py:572
 msgid "لقد تمت إضافة التقرير بنجاح و ستتم دراسته قريباً"
 msgstr "The Report Was Successfully Added, And It Will Be Reviewed Soon"
 
-#: orgs/views.py:641
+#: orgs/views.py:643
 msgid "لقد تم تعديل حالة التقرير بنجاح"
 msgstr "The Report Statue Was Edited Successfully"
 
-#: orgs/views.py:665
+#: orgs/views.py:667
 msgid "لقد تم حذف التقرير بنجاح"
 msgstr "The Report Was Deleted Successfully"
 
-#: orgs/views.py:688
+#: orgs/views.py:690
 msgid "لقد تمت تعديل التقرير بنجاح"
 msgstr "The Report Was Edited Successfully"
 
-#: orgs/views.py:740
+#: orgs/views.py:742
 msgid "لقد تمت إضافة البيان بنجاح و ستتم دراسته قريباً"
 msgstr "The Statement Was Successfully Added, And It Will Be Reviewed Soon"
 
-#: orgs/views.py:766
+#: orgs/views.py:768
 msgid "لقد تم تعديل حالة البيان بنجاح"
 msgstr "The Statement Statue Was Edited Successfully"
 
-#: orgs/views.py:816
+#: orgs/views.py:818
 msgid "لقد تم تعديل البيان بنجاح"
 msgstr "The Statement Was Edited Successfully"
 
-#: orgs/views.py:835
+#: orgs/views.py:837
 msgid "لقد تم حذف البيان بنجاح"
 msgstr "The Statement Was Deleted Successfully"
 
-#: orgs/views.py:881
+#: orgs/views.py:883
 msgid "لقد تمت إضافة المحتوى بنجاح و ستتم دراسته قريباً"
 msgstr "The Content Was Successfully Added, And It Will Be Reviewed Soon"
 
-#: orgs/views.py:908
+#: orgs/views.py:910
 msgid "لقد تم تعديل حالة المحتوى بنجاح"
 msgstr "The Content Statue Was Edited Successfully"
 
-#: orgs/views.py:958
+#: orgs/views.py:960
 msgid "لقد تم تعديل المحتوى بنجاح"
 msgstr "The Content Was Edited Successfully"
 
-#: orgs/views.py:978
+#: orgs/views.py:980
 msgid "لقد تم حذف المحتوى بنجاح"
 msgstr "The Content Was Deleted Successfully"
 
-#: orgs/views.py:1024
+#: orgs/views.py:1026
 msgid "لقد تمت إضافة البحث بنجاح و ستتم دراسته قريباً"
 msgstr "The Research Was Successfully Added, And It Will Be Reviewed Soon"
 
-#: orgs/views.py:1053
+#: orgs/views.py:1055
 msgid "لقد تم تعديل حالة البحث بنجاح"
 msgstr "The Research Statue Was Edited Successfully"
 
-#: orgs/views.py:1104
+#: orgs/views.py:1106
 msgid "لقد تم تعديل البحث بنجاح"
 msgstr "The Research Was Edited Successfully"
 
-#: orgs/views.py:1124
+#: orgs/views.py:1126
 msgid "لقد تم حذف البحث بنجاح"
 msgstr "The Research Was Deleted Successfully"
 
-#: orgs/views.py:1276 orgs/views.py:1291
+#: orgs/views.py:1278 orgs/views.py:1293
 msgid "لقد تمت إضافة فرصة العمل بنجاح و ستتم دراستها قريباً"
-msgstr "The Job Opportunity Was Successfully Added, And It Will Be Reviewed Soon"
+msgstr ""
+"The Job Opportunity Was Successfully Added, And It Will Be Reviewed Soon"
 
-#: orgs/views.py:1356
+#: orgs/views.py:1358
 msgid "لقد تم تغيير حالة فرصة العمل بنجاح"
 msgstr "The Job Opportunity Statue Was Edited Successfully"
 
-#: orgs/views.py:1393
+#: orgs/views.py:1395
 msgid "لقد تم تعديل فرصة العمل بنجاح"
 msgstr "The Job Opportunity Was Edited Successfully"
 
-#: orgs/views.py:1416
+#: orgs/views.py:1418
 msgid "لقد تم حذف فرصة العمل بنجاح"
 msgstr "The Job Opportunity Was Deleted Successfully"
 
-#: orgs/views.py:1472
+#: orgs/views.py:1474
 msgid "لقد تم تسجيل طلب فرصة التمويل بنجاح و ستتم دراسته قريباً"
-msgstr "The Funding Opportunity Request Was Successfully Registered, And It Will Be Reviewed Soon"
+msgstr ""
+"The Funding Opportunity Request Was Successfully Registered, And It Will Be "
+"Reviewed Soon"
 
-#: orgs/views.py:1476
+#: orgs/views.py:1478
 msgid "رجاءً أدخل اسم المنظمة أو الجهة المانحة لتتم دراسة فرصة التمويل"
-msgstr "Please, Enter The Organisation Name Or The Donor To Review The Funding Opportunity"
+msgstr ""
+"Please, Enter The Organisation Name Or The Donor To Review The Funding "
+"Opportunity"
 
-#: orgs/views.py:1504
+#: orgs/views.py:1506
 msgid "لقد تم تغيير حالة فرصة التمويل بنجاح"
 msgstr "The Funding Opportunity Statue Was Changed Successfully"
 
-#: orgs/views.py:1531 orgs/views.py:1711
+#: orgs/views.py:1533 orgs/views.py:1713
 msgid "لقد تم تعديل فرصة التمويل بنجاح"
 msgstr "The Funding Opportunity Was Edited Successfully"
 
-#: orgs/views.py:1552 orgs/views.py:1732
+#: orgs/views.py:1554 orgs/views.py:1734
 msgid "لقد تم حذف فرصة التمويل بنجاح"
 msgstr "The Funding Opportunity Was Deleted Successfully"
 
-#: orgs/views.py:1628
+#: orgs/views.py:1630
 msgid "لقد تمت إضافة فرصة التمويل بنجاح و ستتم دراسته قريباً"
-msgstr "The Funding Opportunity Was Successfully Added, And It Will Be Reviewed Soon"
+msgstr ""
+"The Funding Opportunity Was Successfully Added, And It Will Be Reviewed Soon"
 
-#: orgs/views.py:1633
+#: orgs/views.py:1635
 msgid "يحب إدخال اسم منظمة أو اسم الجهة المانحة لنتمكن من دراسة فرصة التمويل"
-msgstr "The Organisation Name Or The Donor Name Must Be Entered To Review Funding Opportunity"
+msgstr ""
+"The Organisation Name Or The Donor Name Must Be Entered To Review Funding "
+"Opportunity"
 
-#: orgs/views.py:1683
+#: orgs/views.py:1685
 msgid "لقد تم تغيير حالة المنحة  بنجاح"
 msgstr "The Grant Statue Was Changed Successfully"
 
-#: orgs/views.py:1784
+#: orgs/views.py:1786
 msgid "لقد تمت إضافة فرصة بناء القدرات بنجاح و ستتم دراسته قريباً"
-msgstr "The Capacity Building Opportunity Was Added Successfully, And It Will Be Reviewed Soon"
+msgstr ""
+"The Capacity Building Opportunity Was Added Successfully, And It Will Be "
+"Reviewed Soon"
 
-#: orgs/views.py:1789
+#: orgs/views.py:1791
 msgid "يجب إدخال اسم الجهة المانحة لنتمكن من دراسة الفرصة"
 msgstr "The Donor Name Must Be Entered To Review The Opportunity"
 
-#: orgs/views.py:1839
+#: orgs/views.py:1841
 msgid "لقد تم تغيير حالة فرصة بناء القدرات  بنجاح"
 msgstr "The Capacity Building Opportunity Statue Was Changed Successfully"
 
-#: orgs/views.py:1868
+#: orgs/views.py:1870
 msgid "لقد تم تعديل فرصة بناء القدرات بنجاح"
 msgstr "The Capacity Building Opportunity Was Edited Successfully"
 
-#: orgs/views.py:1892
+#: orgs/views.py:1894
 msgid "لقد تم حذف فرصة بناء القدرات بنجاح"
 msgstr "The Capacity Building Opportunity Was Deleted Successfully"
 
-#: orgs/views.py:1940
+#: orgs/views.py:1942
 msgid "لقد تمت إضافة دليل تطوير بنجاح و ستتم دراسته قريباً"
-msgstr "The Development Index Was Added Successfully, And It Will Be Reviewed Soon"
+msgstr ""
+"The Development Index Was Added Successfully, And It Will Be Reviewed Soon"
 
-#: orgs/views.py:1990
+#: orgs/views.py:1992
 msgid "لقد تم تغيير حالة دليل تطوير بنجاح"
 msgstr "The Development Index Statue Was Changed Successfully"
 
-#: orgs/views.py:2018
+#: orgs/views.py:2020
 msgid "لقد تم تعديل دليل التطوير بنجاح"
 msgstr "The Development Index Was Edited Successfully"
 
-#: orgs/views.py:2101
+#: orgs/views.py:2103
 msgid "لقد تم ارسال الدعوة "
 msgstr "The Invitation Was Sent"
 
@@ -1984,7 +2006,7 @@ msgstr "Log Out"
 #: templates/combonents/main-navbar.html:291
 #: templates/register/password_change_done.html:24
 #: templates/register/signe-in.html:2 templates/register/signe-in.html:19
-#: templates/register/signe-in.html:24 templates/register/signe-in.html:30
+#: templates/register/signe-in.html:39 templates/register/signe-in.html:46
 msgid "تسجيل الدخول"
 msgstr "Log In"
 
@@ -2095,7 +2117,9 @@ msgstr "Add Building Capacities Opportunity"
 
 #: templates/combonents/sidebar_dashboard.html:217
 msgid "فرص بناء القدرات للمنظمات قيد الدراسة"
-msgstr "Building Capacities Opportunities For The Organisations Are Under Consideration"
+msgstr ""
+"Building Capacities Opportunities For The Organisations Are Under "
+"Consideration"
 
 #: templates/combonents/sidebar_dashboard.html:225
 #: templates/orgs/devs/org_add_dev.html:4
@@ -2496,7 +2520,8 @@ msgstr "Statements Under Consideration"
 
 #: templates/orgs/data/data_not_pub.html:127
 msgid " لا يوجد حالياً بيانات قيد الدراسة منشورة للمنظمات"
-msgstr "There Are No Statements Under Consideration For The Organisations Currently"
+msgstr ""
+"There Are No Statements Under Consideration For The Organisations Currently"
 
 #: templates/orgs/data/delete_data.html:3
 #: templates/orgs/data/delete_data.html:10
@@ -2560,7 +2585,8 @@ msgstr "Add Development Index"
 
 #: templates/orgs/devs/dev_not_pub.html:131
 msgid "لا يوجد حالياً دليل تطوير منشور من قبل المنظمات قيد الدراسة"
-msgstr "There is currently no organization published development guide in place Study"
+msgstr ""
+"There is currently no organization published development guide in place Study"
 
 #: templates/orgs/devs/org_add_dev.html:10
 msgid "اضافة دليل تطوير"
@@ -2615,7 +2641,8 @@ msgstr "The latest three development guides"
 
 #: templates/orgs/devs/org_devs.html:137
 msgid "لا يوجد حالياً دليل تطوير منشور من قبل المنظمات"
-msgstr "There Is No Published Development Index For The Organisations Currently"
+msgstr ""
+"There Is No Published Development Index For The Organisations Currently"
 
 #: templates/orgs/devs/org_edit_dev.html:4
 #: templates/orgs/devs/org_edit_dev.html:10
@@ -2673,7 +2700,8 @@ msgstr "Editing Funding Opportunity"
 
 #: templates/orgs/funding_opport/orgs/org_funding.html:138
 msgid "لا يوجد حالياً فرص تمويل منشورة من قبل المنظمات"
-msgstr "There Are No Published Funding Opportunities By The Organisations Currently"
+msgstr ""
+"There Are No Published Funding Opportunities By The Organisations Currently"
 
 #: templates/orgs/funding_opport/orgs/org_funding_delete.html:4
 #: templates/orgs/funding_opport/orgs/org_funding_delete.html:11
@@ -2727,7 +2755,9 @@ msgstr "Funding Opportunities For The Individuals To Accept Publishing "
 #: templates/orgs/funding_opport/pers/not_pub.html:134
 #: templates/orgs/funding_opport/pers/pub.html:139
 msgid "لا يوجد حالياً فرص للأفراد تمويل منشورة من قبل المنظمات"
-msgstr "There Are No Published Funding Opportunities For The Individuals By The Organisations "
+msgstr ""
+"There Are No Published Funding Opportunities For The Individuals By The "
+"Organisations "
 
 #: templates/orgs/funding_opport/pers/pub.html:4
 #: templates/orgs/funding_opport/pers/pub.html:11
@@ -2775,7 +2805,8 @@ msgstr "Read More"
 #: templates/orgs/guid/orgs_guide.html:83
 #: templates/orgs/guid/orgs_guide.html:88
 msgid "طلبات اشتراك المنظمات قيد الدراسة"
-msgstr "The Applies For Participation To The Organisations Are Under Consideration"
+msgstr ""
+"The Applies For Participation To The Organisations Are Under Consideration"
 
 #: templates/orgs/guid/orgs_guide.html:201
 #: templates/profiles/orgs_orders_published.html:81
@@ -2899,7 +2930,8 @@ msgstr "The Audio-Visual Content Is Under Consideration"
 #: templates/orgs/media/media_not_pub.html:128
 msgid ""
 "لا يوجد حالياً محتوى سمعي و بصري منشور من قبل المنظمات للموافقة على النشر"
-msgstr "There Is No Published Audio-Visual Content By The Organisation To Publish"
+msgstr ""
+"There Is No Published Audio-Visual Content By The Organisation To Publish"
 
 #: templates/orgs/news/org_add_news.html:32
 msgid "انشر الخبر"
@@ -2943,9 +2975,8 @@ msgid "إلغاء نشر الخبر"
 msgstr "Cancel Publishing The News Item"
 
 #: templates/orgs/news/orgs_news_detail.html:73
-#: templates/orgs/rapport/detail_rapport.html:75
-msgid "تاريخ إضافة التقرير"
-msgstr "Adding The Report Date"
+msgid "تاريخ إضافة الخبر"
+msgstr "Adding The News Date"
 
 #: templates/orgs/news/orgs_news_detail.html:97
 msgid "اسم اللذي أضاف الخبر"
@@ -2990,7 +3021,7 @@ msgstr "The Portal News Under Consideration"
 msgid "لا يوجد حالياً أخبار جديدة عن البوابة"
 msgstr "There Is No News About The Portal Currently "
 
-#: templates/orgs/politic.html:94
+#: templates/orgs/politic.html:100
 msgid "عودة إلى الصفحة الرئيسية"
 msgstr "Back To The Main Page"
 
@@ -3029,6 +3060,10 @@ msgstr "Cancelling To Publish The Report"
 #: templates/orgs/rapport/edit_rapport.html:8
 msgid "تعديل التقرير"
 msgstr "Editing The Report"
+
+#: templates/orgs/rapport/detail_rapport.html:75
+msgid "تاريخ إضافة التقرير"
+msgstr "Adding The Report Date"
 
 #: templates/orgs/rapport/detail_rapport.html:96
 msgid "اسم اللذي أضاف التقرير"
@@ -3321,7 +3356,9 @@ msgstr "Complete The Personal Profile For The Organisation"
 #: templates/profiles/org_profile_form.html:37
 #: templates/profiles/org_profile_form.html:66
 msgid "هذا الحقل لا يقبل أقل من 3 حروف و لا يقبل اﻷحرف الخاصه و الرموز"
-msgstr "This Field Does Not Accept Less Than Three Letters, Or Special Characters And Symbols"
+msgstr ""
+"This Field Does Not Accept Less Than Three Letters, Or Special Characters "
+"And Symbols"
 
 #: templates/profiles/org_profile_update.html:2
 #: templates/profiles/org_profile_update.html:8
@@ -3466,7 +3503,9 @@ msgstr "Back To Civil Society Index's Page"
 msgid ""
 "رجاءً أتمم ملف المنظمة الشخصي لنتمكن من التحقق من معلوماتكم و تتمكنون من "
 "استخدام الموقع"
-msgstr "Please, Complete The Organisation Personal Profile, To Verify Your Information, And Be Able To Use The Website"
+msgstr ""
+"Please, Complete The Organisation Personal Profile, To Verify Your "
+"Information, And Be Able To Use The Website"
 
 #: templates/profiles/profile.html:466
 msgid "ملف المنظمة الشخصي"
@@ -3514,7 +3553,7 @@ msgstr "You Can Log In Using Your New Password "
 #: templates/register/password_reset.html:6
 #: templates/register/password_reset.html:35
 #: templates/register/password_reset_confirm.html:26
-#: templates/register/signe-in.html:36
+#: templates/register/signe-in.html:52
 msgid "إعادة تعيين كلمة المرور"
 msgstr "Reset Your Password"
 
@@ -3577,15 +3616,15 @@ msgstr "You have already signed in, you can go to the home page"
 msgid "الذهاب إلى الصفحة الرئيسية"
 msgstr "Go to the home page"
 
-#: templates/register/signe-in.html:35
+#: templates/register/signe-in.html:51
 msgid "هل نسيت كلمة المرور"
 msgstr "Did You Forget Your Password?"
 
-#: templates/register/signe-in.html:39
+#: templates/register/signe-in.html:55
 msgid "إذا لم يكن لديك حساب ! يمكنك"
 msgstr "If You Do Not Have An Account, You Can"
 
-#: templates/register/signe-in.html:40
+#: templates/register/signe-in.html:56
 msgid "إنشاء حساب"
 msgstr "Create An Account "
 

@@ -494,7 +494,7 @@ class OrgRapport(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE)
     org_name = models.ForeignKey(
-        OrgProfile, on_delete=models.CASCADE, null=False, blank=True)
+        OrgProfile, on_delete=models.CASCADE, null=False, blank=True, verbose_name=_('اسم المنظمة'))
 
     title = models.CharField(max_length=255, null=False,
                              verbose_name=_('عنوان التقرير'))
@@ -519,7 +519,7 @@ class OrgData(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE)
     org_name = models.ForeignKey(
-        OrgProfile, on_delete=models.CASCADE, null=False, blank=True)
+        OrgProfile, on_delete=models.CASCADE, null=False, blank=True, verbose_name=_('اسم المنظمة'))
 
     title = models.CharField(max_length=255, null=False,
                              verbose_name=_('عنوان البيان'))

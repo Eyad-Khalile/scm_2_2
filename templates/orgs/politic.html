@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
-{% get_current_language as LANGUAGE_CODE %}
+{% load i18n %}
+
 {% block title %} {% trans 'سياسة الخصوصية' %} {% endblock %}
 
 {% block content %}
+{% get_current_language as LANGUAGE_CODE %}
 
 <div class="mt-5">
 
     <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">{% trans 'سياسة الخصوصية' %}</h1>
 
     {% if LANGUAGE_CODE == 'ar' %}
-    <p class="text-al-just">ما هو لوريم ايبسوم Lorem ipsum
+
+    <!-- <p class="text-al-just">ما هو لوريم ايبسوم Lorem ipsum
         لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت
         تصاميم
         مطبوعه ... بروشور او فلاير على سبيل المثال ... او نماذج مواقع انترنت ...
@@ -87,7 +90,10 @@
 
         أ ساباينتي ديليكتيوس, يوت أيوت رياسايندايس فوليوبتاتايبص مايوريس ألايس
 
-        كونسيكيواتور أيوت بيرفيريندايس دولورايبيوس أسبيرايوريس ريبيللات .</p>
+        كونسيكيواتور أيوت بيرفيريندايس دولورايبيوس أسبيرايوريس ريبيللات .</p> -->
+
+    {% elif LANGUAGE_CODE == 'en' %}
+    <h2>Comming soon :)</h2>
 
     {% endif %}
 

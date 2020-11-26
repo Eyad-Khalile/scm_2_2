@@ -72,20 +72,22 @@ def signe_up(request):
                         'token': account_activation_token.make_token(user),
                     })
                     to_email = form.cleaned_data.get('email')
-                    # email = EmailMessage(
-                    #     subject, message, to=[to_email]
-                    # )
+                    email = EmailMessage(
+                        subject, message, to=[to_email]
+                    )
 
                     # print(email)
-                    # email.send()
-                    send_mail(
-                        subject,
-                        message,
-                        'khalile.eyad@gmail.com',
-                        [
-                            to_email,
-                        ]
-                    )
+                    email.send()
+
+                    # SENDGRID
+                    # send_mail(
+                    #     subject,
+                    #     message,
+                    #     'khalile.eyad@gmail.com',
+                    #     [
+                    #         to_email,
+                    #     ]
+                    # )
 
                     # message_send = Mail(
                     #     to_emails=to_email,

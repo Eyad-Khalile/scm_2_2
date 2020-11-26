@@ -8,7 +8,8 @@
 
 
 <div class="row mt-4 pt-4">
-  <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">{% trans 'تفاصيل البيان' %} </h1>
+  <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+    {% trans 'تفاصيل البيان' %} </h1>
 
 
   <div class="well col-lg-9 job-card col-xs-12 position-relative">
@@ -106,7 +107,8 @@
     {% endif %}
 
 
-
+    <!-- {{ request.scheme }} <br> {{ request.META.HTTP_HOST }} <br> {{ request.path }} <br> -->
+    <!-- {# {{ request.GET.urlencode }} #} -->
 
     <p class="row">
       <span class="col-3">
@@ -117,11 +119,18 @@
       </span>
     </p>
     {% if '.pdf' in data.media.url %}
-    <!-- <object data="{{ data.media.url }}" type="application/pdf" title="{{data.title}}" width="100%" height="885">
+
+    <!-- <object data="{{ request.META.HTTP_HOST }}{{ data.media.url }}" type="application/pdf" title="{{data.title}}"
+      width="100%" height="885">
       <embed src="{{ data.media.url  }}">
     </object> -->
-    <!-- <embed src="{{ data.media.url }}" width=800 height=500 type='application/pdf' /> -->
-    <iframe src="{{ data.media.url }}" style="width:600px; height:500px;" frameborder="0"></iframe>
+    <!-- <object data="{{ data.media.url }}" type="application/pdf" width="600" height="800">
+      lie alternatif : <a href="{{ data.media.url }}" target=_blank>test.pdf</a>
+    </object>
+    <embed src="{{ data.media.url }}" width=800 height=500 type='application/pdf' /> -->
+    <!-- <iframe src="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ data.media.url }}"
+      style="width:600px; height:500px;" frameborder="0"></iframe> -->
+    <iframe src="{{ data.media.url  }}" width="800" height="600" align="middle"></iframe>
     {% else %}
     <a href="">
       <img src="{{ data.media.url }}" name="{{ data.title }}" title="{{ data.title }}" alt="{{ data.title }}"

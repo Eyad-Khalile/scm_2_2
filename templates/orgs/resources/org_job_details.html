@@ -65,7 +65,7 @@
 
         <!-- START CART -->
         <strong>
-            <h2 class="text-center mt-3"> {% trans "اسم فرصة العمل" %} : {{ job.job_title }}</h2>
+            <h2 class="text-center mt-3" id="job_title"> {% trans "اسم فرصة العمل" %} : {{ job.job_title }}</h2>
         </strong>
 
         <hr>
@@ -233,31 +233,23 @@
             </span>
         </p>
 
-        <div class="social-share col-1 position-absolute d-flex {% if LANGUAGE_CODE == 'ar'%} flex-column align-items-end
-                   right {% else %} flex-column align-items-start left {% endif %}">
-            <!-- FACEBOOK -->
+        <!-- SOCIAL -->
 
-            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}"
-                class="btn position-relative mb-2" title="{% trans 'مشاركة على فيسبوك' %}">
-                <i class="fab fa-facebook-f"></i>
+        <div class="social-share col-1 position-absolute d-flex flex-column align-items-center {% if LANGUAGE_CODE == 'ar'%}
+      right {% else %} left {% endif %}">
+
+            <a href="#" class="facebook-btn" target="_blank" title="{% trans 'مشاركة على فيسبوك' %}">
+                <i class="fab fa-facebook"></i>
             </a>
-
-            <!-- TWITTER -->
-
-            <a target="_blank"
-                href="https://twitter.com/home?status={{ share_string }}%20{{ request.build_absolute_uri }}"
-                class="btn position-relative mt-2 mb-2 mt-0" title="{% trans 'مشاركة على تويتر' %}">
+            <a href="#" class="twitter-btn" target="_blank" title="{% trans 'مشاركة على تويتر' %}">
                 <i class="fab fa-twitter"></i>
             </a>
-
-            <!-- LINKEDIN -->
-
-            <a target="_blank"
-                href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ job.title }}&summary={{ share_string }}&source={{ request.build_absolute_uri }}"
-                class="btn position-relative mt-2 mt-0" title="{% trans 'مشاركة على لينكدين' %}">
-                <i class="fab fa-linkedin-in"></i>
+            <a href="#" class="linkedin-btn" target="_blank" title="{% trans 'مشاركة على لينكدين' %}">
+                <i class="fab fa-linkedin"></i>
             </a>
-
+            <a href="#" class="whatsapp-btn" target="_blank" title="{% trans 'مشاركة على واتس اب' %}">
+                <i class="fab fa-whatsapp"></i>
+            </a>
         </div>
 
 

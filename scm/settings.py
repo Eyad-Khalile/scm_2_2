@@ -51,8 +51,6 @@ INSTALLED_APPS = [
     'phonenumber_filter',
     'django_filters',
     #  'django_social_share',
-    # 'ckeditor',
-    # 'django_template_maths',
 
 ]
 

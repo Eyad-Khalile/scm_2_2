@@ -11,7 +11,6 @@ from django.core.mail import send_mail
 from django.template.loader import get_template
 from django.template import Context
 from django.conf import settings
-from ckeditor.fields import RichTextField
 import os
 
 
@@ -343,6 +342,10 @@ class City(models.Model):
         max_length=150, null=False, default=None, choices=MyChoices.country_CHOICES, verbose_name=_('الدولة'))
     city_work = models.CharField(max_length=255, null=False,
                                  verbose_name=_('اسم المحافظة'))
+    city_work_en = models.CharField(max_length=255, null=True, blank=True, default='',
+                                    verbose_name=_('City En'))
+    city_work_ku = models.CharField(max_length=255, null=True, blank=True, default='',
+                                    verbose_name=_('City Ku'))
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True, default=None)
@@ -376,8 +379,6 @@ class OrgProfile(models.Model):
                              null=False, default='org_logos/default_logo.jpg', verbose_name=_("شعار المنظمة"))
     message = models.TextField(
         max_length=2000, null=False, verbose_name=_("الرؤية و الرسالة"))
-    # message = RichTextField(
-    #     null=True, blank=True, verbose_name=_("الرؤية و الرسالة"))
 
     name_managing_director = models.CharField(
         max_length=255, null=True, blank=True, verbose_name=_("اسم رئيس مجلس اﻹدارة"))

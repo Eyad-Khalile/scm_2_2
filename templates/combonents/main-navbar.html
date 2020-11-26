@@ -14,7 +14,7 @@
         <!-- <img src="{% static 'media/main_logo/logo.png' %}" alt="">
         </a> -->
         <a class="navbar-brand" href="{% url 'home' %}">
-            <img src="{% static 'media/main_logo/logo.png' %}" alt="" width="60">
+            <img src="{% static 'media/main_logo/logo_3.png' %}" alt="" width="60">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -138,7 +138,7 @@
                                 href="{% url 'funding' %}"> {% trans 'فرص التمويل' %} </a>
                         </li>
                         <li>
-                            <a class="dropdown-item {% if request.resolver_match.url_name == 'resource_stectur' %} active {% endif %}"
+                            <a class="dropdown-item {% if request.resolver_match.url_name == 'orgs_capacity' %} active {% endif %}"
                                 href="{% url 'orgs_capacity' %}"> {% trans 'فرص بناء القدرات' %} </a>
                         </li>
                         <li>
@@ -179,8 +179,8 @@
                                 href="{% url 'funding' %}"> {% trans 'فرص التمويل' %} </a>
                         </li>
                         <li>
-                            <a class="dropdown-item {% if request.resolver_match.url_name == 'resource_stectur' %} active {% endif %}"
-                                href="{% url 'resource_stectur' %}"> {% trans 'فرص بناء القدرات' %} </a>
+                            <a class="dropdown-item {% if request.resolver_match.url_name == 'orgs_capacity' %} active {% endif %}"
+                                href="{% url 'orgs_capacity' %}"> {% trans 'فرص بناء القدرات' %} </a>
                         </li>
                         <li>
                             <a class="dropdown-item {% if request.resolver_match.url_name == 'orgs_devs' %} active {% endif %}"

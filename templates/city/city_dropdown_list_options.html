@@ -1,3 +1,5 @@
+{% load static i18n %}
+
 <option value="">---------</option>
 {% for city in cities %}
 <option value="{{ city.pk }}">{{ city.city_work }}</option>

@@ -1131,67 +1131,6 @@ def delete_research(request, research_id):
     return render(request, 'orgs/research/delete_research.html', context)
 
 
-# RECOURCE
-
-def resource(request):
-    return render(request, 'orgs/resource/resource.html')
-
-
-def resource_work(request):
-    return render(request, 'orgs/resource/resource_work.html')
-
-
-def resource_work_detail(request, work_id):
-    id = work_id
-    context = {
-        'id': id,
-    }
-    return render(request, 'orgs/resource/resource_work_detail.html', context)
-
-
-def resource_finance(request):
-    return render(request, 'orgs/resource/resource_finance.html')
-
-
-def resource_finance_orgs(request):
-    return render(request, 'orgs/resource/resource_finance_orgs.html')
-
-
-def resource_finance_orgs_detail(request, id):
-    id = id
-    context = {
-        'id': id,
-    }
-    # 8
-    return render(request, 'orgs/resource/resource_finance_orgs_detail.html', context)
-
-
-def resource_stectur(request):
-    return render(request, 'orgs/resource/resource_strectur.html')
-
-
-def resource_stectur_detail(request, id):
-    id = id
-    context = {
-        'id': id,
-    }
-    # 10
-    return render(request, 'orgs/resource/resource_strectur_detail.html', context)
-
-
-def resource_upgrade(request):
-    return render(request, 'orgs/resource/resource_upgrade.html')
-
-
-def resource_upgrade_detail(request, id):
-    id = id
-    context = {
-        'id': id,
-    }
-    # 12
-    return render(request, 'orgs/resource/resource_upgrade_detail.html', context)
-
-
 # CENTRE NEWS
 def centre_news(request):
     return render(request, 'orgs/centre_news.html')

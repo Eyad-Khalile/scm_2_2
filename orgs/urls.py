@@ -120,18 +120,6 @@ urlpatterns = [
 
 
 
-
-
-
-
-
-
-
-
-    path('resource_work_detail/<str:work_id>',
-         views.resource_work_detail, name="resource_work_detail"),
-    path('resource_finance/', views.resource_finance, name="resource_finance"),
-
     # FINANCE PERSO
     path('finance_perso/', views.finance_perso,
          name="finance_perso"),
@@ -147,21 +135,11 @@ urlpatterns = [
          views.finance_perso_delete, name="finance_perso_delete"),
 
 
-    path('resource_finance_orgs/', views.resource_finance_orgs,
-         name="resource_finance_orgs"),
-    path('resource_finance_orgs_detail/<str:id>',
-         views.resource_finance_orgs_detail, name="resource_finance_orgs_detail"),
-    path('resource_stectur/', views.resource_stectur, name="resource_stectur"),
-    path('resource_stectur_detail/<str:id>',
-         views.resource_stectur_detail, name="resource_stectur_detail"),
-    path('resource_upgrade/', views.resource_upgrade, name="resource_upgrade"),
-    path('resource_upgrade_detail/<str:id>',
-         views.resource_upgrade_detail, name="resource_upgrade_detail"),
 
     # CENTRE NEWS
-    path('centre_news/', views.centre_news, name="centre_news"),
-    path('centre_news_detail/<str:id>',
-         views.centre_news_detail, name="centre_news_detail"),
+    #     path('centre_news/', views.centre_news, name="centre_news"),
+    #     path('centre_news_detail/<str:id>',
+    #          views.centre_news_detail, name="centre_news_detail"),
 
     # CONTACT-US
     # path('contact', views.contact, name="contact"),

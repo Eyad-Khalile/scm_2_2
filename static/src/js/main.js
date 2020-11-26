@@ -162,7 +162,7 @@ $('#carouselHomePage').find('img').css('height', screen_height + 'px !important'
 
 $('#carouselHomePage').carousel({
     pause: false,
-    interval: 4000,
+    interval: 5000,
 });
 
 

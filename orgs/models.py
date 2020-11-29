@@ -519,6 +519,16 @@ class OrgRapport(models.Model):
     def __str__(self):
         return self.title
 
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        super().save(force_insert, force_update, using, update_fields)
+        extension = os.path.splitext(self.media.name)
+        if extension != '.pdf':
+            img = Image.open(self.media.path)
+            if img.height > 1600 or img.width > 1600:
+                output_size = (1600, 1600)
+                img.thumbnail(output_size)
+                img.save(self.media.path)
+
 # :::::::::: ORGS DATA :::::::::::::::::
 
 
@@ -541,6 +551,16 @@ class OrgData(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        super().save(force_insert, force_update, using, update_fields)
+        extension = os.path.splitext(self.media.name)
+        if extension != '.pdf':
+            img = Image.open(self.media.path)
+            if img.height > 1600 or img.width > 1600:
+                output_size = (1600, 1600)
+                img.thumbnail(output_size)
+                img.save(self.media.path)
 
 # :::::::::: ORGS MEDIA :::::::::::::::::
 
@@ -566,6 +586,16 @@ class OrgMedia(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        super().save(force_insert, force_update, using, update_fields)
+        extension = os.path.splitext(self.media.name)
+        if extension != '.pdf':
+            img = Image.open(self.media.path)
+            if img.height > 1600 or img.width > 1600:
+                output_size = (1600, 1600)
+                img.thumbnail(output_size)
+                img.save(self.media.path)
 
 
 # :::::::::: ORGS RESEARCH :::::::::::::::::
@@ -596,6 +626,18 @@ class OrgResearch(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        super().save(force_insert, force_update, using, update_fields)
+        extension = os.path.splitext(self.media.name)
+        if extension != '.pdf':
+            img = Image.open(self.media.path)
+            if img.height > 1600 or img.width > 1600:
+                output_size = (1600, 1600)
+                img.thumbnail(output_size)
+                img.save(self.media.path)
+
+
 # here is the sources of civiltey gate
 # add post (job opri)
 

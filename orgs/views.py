@@ -403,6 +403,7 @@ def news(request):
 def orgs_news(request):
     news = OrgNews.objects.filter(Q(publish=True) & ~Q(
         org_name__name='khalil')).order_by('-created_at')
+    org_prof_pub_check = OrgProfile.objects.filter(user=request.user).first()
 
     myFilter = OrgsNewsFilter(request.GET, queryset=news)
     news = myFilter.qs
@@ -418,6 +419,7 @@ def orgs_news(request):
     context = {
         'news': news,
         'myFilter': myFilter,
+        'org_prof_pub_check': org_prof_pub_check,
     }
     return render(request, 'orgs/news/orgs_news_news.html', context)
 
@@ -425,6 +427,8 @@ def orgs_news(request):
 # ORGS ADD NEWS
 @ login_required(login_url='signe_in')
 def orgs_add_news(request):
+
+    org_prof_pub_check = OrgProfile.objects.filter(user=request.user).first()
 
     if request.method == 'POST':
         form = NewsForm(request.POST or None, files=request.FILES)
@@ -450,6 +454,7 @@ def orgs_add_news(request):
 
     context = {
         'form': form,
+        'org_prof_pub_check': org_prof_pub_check,
     }
     return render(request, 'orgs/news/org_add_news.html', context)
 
@@ -554,6 +559,7 @@ def news_delete(request, news_id):
 # ::::::::::::: RAPPORT ::::::::::::::::::::::
 @ login_required(login_url='signe_in')
 def add_rapport(request):
+    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
 
     if request.method == 'POST':
         form = RapportForm(request.POST or None, files=request.FILES)
@@ -577,6 +583,7 @@ def add_rapport(request):
 
     context = {
         "form": form,
+        'org_prof_pub_check': org_prof_pub_check,
     }
     return render(request, 'orgs/rapport/add_rapport.html', context)
 
@@ -584,6 +591,7 @@ def add_rapport(request):
 # ::::::::: L'AFFICHAGE DES ORGS RAPPORTS ::::::::::::::::
 def orgs_rapport(request):
     rapports = OrgRapport.objects.filter(publish=True).order_by('-created_at')
+    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
 
     myFilter = OrgsRapportFilter(request.GET, queryset=rapports)
     rapports = myFilter.qs
@@ -599,6 +607,7 @@ def orgs_rapport(request):
     context = {
         'rapports': rapports,
         'myFilter': myFilter,
+        'org_prof_pub_check': org_prof_pub_check,
     }
     return render(request, 'orgs/rapport/rapport.html', context)
 
@@ -704,6 +713,7 @@ def edit_rapport(request, rapport_id):
 # DATA PUB
 def data(request):
     datas = OrgData.objects.filter(publish=True).order_by('-created_at')
+    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
 
     myFilter = OrgsDataFilter(request.GET, queryset=datas)
     datas = myFilter.qs
@@ -719,12 +729,15 @@ def data(request):
     context = {
         'datas': datas,
         'myFilter': myFilter,
+        'org_prof_pub_check': org_prof_pub_check,
     }
     return render(request, 'orgs/data/data.html', context)
 
 
 @ login_required(login_url='signe_in')
 def add_data(request):
+    org_prof_pub_check = OrgProfile.objects.filter(user=request.user).first()
+
     if request.method == 'POST':
         form = DataForm(request.POST or None, files=request.FILES)
         if form.is_valid():
@@ -746,6 +759,7 @@ def add_data(request):
         form = DataForm()
     context = {
         'form': form,
+        'org_prof_pub_check': org_prof_pub_check,
     }
 
     return render(request, 'orgs/data/add_data.html', context)
@@ -845,6 +859,7 @@ def delete_data(request, data_id):
 # :::::::::: MEDIA :::::::::::::::
 def media(request):
     medias = OrgMedia.objects.filter(publish=True).order_by('-created_at')
+    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
 
     myFilter = OrgsMediaFilter(request.GET, queryset=medias)
     medias = myFilter.qs
@@ -860,12 +875,14 @@ def media(request):
     context = {
         'medias': medias,
         'myFilter': myFilter,
+        'org_prof_pub_check': org_prof_pub_check,
     }
     return render(request, 'orgs/media/media.html', context)
 
 
 @ login_required(login_url='signe_in')
 def add_media(request):
+    org_prof_pub_check = OrgProfile.objects.filter(user=request.user).first()
     if request.method == 'POST':
         form = MediaForm(request.POST or None, files=request.FILES)
         if form.is_valid():
@@ -888,6 +905,7 @@ def add_media(request):
 
     context = {
         'form': form,
+        'org_prof_pub_check': org_prof_pub_check,
     }
 
     return render(request, 'orgs/media/add_media.html', context)
@@ -989,6 +1007,7 @@ def delete_media(request, media_id):
 def research(request):
     researchs = OrgResearch.objects.filter(
         publish=True).order_by('-created_at')
+    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
 
     myFilter = OrgsResearchFilter(request.GET, queryset=researchs)
     researchs = myFilter.qs
@@ -1004,12 +1023,14 @@ def research(request):
     context = {
         'researchs': researchs,
         'myFilter': myFilter,
+        'org_prof_pub_check': org_prof_pub_check,
     }
     return render(request, 'orgs/research/research.html', context)
 
 
 @ login_required(login_url='signe_in')
 def add_research(request):
+    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
     if request.method == 'POST':
         form = ResearchForm(request.POST or None, files=request.FILES)
         if form.is_valid():
@@ -1031,6 +1052,7 @@ def add_research(request):
 
     context = {
         'form': form,
+        'org_prof_pub_check': org_prof_pub_check,
     }
 
     return render(request, 'orgs/research/add_research.html', context)
@@ -1163,6 +1185,7 @@ def resources(request):
 
 def orgs_jobs(request):
     jobs = OrgJob.objects.filter(publish=True).order_by('-created_at')
+    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
 
     myFilter = OrgsJobsFilter(request.GET, queryset=jobs)
     jobs = myFilter.qs
@@ -1178,6 +1201,7 @@ def orgs_jobs(request):
     context = {
         'jobs': jobs,
         'myFilter': myFilter,
+        'org_prof_pub_check': org_prof_pub_check,
     }
     return render(request, 'orgs/resources/org_jobs.html', context)
 # add job to recourse
@@ -1185,7 +1209,7 @@ def orgs_jobs(request):
 
 @ login_required(login_url='signe_in')
 def orgs_add_job(request):
-
+    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
     other = OtherOrgs.objects.all().count()
 
     if request.method == 'POST':
@@ -1207,14 +1231,14 @@ def orgs_add_job(request):
                 user.org_name = org_name
                 user.save()
 
-                if other_name:
-                    creater = form_other.save(commit=False)
-                    creater.created_by = request.user
-                    creater.job = form.instance.id
-                    creater.save()
+            elif other_name:
+                creater = form_other.save(commit=False)
+                creater.created_by = request.user
+                creater.job = form.instance.id
+                creater.save()
 
-                    messages.success(request, _(
-                        'لقد تمت إضافة فرصة العمل بنجاح و ستتم دراستها قريباً'))
+                messages.success(request, _(
+                    'لقد تمت إضافة فرصة العمل بنجاح و ستتم دراستها قريباً'))
 
                 return redirect('orgs_jobs')
             else:
@@ -1244,6 +1268,7 @@ def orgs_add_job(request):
         'form': form,
         'other': other,
         'form_other': form_other,
+        'org_prof_pub_check': org_prof_pub_check,
     }
     return render(request, 'orgs/resources/org_add_job.html', context)
 # jobs list to confirme
@@ -1873,8 +1898,8 @@ def orgs_add_devs(request):
             org_name = form.cleaned_data.get('org_name')
             if org_name:
                 user.org_name = org_name
-            else:
-                user.org_name = request.user
+            # else:
+            #     user.org_name = request.user
             user.save()
 
             messages.success(request, _(

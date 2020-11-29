@@ -40,6 +40,12 @@ $("#id_position_work").change(function () {
 });
 
 
+// DOMAIN WORK
+$('#id_work_domain').change(function () {
+    let domain = $('#id_work_domain').val();
+    console.log(domain);
+});
+
 // CITY AJAX
 $("#fill_form #id_position_work").change(function () {
 

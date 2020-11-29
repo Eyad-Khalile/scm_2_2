@@ -6,6 +6,11 @@
 
 {% block content %}
 
+<!-- FROM FACEBOOK -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v9.0"
+  nonce="YVqJemAo"></script>
+
 
 <div class="row mt-4 pt-4">
   <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}"> {% trans 'تفاصيل الخبر' %} </h1>
@@ -158,8 +163,14 @@
         <i class="fab fa-whatsapp"></i>
       </a>
 
+      <!-- FROM FACEBOOK -->
+      <div class="fb-share-button" data-href="{{ request.build_absolute_uri }}/{{ new.id }}" data-layout="button_count"
+        data-size="small">
+        <a target="_blank"
+          href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Fnews_detail%2F10&amp;src=sdkpreparse"
+          class="fb-xfbml-parse-ignore">Partager</a>
 
-
+      </div>
 
     </div>
 

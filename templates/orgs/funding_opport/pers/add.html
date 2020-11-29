@@ -5,6 +5,7 @@
 
 {% block content %}
 
+{% if request.user.is_authenticated and request.user.is_staff %}
 
 <div class="mt-4 pt-4">
     <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
@@ -88,4 +89,10 @@
 
     </div>
 </div>
+
+{% else %}
+<h2 class="text center pt-4 mt-4">{% trans 'ليس لديك الصلاحية لدخول هذه الصفحة' %}</h2>
+{% endif %}
+
+
 {% endblock %}

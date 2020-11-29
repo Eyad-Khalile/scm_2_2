@@ -1,3 +1,4 @@
+from multiselectfield import MultiSelectField
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -404,7 +405,7 @@ class OrgProfile(models.Model):
         max_length=255, null=False, verbose_name=_('عنوان المقر الرئيسي'))
 
     # ORG INFO
-    work_domain = models.CharField(
+    work_domain = MultiSelectField(
         max_length=255, choices=MyChoices.domain_CHOICES, null=False, verbose_name=_('مجال العمل'))
     target_cat = models.CharField(
         max_length=255, null=False, choices=MyChoices.target_CHOICES, verbose_name=_('الفئات المستهدفة'))
@@ -440,6 +441,11 @@ class OrgProfile(models.Model):
 
     # def formatted_phone(self, country=None):
     #     return phonenumbers.parse(self.phone, country)
+
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     if self.work_domain:
+    #         self.work_domain = eval(self.work_domain)
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         super().save(force_insert, force_update, using, update_fields)
@@ -632,7 +638,7 @@ class OrgJob(models.Model):
     period_months = models.PositiveIntegerField(
         null=True, blank=True, verbose_name=_('مدة العقد بالأشهر'))
     job_description = models.TextField(
-        max_length=5000, null=False, verbose_name=_('وصف الوضيفة'))
+        max_length=5000, null=False, verbose_name=_('وصف الوظيفة'))
     job_type = models.CharField(max_length=255, null=False, choices=MyChoices.job_CHOICES,
                                 verbose_name=_('نوع الوظيفة'))
     experience = models.CharField(max_length=255, null=False, choices=MyChoices.expereince_CHOICES,

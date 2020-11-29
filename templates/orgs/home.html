@@ -7,14 +7,14 @@
 
 <div id="carouselHomePage" class="carouselHomePage carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item slide-item-1 active" style="background-image: url('{% static 'media/01.png' %}')">
-      <!-- <img src="{% static 'media/slider/img_01.jpg' %}" class="d-block w-100 img-responsive" alt="..."> -->
+    <div class="carousel-item slide-item-1 active" style='background-image: url("{% static 'media/01.png' %}")'>
+      <!-- <img src=" {% static 'media/slider/img_01.jpg' %}" class="d-block w-100 img-responsive" alt="..."> -->
       <!-- <div class="carousel-caption d-none d-md-block">
         <h2>First slide label</h2>
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
       </div> -->
     </div>
-    <div class="carousel-item slide-item-2" style="background-image: url('{% static 'media/02.png' %}')">
+    <div class="carousel-item slide-item-2" style='background-image: url("{% static 'media/02.png' %}")'>
       <!-- <img src="{% static 'media/slider/img_02.jpg' %}" class="d-block w-100 img-responsive" alt="..."> -->
       <!-- <div class="carousel-caption d-none d-md-block">
         <h2>Second slide label</h2>
@@ -162,8 +162,8 @@
     <div
       class="col-lg-6 col-xs-12 d-flex {% if LANGUAGE_CODE == 'ar'%} align-items-end pb-4 {% else  %} align-items-center {% endif %} pl-0 pr-0 justify-content-center"
       data-aos="fade-right">
-      <video width="100%" controls>
-        <source src="{% static 'video/hiba.mp4'%}" type="video/mp4">
+      <video width="100%" controls poster="{% static 'media/main_logo/logo_3.png' %}">
+        <source src="{% static 'video/civil_gateway.mp4'%}" type="video/mp4">
       </video>
     </div>
   </div>

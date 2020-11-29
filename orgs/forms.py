@@ -1,3 +1,4 @@
+from multiselectfield import MultiSelectFormField
 from django import forms
 from .models import *
 from django.contrib.auth.models import User
@@ -35,7 +36,10 @@ class CityForm(forms.ModelForm):
 
 
 # ORG PROFILE
+
+
 class OrgProfileForm(forms.ModelForm):
+
     name = forms.CharField(max_length=255, min_length=3, label=_('اسم المنظمة'),
                            help_text=_(
                                ''),
@@ -89,6 +93,13 @@ class OrgProfileForm(forms.ModelForm):
                                      widget=forms.TextInput(
         attrs={'placeholder': _('هذا الحقل لا يقبل الحروف الخاصه و الرموز')})
     )
+    # MultipleChoiceField
+    work_domain = forms.MultipleChoiceField(
+        choices=MyChoices.domain_CHOICES, required=True,
+        help_text=_(
+            'لتحديد أكثر من مجال يرجى الاختيار مع استمرار الضغط على زر ال CTRL'),
+        # widget=forms.CheckboxSelectMultiple,
+        label=_('مجال العمل'))
 
     class Meta:
         model = OrgProfile

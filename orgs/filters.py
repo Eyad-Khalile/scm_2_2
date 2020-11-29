@@ -4,12 +4,46 @@ from .models import OrgProfile, OrgNews, OrgRapport, OrgData, OrgResearch, OrgJo
 from django.utils.translation import gettext_lazy as _
 
 
+from multiselectfield import MultiSelectField
+
+# DOMAIN_CHOICES = tuple(
+#     OrgProfile.objects.filter(work_domain__name='work_domain').values_list('id', 'option'))
+
+
 class OrgsFilter(django_filters.FilterSet):
+    domain_CHOICES = (
+        ('Media', _('اﻹعلام و المناصرة')),
+        ('Education', _('تعليم')),
+        ('Protection', _('حماية و الصحة النفسية')),
+        ('Livelihoods and food security', _('سبل العيش واﻷمن الغذائي')),
+        ('Project of clean ,water, sanitation ', _(
+            'النظافة والمياه والصرف الصحي')),
+        ('Development', _('تنمية و بناء قدرات و ثقافة')),
+        ('Law, suport, policy', _('المواطنة و الحوكمة و الديموقراطية و السلام و السياسة')),
+        ('Donors and support volunteering', _('اﻷسرة و الجندرة و قضايا المرأة')),
+        ('Religious org', _('المأوى و البنة التحتية')),
+        ('Prof association and assembles', _('تنسيق و تجمعات المجتمع المدني')),
+        ('Health', _('صحة')),
+        ('Studies and research', _('دراسات وأبحاث')),
+        ('Other', _('أخرى')),
+    )
     # langue
     # language = CharFilter(field_name="language",label='Langue')
     # auther = CharFilter(field_name="auther", lookup_expr='gte',label='Auteur')
     # category = CharFilter(field_name="category", label='Catégorie')
     # sub_category = CharFilter(label='Sous-Catégorie')
+
+    # work_domain = MultiSelectField(choices=MyChoices.domain_CHOICES)
+
+    # work_domain = django_filters.CharFilter(
+    #     field_name='work_domain', lookup_expr='gte', method='filter_work_domain', label=_('مجال العمل'))
+    #   MultipleChoiceFilter
+    # work_domain = django_filters.ModelMultipleChoiceFilter(
+    #     method='filter_domain')
+    # work_domain = django_filters.MultipleChoiceFilter(choices=DOMAIN_CHOICES,
+    #                                                   method='filter_domain')
+    work_domain = django_filters.MultipleChoiceFilter(
+        choices=domain_CHOICES, lookup_expr='contains', label=_('مجال العمل'))
 
     start_date = CharFilter(field_name="date_of_establishment",
                             lookup_expr='gte', label=_('تاريخ التأسيس / من :'))
@@ -24,6 +58,11 @@ class OrgsFilter(django_filters.FilterSet):
     # description = CharFilter(field_name="description",
     #                          lookup_expr='icontains', label='Description')
 
+    # def filter_domain(self, qs, name, value):
+    #     result = qs.filter(Q(attribute_values__attribute__name='work_domain',
+    #                          attribute_values__value_option__in=value))
+    #     return result
+
     class Meta:
         model = OrgProfile
         fields = [
@@ -36,6 +75,9 @@ class OrgsFilter(django_filters.FilterSet):
             'target_cat',
             'published_at',
         ]
+
+        # def filter_work_domain(self, queryset, name, work_domain):
+        #     return queryset.filter(work_domain__contains=work_domain.split(','))
 
         # exclude = ['date_published', 'date_updated', 'likes', 'is_published']
 

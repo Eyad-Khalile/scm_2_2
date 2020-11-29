@@ -14,10 +14,12 @@
     <div class="d-flex mt-4">
 
         {% if request.user.is_authenticated %}
+        {% if org_prof_pub_check.publish == True or request.user.is_staff %}
         <a href="{% url 'orgs_add_news' %}"
             class="btn btn-block mt-4 {% if LANGUAGE_CODE == 'ar' %} ml-2 {% else %} mr-2 {% endif %}"
             title="{% trans 'إضافة خبر' %}"><i class="fas fa-plus"></i>
         </a>
+        {% endif %}
         {% endif %}
 
         {% if news%}

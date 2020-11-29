@@ -40,7 +40,8 @@ def org_profile(request):
     # print('==========', orgs)
 
     if request.method == 'POST':
-        form = OrgProfileForm(request.POST or None, files=request.FILES)
+        form = OrgProfileForm(request.POST or None,
+                              files=request.FILES)
 
         if request.POST.get('user') != None:
             userprof = request.POST.get('user')
@@ -95,7 +96,7 @@ def org_profile_edit(request, pk):
 
             messages.success(
                 request, _('لقد تم تعديل الملف الشخصي بنجاح'))
-            return redirect('profile')
+            return redirect('guide')
 
     else:
         form = OrgProfileForm(instance=org_prof)

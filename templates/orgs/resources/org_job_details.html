@@ -104,7 +104,7 @@
 
                 {% endif %}
             </div>
-            <div class="col-md-6 col-sm-12 d-flex justify-content-start align-items-center">
+            <div class="col-md-6 col-sm-12 d-flex justify-content-start align-items-start">
                 <!-- ORG NAME -->
                 <h3 class="">
                     {% trans 'اسم المنظمة' %}
@@ -116,7 +116,7 @@
                     {% elif other.job|floatformat:"2" == job.id|floatformat:"2" %}
                     {{ other.name }}
                     {% else %}
-                    {% trans 'لم يذكر' %}
+                    : {% trans 'لم يذكر' %}
                     {% endif %}
                 </h3>
 

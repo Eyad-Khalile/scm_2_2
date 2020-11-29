@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'django_countries',
     'phonenumber_filter',
     'django_filters',
+    'multiselectfield',
+
     #  'django_social_share',
 
 ]
@@ -195,14 +197,14 @@ LOGIN_REDIRECT_URL = 'profile'
 
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static/')
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/')
+]
 
-
-STATIC_ROOT = (os.path.join(BASE_DIR, 'static/'))
+# STATIC_ROOT = (os.path.join(BASE_DIR, 'static/'))
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
+# MEDIA
 MEDIA_ROOT = (os.path.join(BASE_DIR, 'media'))
 MEDIA_URL = '/media/'
 

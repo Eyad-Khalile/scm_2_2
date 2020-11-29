@@ -403,7 +403,11 @@ def news(request):
 def orgs_news(request):
     news = OrgNews.objects.filter(Q(publish=True) & ~Q(
         org_name__name='khalil')).order_by('-created_at')
-    org_prof_pub_check = OrgProfile.objects.filter(user=request.user).first()
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
 
     myFilter = OrgsNewsFilter(request.GET, queryset=news)
     news = myFilter.qs
@@ -428,7 +432,11 @@ def orgs_news(request):
 @ login_required(login_url='signe_in')
 def orgs_add_news(request):
 
-    org_prof_pub_check = OrgProfile.objects.filter(user=request.user).first()
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
 
     if request.method == 'POST':
         form = NewsForm(request.POST or None, files=request.FILES)
@@ -559,7 +567,11 @@ def news_delete(request, news_id):
 # ::::::::::::: RAPPORT ::::::::::::::::::::::
 @ login_required(login_url='signe_in')
 def add_rapport(request):
-    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
 
     if request.method == 'POST':
         form = RapportForm(request.POST or None, files=request.FILES)
@@ -591,7 +603,11 @@ def add_rapport(request):
 # ::::::::: L'AFFICHAGE DES ORGS RAPPORTS ::::::::::::::::
 def orgs_rapport(request):
     rapports = OrgRapport.objects.filter(publish=True).order_by('-created_at')
-    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
 
     myFilter = OrgsRapportFilter(request.GET, queryset=rapports)
     rapports = myFilter.qs
@@ -713,7 +729,11 @@ def edit_rapport(request, rapport_id):
 # DATA PUB
 def data(request):
     datas = OrgData.objects.filter(publish=True).order_by('-created_at')
-    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
 
     myFilter = OrgsDataFilter(request.GET, queryset=datas)
     datas = myFilter.qs
@@ -736,7 +756,11 @@ def data(request):
 
 @ login_required(login_url='signe_in')
 def add_data(request):
-    org_prof_pub_check = OrgProfile.objects.filter(user=request.user).first()
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
 
     if request.method == 'POST':
         form = DataForm(request.POST or None, files=request.FILES)
@@ -859,7 +883,11 @@ def delete_data(request, data_id):
 # :::::::::: MEDIA :::::::::::::::
 def media(request):
     medias = OrgMedia.objects.filter(publish=True).order_by('-created_at')
-    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
 
     myFilter = OrgsMediaFilter(request.GET, queryset=medias)
     medias = myFilter.qs
@@ -882,7 +910,12 @@ def media(request):
 
 @ login_required(login_url='signe_in')
 def add_media(request):
-    org_prof_pub_check = OrgProfile.objects.filter(user=request.user).first()
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
+
     if request.method == 'POST':
         form = MediaForm(request.POST or None, files=request.FILES)
         if form.is_valid():
@@ -1007,7 +1040,11 @@ def delete_media(request, media_id):
 def research(request):
     researchs = OrgResearch.objects.filter(
         publish=True).order_by('-created_at')
-    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
 
     myFilter = OrgsResearchFilter(request.GET, queryset=researchs)
     researchs = myFilter.qs
@@ -1030,7 +1067,12 @@ def research(request):
 
 @ login_required(login_url='signe_in')
 def add_research(request):
-    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
+
     if request.method == 'POST':
         form = ResearchForm(request.POST or None, files=request.FILES)
         if form.is_valid():
@@ -1185,7 +1227,11 @@ def resources(request):
 
 def orgs_jobs(request):
     jobs = OrgJob.objects.filter(publish=True).order_by('-created_at')
-    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
 
     myFilter = OrgsJobsFilter(request.GET, queryset=jobs)
     jobs = myFilter.qs
@@ -1209,7 +1255,12 @@ def orgs_jobs(request):
 
 @ login_required(login_url='signe_in')
 def orgs_add_job(request):
-    org_prof_pub_check = OrgProfile.objects.filter(user=request.user)[0]
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
+
     other = OtherOrgs.objects.all().count()
 
     if request.method == 'POST':

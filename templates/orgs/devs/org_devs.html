@@ -85,7 +85,7 @@
 
                     <p>{{ dev.get_subject_display }}</p>
 
-                    <p>{{ dev.dev_description|truncatechars:80 }}</p>
+                    <p>{{ dev.dev_description|safe|truncatechars:80 }}</p>
                     <p>
                         <a href="{% url 'devs_detail' dev.id %}" class="btn btn-block"
                             title="{% trans 'لقراءة المزيد' %}"><i class="fas fa-book-reader"></i></a>

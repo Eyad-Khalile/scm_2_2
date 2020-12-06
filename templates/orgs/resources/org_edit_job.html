@@ -16,6 +16,7 @@
     <form action="" method="post" id="add_job" class="register" data-cities-url="{% url 'ajax_load_cities' %}"
         enctype="multipart/form-data">
         {% csrf_token %}
+        {{ form.media }}
 
         {% if request.user.is_authenticated and request.user.is_staff %}
         <div class="for-group">

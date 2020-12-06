@@ -350,7 +350,7 @@ body {
 
 
 
-  .btn {
+  .btn:not(.dropdown-toggle) {
     background-color: $color-1;
     border: 1px solid $color-1;
     color: #fff;
@@ -372,6 +372,35 @@ body {
       // font-weight: 700;
       // transform: scaleY(1.2);
 
+    }
+  }
+
+  .dropdown-toggle::after {
+    border-top: 0 !important;
+  }
+
+  .btn-group {
+    .dropdown-menu.show {
+      min-width: 360px;
+      transform: translate3d(0px, 0px, 0px) !important;
+      &.right-0 {
+        right: 0;
+      }
+    }
+    #btnGroupDrop1 {
+      svg {
+        path {
+          fill: $color-1;
+        }
+      }
+    }
+    .dropdown-item {
+      color: $color-1;
+      text-align: initial;
+      &:hover {
+        color: #fff;
+        background-color: $color-1;
+      }
     }
   }
 
@@ -1007,6 +1036,16 @@ body {
   .br_left {
     border-left: 5px solid $color-1;
     padding-left: 20px;
+  }
+
+  #about,
+  #contact {
+    .row {
+      padding: 5px;
+    }
+    .row:nth-child(odd) {
+      background-color: #fff;
+    }
   }
 
   

@@ -9,50 +9,63 @@
 
   <!-- MINI MANU -->
   {% if request.user.is_authenticated %}
-  <span id="span-menu" type="button" class="span-menu span-menu-org {% if LANGUAGE_CODE == 'ar' %} float-right {% else %} float-left
-    {% endif %}"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
+  <!-- <span id="span-menu" type="button" class="span-menu span-menu-org {% if LANGUAGE_CODE == 'ar' %} float-right {% else %} float-left
+    {% endif %}"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span> -->
+  <div class="btn-group" role="group">
+    <!-- BTN -->
+    <span id="btnGroupDrop1" type="button" class="btn dropdown-toggle {% if LANGUAGE_CODE == 'ar' %} pr-0 {% else %} pl-0
+    {% endif %}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    </span>
+    <!-- MENU -->
+    <div class="dropdown-menu {% if LANGUAGE_CODE == 'ar' %} right-0 {% endif %}" aria-labelledby="btnGroupDrop1">
+      {% if request.user.is_authenticated and request.user.is_superuser %}
+      {% if org.publish == False %}
+      <form action="" class="confirm" method="post">
+        {% csrf_token %} {{ form.publish }}
+        <div class="form-group">
+          <button type="submit" id="org_confirm_btn" class="dropdown-item"
+            title="{% trans 'قبول الطلب' %}">{% trans 'قبول الطلب' %} <i class="fas fa-check mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}"></i></button>
+        </div>
+      </form>
+      {% elif org.publish == True %}
+      <form action="" class="deconfirm" method="post">
+        {% csrf_token %} {{ form.publish }}
+        <div class="form-group">
+          <button type="submit" id="org_deconfirm_btn" class="dropdown-item"
+            title="{% trans 'رفض الطلب' %}">{% trans 'رفض الطلب' %} <i class="fa fa-ban mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}" aria-hidden="true"></i></button>
+        </div>
+      </form>
+      {% endif %}
+      {% endif %}
+
+
+      {% if request.user.is_superuser %}
+      <a href="{% url 'org_profile_edit' org.id %}" class="dropdown-item"
+        title="{% trans 'تعديل الملف الشخصي' %}">{% trans 'تعديل الملف الشخصي' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}"></i></a>
+      <a href="{% url 'org_profile_delete' org.id %}" class="dropdown-item"
+        title="{% trans 'حذف الملف الشخصي' %}">{% trans 'حذف الملف الشخصي' %} <i class="far fa-trash-alt mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}"></i></a>
+
+      {% elif request.user == org.user or request.user.is_staff %}
+      {% if org.publish == False %}
+      <a href="{% url 'org_profile_edit' org.id %}" class="dropdown-item"
+        title="{% trans 'تعديل الملف الشخصي' %}">{% trans 'تعديل الملف الشخصي' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}"></i></a>
+      {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
   {% endif %}
 
-  <div id="mini-menu" class="list-group mini-menu mini-menu-org d-none {% if LANGUAGE_CODE == 'ar' %} menu-right {% else %}
+  <!-- <div id="mini-menu" class="list-group mini-menu mini-menu-org d-none {% if LANGUAGE_CODE == 'ar' %} menu-right {% else %}
     menu-left
     {% endif %}">
-    <!-- <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-        Cras justo odio
-      </a> -->
-    {% if request.user.is_authenticated and request.user.is_superuser %}
-    {% if org.publish == False %}
-    <form action="" class="confirm" method="post">
-      {% csrf_token %} {{ form.publish }}
-      <div class="form-group">
-        <button type="submit" id="org_confirm_btn" class="list-group-item list-group-item-action"
-          title="{% trans 'قبول الطلب' %}">{% trans 'قبول الطلب' %} <i class="fas fa-check mx-1"></i></button>
-      </div>
-    </form>
-    {% elif org.publish == True %}
-    <form action="" class="deconfirm" method="post">
-      {% csrf_token %} {{ form.publish }}
-      <div class="form-group">
-        <button type="submit" id="org_deconfirm_btn" class="list-group-item list-group-item-action"
-          title="{% trans 'رفض الطلب' %}">{% trans 'رفض الطلب' %} <i class="fa fa-ban mx-1"
-            aria-hidden="true"></i></button>
-      </div>
-    </form>
-    {% endif %}
-    {% endif %}
-
-
-    {% if request.user.is_superuser %}
-    <a href="{% url 'org_profile_edit' org.id %}" class="list-group-item list-group-item-action"
-      title="{% trans 'تعديل الملف الشخصي' %}">{% trans 'تعديل الملف الشخصي' %} <i class="fas fa-edit mx-1"></i></a>
-    <a href="{% url 'org_profile_delete' org.id %}" class="list-group-item list-group-item-action"
-      title="{% trans 'حذف الملف الشخصي' %}">{% trans 'حذف الملف الشخصي' %} <i class="far fa-trash-alt mx-1"></i></a>
-
-    {% elif request.user == job.user and job.publish == False %}
-    <a href="{% url 'org_profile_edit' org.id %}" class="list-group-item list-group-item-action"
-      title="{% trans 'تعديل الملف الشخصي' %}">{% trans 'تعديل الملف الشخصي' %} <i class="fas fa-edit mx-1"></i></a>
-    {% endif %}
-
-  </div>
+  </div> -->
 
   <form>
 
@@ -111,12 +124,25 @@
           </h6>
 
           {% if request.user.is_superuser %}
-          <h6 class="mb-4 pb-4 row border-top pt-2">
+          <h6 class="row border-top pt-2">
             <div class="col-6">
               <strong>{% trans "اسم المستخدم" %}</strong>
             </div>
             <div class="col-6">
               : {{ org.user }}
+            </div>
+          </h6>
+
+          <h6 class="mb-4 pb-4 row border-top pt-2">
+            <div class="col-6">
+              <strong>{% trans "اسم الذي أضاف الطلب" %}</strong>
+            </div>
+            <div class="col-6">
+              {% if org.staff %}
+              : {{ org.staff }}
+              {% else %}
+              : {{ org.user }}
+              {% endif %}
             </div>
           </h6>
           {% endif %}
@@ -161,7 +187,9 @@
               <strong>{% trans 'مكان العمل' %} :</strong>
             </div>
             <div class="col-6">
-              {{ org.get_position_work_display }}
+              {% for country in org_position %}
+              {{ country.get_position_work_display }} |
+              {% endfor %}
             </div>
           </p>
 
@@ -170,19 +198,21 @@
               <strong>{% trans 'المحافظة' %} :</strong>
             </div>
             <div class="col-6">
-              {% if org.city_work %}
-              {{ org.city_work }}
+              {% for city in org_position %}
+              {% if city.city_work %}
+              {{ city.city_work }} |
               {% else %}
               <span class="text-muted">
                 {% trans 'لم يذكر' %} </span>
               {% endif %}
+              {% endfor %}
             </div>
           </p>
 
           <p>{% trans 'الرؤية و الرسالة' %}</p>
           <p class="text-al-just">
             {% if org.message %}
-            {{ org.message }}
+            {{ org.message|safe }}
             {% else %}
             <span class="text-muted">
               {% trans "لم يذكر" %}
@@ -389,7 +419,7 @@
               <div class="col-md-6">
                 <p>
                   {% if org.site_web %}
-                  <a href="https://www.{{ org.site_web }}" target="_blank">{{ org.site_web }}</a>
+                  <a href="{{ org.site_web }}" target="_blank">{{ org.site_web }}</a>
                   {% else %}
                   <span class="text-muted"> {% trans 'لم يذكر' %} </span>
                   {% endif %}
@@ -403,7 +433,7 @@
               <div class="col-md-6">
                 <p>
                   {% if org.facebook %}
-                  <a href="https://www.{{ org.facebook }}" target="_blank">{{ org.facebook }}</a>
+                  <a href="{{ org.facebook }}" target="_blank">{{ org.facebook }}</a>
                   {% else %}
                   <span class="text-muted"> {% trans 'لم يذكر' %} </span>
                   {% endif %}
@@ -417,7 +447,7 @@
               <div class="col-md-6">
                 <p>
                   {% if org.twitter %}
-                  <a href="https://www.{{ org.twitter }}" target="_blank">{{ org.twitter }}</a>
+                  <a href="{{ org.twitter }}" target="_blank">{{ org.twitter }}</a>
                   {% else %}
                   <span class="text-muted"> {% trans 'لم يذكر' %} </span>
                   {% endif %}

@@ -83,8 +83,8 @@
             title="{% trans 'طلبات اشتراك المنظمات قيد الدراسة' %}" data-aos="fade-right"><i
                 class="fas fa-chalkboard-teacher"></i>
         </a>
-        {% elif request.user.is_authenticated %}
-        <a href="{% url 'guide_conf' %}?user={{ request.user.id }}" class="btn btn-block mt-4 mx-2"
+        {% elif request.user.is_authenticated and request.user.is_staff %}
+        <a href="{% url 'guide_conf' %}?staff={{ request.user.username }}" class="btn btn-block mt-4 mx-2"
             title="{% trans 'طلبات اشتراك المنظمات قيد الدراسة' %}" data-aos="fade-right"><i
                 class="fas fa-chalkboard-teacher"></i>
         </a>
@@ -103,10 +103,9 @@
                 {{ myFilter.form.name|as_crispy_field }}
             </div>
             <div class="col-sm-12 col-md-4 mt-3">
-                {{ myFilter.form.position_work|as_crispy_field }}
-            </div>
-            <div class="col-sm-12 col-md-4 mt-3">
                 {{ myFilter.form.work_domain|as_crispy_field }}
+            </div>
+            <div class="col-sm-12 col-md-4  mt-3">
             </div>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-4 mt-3">

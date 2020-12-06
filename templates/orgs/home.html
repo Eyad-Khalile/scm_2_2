@@ -298,7 +298,7 @@
               <h3 class="mt-4">{{ capacity.org_name }}</h3>
               <h3 class="mt-4">{{ capacity.name_capacity }}</h3>
               <h3 class="mt-4">{{ capacity.title_capacity }}</h3>
-              <p>{{ capacity.capacity_description|truncatechars:80 }}</p>
+              <p>{{ capacity.capacity_description|safe|truncatechars:80 }}</p>
               <p>
                 <a href="{% url 'capacity_detail' capacity.id %}" class="btn btn-block">
                   {% trans 'للمزيد عن فرصة بناء القدرات' %}

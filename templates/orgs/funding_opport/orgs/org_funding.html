@@ -85,8 +85,8 @@
                     {{ funding.name_funding }}
                     {% endif %}</h3>
 
-                <p>{{ funding.funding_org_description|truncatechars:80 }}</p>
-                <p>{{ funding.funding_description|truncatechars:80 }}</p>
+                <p>{{ funding.funding_org_description|safe|truncatechars:80 }}</p>
+                <p>{{ funding.funding_description|safe|truncatechars:80 }}</p>
                 <p>
                     <a href="{% url 'funding_detail' funding.id %}" class="btn btn-block"
                         title="{% trans 'لقراءة المزيد' %}"><i class="fas fa-book-reader"></i></a>

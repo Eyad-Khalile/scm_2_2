@@ -5,6 +5,8 @@
 
 {% block content %}
 
+{% if request.user.is_authenticated and request.user.id|floatformat:"0" == filter_user_id|floatformat:"0" or request.user.is_superuser %}
+
 
 <div class="mt-4 pt-4">
     <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
@@ -79,7 +81,7 @@
 
                     <p>{{ dev.get_subject_display }}</p>
 
-                    <p>{{ dev.dev_description|truncatechars:80 }}</p>
+                    <p>{{ dev.dev_description|safe|truncatechars:80 }}</p>
                     <p>
                         <a href="{% url 'devs_detail' dev.id %}" class="btn btn-block"
                             title="{% trans 'لقراءة المزيد' %}"><i class="fas fa-book-reader"></i></a>
@@ -135,11 +137,10 @@
         </div>
     </div>
 
-
-
-
-
-
 </div>
+
+{% else %}
+<h2 class="text-center mt-4 pt-4">{% trans 'ليس لديك الصلاحية لدخول هذه الصفحة' %}</h2>
+{% endif %}
 
 {% endblock %}

@@ -86,7 +86,7 @@
                     {{ funding.name_funding }}
                     {% endif %}</h3>
 
-                <p>{{ funding.fund_org_description|truncatechars:80 }}</p>
+                <p>{{ funding.fund_org_description|safe|truncatechars:80 }}</p>
                 <!-- <p>{{ funding.funding_dead_date|date:"Y-m-d" }}</p> -->
                 <p>
                     <a href="{% url 'finance_perso_detail' funding.id %}" class="btn btn-block"

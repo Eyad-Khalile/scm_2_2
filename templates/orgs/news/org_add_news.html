@@ -15,6 +15,8 @@
     <form action="" method="post" class="register" enctype="multipart/form-data">
         {% csrf_token %}
 
+        {{ form.media }}
+
         {% if request.user.is_authenticated and request.user.is_staff %}
         <div class="for-group">
             {{ form.org_name|as_crispy_field }}

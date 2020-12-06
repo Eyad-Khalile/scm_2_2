@@ -25,6 +25,7 @@ import traceback
 from django.db.models import Q
 from datetime import date, timedelta
 from django.utils.datastructures import MultiValueDictKeyError
+# BOKEH
 from bokeh.io import output_file, show
 from bokeh.models import ColumnDataSource
 from bokeh.palettes import Spectral6
@@ -48,78 +49,77 @@ def signe_up(request):
     if request.user.is_authenticated:
         return redirect('home')
     else:
-        users = User.objects.all()
-        emails = []
-        for user in users:
-            emails += user.email,
+        # users = User.objects.all()
+        # emails = []
+        # for user in users:
+        #     emails += user.email,
 
         if request.method == 'POST':
             form = SignUpForm(request.POST or None)
-            user_email = request.POST.get('email')
+            # user_email = request.POST.get('email')
+            # if user_email not in emails:
+            if form.is_valid():
+                user = form.save(commit=False)
+                user.is_active = False
+                user.save()
 
-            if user_email not in emails:
-                if form.is_valid():
-                    user = form.save(commit=False)
-                    user.is_active = False
-                    user.save()
+                current_site = get_current_site(request)
+                subject = 'Activate Your Account.'
+                message = render_to_string('register/account_activation_email.html', {
+                    'user': user,
+                    'domain': current_site.domain,
+                    'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                    'token': account_activation_token.make_token(user),
+                })
+                to_email = form.cleaned_data.get('email')
+                email = EmailMessage(
+                    subject, message, to=[to_email]
+                )
 
-                    current_site = get_current_site(request)
-                    subject = 'Activate Your Account.'
-                    message = render_to_string('register/account_activation_email.html', {
-                        'user': user,
-                        'domain': current_site.domain,
-                        'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-                        'token': account_activation_token.make_token(user),
-                    })
-                    to_email = form.cleaned_data.get('email')
-                    email = EmailMessage(
-                        subject, message, to=[to_email]
-                    )
+                # print(email)
+                email.send()
 
-                    # print(email)
-                    email.send()
+                # SENDGRID
+                # send_mail(
+                #     subject,
+                #     message,
+                #     'khalile.eyad@gmail.com',
+                #     [
+                #         to_email,
+                #     ]
+                # )
 
-                    # SENDGRID
-                    # send_mail(
-                    #     subject,
-                    #     message,
-                    #     'khalile.eyad@gmail.com',
-                    #     [
-                    #         to_email,
-                    #     ]
-                    # )
+                # message_send = Mail(
+                #     to_emails=to_email,
+                #     subject=subject,
+                #     plain_text_content=message,
+                # )
 
-                    # message_send = Mail(
-                    #     to_emails=to_email,
-                    #     subject=subject,
-                    #     plain_text_content=message,
-                    # )
+                # try:
+                #     sg = SendGridAPIClient(os.environ['SEND_API_KEY'])
+                #     response = sg.send(message_send)
+                #     print(response.status_code)
+                #     print(response.body)
+                #     print(response.headers)
+                # except Exception as e:
+                #     # print(e.message)
+                #     pass
+                username = form.cleaned_data.get('username')
 
-                    # try:
-                    #     sg = SendGridAPIClient(os.environ['SEND_API_KEY'])
-                    #     response = sg.send(message_send)
-                    #     print(response.status_code)
-                    #     print(response.body)
-                    #     print(response.headers)
-                    # except Exception as e:
-                    #     # print(e.message)
-                    #     pass
-                    username = form.cleaned_data.get('username')
+                # messages.success(
+                #     request, f'Your Account has been created Successful with username ( {username} ) !, Please confirm your email address to complete the registration ')
+                messages.success(
+                    request, _(f'تم إنشاء حسابك بنجاح باسم المستخدم ( {username} ) !, يرجى تأكيد عنوان بريدك الإلكتروني لإكمال التسجيل '))
+                return redirect('home')
+            # else:
 
-                    # messages.success(
-                    #     request, f'Your Account has been created Successful with username ( {username} ) !, Please confirm your email address to complete the registration ')
-                    messages.success(
-                        request, _(f'تم إنشاء حسابك بنجاح باسم المستخدم ( {username} ) !, يرجى تأكيد عنوان بريدك الإلكتروني لإكمال التسجيل '))
-                    return redirect('home')
-            else:
-
-                if user_email in emails:
-                    # messages.error(
-                    #     request, f'Please Sign-up with another email address, this email ( {user_email} ) is already in use')
-                    messages.error(
-                        request, _(f'يرجى التسجيل باستخدام عنوان بريد إلكتروني آخر، هذا البريد الإلكتروني ( {user_email} ) مستخدم مسبقاً'))
-                    return redirect('signe_up')
-                # else:
+            #     if user_email in emails:
+            #         # messages.error(
+            #         #     request, f'Please Sign-up with another email address, this email ( {user_email} ) is already in use')
+            #         messages.error(
+            #             request, _(f'يرجى التسجيل باستخدام عنوان بريد إلكتروني آخر، هذا البريد الإلكتروني ( {user_email} ) مستخدم مسبقاً'))
+            #         return redirect('signe_up')
+            #     # else:
 
         else:
             form = SignUpForm()
@@ -235,8 +235,9 @@ def load_cities(request):
     return render(request, 'city/city_dropdown_list_options.html', {'cities': cities})
     # return JsonResponse(list(cities.values('id', 'name')), safe=False)
 
-
 # =========== Page 404 ==================
+
+
 def page_not_found_view(request, exception):
     return render(request, 'errors/404.html')
 
@@ -473,8 +474,16 @@ def org_news_not_pub(request):
     news = OrgNews.objects.filter(Q(publish=False) & ~Q(
         org_name__name='khalil')).order_by('-created_at')
 
+    filter_user_id = request.GET.get('user', None)
+
     myFilter = OrgsNewsFilter(request.GET, queryset=news)
     news = myFilter.qs
+
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
 
     # PAGINATEUR
     paginator = Paginator(news, 12)
@@ -487,6 +496,8 @@ def org_news_not_pub(request):
     context = {
         'news': news,
         'myFilter': myFilter,
+        'org_prof_pub_check': org_prof_pub_check,
+        'filter_user_id': filter_user_id,
     }
     return render(request, 'orgs/news/org_news_not_pub.html', context)
 
@@ -632,8 +643,16 @@ def orgs_rapport(request):
 def orgs_rapport_not_pub(request):
     rapports = OrgRapport.objects.filter(publish=False).order_by('-created_at')
 
+    filter_user_id = request.GET.get('user', None)
+
     myFilter = OrgsRapportFilter(request.GET, queryset=rapports)
     rapports = myFilter.qs
+
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
 
     # PAGINATEUR
     paginator = Paginator(rapports, 12)
@@ -646,6 +665,8 @@ def orgs_rapport_not_pub(request):
     context = {
         'rapports': rapports,
         'myFilter': myFilter,
+        'org_prof_pub_check': org_prof_pub_check,
+        'filter_user_id': filter_user_id,
     }
     return render(request, 'orgs/rapport/rapport_not_pub.html', context)
 
@@ -822,6 +843,14 @@ def data_detail(request, data_id):
 def data_not_pub(request):
     datas = OrgData.objects.filter(publish=False).order_by('-created_at')
 
+    filter_user_id = request.GET.get('user', None)
+
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
+
     myFilter = OrgsDataFilter(request.GET, queryset=datas)
     datas = myFilter.qs
 
@@ -836,6 +865,8 @@ def data_not_pub(request):
     context = {
         'datas': datas,
         'myFilter': myFilter,
+        'org_prof_pub_check': org_prof_pub_check,
+        'filter_user_id': filter_user_id,
     }
     return render(request, 'orgs/data/data_not_pub.html', context)
 
@@ -977,8 +1008,16 @@ def media_detail(request, media_id):
 def media_not_pub(request):
     medias = OrgMedia.objects.filter(publish=False).order_by('-created_at')
 
+    filter_user_id = request.GET.get('user', None)
+
     myFilter = OrgsMediaFilter(request.GET, queryset=medias)
     medias = myFilter.qs
+
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
 
     # PAGINATEUR
     paginator = Paginator(medias, 12)
@@ -991,6 +1030,8 @@ def media_not_pub(request):
     context = {
         'medias': medias,
         'myFilter': myFilter,
+        'org_prof_pub_check': org_prof_pub_check,
+        'filter_user_id': filter_user_id,
     }
     return render(request, 'orgs/media/media_not_pub.html', context)
 
@@ -1139,6 +1180,14 @@ def research_not_pub(request):
     myFilter = OrgsResearchFilter(request.GET, queryset=researchs)
     researchs = myFilter.qs
 
+    filter_user_id = request.GET.get('user', None)
+
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
+
     # PAGINATEUR
     paginator = Paginator(researchs, 12)
     page = request.GET.get('page')
@@ -1150,6 +1199,8 @@ def research_not_pub(request):
     context = {
         'researchs': researchs,
         'myFilter': myFilter,
+        'org_prof_pub_check': org_prof_pub_check,
+        'filter_user_id': filter_user_id,
     }
     return render(request, 'orgs/research/research_not_pub.html', context)
 
@@ -1333,6 +1384,14 @@ def org_jobs_not_pub(request):
     myFilter = OrgsJobsFilter(request.GET, queryset=jobs)
     jobs = myFilter.qs
 
+    filter_user_id = request.GET.get('user', None)
+
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
+
     # PAGINATEUR
     paginator = Paginator(jobs, 12)
     page = request.GET.get('page')
@@ -1344,6 +1403,8 @@ def org_jobs_not_pub(request):
     context = {
         'jobs': jobs,
         'myFilter': myFilter,
+        'org_prof_pub_check': org_prof_pub_check,
+        'filter_user_id': filter_user_id,
     }
 
     return render(request, 'orgs/resources/jobs_not_pub.html', context)
@@ -1582,6 +1643,8 @@ def finance_perso_not_pub(request):
     myFilter = PersoFundFilter(request.GET, queryset=fundings)
     fundings = myFilter.qs
 
+    filter_user_id = request.GET.get('user', None)
+
     # PAGINATEUR
     paginator = Paginator(fundings, 12)
     page = request.GET.get('page')
@@ -1593,6 +1656,7 @@ def finance_perso_not_pub(request):
     context = {
         'fundings': fundings,
         'myFilter': myFilter,
+        'filter_user_id': filter_user_id,
     }
     return render(request, 'orgs/funding_opport/pers/not_pub.html', context)
 
@@ -1666,6 +1730,8 @@ def org_funding_not_pub(request):
     myFilter = OrgsFundingFilter(request.GET, queryset=fundings)
     fundings = myFilter.qs
 
+    filter_user_id = request.GET.get('user', None)
+
     # PAGINATEUR
     paginator = Paginator(fundings, 12)
     page = request.GET.get('page')
@@ -1677,6 +1743,7 @@ def org_funding_not_pub(request):
     context = {
         'fundings': fundings,
         'myFilter': myFilter,
+        'filter_user_id': filter_user_id,
     }
     return render(request, 'orgs/funding_opport/orgs/fundings_not_pub.html', context)
 # funding details
@@ -1822,6 +1889,8 @@ def org_capacity_not_pub(request):
     myFilter = OrgsCapacityFilter(request.GET, queryset=Capacitys)
     Capacitys = myFilter.qs
 
+    filter_user_id = request.GET.get('user', None)
+
     # PAGINATEUR
     paginator = Paginator(Capacitys, 12)
     page = request.GET.get('page')
@@ -1834,6 +1903,7 @@ def org_capacity_not_pub(request):
     context = {
         'Capacitys': Capacitys,
         'myFilter': myFilter,
+        'filter_user_id': filter_user_id,
     }
     return render(request, 'orgs/capacity/capacity_not_pub.html', context)
 # capacity details
@@ -1974,6 +2044,8 @@ def org_devs_not_pub(request):
     myFilter = OrgsDevFilter(request.GET, queryset=devs)
     devs = myFilter.qs
 
+    filter_user_id = request.GET.get('user', None)
+
     # PAGINATEUR
     paginator = Paginator(devs, 12)
     page = request.GET.get('page')
@@ -1985,6 +2057,7 @@ def org_devs_not_pub(request):
     context = {
         'devs': devs,
         'myFilter': myFilter,
+        'filter_user_id': filter_user_id,
     }
     return render(request, 'orgs/devs/dev_not_pub.html', context)
 # devs details

@@ -4,6 +4,9 @@
 
 {% block content %}
 
+{% if request.user.is_authenticated and request.user.id|floatformat:"0" == filter_user_id|floatformat:"0" or request.user.is_superuser %}
+
+
 <div class="pt-4 mt-4 mb-4">
     <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
         {% trans 'اﻷبحاث الخارجية قيد الدراسة' %}</h1>
@@ -13,9 +16,11 @@
     <div class="d-flex mt-4">
 
         {% if request.user.is_authenticated %}
+        {% if org_prof_pub_check.publish == True or request.user.is_staff %}
         <a href="{% url 'add_research' %}"
             class="btn btn-block mt-4 {% if LANGUAGE_CODE == 'ar' %} ml-2 {% else %} mr-2 {% endif %}"
             title="{% trans 'إضافة بحث خارجي' %}"><i class="fas fa-plus"></i></a>
+        {% endif %}
         {% endif %}
 
         {% if researchs and request.user.is_authenticated and request.user.is_superuser %}
@@ -135,6 +140,10 @@
 
 
 </div>
+
+{% else %}
+<h2 class="text-center mt-4 pt-4">{% trans 'ليس لديك الصلاحية لدخول هذه الصفحة' %}</h2>
+{% endif %}
 
 
 

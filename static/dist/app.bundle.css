@@ -11864,7 +11864,7 @@ body {
     body select.bg-trans option {
       background-color: rgba(23, 103, 140, 0.1) !important;
       color: #17678C; }
-  body .btn {
+  body .btn:not(.dropdown-toggle) {
     background-color: #17678C;
     border: 1px solid #17678C;
     color: #fff;
@@ -11888,8 +11888,23 @@ body {
     -ms-transition-timing-function: ease;
     -o-transition-timing-function: ease;
     transition-timing-function: ease; }
-    body .btn:hover {
+    body .btn:not(.dropdown-toggle):hover {
       color: tomato; }
+  body .dropdown-toggle::after {
+    border-top: 0 !important; }
+  body .btn-group .dropdown-menu.show {
+    min-width: 360px;
+    transform: translate3d(0px, 0px, 0px) !important; }
+    body .btn-group .dropdown-menu.show.right-0 {
+      right: 0; }
+  body .btn-group #btnGroupDrop1 svg path {
+    fill: #17678C; }
+  body .btn-group .dropdown-item {
+    color: #17678C;
+    text-align: initial; }
+    body .btn-group .dropdown-item:hover {
+      color: #fff;
+      background-color: #17678C; }
   body .profile-head .nav-tabs {
     border-bottom: 2px solid #17678C; }
     body .profile-head .nav-tabs a {
@@ -12123,6 +12138,12 @@ body {
   body .br_left {
     border-left: 5px solid #17678C;
     padding-left: 20px; }
+  body #about .row,
+  body #contact .row {
+    padding: 5px; }
+  body #about .row:nth-child(odd),
+  body #contact .row:nth-child(odd) {
+    background-color: #fff; }
 
 nav {
   background-color: rgba(23, 103, 140, 0.3); }
@@ -12590,10 +12611,9 @@ form .div-logo {
     width: 100%; }
 
 form label.requiredField span.asteriskField {
-  position: relative;
   color: red;
-  right: 8px;
-  top: 5px; }
+  margin-left: 5px;
+  margin-right: 5px; }
 
 form .form-select {
   width: 100%; }
@@ -12601,7 +12621,7 @@ form .form-select {
 form #div_id_logo div {
   color: #17678C; }
   form #div_id_logo div a {
-    color: #fff; }
+    color: #17678C; }
 
 .register-left {
   color: #17678C !important; }
@@ -12726,6 +12746,9 @@ div.emp-profile img {
   margin-top: 8%;
   margin-bottom: -15%;
   color: #495057; }
+
+.django-ckeditor-widget {
+  width: 100% !important; }
 
 .admin-cont-dashboard {
   margin-top: 2rem;

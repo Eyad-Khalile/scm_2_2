@@ -7,8 +7,7 @@
 
 
 
-
-{% if request.user.is_authenticated and request.user.is_staff %}
+{% if request.user.is_authenticated and request.user.is_staff and request.user.username == filter_user_id or request.user.is_superuser %}
 
 
 
@@ -21,12 +20,10 @@
 
     <div class="d-flex mt-4">
 
-        {% if request.user.is_authenticated %}
-        {% if not request.user.orgprofile_set.all or request.user.is_staff %}
+        {% if request.user.is_authenticated and request.user.is_staff %}
         <a href="{% url 'org_profile' %}"
             class="btn btn-block mt-4 {% if LANGUAGE_CODE == 'ar' %} ml-2 {% else %} mr-2 {% endif %}"
             title="{% trans 'تقديم طلب اشتراك' %}" data-aos="fade-right"><i class="fas fa-plus"></i></a>
-        {% endif %}
         {% endif %}
 
         {% if orgs and request.user.is_superuser %}
@@ -48,9 +45,7 @@
             <div class="col-sm-12 col-md-4  mt-3">
                 {{ myFilter.form.name|as_crispy_field }}
             </div>
-            <div class="col-sm-12 col-md-4 mt-3">
-                {{ myFilter.form.position_work|as_crispy_field }}
-            </div>
+
             <div class="col-sm-12 col-md-4 mt-3">
                 {{ myFilter.form.work_domain|as_crispy_field }}
             </div>
@@ -143,7 +138,7 @@
 
     </div>
     {% else %}
-    <h3 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+    <h3 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %} mt-4 pt-4">
         {% trans 'حالياً لا يوجد طلبات للمنظمات للموافقة عليها' %} </h3>
     {% endif %}
 
@@ -158,6 +153,9 @@
 
 </div>
 
+{% else %}
+
+<h2 class="text-center mt-4 pt-4"> {% trans 'ليس لديك الصلاحية لدخول هذه الصفحة' %} </h2>
 
 {% endif %}
 

@@ -6,6 +6,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.utils.translation import gettext_lazy as _
 from django.contrib import messages
+from ckeditor.fields import RichTextField
+from django.db.models import F
 
 
 # ============ User =============================
@@ -17,6 +19,14 @@ class SignUpForm(UserCreationForm):
         model = User
         fields = ['username', 'first_name', 'last_name',
                   'email', 'password1', 'password2']
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        qs = User.objects.filter(email__iexact=email)
+        if qs.exists():
+            raise forms.ValidationError(
+                _('هذا البريد الالكتروني موجود مسبقاً'))
+        return email
 
 
 class LoginForm(forms.Form):
@@ -35,8 +45,42 @@ class CityForm(forms.ModelForm):
         ]
 
 
-# ORG PROFILE
+class PositionForm(forms.ModelForm):
 
+    class Meta:
+        model = Position
+        fields = [
+            'position_work',
+            'city_work',
+        ]
+
+        # def __init__(self, *args, **kwargs):
+        #     super().__init__(*args, **kwargs)
+        #     # form-1-city_work
+        #     for i in range(0, 11):
+        #         self.fields[f'form-{i}-city_work'].queryset = City.objects.none()
+
+        #         if f'form-{i}-position_work' in self.data:
+        #             try:
+        #                 # form-1-position_work
+        #                 position_work = self.data.get(
+        #                     f'form-{i}-position_work')
+        #                 self.fields[f'form-{i}-city_work'].queryset = City.objects.filter(
+        #                     position_work=position_work)
+        #             except (ValueError, TypeError):
+        #                 pass  # invalid input from the client; ignore and fallback to empty City queryset
+
+        #         elif self.instance.pk and self.instance.city_work:
+        #             print(self.instance.city_work)
+        #             position_work = self.instance.position_work
+        #             self.fields[f'form-{i}-city_work'].queryset = City.objects.filter(
+        #                 position_work=position_work)
+
+        #         elif self.instance.pk and not self.instance.city_work:
+        #             self.fields[f'form-{i}-city_work'].queryset = City.objects.all()
+
+
+# ORG PROFILE
 
 class OrgProfileForm(forms.ModelForm):
 
@@ -54,8 +98,8 @@ class OrgProfileForm(forms.ModelForm):
                                 widget=forms.TextInput(
         attrs={'placeholder': _('هذا الحقل لا يقبل الحروف الخاصه و الرموز')})
     )
-    message = forms.CharField(max_length=2000, min_length=3, required=False, label=_("الرؤية و الرسالة"), widget=forms.Textarea(
-        attrs={'placeholder': _('هذا الحقل لا يقبل الحروف الخاصه و الرموز')}))
+    # message = RichTextField(max_length=2000, min_length=3, required=False, label=_("الرؤية و الرسالة"), widget=forms.Textarea(
+    #     attrs={'placeholder': _('هذا الحقل لا يقبل الحروف الخاصه و الرموز')}))
 
     name_managing_director = forms.CharField(max_length=255, min_length=3, required=False, label=_('اسم رئيس مجلس اﻹدارة'),
                                              widget=forms.TextInput(
@@ -101,6 +145,13 @@ class OrgProfileForm(forms.ModelForm):
         # widget=forms.CheckboxSelectMultiple,
         label=_('مجال العمل'))
 
+    w_polic_regulations = forms.MultipleChoiceField(
+        choices=MyChoices.polic_CHOICES, required=True,
+        help_text=_(
+            'لتحديد أكثر من مجال يرجى الاختيار مع استمرار الضغط على زر ال CTRL'),
+        # widget=forms.CheckboxSelectMultiple,
+        label=_('السياسات واللوائح المكتوبة'))
+
     class Meta:
         model = OrgProfile
         fields = [
@@ -109,8 +160,8 @@ class OrgProfileForm(forms.ModelForm):
             'name_en_ku',
             'short_cut',
             'org_type',
-            'position_work',
-            'city_work',
+            # 'position_work',
+            # 'city_work',
             'logo',
             'message',
             'name_managing_director',
@@ -135,43 +186,68 @@ class OrgProfileForm(forms.ModelForm):
             'coalition_name',
         ]
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['city_work'].queryset = City.objects.none()
+    # FUNCTION FOR SORT THE USERS WHO DONT HAVE AN ORGPROFILE
+    def __init__(self,  *args, **kwargs):
+        super(OrgProfileForm, self).__init__(*args, **kwargs)
+        instance = getattr(self, 'instance', None)
+        user_id = self.instance
 
-        if 'position_work' in self.data:
-            try:
-                position_work = self.data.get('position_work')
-                self.fields['city_work'].queryset = City.objects.filter(
-                    position_work=position_work)
-            except (ValueError, TypeError):
-                pass  # invalid input from the client; ignore and fallback to empty City queryset
-        # elif 'city_work' in self.data:
-        #     self.fields['city_work'].queryset = self.instance.position_work.city_work_set.all()
-        # else:
-        #     self.fields['city_work'].queryset = City.objects.all()
-        elif self.instance.pk and self.instance.city_work:
-            print(self.instance.city_work)
-            position_work = self.instance.position_work
-            self.fields['city_work'].queryset = City.objects.filter(
-                position_work=position_work)
-        # else:
-        #     self.fields['city_work'].queryset = City.objects.all()
+        all_user = User.objects.values('id').distinct()
+        all_org_user = OrgProfile.objects.values('user_id').distinct()
 
-        elif self.instance.pk and not self.instance.city_work:
-            self.fields['city_work'].queryset = City.objects.all()
-            # if 'position_work' in self.data:
-            #     print(self.data)
-        #         try:
-        #             position_work = self.data.get('position_work')
-        #             self.fields['city_work'].queryset = City.objects.filter(
-        #                 position_work=position_work)
-        #         except (ValueError, TypeError):
-        #             pass  # invalid input from the client; ignore and fallback to empty City queryset
+        def_user = all_user.difference(all_org_user)
 
-            # self.fields['city_work'].queryset = self.instance.position_work.city_work_set.order_by(
-            #     'city_work')
-            # self.fields['city_work'].queryset = self.instance.position_work.city_work_set.all()
+        # self.fields['user'].queryset = User.objects.filter(
+        #     id__in=user_final)
+        self.fields['user'].queryset = User.objects.filter(
+            id__in=def_user)
+
+    # user unique
+    def clean_email(self):
+        user = self.cleaned_data.get('user_id')
+        qs = OrgProfile.objects.filter(user_id__iexact=user)
+        if qs.exists():
+            raise forms.ValidationError(
+                _('هذا البريد الالكتروني موجود مسبقاً'))
+        return user
+
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     self.fields['city_work'].queryset = City.objects.none()
+
+    #     if 'position_work' in self.data:
+    #         try:
+    #             position_work = self.data.get('position_work')
+    #             self.fields['city_work'].queryset = City.objects.filter(
+    #                 position_work=position_work)
+    #         except (ValueError, TypeError):
+    #             pass  # invalid input from the client; ignore and fallback to empty City queryset
+    #     # elif 'city_work' in self.data:
+    #     #     self.fields['city_work'].queryset = self.instance.position_work.city_work_set.all()
+    #     # else:
+    #     #     self.fields['city_work'].queryset = City.objects.all()
+    #     elif self.instance.pk and self.instance.city_work:
+    #         print(self.instance.city_work)
+    #         position_work = self.instance.position_work
+    #         self.fields['city_work'].queryset = City.objects.filter(
+    #             position_work=position_work)
+    #     # else:
+    #     #     self.fields['city_work'].queryset = City.objects.all()
+
+    #     elif self.instance.pk and not self.instance.city_work:
+    #         self.fields['city_work'].queryset = City.objects.all()
+    #         # if 'position_work' in self.data:
+    #         #     print(self.data)
+    #     #         try:
+    #     #             position_work = self.data.get('position_work')
+    #     #             self.fields['city_work'].queryset = City.objects.filter(
+    #     #                 position_work=position_work)
+    #     #         except (ValueError, TypeError):
+    #     #             pass  # invalid input from the client; ignore and fallback to empty City queryset
+
+    #         # self.fields['city_work'].queryset = self.instance.position_work.city_work_set.order_by(
+    #         #     'city_work')
+    #         # self.fields['city_work'].queryset = self.instance.position_work.city_work_set.all()
 
 
 class OrgConfirmForm(forms.ModelForm):

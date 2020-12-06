@@ -16,53 +16,60 @@
 
         <!-- MINI MANU -->
         {% if request.user.is_authenticated %}
-        <span id="span-menu" type="button"
+        <!-- <span id="span-menu" type="button"
             class="span-menu {% if LANGUAGE_CODE == 'ar' %} float-right {% else %} float-left {% endif %}"><i
-                class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
+                class="fa fa-ellipsis-v" aria-hidden="true"></i></span> -->
+        <div class="btn-group" role="group">
+            <span id="btnGroupDrop1" type="button" class="btn dropdown-toggle {% if LANGUAGE_CODE == 'ar' %} pr-0 {% else %} pl-0
+    {% endif %}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </span>
+            <div class="dropdown-menu {% if LANGUAGE_CODE == 'ar' %} right-0 {% endif %}"
+                aria-labelledby="btnGroupDrop1">
+                {% if request.user.is_authenticated and request.user.is_superuser %}
+                {% if perso.publish == False %}
+                <form action="" class="confirm" method="post">
+                    {% csrf_token %} {{ form.publish }}
+                    <div class="form-group">
+                        <button type="submit" id="org_confirm_btn" class="dropdown-item"
+                            title="{% trans 'الموافقة على النشر' %}">{% trans 'الموافقة على النشر' %} <i class="fas fa-check mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}"></i></button>
+                    </div>
+                </form>
+                {% elif perso.publish == True %}
+                <form action="" class="deconfirm" method="post">
+                    {% csrf_token %} {{ form.publish }}
+                    <div class="form-group">
+                        <button type="submit" id="org_deconfirm_btn" class="dropdown-item"
+                            title="{% trans 'إلغاء نشر الدليل' %}">{% trans 'إلغاء نشر الدليل' %} <i class="fa fa-ban mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}" aria-hidden="true"></i></button>
+                    </div>
+                </form>
+                {% endif %}
+                {% endif %}
+
+
+                {% if request.user.is_superuser %}
+                <a href="{% url 'finance_perso_edit' perso.id %}" class="dropdown-item"
+                    title="{% trans 'تعديل فرصة التمويل' %}">{% trans 'تعديل فرصة التمويل' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}"></i></a>
+                <a href="{% url 'finance_perso_delete' perso.id %}" class="dropdown-item"
+                    title="{% trans 'حذف' %}">{% trans 'حذف' %}
+                    <i class="far fa-trash-alt mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}"></i></a>
+
+                {% elif request.user == perso.user and perso.publish == False %}
+                <a href="{% url 'finance_perso_edit' perso.id %}" class="dropdown-item"
+                    title="{% trans 'تعديل فرصة التمويل' %}">{% trans 'تعديل فرصة التمويل' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}"></i></a>
+                {% endif %}
+            </div>
+        </div>
         {% endif %}
 
-        <div id="mini-menu"
+        <!-- <div id="mini-menu"
             class="list-group mini-menu d-none {% if LANGUAGE_CODE == 'ar' %} menu-right {% else %} menu-left {% endif %}">
-            <!-- <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-        Cras justo odio
-      </a> -->
-            {% if request.user.is_authenticated and request.user.is_superuser %}
-            {% if perso.publish == False %}
-            <form action="" class="confirm" method="post">
-                {% csrf_token %} {{ form.publish }}
-                <div class="form-group">
-                    <button type="submit" id="org_confirm_btn" class="list-group-item list-group-item-action"
-                        title="{% trans 'الموافقة على النشر' %}">{% trans 'الموافقة على النشر' %} <i
-                            class="fas fa-check mx-1"></i></button>
-                </div>
-            </form>
-            {% elif perso.publish == True %}
-            <form action="" class="deconfirm" method="post">
-                {% csrf_token %} {{ form.publish }}
-                <div class="form-group">
-                    <button type="submit" id="org_deconfirm_btn" class="list-group-item list-group-item-action"
-                        title="{% trans 'إلغاء نشر الدليل' %}">{% trans 'إلغاء نشر الدليل' %} <i class="fa fa-ban mx-1"
-                            aria-hidden="true"></i></button>
-                </div>
-            </form>
-            {% endif %}
-            {% endif %}
-
-
-            {% if request.user.is_superuser %}
-            <a href="{% url 'finance_perso_edit' perso.id %}" class="list-group-item list-group-item-action"
-                title="{% trans 'تعديل فرصة التمويل' %}">{% trans 'تعديل فرصة التمويل' %} <i
-                    class="fas fa-edit mx-1"></i></a>
-            <a href="{% url 'finance_perso_delete' perso.id %}" class="list-group-item list-group-item-action"
-                title="{% trans 'حذف' %}">{% trans 'حذف' %} <i class="far fa-trash-alt mx-1"></i></a>
-
-            {% elif request.user == perso.user and perso.publish == False %}
-            <a href="{% url 'finance_perso_edit' perso.id %}" class="list-group-item list-group-item-action"
-                title="{% trans 'تعديل فرصة التمويل' %}">{% trans 'تعديل فرصة التمويل' %} <i
-                    class="fas fa-edit mx-1"></i></a>
-            {% endif %}
-
-        </div>
+        </div> -->
 
         <!-- START CART -->
         <strong>
@@ -127,7 +134,7 @@
             </span>
             <span class="col-9">
                 {% if perso.fund_org_description %}
-                : {{ perso.fund_org_description }}
+                : {{ perso.fund_org_description|safe }}
                 {% else %}
                 : {% trans 'لم يذكر' %}
                 {% endif %}
@@ -247,7 +254,7 @@
                 {% trans "وصف المنحة" %} <br>
             </span>
             <span class="col-9">
-                : {{ perso.funding_description }}
+                : {{ perso.funding_description|safe }}
             </span>
         </p>
 
@@ -256,7 +263,7 @@
                 {% trans "شروط المنحة" %}
             </span>
             <span class="col-9">
-                : {{ perso.funding_conditions }}
+                : {{ perso.funding_conditions|safe }}
             </span>
         </p>
 
@@ -265,7 +272,7 @@
                 {% trans "متطلبات التقديم" %}
             </span>
             <span class="col-9">
-                : {{ perso.funding_reqs }}
+                : {{ perso.funding_reqs|safe }}
             </span>
         </p>
 
@@ -274,7 +281,7 @@
                 {% trans "كيفية التقديم" %}
             </span>
             <span class="col-9">
-                : {{ perso.funding_guid }}
+                : {{ perso.funding_guid|safe }}
             </span>
         </p>
 
@@ -319,7 +326,7 @@
         {% for perso in persos|slice:3 %}
         <a href="{% url 'finance_perso_detail' perso.id%}" class='bg-light nav-link border-bottom pb-3 mb-2'>
             <div class="news-card" data-aos="fade-in">
-                <p class="text-dark"> {{ perso.funding_description|truncatechars:80 }} </p>
+                <p class="text-dark"> {{ perso.funding_description|safe|truncatechars:80 }} </p>
 
                 <figure>
                     <img src="{{ perso.logo.url }}" class="w-100" name="{{ perso.title }}" title="{{ perso.title }}"

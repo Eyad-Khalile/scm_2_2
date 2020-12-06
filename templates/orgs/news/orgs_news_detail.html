@@ -20,51 +20,62 @@
 
     <!-- MINI MANU -->
     {% if request.user.is_authenticated %}
-    <span id="span-menu" type="button"
+    <!-- <span id="span-menu" type="button"
       class="span-menu {% if LANGUAGE_CODE == 'ar' %} float-right {% else %} float-left {% endif %}"><i
-        class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
+        class="fa fa-ellipsis-v" aria-hidden="true"></i></span> -->
+    <div class="btn-group" role="group">
+      <!-- BTN -->
+      <span id="btnGroupDrop1" type="button" class="btn dropdown-toggle {% if LANGUAGE_CODE == 'ar' %} pr-0 {% else %} pl-0
+    {% endif %}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+      </span>
+      <!-- MENU -->
+      <div class="dropdown-menu {% if LANGUAGE_CODE == 'ar' %} right-0 {% endif %}" aria-labelledby="btnGroupDrop1">
+        {% if request.user.is_authenticated and request.user.is_superuser %}
+        {% if new.publish == False %}
+        <form action="" class="confirm" method="post">
+          {% csrf_token %} {{ form.publish }}
+          <div class="form-group">
+            <button type="submit" id="org_confirm_btn" class="dropdown-item"
+              title="{% trans 'الموافقة على نشر الخبر' %}">{% trans 'الموافقة على نشر الخبر' %} <i class="fas fa-check mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}"></i></button>
+          </div>
+        </form>
+        {% elif new.publish == True %}
+        <form action="" class="deconfirm" method="post">
+          {% csrf_token %} {{ form.publish }}
+          <div class="form-group">
+            <button type="submit" id="org_deconfirm_btn" class="dropdown-item"
+              title="{% trans 'إلغاء نشر الخبر' %}">{% trans 'إلغاء نشر الخبر' %} <i class="fa fa-ban mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}" aria-hidden="true"></i></button>
+          </div>
+        </form>
+        {% endif %}
+        {% endif %}
+
+
+        {% if request.user.is_superuser %}
+        <a href="{% url 'news_edit' new.id %}" class="dropdown-item"
+          title="{% trans 'تعديل الخبر' %}">{% trans 'تعديل الخبر' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}"></i></a>
+
+        <a href="{% url 'news_delete' new.id %}" class="dropdown-item"
+          title="{% trans 'حذف الخبر' %}">{% trans 'حذف الخبر' %} <i class="far fa-trash-alt mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}"></i></a>
+
+        {% elif request.user == new.user and new.publish == False %}
+        <a href="{% url 'news_edit' new.id %}" class="dropdown-item"
+          title="{% trans 'تعديل الخبر' %}">{% trans 'تعديل الخبر' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}"></i></a>
+        {% endif %}
+
+      </div>
+    </div>
     {% endif %}
 
-    <div id="mini-menu"
+    <!-- <div id="mini-menu"
       class="list-group mini-menu d-none {% if LANGUAGE_CODE == 'ar' %} menu-right {% else %} menu-left {% endif %}">
-
-      {% if request.user.is_authenticated and request.user.is_superuser %}
-      {% if new.publish == False %}
-      <form action="" class="confirm" method="post">
-        {% csrf_token %} {{ form.publish }}
-        <div class="form-group">
-          <button type="submit" id="org_confirm_btn" class="list-group-item list-group-item-action"
-            title="{% trans 'الموافقة على نشر الخبر' %}">{% trans 'الموافقة على نشر الخبر' %} <i
-              class="fas fa-check mx-1"></i></button>
-        </div>
-      </form>
-      {% elif new.publish == True %}
-      <form action="" class="deconfirm" method="post">
-        {% csrf_token %} {{ form.publish }}
-        <div class="form-group">
-          <button type="submit" id="org_deconfirm_btn" class="list-group-item list-group-item-action"
-            title="{% trans 'إلغاء نشر الخبر' %}">{% trans 'إلغاء نشر الخبر' %} <i class="fa fa-ban mx-1"
-              aria-hidden="true"></i></button>
-        </div>
-      </form>
-      {% endif %}
-      {% endif %}
-
-
-
-      {% if request.user.is_superuser %}
-      <a href="{% url 'news_edit' new.id %}" class="list-group-item list-group-item-action"
-        title="{% trans 'تعديل الخبر' %}">{% trans 'تعديل الخبر' %} <i class="fas fa-edit mx-1"></i></a>
-
-      <a href="{% url 'news_delete' new.id %}" class="list-group-item list-group-item-action"
-        title="{% trans 'حذف الخبر' %}">{% trans 'حذف الخبر' %} <i class="far fa-trash-alt mx-1"></i></a>
-
-      {% elif request.user == new.user and new.publish == False %}
-      <a href="{% url 'news_edit' new.id %}" class="list-group-item list-group-item-action"
-        title="{% trans 'تعديل الخبر' %}">{% trans 'تعديل الخبر' %} <i class="fas fa-edit mx-1"></i></a>
-      {% endif %}
-
-    </div>
+    </div> -->
 
     <!-- START CART -->
 
@@ -115,7 +126,7 @@
         alt="{{ new.title }}"></a>
 
 
-    <p class="h4 mt-3 text-al-just p-1" id="post_content"> {{ new.content }}</p>
+    <p class="h4 mt-3 text-al-just p-1" id="post_content"> {{ new.content|safe }}</p>
 
 
     <!-- SOCIAL -->

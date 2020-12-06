@@ -26774,43 +26774,7 @@ $("form.form-signin").find('label[for="id_username"]').addClass("d-none");
 $("form.form-signin").find("#id_username").attr("placeholder", "اسم المستخدم");
 $("form.form-signin").find('label[for="id_password"]').addClass("d-none");
 $("form.form-signin").find("#id_password").attr("placeholder", "كلمة المرور"); // ORG PROFILE 
-// CITY CHOISES
-
-$("#div_id_city_work").hide();
-
-if ($("#id_position_work").val() == "SY" || $("#id_position_work").val() == "TR" || $("#id_position_work").val() == "JO" || $("#id_position_work").val() == "LB" || $("#id_position_work").val() == "IQ") {
-  $("#div_id_city_work").show();
-}
-
-$("#id_position_work").change(function () {
-  let country = $("#id_position_work").val();
-
-  switch (country) {
-    case "SY":
-      $("#div_id_city_work").show();
-      break;
-
-    case "TR":
-      $("#div_id_city_work").show();
-      break;
-
-    case "JO":
-      $("#div_id_city_work").show();
-      break;
-
-    case "LB":
-      $("#div_id_city_work").show();
-      break;
-
-    case "IQ":
-      $("#div_id_city_work").show();
-      break;
-
-    default:
-      $("#div_id_city_work").hide();
-      break;
-  }
-}); // DOMAIN WORK
+// DOMAIN WORK
 
 $('#id_work_domain').change(function () {
   let domain = $('#id_work_domain').val();
@@ -26844,7 +26808,11 @@ $("#fill_form #id_position_work").change(function () {
        */
     }
   });
-}); // // JOBS CITY AJAX
+}); // $('#fill_form #id_user').change(function () {
+//     let val = $('#id_user').val();
+//     // console.log(val);
+// });
+// // JOBS CITY AJAX
 
 $("#add_job #id_position_work").change(function () {
   const url = $("#add_job").attr("data-cities-url"); // get the url of the `load_cities` view
@@ -26945,7 +26913,7 @@ $("#id_phone").attr({
 
 $("#id_name, #id_name_en_ku, #id_short_cut, #id_message, #id_name_managing_director, #id_name_ceo, #id_name_person_contact, #id_org_adress, #id_coalition_name").attr({
   minlength: "3",
-  oninput: "this.value = this.value.replace(/[^ا-يa-zA-Z0-9\nçêîşûłňřüḧẍ' ]/gi, '');"
+  oninput: "this.value = this.value.replace(/[^ا-يa-zA-Z0-9\nçêîşûłňřüḧẍ' ]/g, '');"
 }); // MEMBERS COUNT
 
 $("#id_org_members_count, #id_org_members_womans_count").attr({
@@ -27063,7 +27031,46 @@ $('form#form_rapport').find('#id_media').attr('accept', 'application/pdf,image/*
 // if ($('#error_1_id_email')) {
 //     alert('This email already exists');
 // }
-// RESOURCES
+
+let my_forms_country = $('#add_job, #finance_orgs, #add_perso_finance, #add_capacity');
+my_forms_country.find('#div_id_city_work').hide();
+let county_vall = $('#add_job, #finance_orgs #id_position_work').val();
+
+if (county_vall == 'SY' || county_vall == 'TR' || county_vall == 'IQ' || county_vall == 'LB' || county_vall == 'JO') {
+  my_forms_country.find('#div_id_city_work').show();
+} else {
+  my_forms_country.find('#div_id_city_work').hide();
+}
+
+my_forms_country.find('#id_position_work').change(function () {
+  let country = $(this).val();
+
+  switch (country) {
+    case "SY":
+      my_forms_country.find('#div_id_city_work').show();
+      break;
+
+    case "TR":
+      my_forms_country.find('#div_id_city_work').show();
+      break;
+
+    case "JO":
+      my_forms_country.find('#div_id_city_work').show();
+      break;
+
+    case "LB":
+      my_forms_country.find('#div_id_city_work').show();
+      break;
+
+    case "IQ":
+      my_forms_country.find('#div_id_city_work').show();
+      break;
+
+    default:
+      my_forms_country.find('#div_id_city_work').hide();
+      break;
+  }
+}); // RESOURCES
 // FORM ADD JOB 
 
 let other = '<option value="other">Other</option>';
@@ -27150,7 +27157,64 @@ $('#add_perso_finance').find('#id_fund_type').change(function () {
 });
 $('#dev_form').find('#id_content').attr('accept', 'application/pdf, image/*'); // VIDEO PLACE HOLDER
 
-$('#id_video').attr('placeholder', 'Ex:  https://www.youtube.com');
+$('#id_video').attr('placeholder', 'Ex:  https://www.youtube.com'); // :::::::::::: ADD POSITIONS AND CITYS ::::::::::::::::::
+
+var form_idx = 0;
+$('#add_more_vio').click(function () {
+  form_idx++; // var form_idx = $('#id_form-TOTAL_FORMS').val();
+
+  $('#form_set_vio').append($('#empty_form_vio').html().replace(/__prefix__/g, form_idx));
+  $('#id_form-TOTAL_FORMS').val(parseInt(form_idx) + 1); // CITY HIDE AND SHOW
+  // CITY CHOISES
+
+  $("#div_id_form-" + form_idx + "-city_work").hide();
+
+  if ($("#id_form-1-position_work").val() == "SY" || $("#id_position_work").val() == "TR" || $("#id_position_work").val() == "JO" || $("#id_position_work").val() == "LB" || $("#id_position_work").val() == "IQ") {
+    $("#div_id_form-" + form_idx + "-city_work").show();
+  }
+
+  $("#id_form-" + form_idx + "-position_work").change(function () {
+    let country = $(this).val();
+
+    switch (country) {
+      case "SY":
+        $("#div_id_form-" + form_idx + "-city_work").show();
+        break;
+
+      case "TR":
+        $("#div_id_form-" + form_idx + "-city_work").show();
+        break;
+
+      case "JO":
+        $("#div_id_form-" + form_idx + "-city_work").show();
+        break;
+
+      case "LB":
+        $("#div_id_form-" + form_idx + "-city_work").show();
+        break;
+
+      case "IQ":
+        $("#div_id_form-" + form_idx + "-city_work").show();
+        break;
+
+      default:
+        $("#div_id_form-" + form_idx + "-city_work").hide();
+        break;
+    }
+  }); // $("#id_form-"+form_idx+"-position_work").change(function () {
+  //     const url = $("#fill_form").attr("data-cities-url"); 
+  //     const countryId = $(this).val(); 
+  //     $.ajax({ 
+  //         url: url, 
+  //         data: {
+  //             'position_work': countryId 
+  //         },
+  //         success: function (data) {
+  //             $("#id_city_work").html(data);
+  //         }
+  //     });
+  // });
+});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -27205,11 +27269,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {// pre loader
-// $(window).on("load", function () {
-//     setInterval(function () {
-//         $('.loader').addClass('hidden');
-//     });
-// });
+$(window).on("load", function () {
+  setInterval(function () {
+    $('.loader').addClass('hidden');
+  });
+});
 $('body').css('padding-top', $('.navbar').outerHeight() + 'px');
 $('#navbarSupportedContent').find('.nav-link').css('height', $('.navbar').outerHeight() + 'px');
 $('#list-collapse').addClass('d-none');

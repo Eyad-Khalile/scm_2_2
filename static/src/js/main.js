@@ -1,9 +1,9 @@
 // pre loader
-// $(window).on("load", function () {
-//     setInterval(function () {
-//         $('.loader').addClass('hidden');
-//     });
-// });
+$(window).on("load", function () {
+    setInterval(function () {
+        $('.loader').addClass('hidden');
+    });
+});
 
 
 

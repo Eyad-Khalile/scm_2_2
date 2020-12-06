@@ -23,59 +23,92 @@ from bokeh.embed import components
 from django.core.mail import send_mail, send_mass_mail
 from django.template.loader import get_template
 from django.template import Context
+from django.forms import formset_factory, modelformset_factory, inlineformset_factory
 
 
 # if OrgProfile.objects.filter(id=user.id).exists():
 
+
+# ::::::::::::: SETTINGS FOR EXPERIENCE ::::::::::::
+# special field names
+TOTAL_FORM_COUNT = 'TOTAL_FORMS'
+INITIAL_FORM_COUNT = 'INITIAL_FORMS'
+MIN_NUM_FORM_COUNT = 'MIN_NUM_FORMS'
+MAX_NUM_FORM_COUNT = 'MAX_NUM_FORMS'
+ORDERING_FIELD_NAME = 'ORDER'
+DELETION_FIELD_NAME = 'DELETE'
+# default minimum number of forms in a formset
+DEFAULT_MIN_NUM = 0
+# default maximum number of forms in a formset, to prevent memory exhaustion
+DEFAULT_MAX_NUM = 1000
+
+
 # add profile
-
-
 @login_required(login_url='signe_in')
 def org_profile(request):
 
-    users = OrgProfile.objects.all()
-    orgs = []
-    for user in users:
-        orgs += user.user.id,
+    # users = OrgProfile.objects.all()
+    # orgs = []
+    # for user in users:
+    #     orgs += user.user.id,
     # print('==========', orgs)
+
+    # ADD MULTI COUNTRY
+    PositionFormset = modelformset_factory(
+        Position, form=PositionForm, can_delete=True)
 
     if request.method == 'POST':
         form = OrgProfileForm(request.POST or None,
                               files=request.FILES)
+        positionForm = PositionFormset(request.POST or None,
+                                       queryset=Position.objects.none())
 
-        if request.POST.get('user') != None:
-            userprof = request.POST.get('user')
-        else:
-            userprof = request.user.id
+        # if request.POST.get('user') != None:
+        #     userprof = request.POST.get('user')
+        # else:
+        #     userprof = request.user.id
         # print('==========', userprof)
 
-        if int(userprof) not in orgs:
-            print('is not in')
-            if form.is_valid():
-                prof = form.save(commit=False)
-                user = form.cleaned_data.get('user')
-                if user:
-                    prof.user = user
-                else:
-                    prof.user = request.user
-                prof.save()
+        # if int(userprof) not in orgs:
+        # if int(userprof):
+        # print('is not in')
+        if form.is_valid() and positionForm.is_valid():
+            prof = form.save(commit=False)
+            user = form.cleaned_data.get('user')
+            if request.user.is_staff:
+                prof.staff = request.user
+            if user:
+                prof.user = user
+            else:
+                prof.user = request.user
+            prof.save()
 
-                messages.success(
-                    request, 'لقد تم تسحيل بياناتكم بنجاح و ستتم دراستها باقرب وقت')
-                return redirect('home')
+            inst_vio = positionForm.save(commit=False)
+            for inst in inst_vio:
+                inst.user = request.user
+                inst.org_profile_id = prof.id
+                inst.save()
 
+            messages.success(
+                request, 'لقد تم تسحيل بياناتكم بنجاح و ستتم دراستها باقرب وقت')
+            return redirect('home')
         else:
-            if int(userprof) in orgs and not request.user.is_staff:
-                # print(orgs)
-                # print('is in')
-                messages.error(request, _('هذا المستخدم لديه طلب مسبقاً'))
-                return redirect('org_profile')
+            messages.error(request, 'The form is not valide')
+
+        # else:
+        #     if int(userprof) in orgs:
+        #         # print(orgs)
+        #         # print('is in')
+        #         messages.error(request, _('هذا المستخدم لديه طلب مسبقاً'))
+        #         return redirect('org_profile')
 
     else:
         form = OrgProfileForm()
+        positionForm = PositionFormset(queryset=Position.objects.none())
 
     context = {
-        'form': form
+        'form': form,
+        'positionForm': positionForm,
     }
     return render(request, 'profiles/org_profile_form.html', context)
 
@@ -86,23 +119,40 @@ def org_profile(request):
 def org_profile_edit(request, pk):
     org_prof = OrgProfile.objects.get(id=pk)
 
+    # ADD MULTI COUNTRY
+    PositionFormset = modelformset_factory(
+        Position, form=PositionForm, can_delete=True, extra=3)
     if request.method == 'POST':
         form = OrgProfileForm(request.POST or None,
                               files=request.FILES, instance=org_prof)
-        if form.is_valid():
+        positionForm = PositionFormset(request.POST or None,
+                                       queryset=Position.objects.filter(org_profile_id=org_prof))
+        if form.is_valid() and positionForm.is_valid():
             user = form.save(commit=False)
             user.updated_at = datetime.utcnow()
             user.save()
+
+            inst_vio = positionForm.save(commit=False)
+            for inst in inst_vio:
+                inst.user = request.user
+                inst.org_profile_id = prof.id
+                inst.save()
 
             messages.success(
                 request, _('لقد تم تعديل الملف الشخصي بنجاح'))
             return redirect('guide')
 
+        else:
+            messages.error(request, 'The form is not valide')
+
     else:
         form = OrgProfileForm(instance=org_prof)
+        positionForm = PositionFormset(
+            queryset=Position.objects.filter(org_profile_id=org_prof))
 
     context = {
-        'form': form
+        'form': form,
+        'positionForm': positionForm,
     }
     return render(request, 'profiles/org_profile_update.html', context)
 
@@ -136,6 +186,8 @@ def guide_not_pub(request):
     orgs = OrgProfile.objects.filter(publish=False).order_by('-created_at')
 
     myFilter = OrgsFilter(request.GET, queryset=orgs)
+
+    filter_user_id = request.GET.get('staff', None)
     orgs = myFilter.qs
 
     # PAGINATEUR
@@ -149,6 +201,7 @@ def guide_not_pub(request):
     context = {
         'orgs': orgs,
         'myFilter': myFilter,
+        'filter_user_id': filter_user_id,
     }
     return render(request, 'orgs/guid/orgs_guid_conf_pub.html', context)
 
@@ -180,6 +233,7 @@ def orgs_orders_published(request):
 # ORG DETAIL تفاصيل المنظمة مع الموافقة و الرفض
 def particip_detail(request, par_id):
     org = get_object_or_404(OrgProfile, id=par_id)
+    org_position = Position.objects.filter(org_profile_id=org.id)
 
     if request.method == 'POST':
         form = OrgConfirmForm(request.POST or None, instance=org)
@@ -191,14 +245,6 @@ def particip_detail(request, par_id):
             messages.success(request, _(
                 'لقد تم تغيير حالة الطلب للمنظمة بنجاح'))
 
-            # org_status = form.cleaned_data.get('publish')
-            # if org_status == 'True':
-            #     messages.success(request, _(
-            #         'لقد تم قبول طلب تسجيل المنظمة بنجاح'))
-            # if org_status == 'False':
-            #     messages.info(request, _(
-            #         'لقد تم رفض طلب تسجيل المنظمة بنجاح'))
-
             return redirect('guide')
     else:
         form = OrgConfirmForm(instance=org)
@@ -206,6 +252,7 @@ def particip_detail(request, par_id):
     context = {
         'org': org,
         'form': form,
+        'org_position': org_position,
     }
     return render(request, 'profiles/particip_detail.html', context)
 

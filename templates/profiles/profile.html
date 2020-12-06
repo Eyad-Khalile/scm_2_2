@@ -115,7 +115,7 @@
                         </span>
                         <span class="col-9 text-al-just">
                             {% if prof.message %}
-                            : {{ prof.message }}
+                            : {{ prof.message|safe }}
                             {% else %}
                             <span class="text-muted"> : {% trans 'لم يذكر' %} </span>
                             {% endif %}

@@ -187,29 +187,37 @@ class OrgProfileForm(forms.ModelForm):
         ]
 
     # FUNCTION FOR SORT THE USERS WHO DONT HAVE AN ORGPROFILE
-    def __init__(self,  *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super(OrgProfileForm, self).__init__(*args, **kwargs)
-        instance = getattr(self, 'instance', None)
-        user_id = self.instance
+        # instance = getattr(self, 'instance', None)
 
-        all_user = User.objects.values('id').distinct()
-        all_org_user = OrgProfile.objects.values('user_id').distinct()
+        # IN CASE EDIT
+        if self.instance.pk:
+            org_id = self.instance
+            self.fields['user'].queryset = User.objects.filter(
+                orgprofile=org_id)
 
-        def_user = all_user.difference(all_org_user)
+        # IN CASE ADD
+        else:
+            all_user = User.objects.values('id').distinct()
+            all_org_user = OrgProfile.objects.values('user_id').distinct()
+            def_user = all_user.difference(all_org_user)
 
-        # self.fields['user'].queryset = User.objects.filter(
-        #     id__in=user_final)
-        self.fields['user'].queryset = User.objects.filter(
-            id__in=def_user)
+            self.fields['user'].queryset = User.objects.filter(
+                id__in=def_user)
 
+    
+            
+        
     # user unique
-    def clean_email(self):
-        user = self.cleaned_data.get('user_id')
-        qs = OrgProfile.objects.filter(user_id__iexact=user)
-        if qs.exists():
-            raise forms.ValidationError(
-                _('هذا البريد الالكتروني موجود مسبقاً'))
-        return user
+    # def clean_email(self):
+    #     user = self.cleaned_data.get('user_id')
+    #     # qs = OrgProfile.objects.filter(user_id__iexact=user)
+    #     qs = OrgProfile.objects.filter(user_id=user)
+    #     if qs.exists():
+    #         raise forms.ValidationError(
+    #             _('هذا البريد الالكتروني موجود مسبقاً'))
+    #     return user
 
     # def __init__(self, *args, **kwargs):
     #     super().__init__(*args, **kwargs)

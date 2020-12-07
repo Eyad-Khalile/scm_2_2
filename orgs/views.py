@@ -151,7 +151,7 @@ def activate(request, uidb64, token):
 
 
 # CITYES
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def add_city(request):
 
     if request.method == 'POST':
@@ -173,7 +173,7 @@ def add_city(request):
     return render(request, 'city/add_city.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def edit_city(request, city_id):
     city = get_object_or_404(City, id=city_id)
 
@@ -201,7 +201,7 @@ def edit_city(request, city_id):
     return render(request, 'city/edite_city.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def delete_city(request, city_id):
     city = get_object_or_404(City, id=city_id)
 
@@ -218,7 +218,7 @@ def delete_city(request, city_id):
     return render(request, 'city/delete_city.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def view_city(request):
     cityes = City.objects.all().order_by('id')
 
@@ -430,7 +430,7 @@ def orgs_news(request):
 
 
 # ORGS ADD NEWS
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def orgs_add_news(request):
 
     if request.user.is_authenticated:
@@ -469,7 +469,7 @@ def orgs_add_news(request):
 
 
 # أخبار المنظمات قيد الدراسة
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def org_news_not_pub(request):
     news = OrgNews.objects.filter(Q(publish=False) & ~Q(
         org_name__name='khalil')).order_by('-created_at')
@@ -531,7 +531,7 @@ def news_detail(request, news_id):
 
 
 # NEWS EDIT
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def news_edit(request, news_id):
     new = get_object_or_404(OrgNews, id=news_id)
 
@@ -558,7 +558,7 @@ def news_edit(request, news_id):
 # :: NEWS DELETE ::
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def news_delete(request, news_id):
     new = get_object_or_404(OrgNews, id=news_id)
 
@@ -576,7 +576,7 @@ def news_delete(request, news_id):
 
 
 # ::::::::::::: RAPPORT ::::::::::::::::::::::
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def add_rapport(request):
     if request.user.is_authenticated:
         org_prof_pub_check = OrgProfile.objects.filter(
@@ -639,7 +639,7 @@ def orgs_rapport(request):
     return render(request, 'orgs/rapport/rapport.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def orgs_rapport_not_pub(request):
     rapports = OrgRapport.objects.filter(publish=False).order_by('-created_at')
 
@@ -702,7 +702,7 @@ def orgs_rapport_detail(request, rapport_id):
 
 
 # DELETE RAPPORT
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def orgs_rapport_delete(request, rapport_id):
     rapport = get_object_or_404(OrgRapport, id=rapport_id)
 
@@ -720,7 +720,7 @@ def orgs_rapport_delete(request, rapport_id):
 
 
 # UPDATE RAPPORT
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def edit_rapport(request, rapport_id):
     rapport = get_object_or_404(OrgRapport, id=rapport_id)
 
@@ -775,7 +775,7 @@ def data(request):
     return render(request, 'orgs/data/data.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def add_data(request):
     if request.user.is_authenticated:
         org_prof_pub_check = OrgProfile.objects.filter(
@@ -839,7 +839,7 @@ def data_detail(request, data_id):
     return render(request, 'orgs/data/detail_data.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def data_not_pub(request):
     datas = OrgData.objects.filter(publish=False).order_by('-created_at')
 
@@ -871,7 +871,7 @@ def data_not_pub(request):
     return render(request, 'orgs/data/data_not_pub.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def edit_data(request, data_id):
     data = get_object_or_404(OrgData, id=data_id)
 
@@ -896,7 +896,7 @@ def edit_data(request, data_id):
     return render(request, 'orgs/data/edit_data.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def delete_data(request, data_id):
     data = get_object_or_404(OrgData, id=data_id)
     if request.method == 'POST' and request.user.is_superuser:
@@ -939,7 +939,7 @@ def media(request):
     return render(request, 'orgs/media/media.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def add_media(request):
     if request.user.is_authenticated:
         org_prof_pub_check = OrgProfile.objects.filter(
@@ -1004,7 +1004,7 @@ def media_detail(request, media_id):
     return render(request, 'orgs/media/media_detail.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def media_not_pub(request):
     medias = OrgMedia.objects.filter(publish=False).order_by('-created_at')
 
@@ -1036,7 +1036,7 @@ def media_not_pub(request):
     return render(request, 'orgs/media/media_not_pub.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def edit_media(request, media_id):
     media = get_object_or_404(OrgMedia, id=media_id)
 
@@ -1062,7 +1062,7 @@ def edit_media(request, media_id):
     return render(request, 'orgs/media/edit_media.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def delete_media(request, media_id):
     media = get_object_or_404(OrgMedia, id=media_id)
     if request.method == 'POST' and request.user.is_superuser:
@@ -1106,7 +1106,7 @@ def research(request):
     return render(request, 'orgs/research/research.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def add_research(request):
     if request.user.is_authenticated:
         org_prof_pub_check = OrgProfile.objects.filter(
@@ -1172,7 +1172,7 @@ def research_detail(request, research_id):
     return render(request, 'orgs/research/detail_research.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def research_not_pub(request):
     researchs = OrgResearch.objects.filter(
         publish=False).order_by('-created_at')
@@ -1205,7 +1205,7 @@ def research_not_pub(request):
     return render(request, 'orgs/research/research_not_pub.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def edit_research(request, research_id):
     research = get_object_or_404(OrgResearch, id=research_id)
 
@@ -1231,7 +1231,7 @@ def edit_research(request, research_id):
     return render(request, 'orgs/research/edit_research.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def delete_research(request, research_id):
     research = get_object_or_404(OrgResearch, id=research_id)
     if request.method == 'POST' and request.user.is_superuser:
@@ -1304,7 +1304,7 @@ def orgs_jobs(request):
 # add job to recourse
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def orgs_add_job(request):
     if request.user.is_authenticated:
         org_prof_pub_check = OrgProfile.objects.filter(
@@ -1376,7 +1376,7 @@ def orgs_add_job(request):
 # jobs list to confirme
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def org_jobs_not_pub(request):
     jobs = OrgJob.objects.filter(publish=False).order_by('-created_at')
     others = OtherOrgs.objects.all()
@@ -1451,7 +1451,7 @@ def jobs_detail(request, job_id):
 # job edit to modify job details
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def jobs_edit(request, job_id):
     job = get_object_or_404(OrgJob, id=job_id)
     other = OtherOrgs.objects.filter(job=job_id).first()
@@ -1483,7 +1483,7 @@ def jobs_edit(request, job_id):
 # delete job
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def jobs_delete(request, job_id):
     job = get_object_or_404(OrgJob, id=job_id)
 
@@ -1533,7 +1533,7 @@ def finance_perso(request):
     return render(request, 'orgs/funding_opport/pers/pub.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def add_finance_perso(request):
     if request.method == 'POST':
         form = PersoFunForm(request.POST or None, request.FILES or None)
@@ -1593,7 +1593,7 @@ def finance_perso_detail(request, pk):
     return render(request, 'orgs/funding_opport/pers/detail.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def finance_perso_edit(request, pk):
     perso = get_object_or_404(PersFundingOpp, id=pk)
 
@@ -1619,7 +1619,7 @@ def finance_perso_edit(request, pk):
     return render(request, 'orgs/funding_opport/pers/edit.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def finance_perso_delete(request, pk):
     funding = get_object_or_404(PersFundingOpp, id=pk)
 
@@ -1636,7 +1636,7 @@ def finance_perso_delete(request, pk):
     return render(request, 'orgs/funding_opport/pers/delete.html', context)
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def finance_perso_not_pub(request):
     fundings = PersFundingOpp.objects.filter(
         publish=False).order_by('-created_at')
@@ -1685,7 +1685,7 @@ def orgs_funding(request):
 # add funding
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def orgs_add_funding(request):
 
     if request.method == 'POST':
@@ -1722,7 +1722,7 @@ def orgs_add_funding(request):
 # funding list to confirme
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def org_funding_not_pub(request):
     fundings = OrgFundingOpp.objects.filter(
         publish=False).order_by('-created_at')
@@ -1779,7 +1779,7 @@ def funding_detail(request, funding_id):
 # job edit to modify job details
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def funding_edit(request, funding_id):
     funding = get_object_or_404(OrgFundingOpp, id=funding_id)
 
@@ -1805,7 +1805,7 @@ def funding_edit(request, funding_id):
 # delete funding
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def funding_delete(request, funding_id):
     funding = get_object_or_404(OrgFundingOpp, id=funding_id)
 
@@ -1847,7 +1847,7 @@ def orgs_capacity(request):
 # add funding
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def orgs_add_capacity(request):
 
     if request.method == 'POST':
@@ -1881,7 +1881,7 @@ def orgs_add_capacity(request):
 # funding list to confirme
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def org_capacity_not_pub(request):
     Capacitys = OrgCapacityOpp.objects.filter(
         publish=False).order_by('-created_at')
@@ -1938,7 +1938,7 @@ def capacity_detail(request, capacity_id):
 # capacity edit to modify capacity details
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def capacity_edit(request, capacity_id):
     capacity = get_object_or_404(OrgCapacityOpp, id=capacity_id)
 
@@ -1968,7 +1968,7 @@ def capacity_edit(request, capacity_id):
 # delete funding
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def capacity_delete(request, capacity_id):
     capacity = get_object_or_404(OrgCapacityOpp, id=capacity_id)
 
@@ -2008,7 +2008,7 @@ def orgs_devs(request):
 # add devs
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def orgs_add_devs(request):
 
     if request.method == 'POST':
@@ -2037,7 +2037,7 @@ def orgs_add_devs(request):
 # devs list to confirme 0
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def org_devs_not_pub(request):
     devs = DevOrgOpp.objects.filter(publish=False).order_by('-created_at')
 
@@ -2092,7 +2092,7 @@ def devs_detail(request, devs_id):
 # dev edit to modify dev details
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def dev_edit(request, devs_id):
     devs = get_object_or_404(DevOrgOpp, id=devs_id)
 
@@ -2118,7 +2118,7 @@ def dev_edit(request, devs_id):
 
 
 # delete dev bulding
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def dev_delete(request, devs_id):
     devs = DevOrgOpp.objects.filter(publish=True).order_by('-created_at')
 
@@ -2178,7 +2178,7 @@ def orgs_our_news(request):
 # send invitions
 
 
-@ login_required(login_url='signe_in')
+@login_required(login_url='signe_in')
 def friend_invite(request):
     if request.method == 'POST':
         form = FriendInviteForm(request.POST or None, files=request.FILES)

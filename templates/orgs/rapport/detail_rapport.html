@@ -134,9 +134,22 @@
     </p>
 
     {% if '.pdf' in rapport.media.url %}
+    <!-- <p><a href="{{ rapport.media.url }}" target=_blank>{{ rapport.title }}</a></p> -->
+
     <object data="{{ rapport.media.url }}" type="application/pdf" title="{{rapport.title}}" width="100%" height="885">
-      <!-- <embed src="{{ rapport.media.url  }}" > -->
+      <embed src="{{ rapport.media.url  }}" >
+        <p>Vous n'avez pas de plugin PDF mais vous pouvez <a href="{{ rapport.media.url }} " target=_blank>télécharger
+            le fichier.</a></p>
     </object>
+<!-- 
+    <object
+      data="{{ rapport.media.url }}"
+      type="application/pdf" width="500" height="500" typemustmatch>
+      <p>Vous n'avez pas de plugin PDF mais vous pouvez <a
+          href="{{ rapport.media.url }} " target=_blank>télécharger
+          le fichier.</a></p>
+    </object> -->
+
     {% else %}
     <a href="">
       <img src="{{ rapport.media.url }}" name="{{ rapport.title }}" title="{{ rapport.title }}"

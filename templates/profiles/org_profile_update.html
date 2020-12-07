@@ -63,7 +63,6 @@
 
         <div class="d-flex flex-wrap">
             {{ positionForm.media }}
-
             {{ positionForm.management_form|crispy }}
 
             {% for form in positionForm %}
@@ -72,15 +71,9 @@
                 {{ form.city_work|as_crispy_field }}
             </div>
             {% endfor %}
-
-
         </div>
 
-
         <hr class="d-none d-xl-block">
-
-
-
 
         <div>
             {{ form.message|as_crispy_field | safe }}

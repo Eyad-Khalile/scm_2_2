@@ -127,15 +127,23 @@ def org_profile_edit(request, pk):
                               files=request.FILES, instance=org_prof)
         positionForm = PositionFormset(request.POST or None,
                                        queryset=Position.objects.filter(org_profile_id=org_prof))
-        if form.is_valid() and positionForm.is_valid():
+        if form.is_valid():
             user = form.save(commit=False)
             user.updated_at = datetime.utcnow()
             user.save()
 
+            messages.success(
+                request, _('لقد تم تعديل الملف الشخصي بنجاح'))
+            return redirect('guide')
+
+        else:
+            messages.error(request, 'The form profile is not valide')
+
+        if positionForm.is_valid():
             inst_vio = positionForm.save(commit=False)
             for inst in inst_vio:
                 inst.user = request.user
-                inst.org_profile_id = prof.id
+                inst.org_profile_id = user.id
                 inst.save()
 
             messages.success(
@@ -143,7 +151,9 @@ def org_profile_edit(request, pk):
             return redirect('guide')
 
         else:
-            messages.error(request, 'The form is not valide')
+            print(positionForm)
+            messages.error(request, 'The form position is not valide')
+
 
     else:
         form = OrgProfileForm(instance=org_prof)

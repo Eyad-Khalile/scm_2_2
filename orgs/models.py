@@ -442,8 +442,8 @@ class OrgProfile(models.Model):
     updated_at = models.DateTimeField(blank=True, null=True, default=None)
 
     def __str__(self):
-        if self.user:
-            # return '%s %s' % (self.user.username, self.name)
+        if self.name:
+            # return '%s %s' % (self.name, self.user.username)
             # return '%s' % (self.user.username) + ' / ' + '%s' % (self.name)
             return self.name
 
@@ -480,7 +480,7 @@ class Position(models.Model):
     #     max_length=100, null=True, blank=True, default=None)
 
     position_work = CountryField(
-        max_length=255, null=False, verbose_name=_("مكان العمل"))
+        max_length=255, null=True, blank=True, verbose_name=_("مكان العمل"))
     city_work = models.ForeignKey(
         City, on_delete=models.SET_NULL, null=True, blank=True, verbose_name=_("المحافظة"))
 
@@ -555,7 +555,7 @@ class OrgRapport(models.Model):
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         super().save(force_insert, force_update, using, update_fields)
         extension = os.path.splitext(self.media.name)
-        if extension != '.pdf':
+        if not '.pdf' in list(extension):
             img = Image.open(self.media.path)
             if img.height > 1600 or img.width > 1600:
                 output_size = (1600, 1600)

@@ -46,10 +46,6 @@
                     </div>
                 </form>
                 {% endif %}
-                {% endif %}
-
-
-                {% if request.user.is_superuser %}
                 <a href="{% url 'finance_perso_edit' perso.id %}" class="dropdown-item"
                     title="{% trans 'تعديل فرصة التمويل' %}">{% trans 'تعديل فرصة التمويل' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
     {% endif %}"></i></a>
@@ -57,11 +53,16 @@
                     title="{% trans 'حذف' %}">{% trans 'حذف' %}
                     <i class="far fa-trash-alt mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
     {% endif %}"></i></a>
+                {% endif %}
 
-                {% elif request.user == perso.user and perso.publish == False %}
+
+                {% if request.user == perso.user and perso.publish == False %}
                 <a href="{% url 'finance_perso_edit' perso.id %}" class="dropdown-item"
                     title="{% trans 'تعديل فرصة التمويل' %}">{% trans 'تعديل فرصة التمويل' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
     {% endif %}"></i></a>
+                {% else %}
+                <a href="#" class="dropdown-item text-wrap">
+                    {% trans 'لا يمكنك التعديل بعد الموافقة على النشر أو ليس لديك الصلاحية' %} </a>
                 {% endif %}
             </div>
         </div>

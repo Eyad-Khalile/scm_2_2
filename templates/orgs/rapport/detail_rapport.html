@@ -18,7 +18,7 @@
     {% if request.user.is_authenticated %}
     <!-- <span id="span-menu" type="button"
       class="span-menu {% if LANGUAGE_CODE == 'ar' %} float-right {% else %} float-left {% endif %}"><i
-        class="fa fa-ellipsis-v" aria-hidden="true"></i></span> -->
+      class="fa fa-ellipsis-v" aria-hidden="true"></i></span> -->
     <div class="btn-group" role="group">
       <span id="btnGroupDrop1" type="button" class="btn dropdown-toggle {% if LANGUAGE_CODE == 'ar' %} pr-0 {% else %} pl-0
     {% endif %}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,26 +45,30 @@
           </div>
         </form>
         {% endif %}
-        {% endif %}
-
-
-        {% if request.user.is_superuser %}
         <a href="{% url 'edit_rapport' rapport.id %}" class="dropdown-item"
           title="{% trans 'تعديل التقرير' %}">{% trans 'تعديل التقرير' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
     {% endif %}"></i></a>
         <a href="{% url 'orgs_rapport_delete' rapport.id %}" class="dropdown-item"
           title="{% trans 'حذف التقرير' %}">{% trans 'حذف التقرير' %} <i class="far fa-trash-alt mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
     {% endif %}"></i></a>
-
-        {% elif request.user == rapport.user and rapport.publish == False %}
-        <a href="{% url 'edit_rapport' rapport.id %}" class="dropdown-item"
-          title="{% trans 'تعديل التقرير' %}">{% trans 'تعديل التقرير' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
-    {% endif %}"></i></a>
         {% endif %}
+
+
+        {% if rapport.user == request.user.username and rapport.publish == False %}
+        <a href="{% url 'edit_rapport' rapport.id %}" class="dropdown-item" title="{% trans 'تعديل التقرير' %}">
+          {% trans 'تعديل التقرير' %}
+          <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+    {% endif %}"></i>
+        </a>
+        {% else %}
+        <a href="#" class="dropdown-item text-wrap"> {% trans 'لا يمكنك التعديل بعد الموافقة على النشر أو ليس لديك الصلاحية' %} </a>
+        {% endif %}
+        
 
       </div>
     </div>
     {% endif %}
+
 
     <!-- <div id="mini-menu"
       class="list-group mini-menu d-none {% if LANGUAGE_CODE == 'ar' %} menu-right {% else %} menu-left {% endif %}">
@@ -137,18 +141,10 @@
     <!-- <p><a href="{{ rapport.media.url }}" target=_blank>{{ rapport.title }}</a></p> -->
 
     <object data="{{ rapport.media.url }}" type="application/pdf" title="{{rapport.title}}" width="100%" height="885">
-      <embed src="{{ rapport.media.url  }}" >
-        <p>Vous n'avez pas de plugin PDF mais vous pouvez <a href="{{ rapport.media.url }} " target=_blank>télécharger
-            le fichier.</a></p>
-    </object>
-<!-- 
-    <object
-      data="{{ rapport.media.url }}"
-      type="application/pdf" width="500" height="500" typemustmatch>
-      <p>Vous n'avez pas de plugin PDF mais vous pouvez <a
-          href="{{ rapport.media.url }} " target=_blank>télécharger
+      <embed src="{{ rapport.media.url  }}">
+      <p>Vous n'avez pas de plugin PDF mais vous pouvez <a href="{{ rapport.media.url }} " target=_blank>télécharger
           le fichier.</a></p>
-    </object> -->
+    </object>
 
     {% else %}
     <a href="">

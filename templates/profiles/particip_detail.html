@@ -39,23 +39,28 @@
         </div>
       </form>
       {% endif %}
-      {% endif %}
-
-
-      {% if request.user.is_superuser %}
       <a href="{% url 'org_profile_edit' org.id %}" class="dropdown-item"
         title="{% trans 'تعديل الملف الشخصي' %}">{% trans 'تعديل الملف الشخصي' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
     {% endif %}"></i></a>
       <a href="{% url 'org_profile_delete' org.id %}" class="dropdown-item"
         title="{% trans 'حذف الملف الشخصي' %}">{% trans 'حذف الملف الشخصي' %} <i class="far fa-trash-alt mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
     {% endif %}"></i></a>
+      {% endif %}
 
-      {% elif request.user == org.user or request.user.is_staff %}
+
+
       {% if org.publish == False %}
+      {% if request.user == org.user or request.user.is_staff %}
       <a href="{% url 'org_profile_edit' org.id %}" class="dropdown-item"
         title="{% trans 'تعديل الملف الشخصي' %}">{% trans 'تعديل الملف الشخصي' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
     {% endif %}"></i></a>
+    {% else %}
+    <a href="#" class="dropdown-item text-wrap">
+      {% trans 'ليس لديك الصلاحية' %} </a>
       {% endif %}
+      {% else %}
+      <a href="#" class="dropdown-item text-wrap">
+        {% trans 'لا يمكنك التعديل بعد الموافقة على النشر' %} </a>
       {% endif %}
     </div>
   </div>

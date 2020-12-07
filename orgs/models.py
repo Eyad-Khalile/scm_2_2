@@ -589,7 +589,7 @@ class OrgData(models.Model):
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         super().save(force_insert, force_update, using, update_fields)
         extension = os.path.splitext(self.media.name)
-        if extension != '.pdf':
+        if not '.pdf' in list(extension):
             img = Image.open(self.media.path)
             if img.height > 1600 or img.width > 1600:
                 output_size = (1600, 1600)
@@ -625,7 +625,7 @@ class OrgMedia(models.Model):
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         super().save(force_insert, force_update, using, update_fields)
         extension = os.path.splitext(self.media.name)
-        if extension != '.pdf':
+        if not '.pdf' in list(extension):
             img = Image.open(self.media.path)
             if img.height > 1600 or img.width > 1600:
                 output_size = (1600, 1600)
@@ -666,7 +666,7 @@ class OrgResearch(models.Model):
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         super().save(force_insert, force_update, using, update_fields)
         extension = os.path.splitext(self.media.name)
-        if extension != '.pdf':
+        if not '.pdf' in list(extension):
             img = Image.open(self.media.path)
             if img.height > 1600 or img.width > 1600:
                 output_size = (1600, 1600)
@@ -1008,7 +1008,7 @@ class DevOrgOpp(models.Model):
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         super().save(force_insert, force_update, using, update_fields)
         extension = os.path.splitext(self.content.name)
-        if extension != '.pdf':
+        if not '.pdf' in list(extension):
             img = Image.open(self.content.path)
             if img.height > 1600 or img.width > 1600:
                 output_size = (1600, 1600)

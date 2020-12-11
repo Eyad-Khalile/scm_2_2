@@ -62,7 +62,7 @@
 
 
 
-    <div class="row row-m-0 {% if LANGUAGE_CODE == 'ar' %} row-gutter-0 {% else %} row-gutter-3 {% endif %} pt-4 pb-4
+    <div class="row row-m-0 row-gutter-0 pt-4 pb-4
         mb-4">
         {% if fundings %}
         {% for funding in fundings %}
@@ -81,8 +81,8 @@
                     {{ funding.name_funding }}
                     {% endif %}</h3>
 
-                <p>{{ funding.funding_org_description|safe|truncatechars:80 }}</p>
-                <p>{{ funding.funding_description|safe|truncatechars:80 }}</p>
+                <!-- <p>{{ funding.funding_org_description|safe|truncatechars:80 }}</p>
+                <p>{{ funding.funding_description|safe|truncatechars:80 }}</p> -->
                 <p>
                     <a href="{% url 'funding_detail' funding.id %}" class="btn btn-block"
                         title="{% trans 'لقراءة المزيد' %}"><i class="fas fa-book-reader"></i></a>

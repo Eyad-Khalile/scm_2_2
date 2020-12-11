@@ -58,7 +58,7 @@
 
 
 
-    <div class="row row-m-0 {% if LANGUAGE_CODE == 'ar' %} row-gutter-0 {% else %} row-gutter-3 {% endif %} pt-4 pb-4
+    <div class="row row-m-0 row-gutter-0 pt-4 pb-4
         mb-4">
 
         <div class="row row-m-0 justify-content-start pt-4 pb-4 mb-4">
@@ -81,7 +81,7 @@
 
                     <p>{{ dev.get_subject_display }}</p>
 
-                    <p>{{ dev.dev_description|safe|truncatechars:80 }}</p>
+                    <!-- <p>{{ dev.dev_description|safe|truncatechars:80 }}</p> -->
                     <p>
                         <a href="{% url 'devs_detail' dev.id %}" class="btn btn-block"
                             title="{% trans 'لقراءة المزيد' %}"><i class="fas fa-book-reader"></i></a>

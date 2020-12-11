@@ -83,8 +83,8 @@ def org_profile(request):
                 prof.user = request.user
             prof.save()
 
-            inst_vio = positionForm.save(commit=False)
-            for inst in inst_vio:
+            inst_pos = positionForm.save(commit=False)
+            for inst in inst_pos:
                 inst.user = request.user
                 inst.org_profile_id = prof.id
                 inst.save()
@@ -121,16 +121,47 @@ def org_profile_edit(request, pk):
 
     # ADD MULTI COUNTRY
     PositionFormset = modelformset_factory(
-        Position, form=PositionForm, can_delete=True, extra=3)
+        Position, fields=('position_work', 'city_work'), extra=5)
+    
     if request.method == 'POST':
         form = OrgProfileForm(request.POST or None,
                               files=request.FILES, instance=org_prof)
-        positionForm = PositionFormset(request.POST or None,
-                                       queryset=Position.objects.filter(org_profile_id=org_prof))
-        if form.is_valid():
+        positionForm = PositionFormset(
+            request.POST or None, request.FILES or None)
+
+        if form.is_valid() and positionForm.is_valid():
             user = form.save(commit=False)
             user.updated_at = datetime.utcnow()
             user.save()
+
+            data = Position.objects.filter(org_profile_id=org_prof)
+
+            # =================== Update and Delete Position =====================
+            for index, f in enumerate(positionForm):
+                if f.cleaned_data:
+                    # ========= for add new media with the arg (extra=1) ==========
+                    if f.cleaned_data['id'] is None:
+                        pos = Position(org_profile_id=org_prof,
+                                       position_work=f.cleaned_data.get('position_work'), city_work=f.cleaned_data.get('city_work'))
+                        pos.org_profile = org_prof
+                        pos.user = request.user
+                        pos.save()
+                    # for Delete an Position
+                    elif f.cleaned_data['position_work'] is False or f.cleaned_data['city_work'] is False:
+                        pos = Position.objects.get(
+                            id=request.POST.get('form-' + str(index) + '-id'))
+                        pos.delete()
+                    # for Update an Position
+                    else:
+                        pos = Position(org_profile_id=org_prof,
+                                       position_work=f.cleaned_data.get('position_work'), city_work=f.cleaned_data.get('city_work'))
+                        d = Position.objects.get(id=data[index].id)
+                        d.user = request.user
+                        d.position_work = pos.position_work
+                        d.city_work = pos.city_work
+                        d.updated_at = datetime.utcnow()
+                        d.save()
+        
 
             messages.success(
                 request, _('لقد تم تعديل الملف الشخصي بنجاح'))
@@ -138,21 +169,6 @@ def org_profile_edit(request, pk):
 
         else:
             messages.error(request, 'The form profile is not valide')
-
-        if positionForm.is_valid():
-            inst_vio = positionForm.save(commit=False)
-            for inst in inst_vio:
-                inst.user = request.user
-                inst.org_profile_id = user.id
-                inst.save()
-
-            messages.success(
-                request, _('لقد تم تعديل الملف الشخصي بنجاح'))
-            return redirect('guide')
-
-        else:
-            print(positionForm)
-            messages.error(request, 'The form position is not valide')
 
 
     else:

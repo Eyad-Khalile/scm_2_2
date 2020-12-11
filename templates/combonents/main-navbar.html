@@ -196,6 +196,10 @@
                     <a class="nav-link {% if request.resolver_match.url_name == 'centre_news' %} active {% endif %}"
                         aria-current="page" href="{% url 'orgs_our_news' %}"> {% trans 'أخبار البوابة' %} </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'contact' %} active {% endif %}"
+                        aria-current="page" href="{% url 'contact' %}"> {% trans 'للتواصل معنا' %} </a>
+                </li>
             </ul>
 
             <!-- left side -->
@@ -218,10 +222,14 @@
                             <!-- <a class="dropdown-item {% if request.resolver_match.url_name == 'profile' %} active {% endif %}"
                                 href="{% url 'profile' %}"> {% trans 'لوحة التحكم الخاصة باﻹدارة' %} </a> -->
 
-
                             <a class="dropdown-item {% if request.resolver_match.url_name == 'profile' %} active {% endif %}"
-                                href="{% url 'profile' %}"> {% trans 'ملفي الشخصي' %} </a>
-
+                                href="{% url 'profile' %}"> 
+                                {% if request.user.is_superuser %}
+                                {% trans 'لوحة التحكم الخاصة باﻹدارة' %}
+                                {% else %}
+                                {% trans 'ملفي الشخصي' %} 
+                                {% endif %}
+                            </a>
                         </li>
                         <li>
                             <a class="dropdown-item {% if request.resolver_match.url_name == 'password_change' %} active {% endif %}"
@@ -245,11 +253,17 @@
                     </a>
                     <ul class="dropdown-menu bg-main-color border-0" aria-labelledby="navbarDropdown">
                         {% if request.user.is_authenticated and not request.user.is_superuser %}
-                        <li>
-                            <a class="dropdown-item {% if request.resolver_match.url_name == 'profile' %} active {% endif %}"
-                                href="{% url 'profile' %}"> {% trans 'ملفي الشخصي' %} </a>
-                        </li>
                         {% endif %}
+                            <li>
+                                <a class="dropdown-item {% if request.resolver_match.url_name == 'profile' %} active {% endif %}"
+                                    href="{% url 'profile' %}">
+                                    {% if request.user.is_superuser %}
+                                    {% trans 'لوحة التحكم الخاصة باﻹدارة' %}
+                                    {% else %}
+                                    {% trans 'ملفي الشخصي' %}
+                                    {% endif %}
+                                </a>
+                            </li>
                         <li>
                             <a class="dropdown-item {% if request.resolver_match.url_name == 'password_change' %} active {% endif %}"
                                 href="{% url 'password_change' %}"> {% trans 'تغيير كلمة المرور' %} </a>

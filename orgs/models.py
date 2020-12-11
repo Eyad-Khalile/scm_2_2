@@ -344,9 +344,9 @@ class City(models.Model):
     city_work = models.CharField(max_length=255, null=False,
                                  verbose_name=_('اسم المحافظة'))
     city_work_en = models.CharField(max_length=255, null=True, blank=True, default='',
-                                    verbose_name=_('City En'))
+                                    verbose_name=_('اسم المدينة بالانكليزية'))
     city_work_ku = models.CharField(max_length=255, null=True, blank=True, default='',
-                                    verbose_name=_('City Ku'))
+                                    verbose_name=_('اسم المدينة بالكردية'))
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(blank=True, null=True, default=None)
@@ -360,7 +360,7 @@ class City(models.Model):
 class OrgProfile(models.Model):
 
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, null=True, blank=True, verbose_name=_("اسم المستخدم"), help_text=_('المستخدمين الذين ليس لديهم طلبات بروفايل فقط'))
+        User, on_delete=models.CASCADE, null=True, blank=True, verbose_name=_("اسم المستخدم"), help_text=_('المستخدمون الذين ليس لديهم طلبات بروفايل فقط'))
 
     staff = models.CharField(max_length=100, null=True, blank=True)
 
@@ -415,7 +415,7 @@ class OrgProfile(models.Model):
     # ORG INFO
     work_domain = MultiSelectField(
         max_length=255, choices=MyChoices.domain_CHOICES, null=False, verbose_name=_('مجال العمل'))
-    target_cat = models.CharField(
+    target_cat = MultiSelectField(
         max_length=255, null=False, choices=MyChoices.target_CHOICES, verbose_name=_('الفئات المستهدفة'))
     date_of_establishment = models.CharField(
         max_length=150, null=True, blank=True, verbose_name=_('تاريخ سنة التأسيس'))

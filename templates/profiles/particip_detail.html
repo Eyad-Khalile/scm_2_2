@@ -25,7 +25,7 @@
         {% csrf_token %} {{ form.publish }}
         <div class="form-group">
           <button type="submit" id="org_confirm_btn" class="dropdown-item"
-            title="{% trans 'قبول الطلب' %}">{% trans 'قبول الطلب' %} <i class="fas fa-check mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+            title="{% trans 'قبول الطلب' %}">{% trans 'قبول الطلب' %} <i class="fas fa-check  {% if LANGUAGE_CODE == 'ar' %} float-left mr-4 {% else %} ml-4 float-right
     {% endif %}"></i></button>
         </div>
       </form>
@@ -34,30 +34,30 @@
         {% csrf_token %} {{ form.publish }}
         <div class="form-group">
           <button type="submit" id="org_deconfirm_btn" class="dropdown-item"
-            title="{% trans 'رفض الطلب' %}">{% trans 'رفض الطلب' %} <i class="fa fa-ban mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+            title="{% trans 'رفض الطلب' %}">{% trans 'رفض الطلب' %} <i class="fa fa-ban  {% if LANGUAGE_CODE == 'ar' %} float-left mr-4 {% else %} ml-4 float-right
     {% endif %}" aria-hidden="true"></i></button>
         </div>
       </form>
       {% endif %}
       <a href="{% url 'org_profile_edit' org.id %}" class="dropdown-item"
-        title="{% trans 'تعديل الملف الشخصي' %}">{% trans 'تعديل الملف الشخصي' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+        title="{% trans 'تعديل الملف الشخصي' %}">{% trans 'تعديل الملف الشخصي' %} <i class="fas fa-edit  {% if LANGUAGE_CODE == 'ar' %} float-left mr-4 {% else %} ml-4 float-right
     {% endif %}"></i></a>
       <a href="{% url 'org_profile_delete' org.id %}" class="dropdown-item"
-        title="{% trans 'حذف الملف الشخصي' %}">{% trans 'حذف الملف الشخصي' %} <i class="far fa-trash-alt mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+        title="{% trans 'حذف الملف الشخصي' %}">{% trans 'حذف الملف الشخصي' %} <i class="far fa-trash-alt  {% if LANGUAGE_CODE == 'ar' %} float-left mr-4 {% else %} ml-4 float-right
     {% endif %}"></i></a>
       {% endif %}
 
 
 
-      {% if org.publish == False %}
+      {% if org.publish == False and not request.user.is_superuser %}
       {% if request.user == org.user or request.user.is_staff %}
       <a href="{% url 'org_profile_edit' org.id %}" class="dropdown-item"
-        title="{% trans 'تعديل الملف الشخصي' %}">{% trans 'تعديل الملف الشخصي' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+        title="{% trans 'تعديل الملف الشخصي' %}">{% trans 'تعديل الملف الشخصي' %} <i class="fas fa-edit  {% if LANGUAGE_CODE == 'ar' %} float-left mr-4 {% else %} ml-4 float-right
     {% endif %}"></i></a>
-    {% else %}
-    {% if not request.user.is_superuser %}
-    <a href="#" class="dropdown-item text-wrap">
-      {% trans 'ليس لديك الصلاحية' %} </a>
+      {% else %}
+      {% if not request.user.is_superuser %}
+      <a href="#" class="dropdown-item text-wrap">
+        {% trans 'ليس لديك الصلاحية' %} </a>
       {% endif %}
       {% endif %}
       {% else %}
@@ -211,8 +211,10 @@
               {% if city.city_work %}
               {{ city.city_work }} |
               {% else %}
+              {% if city.city_work != None %}
               <span class="text-muted">
                 {% trans 'لم يذكر' %} </span>
+                {% endif %}
               {% endif %}
               {% endfor %}
             </div>

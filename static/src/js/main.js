@@ -286,3 +286,16 @@ document.onkeydown = function (evt) {
     }
 }
 
+
+// if ($("Your p tag").val().length == 0)
+
+let p_empty = $('.job-card').find('p');
+
+
+
+// $('.job-card').find('p').each(function () {
+//     if (p_empty === "" || p_empty === "\u200b" ) {
+//         $('.job-card').find('p').css('display', 'none');
+//     }
+// });
+

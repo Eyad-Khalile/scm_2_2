@@ -142,7 +142,7 @@ urlpatterns = [
     #          views.centre_news_detail, name="centre_news_detail"),
 
     # CONTACT-US
-    # path('contact', views.contact, name="contact"),
+    path('contact', views.contact, name="contact"),
 
 
     # SIGNE-IN AND SIGNE-UP

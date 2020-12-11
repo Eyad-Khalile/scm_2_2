@@ -61,17 +61,17 @@
             </div>
         </div>
 
-        <div class="d-flex flex-wrap">
-            {{ positionForm.media }}
-            {{ positionForm.management_form|crispy }}
-
+        <!-- ADD AND UPDATE POSITION ACTUELLE -->
+        <div class="form-group update-position d-flex flex-wrap">
+            {{ positionForm.management_form }}
             {% for form in positionForm %}
             <div class="form-group mx-2 rounded border p-2 bg-light">
-                {{ form.position_work|as_crispy_field }}
-                {{ form.city_work|as_crispy_field }}
+                {{ form|crispy }}
             </div>
             {% endfor %}
         </div>
+
+        
 
         <hr class="d-none d-xl-block">
 

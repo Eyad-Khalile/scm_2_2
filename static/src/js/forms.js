@@ -432,8 +432,19 @@ $('#id_video').attr('placeholder', 'Ex:  https://www.youtube.com');
 
 
 
+// UPDATE PROFILE -> POSITION
+let olde_total_forms = $('.update-position').find('input[name=form-TOTAL_FORMS]').val();
+let olde_initial_forms = $('.update-position').find('input[name=form-INITIAL_FORMS]').val();
+
+let new_total_forms = $('.form-vio').find('input[name=form-TOTAL_FORMS]');
+let new_initial_forms = $('.form-vio').find('input[name=form-INITIAL_FORMS]');
+
+new_total_forms.attr('value', olde_total_forms);
+new_initial_forms.attr('value', olde_initial_forms);
+
 // :::::::::::: ADD POSITIONS AND CITYS ::::::::::::::::::
-var form_idx = 0
+var form_idx = new_total_forms.val()-1;
+// var form_idx = 0;
 $('#add_more_vio').click(function () {
     form_idx++;
     // var form_idx = $('#id_form-TOTAL_FORMS').val();
@@ -488,5 +499,5 @@ $('#add_more_vio').click(function () {
     //     });
     // });
 
-
 });
+

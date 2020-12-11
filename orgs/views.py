@@ -46,7 +46,7 @@ from sendgrid.helpers.mail import Mail
 
 
 def signe_up(request):
-    if request.user.is_authenticated:
+    if request.user.is_authenticated and not request.user.is_superuser:
         return redirect('home')
     else:
         # users = User.objects.all()
@@ -60,57 +60,44 @@ def signe_up(request):
             # if user_email not in emails:
             if form.is_valid():
                 user = form.save(commit=False)
-                user.is_active = False
+                if request.user.is_superuser:
+                    user.is_active = True
+                else:
+                    user.is_active = False
                 user.save()
+                
 
-                current_site = get_current_site(request)
-                subject = 'Activate Your Account.'
-                message = render_to_string('register/account_activation_email.html', {
-                    'user': user,
-                    'domain': current_site.domain,
-                    'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-                    'token': account_activation_token.make_token(user),
-                })
-                to_email = form.cleaned_data.get('email')
-                email = EmailMessage(
-                    subject, message, to=[to_email]
-                )
+                if not request.user.is_superuser:
+                    current_site = get_current_site(request)
+                    subject = 'Activate Your Account.'
+                    message = render_to_string('register/account_activation_email.html', {
+                        'user': user,
+                        'domain': current_site.domain,
+                        'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                        'token': account_activation_token.make_token(user),
+                    })
+                    to_email = form.cleaned_data.get('email')
+                    email = EmailMessage(
+                        subject, message, to=[to_email]
+                    )
 
-                # print(email)
-                email.send()
+                    # print(email)
+                    email.send()
+                    username = form.cleaned_data.get('username')
+                    # messages.success(
+                    #     request, f'Your Account has been created Successful with username ( {username} ) !, Please confirm your email address to complete the registration ')
+                    messages.success(
+                        request, _(f'تم إنشاء حسابك بنجاح باسم المستخدم ( {username} ) !, يرجى تأكيد عنوان بريدك الإلكتروني لإكمال التسجيل '))
+                    return redirect('home')
 
-                # SENDGRID
-                # send_mail(
-                #     subject,
-                #     message,
-                #     'khalile.eyad@gmail.com',
-                #     [
-                #         to_email,
-                #     ]
-                # )
+                else:
+                    username = form.cleaned_data.get('username')
+                    # messages.success(
+                    #     request, f'Your Account has been created Successful with username ( {username} ) !, Please confirm your email address to complete the registration ')
+                    messages.success(
+                        request, _(f'لقد تم تسجيل حساب المستخدم ( {username} ) بنجاح'))
+                    return redirect('signe_up')
 
-                # message_send = Mail(
-                #     to_emails=to_email,
-                #     subject=subject,
-                #     plain_text_content=message,
-                # )
-
-                # try:
-                #     sg = SendGridAPIClient(os.environ['SEND_API_KEY'])
-                #     response = sg.send(message_send)
-                #     print(response.status_code)
-                #     print(response.body)
-                #     print(response.headers)
-                # except Exception as e:
-                #     # print(e.message)
-                #     pass
-                username = form.cleaned_data.get('username')
-
-                # messages.success(
-                #     request, f'Your Account has been created Successful with username ( {username} ) !, Please confirm your email address to complete the registration ')
-                messages.success(
-                    request, _(f'تم إنشاء حسابك بنجاح باسم المستخدم ( {username} ) !, يرجى تأكيد عنوان بريدك الإلكتروني لإكمال التسجيل '))
-                return redirect('home')
             # else:
 
             #     if user_email in emails:
@@ -1266,8 +1253,43 @@ def site_politic(request):
 
 
 # CONTACT-US
-# def contact(request):
-#     return render(request, 'contact/contact.html')
+def contact(request):
+
+    if request.method == 'POST':
+        form = ContactUsForm(request.POST or None)
+
+        contact_name = request.POST['contact_name']
+        contact_email = request.POST['contact_email']
+        contact_subject = request.POST['contact_email']
+        contact_message = request.POST['contact_message']
+
+        send_mail(
+            # subject,
+            # message,
+            # from email,
+            # to email,
+            contact_subject + ' ' + contact_name + ' ' + contact_email,
+            contact_message,
+            contact_email,
+            ['khalile.eyad@gmail.com'],
+
+        )
+
+        messages.success(request, 'لقد تم الارسال بنجاح و سيتم الرد باقرب وقت ممكن')
+        return redirect('home')
+
+    else:
+        form = ContactUsForm()
+
+    
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'contact/contact.html', context)
+
+
+
 # Recourses of civilty this is the befor last tab
 def resources(request):
     return render(request, 'orgs/resources/org_recources.html')
@@ -1317,6 +1339,7 @@ def orgs_add_job(request):
     if request.method == 'POST':
         form = JobsForm(request.POST or None, files=request.FILES)
         form_other = OtherOrgsForm(request.POST or None, files=request.FILES)
+
         if form.is_valid() and form_other.is_valid():
 
             user = form.save(commit=False)
@@ -1332,6 +1355,11 @@ def orgs_add_job(request):
             if org_name:
                 user.org_name = org_name
                 user.save()
+
+                messages.success(request, _(
+                    'لقد تمت إضافة فرصة العمل بنجاح و ستتم دراستها قريباً'))
+
+                return redirect('orgs_jobs')
 
             elif other_name:
                 creater = form_other.save(commit=False)
@@ -1354,10 +1382,10 @@ def orgs_add_job(request):
                     creater.job = form.instance.id
                     creater.save()
 
-                messages.success(request, _(
-                    'لقد تمت إضافة فرصة العمل بنجاح و ستتم دراستها قريباً'))
+                    messages.success(request, _(
+                        'لقد تمت إضافة فرصة العمل بنجاح و ستتم دراستها قريباً'))
 
-                return redirect('orgs_jobs')
+                    return redirect('orgs_jobs')
 
             # else:
             #     messages.error(request, _(

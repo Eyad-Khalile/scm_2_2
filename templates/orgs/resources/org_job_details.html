@@ -33,7 +33,7 @@
                     {% csrf_token %} {{ form.publish }}
                     <div class="form-group">
                         <button type="submit" id="org_confirm_btn" class="dropdown-item"
-                            title="{% trans 'الموافقة على النشر' %}">{% trans 'الموافقة على النشر' %} <i class="fas fa-check mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+                            title="{% trans 'الموافقة على النشر' %}">{% trans 'الموافقة على النشر' %} <i class="fas fa-check {% if LANGUAGE_CODE == 'ar' %} mr-4 float-left {% else %} ml-4 float-right
     {% endif %}"></i></button>
                     </div>
                 </form>
@@ -42,28 +42,29 @@
                     {% csrf_token %} {{ form.publish }}
                     <div class="form-group">
                         <button type="submit" id="org_deconfirm_btn" class="dropdown-item"
-                            title="{% trans 'إلغاء نشر فرصة العمل' %}">{% trans 'إلغاء نشر فرصة العمل' %} <i class="fa fa-ban mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+                            title="{% trans 'إلغاء نشر فرصة العمل' %}">{% trans 'إلغاء نشر فرصة العمل' %} <i class="fa fa-ban {% if LANGUAGE_CODE == 'ar' %} mr-4 float-left {% else %} ml-4 float-right
     {% endif %}" aria-hidden="true"></i></button>
                     </div>
                 </form>
                 {% endif %}
                 <a href="{% url 'jobs_edit' job.id %}" class="dropdown-item"
-                    title="{% trans 'تعديل فرصة عمل' %}">{% trans 'تعديل فرصة عمل' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+                    title="{% trans 'تعديل فرصة عمل' %}">{% trans 'تعديل فرصة عمل' %} <i class="fas fa-edit {% if LANGUAGE_CODE == 'ar' %} mr-4 float-left {% else %} ml-4 float-right
     {% endif %}"></i></a>
                 <a href="{% url 'jobs_delete' job.id %}" class="dropdown-item"
-                    title="{% trans 'حذف' %}">{% trans 'حذف' %} <i class="far fa-trash-alt mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+                    title="{% trans 'حذف' %}">{% trans 'حذف' %} <i class="far fa-trash-alt {% if LANGUAGE_CODE == 'ar' %} mr-4 float-left {% else %} ml-4 float-right
     {% endif %}"></i></a>
                 {% endif %}
 
-
-                {% if request.user == job.user and job.publish == False %}
+                {% if job.publish == False %}
+                {% if request.user == job.user and not request.user.is_superuser %}
                 <a href="{% url 'jobs_edit' job.id %}" class="dropdown-item"
-                    title="{% trans 'تعديل فرصة عمل' %}">{% trans 'تعديل فرصة عمل' %} <i class="fas fa-edit mx-1 {% if LANGUAGE_CODE == 'ar' %} float-left {% else %} float-right
+                    title="{% trans 'تعديل فرصة عمل' %}">{% trans 'تعديل فرصة عمل' %} <i class="fas fa-edit {% if LANGUAGE_CODE == 'ar' %} mr-4 float-left {% else %} ml-4 float-right
     {% endif %}"></i></a>
                 {% else %}
                 {% if not request.user.is_superuser %}
                 <a href="#" class="dropdown-item text-wrap">
                     {% trans 'لا يمكنك التعديل بعد الموافقة على النشر أو ليس لديك الصلاحية' %} </a>
+                {% endif %}
                 {% endif %}
                 {% endif %}
             </div>

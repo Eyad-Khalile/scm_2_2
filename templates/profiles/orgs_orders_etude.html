@@ -27,7 +27,7 @@
                     height="140" class="img-circle"></a>
             <h3 class="mt-4">{{ org.name }}</h3>
             <p>{{ org.short_cut }}</p>
-            <p>{{ org.message|truncatechars:80 }}</p>
+            <!-- <p>{{ org.message|safe|truncatechars:80 }}</p> -->
             <p>
                 <a href="{% url 'particip_detail' org.id %}" class="btn btn-block">
                     {% trans 'للمزيد عن المنظمة' %} </a>

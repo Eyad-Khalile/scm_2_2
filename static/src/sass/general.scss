@@ -10,7 +10,7 @@
 // $color-1: rgb(0, 173, 239);
 // $color-1: rgb(32, 151, 209);
 $color-1: #17678C;
-$color-2: rgb(4, 109, 184);
+$color-2: rgb(0, 0, 0);
 
 $bg-color: linear-gradient(to right, $color-2, $color-1);
 $bg-color-btn-c: radial-gradient(circle at 40px 100px, $color-2, #000);
@@ -361,7 +361,9 @@ body {
     white-space: nowrap;
     font-size: 1.2rem !important;
 
-    // transition: all 0.5s ease-in-out !important;
+    &.wrapp-yes {
+      white-space: initial !important;
+    }
 
     @include myTransition;
 
@@ -381,7 +383,9 @@ body {
 
   .btn-group {
     .dropdown-menu.show {
-      min-width: 360px;
+      // min-width: 360px;
+      width: max-content !important;
+      
       transform: translate3d(0px, 0px, 0px) !important;
       &.right-0 {
         right: 0;
@@ -846,7 +850,7 @@ body {
 
   // JOBS 
   .jobs-cards {
-    height: 475px !important;
+    // height: 475px !important;
     figure {
       overflow: hidden;
       max-width: 140px !important;

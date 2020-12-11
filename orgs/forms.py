@@ -144,11 +144,17 @@ class OrgProfileForm(forms.ModelForm):
             'لتحديد أكثر من مجال يرجى الاختيار مع استمرار الضغط على زر ال CTRL'),
         # widget=forms.CheckboxSelectMultiple,
         label=_('مجال العمل'))
+    target_cat = forms.MultipleChoiceField(
+        choices=MyChoices.target_CHOICES, required=True,
+        help_text=_(
+            'لتحديد أكثر من هدف يرجى الاختيار مع استمرار الضغط على زر ال CTRL'),
+        # widget=forms.CheckboxSelectMultiple,
+        label=_('الفئات المستهدفة'))
 
     w_polic_regulations = forms.MultipleChoiceField(
         choices=MyChoices.polic_CHOICES, required=True,
         help_text=_(
-            'لتحديد أكثر من مجال يرجى الاختيار مع استمرار الضغط على زر ال CTRL'),
+            'لتحديد أكثر من سياسة يرجى الاختيار مع استمرار الضغط على زر ال CTRL'),
         # widget=forms.CheckboxSelectMultiple,
         label=_('السياسات واللوائح المكتوبة'))
 
@@ -681,3 +687,13 @@ class FriendInviteForm(forms.ModelForm):
             'name',
             'email',
         ]
+
+class ContactUsForm(forms.Form):
+    contact_name = forms.CharField(max_length=255, label='', widget=forms.TextInput(
+        attrs={'placeholder': _('الاسم و الكنية')}))
+    contact_email = forms.CharField(max_length=255, label='', widget=forms.EmailInput(
+        attrs={'placeholder': _('البريد الالكتروني')}))
+    contact_subject = forms.CharField(max_length=255, label='', widget=forms.TextInput(
+        attrs={'placeholder': _('العنوان')}))
+    contact_message = forms.CharField(max_length=3000, label='', widget=forms.Textarea(
+        attrs={'placeholder': _('الرسالة')}))

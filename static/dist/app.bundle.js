@@ -27157,9 +27157,17 @@ $('#add_perso_finance').find('#id_fund_type').change(function () {
 });
 $('#dev_form').find('#id_content').attr('accept', 'application/pdf, image/*'); // VIDEO PLACE HOLDER
 
-$('#id_video').attr('placeholder', 'Ex:  https://www.youtube.com'); // :::::::::::: ADD POSITIONS AND CITYS ::::::::::::::::::
+$('#id_video').attr('placeholder', 'Ex:  https://www.youtube.com'); // UPDATE PROFILE -> POSITION
 
-var form_idx = 0;
+let olde_total_forms = $('.update-position').find('input[name=form-TOTAL_FORMS]').val();
+let olde_initial_forms = $('.update-position').find('input[name=form-INITIAL_FORMS]').val();
+let new_total_forms = $('.form-vio').find('input[name=form-TOTAL_FORMS]');
+let new_initial_forms = $('.form-vio').find('input[name=form-INITIAL_FORMS]');
+new_total_forms.attr('value', olde_total_forms);
+new_initial_forms.attr('value', olde_initial_forms); // :::::::::::: ADD POSITIONS AND CITYS ::::::::::::::::::
+
+var form_idx = new_total_forms.val() - 1; // var form_idx = 0;
+
 $('#add_more_vio').click(function () {
   form_idx++; // var form_idx = $('#id_form-TOTAL_FORMS').val();
 
@@ -27496,7 +27504,14 @@ document.onkeydown = function (evt) {
   if (key === 27) {
     $('#mini-menu').addClass('d-none');
   }
-};
+}; // if ($("Your p tag").val().length == 0)
+
+
+let p_empty = $('.job-card').find('p'); // $('.job-card').find('p').each(function () {
+//     if (p_empty === "" || p_empty === "\u200b" ) {
+//         $('.job-card').find('p').css('display', 'none');
+//     }
+// });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),

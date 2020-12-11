@@ -129,8 +129,7 @@
 
 
 
-    <div class="row row-m-0 {% if LANGUAGE_CODE == 'ar' %} row-gutter-0 {% else %} row-gutter-0 {% endif %} pt-4 pb-4
-        mb-4">
+    <div class="row row-m-0 row-gutter-0 pt-4 pb-4 mb-4">
         <br>
         <br>
         {% for org in orgs %}
@@ -145,8 +144,10 @@
                     <img src="{{ org.logo.url }}" name="{{ org.name_en_ku }}" title="{{ org.name_en_ku }}" width="140"
                         height="140" class="img-circle"></a>
                 <h3 class="mt-4">{{ org.name }}</h3>
+                {% if org.short_cut %}
                 <p>{{ org.short_cut }}</p>
-                <p>{{ org.message|safe|truncatechars:80 }}</p>
+                {% endif %}
+                <!-- <p>{{ org.message|safe|truncatechars:80 }}</p> -->
                 <p>
                     <a href="{% url 'particip_detail' org.id %}" class="btn btn-block"
                         title="{% trans 'للمزيد عن المنظمة' %}"><i class="fas fa-book-reader"></i>
@@ -211,10 +212,5 @@
 
 
 </div>
-
-
-
-
-
 
 {% endblock %}

@@ -11851,7 +11851,7 @@ body {
       font-size: 2em;
       color: #fff; }
   body .card {
-    background-image: linear-gradient(to right, #046db8, #17678C); }
+    background-image: linear-gradient(to right, black, #17678C); }
   body hr {
     background-color: #17678C;
     border: 1px; }
@@ -11888,12 +11888,14 @@ body {
     -ms-transition-timing-function: ease;
     -o-transition-timing-function: ease;
     transition-timing-function: ease; }
+    body .btn:not(.dropdown-toggle).wrapp-yes {
+      white-space: initial !important; }
     body .btn:not(.dropdown-toggle):hover {
       color: tomato; }
   body .dropdown-toggle::after {
     border-top: 0 !important; }
   body .btn-group .dropdown-menu.show {
-    min-width: 360px;
+    width: max-content !important;
     transform: translate3d(0px, 0px, 0px) !important; }
     body .btn-group .dropdown-menu.show.right-0 {
       right: 0; }
@@ -12007,12 +12009,10 @@ body {
   body .news-card-link {
     text-decoration: none !important;
     background-color: #fff; }
-  body .jobs-cards {
-    height: 475px !important; }
-    body .jobs-cards figure {
-      overflow: hidden;
-      max-width: 140px !important;
-      max-height: 140px !important; }
+  body .jobs-cards figure {
+    overflow: hidden;
+    max-width: 140px !important;
+    max-height: 140px !important; }
   body .job-card .row {
     --bs-gutter-x: 0 !important; }
   body .job-card h3, body .job-card .h3 {
@@ -12164,7 +12164,6 @@ nav {
     padding: 1.25rem 0;
     text-align: right;
     border: none;
-    width: 50% !important;
     margin-top: 0; }
     nav ul.dropdown-menu li a {
       color: white !important;
@@ -12494,8 +12493,8 @@ footer {
     z-index: 10;
     box-shadow: 0 0 10px #a6d5f7, 0 0 20px #a6d5f7, 0 0 30px #a6d5f7, 0 0 40px #a6d5f7, 0 0 50px #a6d5f7, 0 0 60px #a6d5f7, 0 0 70px #a6d5f7, 0 0 80px #a6d5f7, 0 0 90px #a6d5f7, 0 0 100px #a6d5f7; }
   .org-work div span .btn-button {
-    border: 1px solid linear-gradient(to right, #046db8, #17678C) !important;
-    background: radial-gradient(circle at 40px 100px, #046db8, #000);
+    border: 1px solid linear-gradient(to right, black, #17678C) !important;
+    background: radial-gradient(circle at 40px 100px, black, #000);
     border-radius: 50%;
     color: #fff;
     height: 200px !important;
@@ -12541,7 +12540,7 @@ footer {
 .fieldset {
   /* border: 1px solid #1490C2; */
   border-radius: 20px;
-  background-image: linear-gradient(to right, #046db8, #17678C);
+  background-image: linear-gradient(to right, black, #17678C);
   padding-bottom: 2rem !important;
   color: #fff; }
 
@@ -12583,8 +12582,8 @@ footer {
     transform: translateY(-20px); } }
 
 .orgs-news .btn-button {
-  border: 1px solid linear-gradient(to right, #046db8, #17678C) !important;
-  background: radial-gradient(circle at 40px 100px, #046db8, #000);
+  border: 1px solid linear-gradient(to right, black, #17678C) !important;
+  background: radial-gradient(circle at 40px 100px, black, #000);
   border-radius: 50%;
   color: #fff;
   height: 200px !important;

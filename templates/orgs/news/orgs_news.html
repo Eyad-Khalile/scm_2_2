@@ -9,10 +9,10 @@
 <div class="row mt-4 pt-4 orgs-news">
   <div class="">
     <article>
-      <h1 class="text-center mb-4"> {% trans "أخبار المجتمع المدني" %} </h1>
+      <h1 class="text-center mb-4 " data-aos="fade-left"> {% trans "أخبار المجتمع المدني" %} </h1>
       <!-- Text Descriptions -->
       {% if LANGUAGE_CODE == 'ar'%}
-      <p class="text-right text-al-just p-color h4">
+      <p class="text-right text-al-just p-color h4" data-aos="fade-right">
 
         يعرض هذا القسم آخر أخبار منظمات المجتمع المدني السوري المسجلة في المنصة، بما يتضمن ذلك انجازاتها وأنشطتها و كل
         ما يتعلق بفعالياتها سواء في الميدان أو خارجه كالشراكات الاستراتيجية على سبيل المثال لا الحصر بهدف رفع مستوى
@@ -124,27 +124,27 @@
       <div class="d-flex justify-content-center align-items-center flex-wrap">
         <div class="">
           <a href="{% url 'orgs_news' %}"
-            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap">
+            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap" data-aos="fade-right">
             {% trans "أخبار المنظمات" %} </a>
         </div>
         <div class="">
           <a href="{% url 'orgs_rapport' %}"
-            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap">
+            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap" data-aos="fade-right">
             {% trans "تقارير ودراسات" %} </a>
         </div>
         <div class="">
           <a href="{% url 'data' %}"
-            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap">
+            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap" data-aos="fade-right">
             {% trans "بيانات" %} </a>
         </div>
         <div class="">
           <a href="{% url 'media' %}"
-            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap">
+            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap" data-aos="fade-right">
             {% trans "سمعي وبصري" %} </a>
         </div>
         <div class="">
           <a href="{% url 'research' %}"
-            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap">
+            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap" data-aos="fade-right">
             {% trans "أبحاث خارجية" %}
           </a>
         </div>

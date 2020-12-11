@@ -7,12 +7,13 @@
 
 
 <div class="row mt-4 pt-4 mb-4">
-    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}"> {% trans "تعديل خبر" %} </h1>
+    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}" data-aos="fade-left">
+        {% trans "تعديل خبر" %} </h1>
 
     {% if request.user.is_authenticated %}
     {% if request.user == new.user or request.user.is_staff %}
 
-    <form action="" method="post" class="register" enctype="multipart/form-data">
+    <form action="" method="post" class="register" enctype="multipart/form-data" data-aos="fade-right">
         {% csrf_token %}
 
         {{ form.media }}

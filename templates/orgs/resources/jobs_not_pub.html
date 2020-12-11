@@ -11,7 +11,7 @@
 
 
 <div class="mt-4 pt-4">
-    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}" data-aos="fade-left">
         {% trans "فرص العمل قيد الدراسة" %} </h1>
 
 
@@ -22,13 +22,13 @@
         {% if org_prof_pub_check.publish == True or request.user.is_staff %}
         <a href="{% url 'orgs_add_job' %}"
             class="btn btn-block mt-4 {% if LANGUAGE_CODE == 'ar' %} ml-2 {% else %} mr-2 {% endif %}"
-            title="{% trans 'إضافة فرصة عمل' %}"><i class="fas fa-plus"></i></a>
+            title="{% trans 'إضافة فرصة عمل' %}" data-aos="fade-right"><i class="fas fa-plus"></i></a>
         {% endif %}
         {% endif %}
 
         {% if jobs and request.user.is_authenticated and request.user.is_superuser %}
         <a class="btn btn-block mt-4 mx-2" data-toggle="collapse" href="#collapseFiltre" aria-expanded="false"
-            aria-controls="collapseFiltre" title="{% trans 'فرز' %}"><i class="fas fa-filter"></i></a>
+            aria-controls="collapseFiltre" title="{% trans 'فرز' %}" data-aos="fade-right"><i class="fas fa-filter"></i></a>
         {% endif %}
 
     </div>

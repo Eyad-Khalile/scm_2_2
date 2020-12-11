@@ -9,7 +9,7 @@
 
 
 <div class="mt-4 pt-4">
-    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}" data-aos="fade-left">
         {% trans "فرص بناء القدرات  قيد الدراسة" %}
     </h1>
 
@@ -20,12 +20,13 @@
         {% if request.user.is_authenticated and request.user.is_staff %}
         <a href="{% url 'orgs_add_capacity' %}"
             class="btn btn-block mt-4 {% if LANGUAGE_CODE == 'ar' %} ml-2 {% else %} mr-2 {% endif %}"
-            title="{% trans 'اضافة فرصة بناء القدرات' %}"><i class="fas fa-plus"></i></a>
+            title="{% trans 'اضافة فرصة بناء القدرات' %}" data-aos="fade-right"><i class="fas fa-plus"></i></a>
         {% endif %}
 
         {% if Capacitys and request.user.is_superuser %}
         <a class="btn btn-block mt-4 mx-2" data-toggle="collapse" href="#collapseFiltre" aria-expanded="false"
-            aria-controls="collapseFiltre" title="{% trans 'فرز' %}"><i class="fas fa-filter"></i></a>
+            aria-controls="collapseFiltre" title="{% trans 'فرز' %}" data-aos="fade-left"><i
+                class="fas fa-filter"></i></a>
         {% endif %}
 
     </div>
@@ -71,7 +72,7 @@
         {% if Capacitys %}
         {% for capacity in Capacitys %}
 
-        <div class="span3 well">
+        <div class="span3 well" data-aos="fade-left">
             <span class="text-muted">
                 <i class="far fa-clock ml-2 mr-2"></i>
                 {{ capacity.created_at|timesince }}

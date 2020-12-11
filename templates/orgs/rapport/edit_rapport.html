@@ -5,10 +5,11 @@
 {% block content %}
 
 <div class="row pt-4 mt-4 mb-4">
-    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">{% trans "تعديل التقرير" %}</h1>
+    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}" data-aos="fade-left">
+        {% trans "تعديل التقرير" %}</h1>
     <hr>
 
-    <form action="" id="form_rapport" method="post" class="register" enctype="multipart/form-data">
+    <form action="" id="form_rapport" method="post" class="register" enctype="multipart/form-data" data-aos="fade-right">
         {% csrf_token %}
         {% if request.user.is_authenticated and request.user.is_staff %}
         {{ form.org_name|as_crispy_field }}

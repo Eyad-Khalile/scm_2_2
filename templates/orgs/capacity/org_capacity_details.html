@@ -8,10 +8,10 @@
 
 
 <div class="row mt-4 pt-4">
-    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}" data-aos="fade-left">
         {% trans 'تفاصيل فرصة بناء القدرات' %} </h1>
 
-    <div class="well col-lg-9 job-card col-xs-12 position-relative">
+    <div class="well col-lg-9 job-card col-xs-12 position-relative" data-aos="fade-right">
 
         <!-- MIMI MENU -->
 
@@ -241,7 +241,7 @@
 
     <!-- THE LATEST DEVS  -->
     {% if capacites.count > 0 %}
-    <div class="col-lg-3 d-none d-lg-block last3">
+    <div class="col-lg-3 d-none d-lg-block last3" data-aos="fade-left">
         <h2 class="text-center mb-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
             {% trans 'أحدث ثلاثة فرص بناء القدرات' %} </h2>
         {% for cap in capacites|slice:3 %}

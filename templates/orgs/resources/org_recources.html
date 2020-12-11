@@ -9,11 +9,11 @@
 <div class="row mt-4 pt-4 orgs-news">
   <div class="">
     <article>
-      <h1 class="text-center mb-4"> {% trans "مصادر المجتمع المدني" %} </h1>
+      <h1 class="text-center mb-4" data-aos="fade-left"> {% trans "مصادر المجتمع المدني" %} </h1>
       <!-- Text Descriptions -->
 
       {% if LANGUAGE_CODE == 'ar' %}
-      <p class="text-right text-al-just p-color h4">
+      <p class="text-right text-al-just p-color h4" data-aos="fade-right">
 
         يعرض هذا القسم فرص العمل والتمويل والموارد المتاحة سواء لمنظمات المجتمع المدني السوري والعاملين فيها، وأيضا
         للأفراد السوريين، ويضم هذا القسم أربع صفحات فرعية:
@@ -116,25 +116,25 @@
       <div class="d-flex justify-content-center align-items-center flex-wrap">
         <div class="">
           <a href="{% url 'orgs_jobs' %}"
-            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap">
+            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap" data-aos="fade-left">
             {% trans "فرص العمل" %}
           </a>
         </div>
         <div class="">
           <a href="{% url 'funding' %}"
-            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap">
+            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap" data-aos="fade-left">
             {% trans "فرص التمويل" %}
           </a>
         </div>
 
         <div class="">
           <a href="{% url 'orgs_capacity' %}"
-            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap">
+            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap" data-aos="fade-left">
             {% trans "فرص بناء القدرات" %} </a>
         </div>
         <div class="">
           <a href="{% url 'orgs_devs' %}"
-            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap">
+            class="btn btn-button d-flex justify-content-center align-items-center border-0 text-wrap" data-aos="fade-left">
             {% trans 'دليل التطوير' %}
           </a>
         </div>

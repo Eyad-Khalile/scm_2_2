@@ -7,7 +7,8 @@
 
 
 <div class="mt-4 pt-4">
-    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}"> {% trans "دليل التطوير" %} </h1>
+    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}" data-aos="fade-left">
+        {% trans "دليل التطوير" %} </h1>
 
 
     <div class="d-flex mt-4">
@@ -15,20 +16,21 @@
         {% if request.user.is_authenticated and request.user.is_staff %}
         <a href="{% url 'orgs_add_devs' %}"
             class="btn btn-block mt-4 {% if LANGUAGE_CODE == 'ar' %} ml-2 {% else %} mr-2 {% endif %}"
-            title="{% trans 'اضافة دليل التطوير' %}"><i class="fas fa-plus"></i></a>
+            title="{% trans 'اضافة دليل التطوير' %}" data-aos="fade-right"><i class="fas fa-plus"></i></a>
         {% endif %}
 
         {% if devs %}
         <a class="btn btn-block mt-4 mx-2" data-toggle="collapse" href="#collapseFiltre" aria-expanded="false"
-            aria-controls="collapseFiltre" title="{% trans 'فرز' %}"><i class="fas fa-filter"></i></a>
+            aria-controls="collapseFiltre" title="{% trans 'فرز' %}" data-aos="fade-left"><i
+                class="fas fa-filter"></i></a>
         {% endif %}
 
         {% if request.user.is_authenticated and request.user.is_superuser %}
         <a href="{% url 'org_devs_not_pub' %}" class="btn btn-block mt-4 mx-2"
-            title="{% trans 'دليل التطوير قيد الدراسة' %}"><i class="fas fa-chalkboard-teacher"></i></a>
+            title="{% trans 'دليل التطوير قيد الدراسة' %}" data-aos="fade-right"><i class="fas fa-chalkboard-teacher"></i></a>
         {% elif request.user.is_authenticated and request.user.is_staff %}
         <a href="{% url 'org_devs_not_pub' %}?user={{ request.user.id }}" class="btn btn-block mt-4 mx-2"
-            title="{% trans 'دليل التطوير قيد الدراسة' %}"><i class="fas fa-chalkboard-teacher"></i></a>
+            title="{% trans 'دليل التطوير قيد الدراسة' %}" data-aos="fade-right"><i class="fas fa-chalkboard-teacher"></i></a>
         {% endif %}
 
     </div>

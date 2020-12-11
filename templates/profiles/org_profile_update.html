@@ -14,12 +14,12 @@
     });
 </script>
 
-<h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+<h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}" data-aos="fade-left">
     {% trans 'تعديل الملف الشخصي للمنظمة' %} </h1>
 
 <div class="register mb-5">
     <form action="" id="fill_form" method="POST" data-cities-url="{% url 'ajax_load_cities' %}"
-        enctype="multipart/form-data">
+        enctype="multipart/form-data" data-aos="fade-right">
         {% csrf_token %}
         {{ form.media }}
         {% if request.user.is_staff %}

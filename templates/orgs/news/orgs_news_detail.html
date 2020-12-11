@@ -13,10 +13,11 @@
 
 
 <div class="row mt-4 pt-4">
-  <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}"> {% trans 'تفاصيل الخبر' %} </h1>
+  <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}" data-aos="fade-left">
+    {% trans 'تفاصيل الخبر' %} </h1>
 
   <!-- NEWS DETAIL -->
-  <div class="well col-lg-9 job-card col-xs-12 position-relative">
+  <div class="well col-lg-9 job-card col-xs-12 position-relative" data-aos="fade-right">
 
     <!-- MINI MANU -->
     {% if request.user.is_authenticated %}
@@ -194,7 +195,7 @@
   </div>
 
   <!-- THE LATEST NEWS  -->
-  <div class="col-lg-3 d-none d-lg-block last3">
+  <div class="col-lg-3 d-none d-lg-block last3" data-aos="fade-right">
     <h2 class="text-center mb-4 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
       {% trans 'أحدث ثلاثة أخبار' %} </h2>
     {% for new in news|slice:3 %}

@@ -8,12 +8,13 @@
 {% if request.user.is_authenticated and request.user.is_staff %}
 
 <div class="row mt-4 pt-4 mb-4">
-    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}"> {% trans "اضافة فرصة تمويل" %}
+    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}" data-aos="fade-left">
+        {% trans "اضافة فرصة تمويل" %}
     </h1>
 
 
     <form action="" method="post" id="finance_orgs" data-cities-url="{% url 'ajax_load_cities' %}" class="register"
-        enctype="multipart/form-data">
+        enctype="multipart/form-data" data-aos="fade-right">
         {% csrf_token %}
         {{ form.media }}
 

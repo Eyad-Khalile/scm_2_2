@@ -12,7 +12,8 @@
 
 {% if orgs %}
 
-<h1 class="pt-5 mt-5 border-bottom pb-3 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+<h1 class="pt-5 mt-5 border-bottom pb-3 {% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}"
+    data-aos="fade-left">
     {% trans 'طلبات المنظمات قيد الدراسة' %}</h1>
 
 <div class="row justify-content-center pt-4">
@@ -20,7 +21,7 @@
     <br>
     {% for org in orgs %}
 
-    <div class="span3 well">
+    <div class="span3 well" data-aos="fade-in">
         <center>
             <a href="{% url 'particip_detail' org.id %}">
                 <img src="{{ org.logo.url }}" name="{{ org.name_en_ku }}" title="{{ org.name_en_ku }}" width="140"

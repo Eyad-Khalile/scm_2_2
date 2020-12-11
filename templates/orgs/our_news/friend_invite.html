@@ -7,11 +7,11 @@
 {% block content %}
 
 <div class="mt-5">
-    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}">
+    <h1 class="{% if LANGUAGE_CODE == 'ar' %} br_right {% else %} br_left {% endif %}" data-aos="fade-left">
         {% trans 'دعوة صديق' %}
     </h1>
 
-    <form method="post" action="." class='register'>
+    <form method="post" action="." class='register' data-aos="fade-right">
         {% if LANGUAGE_CODE == 'ar' %}
         <h3 class="text-center">
             أدخل اسم و بريد الكتروني لصديق و اضغط إرسال دعوة لدعوة صديق للانضمام إلى الموقع

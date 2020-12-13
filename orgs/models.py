@@ -191,9 +191,9 @@ class MyChoices(models.Model):
         ('Education', _('تعليم')),
         ('Protection', _('حماية و الصحة النفسية')),
         ('Livelihoods and food security', _('سبل العيش واﻷمن الغذائي')),
-        ('Project of clean ,water, sanitation ', _('النظافة والمياه والصرف الصحي')),
+        ('Project of clean & water & sanitation ', _('النظافة والمياه والصرف الصحي')),
         ('Development', _('تنمية و بناء قدرات و ثقافة')),
-        ('Law, suport, policy', _('المواطنة و الحوكمة و الديموقراطية و السلام و السياسة')),
+        ('Law & suport & policy', _('المواطنة و الحوكمة و الديموقراطية و السلام و السياسة')),
         ('Donors and support volunteering', _('اﻷسرة و الجندرة و قضايا المرأة')),
         ('Religious org', _('المأوى و البنة التحتية')),
         ('Prof association and assembles', _('تنسيق و تجمعات المجتمع المدني')),
@@ -604,7 +604,7 @@ class OrgMedia(models.Model):
         User, on_delete=models.CASCADE)
     staff = models.CharField(max_length=100, null=True, blank=True)
     org_name = models.ForeignKey(
-        OrgProfile, on_delete=models.CASCADE, null=False, blank=True)
+        OrgProfile, on_delete=models.CASCADE, null=False, blank=True, verbose_name=_('اسم المنظمة'))
 
     title = models.CharField(max_length=255, null=False,
                              verbose_name=_('عنوان المحتوى'))
@@ -650,7 +650,7 @@ class OrgResearch(models.Model):
     domaine = models.CharField(max_length=150, null=False, blank=False,
                                choices=MyChoices.domain_CHOICES, verbose_name=_('مجال البحث'))
     media = models.FileField(upload_to="rapport_files",
-                             verbose_name=_('ملف البحث'))
+                             verbose_name=_('ملف أو صورة البحث'))
     url = models.URLField(blank=True, max_length=255,
                           null=True, verbose_name=_('رابط البحث'))
 

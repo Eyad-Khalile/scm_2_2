@@ -2,7 +2,7 @@
 nav {
     // background-image: $bg-color;
     
-    background-color: rgba($color-1, 0.3);
+    background-color: rgba($color-1, 0.4);
     &.nav-bg {
         background-color: $color-1;
     }
@@ -12,7 +12,7 @@ nav {
             a {
                 color: #fff !important;
                 font-weight: bold;
-                padding-top: 1.40em !important;
+                padding-top: 1.70em !important;
                 
                 &:hover {
                     background-color: #fff;

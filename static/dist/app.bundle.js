@@ -27075,23 +27075,24 @@ my_forms_country.find('#id_position_work').change(function () {
 
 let other = '<option value="other">Other</option>';
 $('#add_job #id_org_name').append(other);
-$('#add_job #id_other_org_name').append(other);
-$('#edit_job #id_org_name').append(other);
-$('#edit_job #id_other_org_name').append(other);
+$('#add_job #id_other_org_name').append(other); // $('.edit_job #id_org_name').append(other);
+// $('.edit_job #id_other_org_name').append(other);
+
 $('#add_job, #edit_job').find('#div_id_other_org_name, #div_id_name, #div_id_logo').hide(); // $('#edit_job').find('#div_id_other_org_name, #div_id_name, #div_id_logo').hide();
 
-if ($('#edit_job #id_org_name').val() == '') {
+if ($('.edit_job #id_org_name').val() == '') {
   $('#id_org_name').val('other');
   $('#div_id_other_org_name').show();
 }
 
-if ($('#edit_job #id_other_org_name').val() == '') {
+if ($('.edit_job #id_other_org_name').val() == '') {
   $('#id_other_org_name').val('other');
   $('#div_id_name, #div_id_logo').show();
 }
 
 $('#id_org_name').change(function () {
   let value = $(this).val();
+  console.log(value);
 
   switch (value) {
     case 'other':
@@ -27113,11 +27114,12 @@ $('#id_org_name').change(function () {
 });
 $('#id_other_org_name').change(function () {
   let value = $(this).val();
+  console.log(value);
 
   switch (value) {
     case 'other':
       $('#div_id_name, #div_id_logo').show();
-      $('#add_job, #edit_job').submit(function () {
+      $('#add_job, .edit_job').submit(function () {
         $('#id_other_org_name').val('');
       });
       break;
@@ -27125,6 +27127,16 @@ $('#id_other_org_name').change(function () {
     default:
       $('#div_id_name, #div_id_logo').hide();
       break;
+  }
+});
+$('.add-job-from-add-job').submit(function () {
+  if ($('#id_org_name').val() == 'other') {
+    $('#id_org_name').val('');
+  }
+});
+$('.edit_job').submit(function () {
+  if ($('#id_org_name').val() == 'other') {
+    $('#id_org_name').val('');
   }
 }); // PERIOD MONTHS
 
@@ -27512,6 +27524,8 @@ let p_empty = $('.job-card').find('p'); // $('.job-card').find('p').each(functio
 //         $('.job-card').find('p').css('display', 'none');
 //     }
 // });
+
+$('div.safe-content').find('p').addClass('safe-content');
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),

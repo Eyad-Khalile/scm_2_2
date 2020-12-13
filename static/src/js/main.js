@@ -299,3 +299,4 @@ let p_empty = $('.job-card').find('p');
 //     }
 // });
 
+$('div.safe-content').find('p').addClass('safe-content');

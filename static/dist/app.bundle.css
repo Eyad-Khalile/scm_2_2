@@ -11969,9 +11969,13 @@ body {
       right: 0;
       left: 0; }
   @media (min-width: 1200px) {
+    body nav .nav-link {
+      font-size: 0.9rem !important; }
+    body .navbar-expand-xl .navbar-nav .nav-link {
+      padding-right: 0.25rem;
+      padding-left: 0.25rem; }
     body .span3 {
-      width: 270px; } }
-  @media (min-width: 1200px) {
+      width: 270px; }
     body [class*="span"] {
       float: left;
       min-height: 1px;
@@ -12021,19 +12025,21 @@ body {
   body .job-card p {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
-    padding: 10px;
+    padding: 8px;
     font-size: 1.35rem; }
-  body .job-card p:nth-child(even) {
+  body .job-card p:not(.safe-content):nth-child(even) {
     background: rgba(23, 103, 140, 0.1);
     color: #17678C; }
-    body .job-card p:nth-child(even).text-muted {
+    body .job-card p:not(.safe-content):nth-child(even).text-muted {
       color: #17678C !important; }
-  body .job-card p:nth-child(odd) {
+  body .job-card p:not(.safe-content):nth-child(odd) {
     background: #FFF; }
-  body .job-card figure {
+  body .job-card p:not(.safe-content) figure {
     overflow: hidden;
     max-width: 300px !important;
     max-height: 300px !important; }
+  body .job-card p.safe-content {
+    overflow: auto; }
   body .social-share {
     bottom: 10px;
     background-color: #f5f5f5;
@@ -12146,13 +12152,13 @@ body {
     background-color: #fff; }
 
 nav {
-  background-color: rgba(23, 103, 140, 0.3); }
+  background-color: rgba(23, 103, 140, 0.4); }
   nav.nav-bg {
     background-color: #17678C; }
   nav ul li a {
     color: #fff !important;
     font-weight: bold;
-    padding-top: 1.40em !important; }
+    padding-top: 1.70em !important; }
     nav ul li a:hover {
       background-color: #fff;
       color: #17678C !important; }

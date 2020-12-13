@@ -5,7 +5,8 @@
 
 
 <nav
-    class="navbar fixed-top navbar-expand-xl pt-lg-0 pb-lg-0    navbar-dark {% if not request.resolver_match.url_name == 'home' %} nav-bg {% endif %} ">
+    class="navbar fixed-top navbar-expand-xl pt-lg-0 pb-lg-0 navbar-dark
+    {% if not request.resolver_match.url_name == 'home' %} nav-bg {% endif %} ">
 
     <div class="container-fluid">
         <!-- BRAND -->
@@ -29,14 +30,14 @@
                     <a class="nav-link " aria-current="page" href="{% url 'home' %}"> {% trans 'بوابة المجتمع المدني' %}
                     </a>
                 </li>
-                <li class="nav-item d-none d-lg-block">
+                <li class="nav-item d-none d-xl-block">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">|</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.resolver_match.url_name == 'guide' %} active {% endif %}"
                         aria-current="page" href="{% url 'guide' %}"> {% trans 'دليل المجتمع المدني' %} </a>
                 </li>
-                <li class="nav-item d-none d-lg-block">
+                <li class="nav-item d-none d-xl-block">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">|</a>
                 </li>
 
@@ -116,7 +117,7 @@
                     </ul>
                 </li>
 
-                <li class="nav-item d-none d-lg-block">
+                <li class="nav-item d-none d-xl-block">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">|</a>
                 </li>
 
@@ -189,7 +190,7 @@
                     </ul>
                 </li>
 
-                <li class="nav-item d-none d-lg-block">
+                <li class="nav-item d-none d-xl-block">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">|</a>
                 </li>
                 <li class="nav-item">
@@ -203,7 +204,7 @@
             </ul>
 
             <!-- left side -->
-            <ul class="navbar-nav align-items-lg-center {% if LANGUAGE_CODE == 'ar' %} mr-auto
+            <ul class="navbar-nav align-items-xl-center {% if LANGUAGE_CODE == 'ar' %} mr-auto
                 {% else %} ml-auto {% endif %} mb-2 mb-lg-0">
                 <li class="nav-item d-none d-xs-block d-sm-block d-md-block">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
@@ -304,14 +305,14 @@
                     <a class="nav-link {% if request.resolver_match.url_name == 'signe_in' %} active {% endif %}"
                         aria-current="page" href="{% url 'signe_in' %}"> {% trans 'تسجيل الدخول' %} </a>
                 </li>
-                <li class="nav-item d-none d-lg-block">
+                <!-- <li class="nav-item d-none d-lg-block">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">|</a>
-                </li>
-                <li class="nav-item d-none d-xs-block d-sm-block d-md-block">
+                </li> -->
+                <!-- <li class="nav-item d-none d-xs-block d-sm-block d-md-block">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
                         <hr />
                     </a>
-                </li>
+                </li> -->
                 {% endif %}
 
                 <li class="nav-item">

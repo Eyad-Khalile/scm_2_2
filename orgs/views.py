@@ -489,6 +489,40 @@ def org_news_not_pub(request):
     return render(request, 'orgs/news/org_news_not_pub.html', context)
 
 
+# أخبار المركز قيد الدراسة
+@login_required(login_url='signe_in')
+def our_news_not_pub(request):
+    news = OrgNews.objects.filter(Q(publish=False) & Q(
+        org_name__name='khalil')).order_by('-created_at')
+
+    filter_user_id = request.GET.get('user', None)
+
+    myFilter = OrgsNewsFilter(request.GET, queryset=news)
+    news = myFilter.qs
+
+    if request.user.is_authenticated:
+        org_prof_pub_check = OrgProfile.objects.filter(
+            user=request.user).first()
+    else:
+        org_prof_pub_check = OrgProfile.objects.all()
+
+    # PAGINATEUR
+    paginator = Paginator(news, 12)
+    page = request.GET.get('page')
+    try:
+        news = paginator.get_page(page)
+    except(EmptyPage, InvalidPage):
+        news = paginator.page(paginator.num_pages)
+
+    context = {
+        'news': news,
+        'myFilter': myFilter,
+        'org_prof_pub_check': org_prof_pub_check,
+        'filter_user_id': filter_user_id,
+    }
+    return render(request, 'orgs/our_news/our_news_not_pub.html', context)
+
+
 # ORG NEWS DETAIL
 def news_detail(request, news_id):
     new = get_object_or_404(OrgNews, id=news_id)
@@ -1360,36 +1394,33 @@ def orgs_add_job(request):
                     'لقد تمت إضافة فرصة العمل بنجاح و ستتم دراستها قريباً'))
 
                 return redirect('orgs_jobs')
-
-            elif other_name:
-                creater = form_other.save(commit=False)
-                creater.created_by = request.user
-                creater.job = form.instance.id
-                creater.save()
+            
+            elif other_org_name:
+                user.other_org_name = other_org_name
+                user.save()
 
                 messages.success(request, _(
                     'لقد تمت إضافة فرصة العمل بنجاح و ستتم دراستها قريباً'))
 
                 return redirect('orgs_jobs')
-            else:
-                # print('salut')
-                user.org_name = prof_user.first()
+
+            elif other_name:
+                creater = form_other.save(commit=False)
+                creater.created_by = request.user
+                creater.job = user
+                creater.save()
+
+                user.other_org_name = creater
                 user.save()
 
-                if other_name:
-                    creater = form_other.save(commit=False)
-                    creater.created_by = request.user
-                    creater.job = form.instance.id
-                    creater.save()
+                messages.success(request, _(
+                    'لقد تمت إضافة فرصة العمل بنجاح و ستتم دراستها قريباً'))
 
-                    messages.success(request, _(
-                        'لقد تمت إضافة فرصة العمل بنجاح و ستتم دراستها قريباً'))
+                return redirect('orgs_jobs')
 
-                    return redirect('orgs_jobs')
-
-            # else:
-            #     messages.error(request, _(
-            #         'يجب إدخال اسم منظمة لتتم معالجة و نشر فرصة العمل'))
+            else:
+                messages.error(request, _(
+                    'يجب إدخال اسم منظمة لتتم معالجة و نشر فرصة العمل'))
     else:
         form = JobsForm()
         form_other = OtherOrgsForm()
@@ -1490,10 +1521,34 @@ def jobs_edit(request, job_id):
                         files=request.FILES, instance=job)
         form_other = OtherOrgsForm(
             request.POST or None, files=request.FILES, instance=other)
+
+
         if form.is_valid() and form_other.is_valid():
+
+            other_org_name = form_other.cleaned_data.get('name')
+
             at = form.save(commit=False)
             at.updated_at = datetime.utcnow()
-            at.save()
+
+            if other_org_name:
+                other = form_other.save(commit=False)
+                other.created_by = request.user
+                other.job = at
+                other.save()
+
+                at.other_org_name = other
+                at.save()
+
+                messages.success(request, _(
+                    'لقد تم تعديل فرصة العمل بنجاح'))
+                return redirect('orgs_jobs')
+
+
+            else:
+                at.other_org_name = other
+                at.save()
+
+
 
             messages.success(request, _(
                 'لقد تم تعديل فرصة العمل بنجاح'))
@@ -1942,6 +1997,7 @@ def capacity_detail(request, capacity_id):
     capacites = OrgCapacityOpp.objects.filter(
         publish=True).order_by('-created_at')
     share_string = quote_plus(capacity.capacity_description)
+    
 
     if request.method == 'POST':
         form = CapacityConfirmForm(request.POST or None, instance=capacity)

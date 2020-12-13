@@ -123,8 +123,8 @@
         {% trans "مجال التقرير" %}
       </span>
       <span class="col-9">
-        {% if rapport.demain %}
-        {{ rapport.get_demain_display }}
+        {% if rapport.domain %}
+        {{ rapport.get_domain_display }}
         {% else %}
         <span class="text-muted">: {% trans 'لم يذكر'%}</span>
         {% endif %}

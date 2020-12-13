@@ -109,19 +109,21 @@
                         </span>
                     </p>
 
-                    <p class="row">
-                        <span class="col-3">
-                            {% trans 'الرؤية و الرسالة' %}
-                        </span>
-                        <span class="col-9 text-al-just">
-                            {% if prof.message %}
-                            : {{ prof.message|safe }}
-                            {% else %}
-                            <span class="text-muted"> : {% trans 'لم يذكر' %} </span>
-                            {% endif %}
-                        </span>
-                    </p>
-
+                    <div class="safe-content">
+                        <p class="row">
+                            <span class="col-3">
+                                {% trans 'الرؤية و الرسالة' %}
+                            </span>
+                            <span class="col-9 text-al-just">
+                                {% if prof.message %}
+                                : {{ prof.message|safe }}
+                                {% else %}
+                                <span class="text-muted"> : {% trans 'لم يذكر' %} </span>
+                                {% endif %}
+                            </span>
+                        </p>
+                    </div>
+                        
                 </div>
             </div>
             <div class="col-md-8">

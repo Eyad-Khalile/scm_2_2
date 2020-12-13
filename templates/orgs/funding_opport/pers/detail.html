@@ -133,18 +133,20 @@
         </p>
         {% endif %}
 
-        <p class="row">
-            <span class="col-3">
-                {% trans 'لمحة عن الجهة المانحة' %}
-            </span>
-            <span class="col-9">
-                {% if perso.fund_org_description %}
-                : {{ perso.fund_org_description|safe }}
-                {% else %}
-                : {% trans 'لم يذكر' %}
-                {% endif %}
-            </span>
-        </p>
+        <div class="safe-content">
+            <p class="row">
+                <span class="col-3">
+                    {% trans 'لمحة عن الجهة المانحة' %}
+                </span>
+                <span class="col-9">
+                    {% if perso.fund_org_description %}
+                    : {{ perso.fund_org_description|safe }}
+                    {% else %}
+                    : {% trans 'لم يذكر' %}
+                    {% endif %}
+                </span>
+            </p>
+        </div>
 
         <p class="row">
             <span class="col-3">
@@ -159,14 +161,14 @@
             </span>
         </p>
 
-        <p class="row">
+        <!-- <p class="row">
             <span class="col-3">
                 {% trans 'نوع المنحة' %}
             </span>
             <span class="col-9">
                 : {{ perso.get_fund_type_display }}
             </span>
-        </p>
+        </p> -->
 
         <p class="row">
             <span class="col-3">
@@ -241,7 +243,7 @@
                     {% trans 'مدة المنحة' %}
                 </span>
                 <span class="col-9">
-                    : {{ perso.funding_period }}</strong>
+                    : {{ perso.get_funding_period_display }}</strong>
             </span>
         </p>
 
@@ -250,52 +252,70 @@
                     {% trans 'حجم المنحة' %}
                 </span>
                 <span class="col-9">
-                    : {{ perso.funding_amounte }}</strong>
+                    : {{ perso.get_funding_amounte_display }}</strong>
             </span>
         </p>
 
-        <p class="row">
-            <span class="col-3">
-                {% trans "وصف المنحة" %} <br>
-            </span>
-            <span class="col-9">
-                : {{ perso.funding_description|safe }}
-            </span>
-        </p>
+        <div class="safe-content">
+            <p class="row">
+                <span class="col-3">
+                    {% trans "وصف المنحة" %} <br>
+                </span>
+                <span class="col-9">
+                    : {{ perso.funding_description|safe }}
+                </span>
+            </p>
+        </div>
 
-        <p class="row">
-            <span class="col-3">
-                {% trans "شروط المنحة" %}
-            </span>
-            <span class="col-9">
-                : {{ perso.funding_conditions|safe }}
-            </span>
-        </p>
+        <hr class="m-0">
 
-        <p class="row">
-            <span class="col-3">
-                {% trans "متطلبات التقديم" %}
-            </span>
-            <span class="col-9">
-                : {{ perso.funding_reqs|safe }}
-            </span>
-        </p>
+        <div class="safe-content">
+            <p class="row">
+                <span class="col-3">
+                    {% trans "شروط المنحة" %}
+                </span>
+                <span class="col-9">
+                    : {{ perso.funding_conditions|safe }}
+                </span>
+            </p>
+        </div>
 
-        <p class="row">
-            <span class="col-3">
-                {% trans "كيفية التقديم" %}
-            </span>
-            <span class="col-9">
-                : {{ perso.funding_guid|safe }}
-            </span>
-        </p>
+        <hr class="m-0">
 
+        <div class="safe-content">
+            <p class="row">
+                <span class="col-3">
+                    {% trans "متطلبات التقديم" %}
+                </span>
+                <span class="col-9">
+                    : {{ perso.funding_reqs|safe }}
+                </span>
+            </p>
+        </div>
+
+        <hr class="m-0">
+            
+        <div class="safe-content">
+            <p class="row">
+                <span class="col-3">
+                    {% trans "كيفية التقديم" %}
+                </span>
+                <span class="col-9">
+                    : {{ perso.funding_guid|safe }}
+                </span>
+            </p>
+        </div>
+            
         <p class="row">
             <span class="col-3">
                 {% trans "الرابط الأصلي" %}
             </span>
             <span class="col-9">
+                {% if perso.funding %}
                 <a href="{{ perso.funding_url }}" class="text-dark" target="_blank">: {{ perso.funding_url }}</a>
+                {% else %}
+                : {% trans 'لم يذكر' %}
+                {% endif %}
             </span>
         </p>
 

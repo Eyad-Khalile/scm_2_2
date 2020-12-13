@@ -140,14 +140,16 @@
             </span>
         </p>
 
-        <p class="row">
-            <span class="col-3">
-                {% trans "وصف فرصة التمويل" %} <br>
-            </span>
-            <span class="col-9">
-                : {{ capacity.capacity_description|safe }}
-            </span>
-        </p>
+        <div class="safe-content">
+            <p class="row ">
+                <span class="col-3">
+                    {% trans "وصف فرصة التمويل" %} <br>
+                </span>
+                <span class="col-9">
+                    : {{ capacity.capacity_description|safe }}
+                </span>
+            </p>
+        </div>
 
 
 
@@ -184,23 +186,29 @@
             </strong>
         </p>
 
-        <p class="row">
-            <span class="col-3">
-                {% trans "متطلبات التقديم" %}
-            </span>
-            <span class="col-9">
-                : {{ capacity.capacity_reqs|safe }}
-            </span>
-        </p>
+        <div class="safe-content">
+            <p class="row">
+                <span class="col-3">
+                    {% trans "متطلبات التقديم" %}
+                </span>
+                <span class="col-9">
+                    : {{ capacity.capacity_reqs|safe }}
+                </span>
+            </p>
+        </div>
 
-        <p class="row">
-            <span class="col-3">
-                {% trans "طريقة التقديم" %}
-            </span>
-            <span class="col-9">
-                : {{ capacity.capacity_guid|safe }}
-            </span>
-        </p>
+        <hr class="m-0">
+
+        <div class="safe-content">
+            <p class="row">
+                <span class="col-3">
+                    {% trans "طريقة التقديم" %}
+                </span>
+                <span class="col-9">
+                    : {{ capacity.capacity_guid|safe }}
+                </span>
+            </p>
+        </div>
 
         <p class="row">
             <span class="col-3">
@@ -214,6 +222,7 @@
                 {% endif %}
             </span>
         </p>
+
 
         <!-- SOCIAL -->
 

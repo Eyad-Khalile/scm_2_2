@@ -131,14 +131,16 @@
     </p>
     {% endif %}
 
-    <p class="row">
-      <span class="col-3">
-        {% trans 'لمحة عن الجهة المانحة' %}
-      </span>
-      <span class="col-9">
-        : {{ funding.funding_org_description|safe }}
-      </span>
-    </p>
+    <div class="safe-content">
+      <p class="row">
+        <span class="col-3">
+          {% trans 'لمحة عن الجهة المانحة' %}
+        </span>
+        <span class="col-9">
+          : {{ funding.funding_org_description|safe }}
+        </span>
+      </p>
+    </div>
 
 
     <p class="row">
@@ -176,7 +178,7 @@
           {% trans 'مدة المنحة' %}
         </span>
         <span class="col-9">
-          : {{ funding.funding_period }}
+          : {{ funding.get_funding_period_display }}
         </span>
       </strong> </p>
 
@@ -185,45 +187,59 @@
           {% trans 'حجم المنحة' %}
         </span>
         <span class="col-9">
-          : {{ funding.funding_amounte }}
+          : {{ funding.get_funding_amounte_display }}
         </span>
       </strong> </p>
 
-    <p class="row">
-      <span class="col-3">
-        {% trans "وصف المنحة" %} <br>
-      </span>
-      <span class="col-9">
-        : {{ funding.funding_description|safe }}
-      </span>
-    </p>
+    <div class="safe-content">
+      <p class="row">
+        <span class="col-3">
+          {% trans "وصف المنحة" %} <br>
+        </span>
+        <span class="col-9">
+          : {{ funding.funding_description|safe }}
+        </span>
+      </p>
+    </div>
 
-    <p class="row">
-      <span class="col-3">
-        {% trans "شروط المنحة" %}
-      </span>
-      <span class="col-9">
-        : {{ funding.funding_conditions|safe }}
-      </span>
-    </p>
+    <hr class="m-0">
 
-    <p class="row">
-      <span class="col-3">
-        {% trans "متطلبات التقديم" %}
-      </span>
-      <span class="col-9">
-        : {{ funding.funding_reqs|safe }}
-      </span>
-    </p>
+    <div class="safe-content">
+      <p class="row">
+        <span class="col-3">
+          {% trans "شروط المنحة" %}
+        </span>
+        <span class="col-9">
+          : {{ funding.funding_conditions|safe }}
+        </span>
+      </p>
+    </div>
 
-    <p class="row">
-      <span class="col-3">
-        {% trans "كيفية التقديم" %}
-      </span>
-      <span class="col-9">
-        : {{ funding.funding_guid|safe }}
-      </span>
-    </p>
+    <hr class="m-0">
+
+    <div class="safe-content">
+      <p class="row">
+        <span class="col-3">
+          {% trans "متطلبات التقديم" %}
+        </span>
+        <span class="col-9">
+          : {{ funding.funding_reqs|safe }}
+        </span>
+      </p>
+    </div>
+
+    <hr class="m-0">
+
+    <div class="safe-content">
+      <p class="row">
+        <span class="col-3">
+          {% trans "كيفية التقديم" %}
+        </span>
+        <span class="col-9">
+          : {{ funding.funding_guid|safe }}
+        </span>
+      </p>
+    </div>
 
     <p class="row">
       <span class="col-3">

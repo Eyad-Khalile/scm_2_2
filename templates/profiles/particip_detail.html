@@ -220,16 +220,20 @@
             </div>
           </p>
 
-          <p>{% trans 'الرؤية و الرسالة' %}</p>
-          <p class="text-al-just">
-            {% if org.message %}
-            {{ org.message|safe }}
-            {% else %}
-            <span class="text-muted">
-              {% trans "لم يذكر" %}
-            </span>
-            {% endif %}
-          </p>
+          <div class="safe-content">
+            <p>{% trans 'الرؤية و الرسالة' %}</p>
+            <p class="text-al-just">
+              {% if org.message %}
+              {{ org.message|safe }}
+              {% else %}
+              <span class="text-muted">
+                {% trans "لم يذكر" %}
+              </span>
+              {% endif %}
+            </p>
+          </div>
+
+
         </div>
       </div>
       <div class="col-md-8" data-aos="fade-left">
@@ -369,8 +373,10 @@
                 <p>
                   {% if org.org_member_with == '1' %}
                   {% trans 'نعم' %}
-                  {% else %}
+                  {% elif org.org_member_with == '0' %}
                   <span class="text-muted"> {% trans 'ليست عضو' %} </span>
+                  {% else %}
+                  <span class="text-muted"> {% trans 'لم يذكر' %} </span>
                   {% endif %}
                 </p>
               </div>

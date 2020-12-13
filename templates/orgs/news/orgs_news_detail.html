@@ -131,8 +131,9 @@
       <img src="{{ new.image.url }}" id="post_img" class="w-100" name="{{ new.title }}" title="{{ new.title }}"
         alt="{{ new.title }}"></a>
 
-
-    <p class="h4 mt-3 text-al-just p-1" id="post_content"> {{ new.content|safe }}</p>
+    <div class="safe-content">
+      <p class="h4 mt-3 text-al-just p-1" id="post_content"> {{ new.content|safe }}</p>
+    </div>
 
 
     <!-- SOCIAL -->

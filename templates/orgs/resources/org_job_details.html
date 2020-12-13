@@ -165,14 +165,19 @@
                 : {{ job.get_job_domain_display }}
             </span>
         </p>
-        <p class="row">
-            <span class="col-3">
-                {% trans "وصف فرصة العمل" %} <br>
-            </span>
-            <span class="col-9">
-                : {{ job.job_description|safe }}
-            </span>
-        </p>
+
+        <div class="safe-content">
+            <p class="row">
+                <span class="col-3">
+                    {% trans "وصف فرصة العمل" %} <br>
+                </span>
+                <span class="col-9">
+                    : {{ job.job_description|safe }}
+                </span>
+            </p>
+        </div>
+
+
         <p class="row">
             <span class="col-3">
                 {% trans "مكان العمل" %}
@@ -233,18 +238,22 @@
                 {% trans "تاريخ إغلاق التقدم للوظيفة" %}
             </span>
             <span class="col-9">
-                : {{ job.dead_date|date:"c" }}
+                <strong>
+                    : {{ job.dead_date|date:"c" }}
+                </strong>
             </span>
         </p>
 
-        <p class="row">
-            <span class="col-3">
-                {% trans "طريقة التقدم للوظيفة" %} <br>
-            </span>
-            <span class="col-9">
-                : {{ job.job_aplay|safe }}
-            </span>
-        </p>
+        <div class="safe-content">
+            <p class="row">
+                <span class="col-3">
+                    {% trans "طريقة التقدم للوظيفة" %} <br>
+                </span>
+                <span class="col-9">
+                    : {{ job.job_aplay|safe }}
+                </span>
+            </p>
+        </div>
 
         <!-- SOCIAL -->
 

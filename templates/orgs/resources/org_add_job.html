@@ -14,7 +14,7 @@
     </h1>
 
 
-    <form action="" method="post" id="add_job" data-cities-url="{% url 'ajax_load_cities' %}" class="register"
+    <form action="" method="post" id="add_job" data-cities-url="{% url 'ajax_load_cities' %}" class="register add-job-from-add-job"
         enctype="multipart/form-data" data-aos="fade-right">
         {% csrf_token %}
         {{ form.media }}

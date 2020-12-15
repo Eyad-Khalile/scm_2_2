@@ -27078,14 +27078,14 @@ $('#add_job #id_org_name').append(other);
 $('#add_job #id_other_org_name').append(other); // $('.edit_job #id_org_name').append(other);
 // $('.edit_job #id_other_org_name').append(other);
 
-$('#add_job, #edit_job').find('#div_id_other_org_name, #div_id_name, #div_id_logo').hide(); // $('#edit_job').find('#div_id_other_org_name, #div_id_name, #div_id_logo').hide();
+$('#add_job, .edit_job').find('#div_id_other_org_name, #div_id_name, #div_id_logo').hide(); // $('#edit_job').find('#div_id_other_org_name, #div_id_name, #div_id_logo').hide();
 
 if ($('.edit_job #id_org_name').val() == '') {
   $('#id_org_name').val('other');
   $('#div_id_other_org_name').show();
 }
 
-if ($('.edit_job #id_other_org_name').val() == '') {
+if ($('.edit_job #id_other_org_name').val() == '' && $('.edit_job #id_org_name').val() == '') {
   $('#id_other_org_name').val('other');
   $('#div_id_name, #div_id_logo').show();
 }

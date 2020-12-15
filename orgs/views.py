@@ -1388,6 +1388,7 @@ def orgs_add_job(request):
 
             if org_name:
                 user.org_name = org_name
+                user.staff = request.user
                 user.save()
 
                 messages.success(request, _(
@@ -1397,6 +1398,7 @@ def orgs_add_job(request):
             
             elif other_org_name:
                 user.other_org_name = other_org_name
+                user.staff = request.user
                 user.save()
 
                 messages.success(request, _(
@@ -1407,6 +1409,7 @@ def orgs_add_job(request):
             elif other_name:
                 creater = form_other.save(commit=False)
                 creater.created_by = request.user
+                creater.staff = request.user
                 creater.job = user
                 creater.save()
 
@@ -1419,8 +1422,16 @@ def orgs_add_job(request):
                 return redirect('orgs_jobs')
 
             else:
-                messages.error(request, _(
-                    'يجب إدخال اسم منظمة لتتم معالجة و نشر فرصة العمل'))
+                # messages.error(request, _(
+                #     'يجب إدخال اسم منظمة لتتم معالجة و نشر فرصة العمل'))
+                request_org_name = OrgProfile.objects.filter(user=request.user).first()
+                user.org_name = request_org_name
+                user.save()
+
+                messages.success(request, _(
+                    'لقد تمت إضافة فرصة العمل بنجاح و ستتم دراستها قريباً'))
+
+                return redirect('orgs_jobs')
     else:
         form = JobsForm()
         form_other = OtherOrgsForm()
@@ -1781,11 +1792,11 @@ def orgs_add_funding(request):
             if org_name or name_funding:
                 user = form.save(commit=False)
                 user.user = request.user
-                org_name = form.cleaned_data.get('org_name')
                 if org_name:
                     user.org_name = org_name
-                else:
-                    user.org_name = request.user
+                elif name_funding:
+                    user.name_funding = name_funding
+                    
                 user.save()
 
                 messages.success(request, _(

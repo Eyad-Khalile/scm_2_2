@@ -56,18 +56,24 @@
     {% endif %}"></i></a>
                 {% endif %}
 
-                {% if job.publish == False %}
-                {% if request.user == job.user and not request.user.is_superuser %}
-                <a href="{% url 'jobs_edit' job.id %}" class="dropdown-item"
-                    title="{% trans 'تعديل فرصة عمل' %}">{% trans 'تعديل فرصة عمل' %} <i class="fas fa-edit {% if LANGUAGE_CODE == 'ar' %} mr-4 float-left {% else %} ml-4 float-right
-    {% endif %}"></i></a>
-                {% else %}
-                {% if not request.user.is_superuser %}
+                {% if job.publish == False and not request.user.is_superuser %}
+                    {% if request.user == job.user %}
+                    <a href="{% url 'jobs_edit' job.id %}" class="dropdown-item"
+                        title="{% trans 'تعديل فرصة عمل' %}">{% trans 'تعديل فرصة عمل' %} <i class="fas fa-edit {% if LANGUAGE_CODE == 'ar' %} mr-4 float-left {% else %} ml-4 float-right
+                {% endif %}"></i></a>
+                    {% else %}
+                    <a href="#" class="dropdown-item text-wrap">
+                        {% trans 'ليس لديك الصلاحية' %}
+                    </a>
+                    {% endif %}
+
+                {% elif job.publish == True and not request.user.is_superuser %}
                 <a href="#" class="dropdown-item text-wrap">
-                    {% trans 'لا يمكنك التعديل بعد الموافقة على النشر أو ليس لديك الصلاحية' %} </a>
+                    {% trans 'لا يمكنك التعديل بعد الموافقة على النشر أو ليس لديك الصلاحية' %}
+                </a>
                 {% endif %}
-                {% endif %}
-                {% endif %}
+
+
             </div>
         </div>
         {% endif %}

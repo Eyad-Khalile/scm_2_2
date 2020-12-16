@@ -54,16 +54,21 @@
     {% endif %}"></i></a>
                 {% endif %}
 
-                {% if capacity.publish == False %}
-                {% if request.user == capacity.user and not request.user.is_superuser %}
+                {% if capacity.publish == False and not request.user.is_superuser %}
+                {% if request.user == capacity.user or request.user.is_staff %}
                 <a href="{% url 'capacity_edit' capacity.id %}" class="dropdown-item"
                     title="{% trans 'تعديل فرصة بناءالقدرات' %}">{% trans 'تعديل فرصة بناءالقدرات' %} <i class="fas fa-edit {% if LANGUAGE_CODE == 'ar' %} mr-4 float-left {% else %} ml-4 float-right
     {% endif %}"></i></a>
                 {% else %}
                 {% if not request.user.is_superuser %}
                 <a href="#" class="dropdown-item text-wrap">
-                    {% trans 'لا يمكنك التعديل بعد الموافقة على النشر أو ليس لديك الصلاحية' %} </a>
+                    {% trans 'ليس لديك الصلاحية' %} </a>
                 {% endif %}
+                {% endif %}
+                {% else %}
+                {% if not request.user.is_superuser %}
+                <a href="#" class="dropdown-item text-wrap">
+                    {% trans 'لا يمكنك التعديل بعد الموافقة على النشر أو ليس لديك الصلاحية' %} </a>
                 {% endif %}
                 {% endif %}
             </div>

@@ -54,20 +54,24 @@
         {% endif %}
 
 
-        {% if rapport.publish == False %}
-        {% if rapport.user == request.user.username and not request.user.is_superuser %}
+        {% if rapport.publish == False and not request.user.is_superuser %}
+        {% if request.user == rapport.user %}
         <a href="{% url 'edit_rapport' rapport.id %}" class="dropdown-item" title="{% trans 'تعديل التقرير' %}">
           {% trans 'تعديل التقرير' %}
           <i class="fas fa-edit {% if LANGUAGE_CODE == 'ar' %} mr-4 float-left {% else %} ml-4 float-right
     {% endif %}"></i>
         </a>
         {% else %}
-        {% if not request.user.is_superuser %}
-        <a href="#" class="dropdown-item text-wrap"> {% trans 'لا يمكنك التعديل بعد الموافقة على النشر أو ليس لديك الصلاحية' %} </a>
+        <a href="#" class="dropdown-item text-wrap">
+          {% trans 'ليس لديك الصلاحية' %}
+        </a>
         {% endif %}
+
+        {% elif rapport.publish == True and not request.user.is_superuser %}
+        <a href="#" class="dropdown-item text-wrap">
+          {% trans 'لا يمكنك التعديل بعد الموافقة على النشر أو ليس لديك الصلاحية' %} </a>
         {% endif %}
-        {% endif %}
-        
+
 
       </div>
     </div>

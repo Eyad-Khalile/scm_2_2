@@ -63,7 +63,7 @@
       {% else %}
       {% if not request.user.is_superuser %}
       <a href="#" class="dropdown-item text-wrap">
-        {% trans 'لا يمكنك التعديل بعد الموافقة على النشر' %} </a>
+        {% trans 'لا يمكنك التعديل بعد الموافقة على النشر أو ليس لديك الصلاحية' %} </a>
       {% endif %}
       {% endif %}
     </div>

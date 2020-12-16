@@ -53,18 +53,24 @@
     {% endif %}"></i></a>
         {% endif %}
 
-        {% if data.publish == False %}
-        {% if request.user == data.user and not request.user.is_superuser %}
+
+        {% if data.publish == False and not request.user.is_superuser %}
+        {% if request.user == data.user %}
         <a href="{% url 'edit_data' data.id %}" class="dropdown-item"
           title="{% trans 'تعديل البيان' %}">{% trans 'تعديل البيان' %} <i class="fas fa-edit {% if LANGUAGE_CODE == 'ar' %} mr-4 float-left {% else %} ml-4 float-right
     {% endif %}"></i></a>
         {% else %}
-        {% if not request.user.is_superuser %}
+        <a href="#" class="dropdown-item text-wrap">
+          {% trans 'ليس لديك الصلاحية' %}
+        </a>
+        {% endif %}
+
+        {% elif data.publish == True and not request.user.is_superuser %}
         <a href="#" class="dropdown-item text-wrap">
           {% trans 'لا يمكنك التعديل بعد الموافقة على النشر أو ليس لديك الصلاحية' %} </a>
         {% endif %}
-        {% endif %}
-        {% endif %}
+
+
       </div>
     </div>
     {% endif %}

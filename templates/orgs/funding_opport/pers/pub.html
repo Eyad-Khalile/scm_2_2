@@ -73,7 +73,7 @@
         {% for funding in fundings %}
 
         <div class="span3 well" data-aos="fade-left">
-            <span class="text-muted">{{ funding.created_at|date:"Y-m-d" }}</span>
+            <span class="text-muted">{{ funding.created_at|timesince }}</span>
             <center>
                 <a href="{% url 'finance_perso_detail' funding.id %}">
                     <img src="{{ funding.logo.url }}"

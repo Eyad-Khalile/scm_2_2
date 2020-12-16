@@ -51,19 +51,23 @@
     {% endif %}"></i></a>
         {% endif %}
 
-
-        {% if research.publish == False %}
-        {% if request.user == research.user and not request.user.is_superuser %}
+        {% if research.publish == False and not request.user.is_superuser %}
+        {% if request.user == research.user %}
         <a href="{% url 'edit_research' research.id %}" class="dropdown-item"
           title="{% trans 'تعديل البحث' %}">{% trans 'تعديل البحث' %} <i class="fas fa-edit {% if LANGUAGE_CODE == 'ar' %} mr-4 float-left {% else %} ml-4 float-right
     {% endif %}"></i></a>
         {% else %}
-        {% if not request.user.is_superuser %}
+        <a href="#" class="dropdown-item text-wrap">
+          {% trans 'ليس لديك الصلاحية' %}
+        </a>
+        {% endif %}
+
+        {% elif research.publish == True and not request.user.is_superuser %}
         <a href="#" class="dropdown-item text-wrap">
           {% trans 'لا يمكنك التعديل بعد الموافقة على النشر أو ليس لديك الصلاحية' %} </a>
         {% endif %}
-        {% endif %}
-        {% endif %}
+
+
       </div>
     </div>
     {% endif %}
@@ -152,7 +156,7 @@
     </p>
     {% if '.pdf' in research.media.url %}
     <object data="{{ research.media.url }}" type="application/pdf" title="{{research.title}}" width="100%" height="885">
-      <embed src="{{ research.media.url  }}" >
+      <embed src="{{ research.media.url  }}">
     </object>
     {% else %}
     <a href="">

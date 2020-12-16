@@ -28,7 +28,7 @@
         {% endif %}
         {% endif %}
 
-        {% if news%}
+        {% if jobs and request.user.is_authenticated and request.user.is_superuser %}
         <a class="btn btn-block mt-4  mx-2" data-toggle="collapse" href="#collapseFiltre" aria-expanded="false"
             aria-controls="collapseFiltre" title="{% trans 'فرز' %}" data-aos="fade-right"><i
                 class="fas fa-filter"></i></a>

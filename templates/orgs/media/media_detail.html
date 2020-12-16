@@ -54,18 +54,22 @@
         {% endif %}
 
 
-        {% if media.publish == False %}
-        {% if request.user == media.user and not request.user.is_superuser %}
+        {% if media.publish == False and not request.user.is_superuser %}
+        {% if request.user == media.user %}
         <a href="{% url 'edit_media' media.id %}" class="dropdown-item"
           title="{% trans 'تعديل المحتوى' %}">{% trans 'تعديل المحتوى' %} <i class="fas fa-edit {% if LANGUAGE_CODE == 'ar' %} mr-4 float-left {% else %} ml-4 float-right
     {% endif %}"></i></a>
         {% else %}
-        {% if not request.user.is_superuser %}
+        <a href="#" class="dropdown-item text-wrap">
+          {% trans 'ليس لديك الصلاحية' %}
+        </a>
+        {% endif %}
+
+        {% elif media.publish == True and not request.user.is_superuser %}
         <a href="#" class="dropdown-item text-wrap">
           {% trans 'لا يمكنك التعديل بعد الموافقة على النشر أو ليس لديك الصلاحية' %} </a>
         {% endif %}
-        {% endif %}
-        {% endif %}
+
       </div>
     </div>
     {% endif %}

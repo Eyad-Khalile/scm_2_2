@@ -7,40 +7,30 @@
 
 <div id="carouselHomePage" class="carouselHomePage carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item slide-item-1 active" style='background-image: url("{% static 'media/01.png' %}")'>
-      <!-- <img src=" {% static 'media/slider/img_01.jpg' %}" class="d-block w-100 img-responsive" alt="..."> -->
-      <!-- <div class="carousel-caption d-none d-md-block">
-        <h2>First slide label</h2>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div> -->
+    <div class="carousel-item slide-item-1 active" {% if LANGUAGE_CODE == 'ar' %}
+      style='background-image: url(" {% static 'media/New_Slider/ar/01.jpg' %}")' {% elif LANGUAGE_CODE == 'en' %}
+      style='background-image: url(" {% static 'media/New_Slider/en/01.png' %}")' {% elif LANGUAGE_CODE == 'ku' %}
+      style='background-image: url(" {% static 'media/New_Slider/ku/01.png' %}")' {% endif %}>
     </div>
-    <div class="carousel-item slide-item-2" style='background-image: url("{% static 'media/02.png' %}")'>
-      <!-- <img src="{% static 'media/slider/img_02.jpg' %}" class="d-block w-100 img-responsive" alt="..."> -->
-      <!-- <div class="carousel-caption d-none d-md-block">
-        <h2>Second slide label</h2>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div> -->
+    <div class="carousel-item slide-item-2" {% if LANGUAGE_CODE == 'ar' %}
+      style='background-image: url(" {% static 'media/New_Slider/ar/02.jpg' %}")' {% elif LANGUAGE_CODE == 'en' %}
+      style='background-image: url(" {% static 'media/New_Slider/en/02.png' %}")' {% elif LANGUAGE_CODE == 'ku' %}
+      style='background-image: url(" {% static 'media/New_Slider/ku/02.png' %}")' {% endif %}>
     </div>
-    <div class="carousel-item slide-item-3" style="background-image: url('{% static 'media/03.png' %}')">
-      <!-- <img src="{% static 'media/slider/img_03.jpg' %}" class="d-block w-100 img-responsive" alt="..."> -->
-      <!-- <div class="carousel-caption d-none d-md-block">
-        <h2>Third slide label</h2>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div> -->
+    <div class="carousel-item slide-item-3" {% if LANGUAGE_CODE == 'ar' %}
+      style='background-image: url(" {% static 'media/New_Slider/ar/03.jpg' %}")' {% elif LANGUAGE_CODE == 'en' %}
+      style='background-image: url(" {% static 'media/New_Slider/en/03.png' %}")' {% elif LANGUAGE_CODE == 'ku' %}
+      style='background-image: url(" {% static 'media/New_Slider/ku/03.png' %}")' {% endif %}>
     </div>
-    <div class="carousel-item slide-item-4" style="background-image: url('{% static 'media/04.png' %}')">
-      <!-- <img src="{% static 'media/slider/img_04.jpg' %}" class="d-block w-100 img-responsive" alt="..."> -->
-      <!-- <div class="carousel-caption d-none d-md-block">
-        <h2>Fourth slide label</h2>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div> -->
+    <div class="carousel-item slide-item-4" {% if LANGUAGE_CODE == 'ar' %}
+      style='background-image: url(" {% static 'media/New_Slider/ar/04.jpg' %}")' {% elif LANGUAGE_CODE == 'en' %}
+      style='background-image: url(" {% static 'media/New_Slider/en/04.png' %}")' {% elif LANGUAGE_CODE == 'ku' %}
+      style='background-image: url(" {% static 'media/New_Slider/ku/04.png' %}")' {% endif %}>
     </div>
-    <div class="carousel-item slide-item-5" style="background-image: url('{% static 'media/05.png' %}')">
-      <!-- <img src="{% static 'media/slider/img_05.jpg' %}" class="d-block w-100 img-responsive" alt="..."> -->
-      <!-- <div class="carousel-caption d-none d-md-block">
-        <h2>Fifth slide label</h2>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div> -->
+    <div class="carousel-item slide-item-5" {% if LANGUAGE_CODE == 'ar' %}
+      style='background-image: url(" {% static 'media/New_Slider/ar/05.jpg' %}")' {% elif LANGUAGE_CODE == 'en' %}
+      style='background-image: url(" {% static 'media/New_Slider/en/05.png' %}")' {% elif LANGUAGE_CODE == 'ku' %}
+      style='background-image: url(" {% static 'media/New_Slider/ku/05.png' %}")' {% endif %}>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselHomePage" role="button" data-slide="prev">
@@ -55,44 +45,6 @@
 </div>
 
 
-
-<!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{% static '../media/slider/img_01.jpg' %}" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="{% static '../media/slider/img_02.jpg' %}" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="{% static '../media/slider/img_03.jpg' %}" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="{% static '../media/slider/img_04.jpg' %}" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="{% static '../media/slider/img_05.jpg' %}" class="d-block w-100" alt="...">
-    </div>
-  </div>
-</div> -->
-
-
-
-<!-- <div id="sider_bg">
-  <br><br><br>
-  <h1 class="text-center text-white mb-4 pt-5 slide-text">
-    {% trans 'بوابة المجتمع المدني' %}
-  </h1>
-
-  <div class="text-center">
-    <p class="text_1 d-none text-white text-center">text 1</p>
-    <p class="text_2 d-none text-white text-center">text 2</p>
-    <p class="text_3 d-none text-white text-center">text 3</p>
-    <p class="text_4 d-none text-white text-center">text 4</p>
-    <p class="text_5 d-none text-white text-center">text 5</p>
-  </div>
-  
-</div> -->
 
 <div class="container">
   <div class="row">
@@ -325,7 +277,7 @@
   <div class="form-news-latter mt-4 p-5 rounded mb-4" id="newsletter" data-aos="fade-left">
     <h1 class="text-center text-white border-bottom border-white pb-3"> {% trans "للاشتراك بآخر الأخبار" %} </h1>
     <div class="row">
-      <div class="col-md-6 col-sm-12">
+      <div class="col-md-12 col-sm-12">
         <form action="" method="POST" class="form-news-latter">
           {% csrf_token %}
           <div class="form-group">
@@ -347,7 +299,7 @@
           </div>
         </form>
       </div>
-      <div class="col-md-6 col-sm-12">
+      <!-- <div class="col-md-6 col-sm-12">
         <p class="text-white text-al-just">
 
           Where does it come from?
@@ -366,7 +318,7 @@
           form, accompanied by English versions from the 1914 translation by H. Rackham.
 
         </p>
-      </div>
+      </div> -->
     </div>
 
 
